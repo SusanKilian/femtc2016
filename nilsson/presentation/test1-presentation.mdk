@@ -9,7 +9,7 @@ Beamer Theme  : singapore
 [TITLE]
 
 # Introduction
-* Part of an MSc thesis, Lund University
+* Part of an MSc thesis at Lund University
 * Evaluating FDS for modelling external fire spread
 * Large-scale fire test with data available
 * Previous numerical work showed promising results
@@ -39,7 +39,7 @@ Modified SP Fire 105 test rig
 ~ End Vertical
 ~ Begin Vertical
 # Processing the output data
-# $\dot{q}^{\prime\prime}_{IRHF}$ from the test
+# $\dot{q}^{\prime\prime}_{IRHF}$ from the fire test
 
 ~ Begin Framed { padding:1ex; margin-top:1ex }
 ~ Equation  {#Equation4; caption:"Equation4" }
@@ -61,6 +61,13 @@ $\epsilon_{PT} \dot{q}^{\prime\prime}_{inc} - \epsilon_{PT} \sigma T_{PT}^{4} + 
 ~ Center
 $= C \dfrac{dT_{PT}}{dT}$
 ~
+
+$\vspace{\baselineskip}$
+
+~ Center
+$T_{PT} \sim T_{AST}$
+~
+
 # $\dot{q}^{\prime\prime}_{IRHF}$ in FDS
 
 ~ Begin Framed { padding:1ex; margin-top:1ex }
@@ -136,9 +143,9 @@ $= C \dfrac{dT_{PT}}{dT}$
 * FDS 6.2.0 generally produce higher temperatures and
   $\dot{q}^{\prime\prime}_{IRHF}$ for the given setup compared to FDS
   5.5.3
-* FDS 6.2.0 produce results that are more in line with the results from
-  the test compared to FDS 5.5.3
-* Need of a high mesh resolution to obtain credible results particularly
+* FDS 6.2.0 produce results that are more in line with the test results
+  compared to FDS 5.5.3
+* Need of a high mesh resolution to obtain credible results, particularly
   close to the fire, namely a $D^{*}/\delta x$ of at least 30.
 * It is crucial to compare the same form of output data in FDS
 ~
