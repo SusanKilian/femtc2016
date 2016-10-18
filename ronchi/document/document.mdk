@@ -17,36 +17,41 @@ name-references : REFERENCES
 Evacuation models used in fire safety engineering have largely expanded their capabilities over the last decades. They started as simple computational tools in which people movement equations were implemented in discrete spaces, while they now often allow the simulation of complex behaviours and decision making through advanced agent-based simulation techniques in three-dimensional environments. While the progress of evacuation modelling techniques appears evident comparing their capabilities over the years, there are still quite a few areas in which there is room for significant improvements. What are those areas? This paper wants to open a discussion on a research roadmap for evacuation models used in fire safety engineering. In other words, this paper explores what features need to be possibly implemented, improved, or expanded in existing evacuation models for fire safety engineering applications. This considers both improvements based on existing knowledge in the evacuation research field as well as possible future research directions. Five areas of development concerning evacuation modelling are here discussed, namely 1) Factors affecting people movement, 2) Route choice modelling, 3) Behavioural uncertainty, 4) Integration with other models and 5) Validation methods. 
 ~
 
+**Keywords**. Evacuation modelling; Fire Safety; People movement; Route choice; behavioural uncertainty 
+
+
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
 [reference-manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html "Madoko Reference Manual"
 [femtc2016]: https://github.com/thunderheadeng/femtc2016
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
-# GENERAL INSTRUCTIONS { #sec-intro }
-You are encouraged to use the [Madoko.net Editor][editor] while using
-the [Madoko Reference Manual][reference-manual] to edit/commit your
-documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
-More information about this method of contribution will be covered below.
+# Introduction { #sec-intro }
 
-Text styling, links, sub- and super-script, footnotes and other topics
-are covered in section [Syntax: Inline
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--inline-elements)
-of the manual.
+The quantity, capabilities, and uses of evacuation models in fire safety engineering have been improving significantly in the last decades [@ronchi_evacuation_2011]. 
+In fact, a recent review article showed an impressive growth in the number of publications in scientific journals which include evacuation modelling [@vermuyten_review_2016].
+Different types of studies are conducted with evacuation models. They may focus on the expansion of model capabilities, model applications in different contexts, empirical validation studies, computational optimization, etc. The growth in scientific studies seems to indicate a corresponding expansion of the evacuation modelling community itself.
+This may also be linked to the adoption of performance-based design fire codes worldwide [@meacham_fire_2014], which is associated with an increase in the application of evacuation models for fire safety engineering.
 
-Headings, Figures and Tables, Lists, Code Blocks, Mathematics, etc. are
-covered in section [Syntax: Block
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--block-elements)
-of the manual.
+In this context, it appears evident that the entire evacuation modelling community would benefit from the implementation of research results into improvements of evacuation models. Model developers might see their models increasing their capabilities with a subsequent expansion in their possible users. Model users may obtain more and improved features, a higher usability and an increased credibility of the results they obtain. Evacuation researchers might see that their efforts conducted in understanding the underlying mechanisms of human behaviour in fire evacuation (and the subsequent methods to model it) are reflected into a practical implementation of their findings into existing tools. Authorities having jurisdictions may increase the level of trust into the results produced by the model users.
 
-The target length for submitted and invited papers is about eight pages.
-This length includes all figures and tables. However, because the
-Proceedings will not be printed on paper, there is no maximum limit on
-the number of pages. You are free to exceed the target length of eight
-pages.
+One of the main issues associated with evacuation models is that they may represent certain aspects of human behaviour based on theoretical assumptions rather than behavioural data [@gwynne_guidance_2015].
+In fact, while evacuation models have largely improved their capabilities over the years in representing the physical aspects associated with pedestrian flows, to date, the representation of behavioural aspects of an evacuation highly rely on the model user expertise rather than the modelling methods adopted.
+For this reason, there is agreement in the evacuation modelling community that model validation should be one of the primary areas of evacuation research in the future [@ronchi_need_2014; @ronchi_evacuation_2011].
+Several debates are indeed ongoing on the process of validation of evacuation models and the need for increasing the number of collected behavioural data-sets on fire evacuation [@peacock_five_2011; @ronchi_process_2013].
+The evacuation modelling community is currently tackling this issue through different data collection efforts made by international groups which are involved in human behaviour in fire research. While the collection of behavioural data-sets (and the process of standardization of the methods for collection) remains one of the primary needs of the evacuation modelling community [@minegishi_proposal_2015;@ronchi_need_2014], this paper wants to open a general discussion on what should be the priority areas in evacuation research. This is done by discussing a set of areas which might need particular attention in future research and that might be used for the definition of a research roadmap concerning evacuation modelling.
 
-Please watch this short YouTube Video for a tutorial on how to use the system as intended.
+The choice of the priority areas is neither simple nor is the list complete, and it is not the intention of this work to provide a final answer to this issue. Nevertheless, this paper wants to be a starting point for a broad discussion on a research roadmap for evacuation models, whose definition should consider the point of view of all parties developing/using evacuation models or reviewing evacuation model results. This is deemed to be beneficial for the entire community since it would give guidance for the directions of the future evacuation research efforts.
 
-# MAIN HEADINGS LIKE THIS STYLE
+The objective of this paper is to discuss future improvements in evacuation models, given the existing data-sets and knowledge on human behaviour in fire evacuation emergencies. Possible priority areas in which future research should be conducted are presented. To achieve this objective, this paper refers to recent research findings presented in different areas of evacuation research. These areas for improvements in evacuation models have been classified in different categories, namely:
+
+1. Factors affecting people movement,
+2. Route choice modelling,
+3. Behavioural uncertainty,
+4. Integration with other models,
+5. Validation methods.
+
+
+# 2.	Factors affecting people movement
 Main Headings are all upper case letters and underlined. In Madoko, a
 Single '#' symbol at the start of the line, followed by a space and then
 the heading text.
@@ -166,7 +171,7 @@ separated references, for example:
 ``` Markdown 
 Read about LaTeX and TeX [@akizuki_experimental_2007].
 ```
-Results in: Read about LaTeX and TeX [@akizuki_experimental_2007].
+
 
 Please include full title of journal articles or other references,
 journal, volume, date, pages. There is a nice [table on
