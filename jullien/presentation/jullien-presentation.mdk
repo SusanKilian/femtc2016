@@ -337,26 +337,25 @@ Resolution conflict time, position and RT vary.
 
 
 
-
-
-
-
-
-
 # Synthesis of results (2)
 
 Advantage of the method:
 
 ~ Align-Left
+* Give a methodological justification to the RSET quantification.
 * Assess the number of simulations to perform to get an appropriate confidence interval width.
-* Better understand some phenomena occuring during the evacuation.
-* Show non-linear effects of input parameters on the RSET.
 * Estimate quantitatively the influence on the RSET of the input parameters dispersion.
 ~
 
 # Synthesis of results (3)
 
+~ Align-Left
 
+* Better understand some phenomena occuring during the evacuation.
+* Show non-linear effects of input parameters on the RSET.
+* Raise the question of what RSET is.
+
+~
 
 
 
@@ -371,13 +370,14 @@ Advantage of the method:
 ~ Align-Left
 * Interpret the influence of variability of an input parameter to an output parameter &bcheckmark;
 * Quantify the number of simulations required to make to have a short confidence interval &bcheckmark;
-~
+
 
 &rarr; There is still a lot of work.
 
-Pas les données 
-la méthode à améliorer
+* to make an engineering level tool,
+* to find relevant input data.
 
+~
 
 # Conclusion (2)
 
@@ -390,6 +390,8 @@ Prospects:
 * Need for a bibliography work.
 * Industrialize the method on tools dedicated to stochastic analysis.
 * Compare different simulations tools.
+
+Discuss of what is an adequate failure probability.
 ~
 
 ~ End Vertical
