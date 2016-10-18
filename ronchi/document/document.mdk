@@ -1,18 +1,9 @@
 [INCLUDE=style/lncs]
-Title         : TITLE OF YOUR PAPER, IN CAPITAL LETTERS CENTERED ON PAGE, USING ONE OR MORE LINES AS NECESSARY
-Subtitle      : An optional subtitle.
+Title         : A RESEARCH ROADMAP FOR EVACUATION MODELS USED IN FIRE SAFETY ENGINEERING
 
-Author        : First Author Name
-Affiliation   : Research institute
-Email         : you@bar.com
-
-Author        : My co-author 1
-Affiliation   : Other institute
-Email         : other1@bar.com
-
-Author        : My co-author 2
-Affiliation   : Other institute
-Email         : other2@bar.com
+Author        : Enrico Ronchi
+Affiliation   : Department of Fire Safety Engineering, Lund University, P.O. Box 118, SE-22100 Lund, Sweden
+Email         : enrico.ronchi@brand.lth.se
 
 Bibliography  : references.bib
 Logo          : False
@@ -23,10 +14,7 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-Papers should follow standard technical paper format, an abstract
-followed by the more detailed presentation. The abstract should be typed
-on this area of the first page, with the presentation following after two
-lines of space.
+Evacuation models used in fire safety engineering have largely expanded their capabilities over the last decades. They started as simple computational tools in which people movement equations were implemented in discrete spaces, while they now often allow the simulation of complex behaviours and decision making through advanced agent-based simulation techniques in three-dimensional environments. While the progress of evacuation modelling techniques appears evident comparing their capabilities over the years, there are still quite a few areas in which there is room for significant improvements. What are those areas? This paper wants to open a discussion on a research roadmap for evacuation models used in fire safety engineering. In other words, this paper explores what features need to be possibly implemented, improved, or expanded in existing evacuation models for fire safety engineering applications. This considers both improvements based on existing knowledge in the evacuation research field as well as possible future research directions. Five areas of development concerning evacuation modelling are here discussed, namely 1) Factors affecting people movement, 2) Route choice modelling, 3) Behavioural uncertainty, 4) Integration with other models and 5) Validation methods. 
 ~
 
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
@@ -176,9 +164,9 @@ A bibliography file consists of all your references in the BibTeX format, for ex
 Entries in the bibliography files can now be referenced using semi-colon
 separated references, for example:
 ``` Markdown 
-Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
+Read about LaTeX and TeX [@akizuki_experimental_2007].
 ```
-Results in: Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
+Results in: Read about LaTeX and TeX [@akizuki_experimental_2007].
 
 Please include full title of journal articles or other references,
 journal, volume, date, pages. There is a nice [table on
