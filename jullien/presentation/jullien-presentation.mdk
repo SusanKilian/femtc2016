@@ -90,7 +90,7 @@ empirical distribution function.
 
 ~ Center
 ![fig3_1]
-[fig3_1]: images/fig3_.PNG "fig3_1" { width:auto; max-width:55%; border:solid 1px black}
+[fig3_1]: images/fig3_1.PNG "fig3_1" { width:auto; max-width:55%; border:solid 1px black}
 ~
 
 
@@ -130,7 +130,7 @@ Reminder:
 ~
 ~ Column
 ![fig4_1]
-[fig4_1]: images/fig4_.PNG "fig4_1" { width:auto; max-width:60%; border:solid 1px black}
+[fig4_1]: images/fig4_1.PNG "fig4_1" { width:auto; max-width:60%; border:solid 1px black}
 ~
 ~ End Columns
 
@@ -138,7 +138,7 @@ Reminder:
 
 ~ Center
 ![fig4_2]
-[fig4_2]: images/fig4_.PNG "fig4_2" { width:auto; max-width:70%; border:solid 1px black}
+[fig4_2]: images/fig4_2.PNG "fig4_2" { width:auto; max-width:70%; border:solid 1px black}
 ~
 
 ## Behavioral hypothesis
@@ -175,13 +175,13 @@ Occupants are randomly located in the room and drawn between 1 and 1,000.
 100 simulations
 
 ![fig5_1]
-[fig5_1]: images/fig5_.PNG "fig5_1" { width:auto; max-width:100%; border:solid 1px black}
+[fig5_1]: images/fig5_1.PNG "fig5_1" { width:auto; max-width:100%; border:solid 1px black}
 ~
 ~ Column
 1,000 simulations
 
 ![fig5_2]
-[fig5_2]: images/fig5_.PNG "fig5_2" { width:auto; max-width:100%; border:solid 1px black}
+[fig5_2]: images/fig5_2.PNG "fig5_2" { width:auto; max-width:100%; border:solid 1px black}
 ~
 ~ End Columns
 
@@ -258,7 +258,7 @@ The empirical distribution function is not uniform.
 
 ~ Center
 ![fig6_3]
-[fig6_3]: images/fig6_.PNG "fig6_3" { width:auto; max-width:50%; border:solid 1px black}
+[fig6_3]: images/fig6_3.PNG "fig6_3" { width:auto; max-width:50%; border:solid 1px black}
 ~
 
 
@@ -294,7 +294,7 @@ Conflict resolution time, position, RT fixed.
 
 ~ Center
 ![fig6_5]
-[fig6_5]: images/fig6_.PNG "fig6_5" { width:auto; max-width:50%; border:solid 1px black}
+[fig6_5]: images/fig6_5.PNG "fig6_5" { width:auto; max-width:50%; border:solid 1px black}
 ~
 
 
@@ -310,7 +310,7 @@ Reminder:
 Conflict resolution time and position vary, RT is fixed.
 ~ Center
 ![fig6_6]
-[fig6_6]: images/fig6_.PNG "fig6_6" { width:auto; max-width:50%; border:solid 1px black}
+[fig6_6]: images/fig6_6.PNG "fig6_6" { width:auto; max-width:50%; border:solid 1px black}
 ~
 &rarr; Position has more influence on low and average densities.
 
@@ -323,7 +323,7 @@ Resolution conflict time, position and RT vary.
 ~ Center
 
 ![fig6_7]
-[fig6_7]: images/fig6_.PNG "fig6_7" { width:auto; max-width:50%; border:solid 1px black}
+[fig6_7]: images/fig6_7.PNG "fig6_7" { width:auto; max-width:50%; border:solid 1px black}
 ~
 
 &rarr; the variability of output parameters increases with the one of the input parameters &bcheckmark;
