@@ -31,18 +31,18 @@ Modified SP Fire 105 test rig
 ~~
 ~
 
-# Fire development
+## Fire development
 ![Figure1-2ny]
 [Figure1-2ny]: images/Figure1-2ny.png "Figure1-2ny" { width:auto; max-width:100% }
 
-# Setup in FDS
+## Setup in FDS
 ![Figure4]
 [Figure4]: images/Figure4.jpg "Figure4" { width:auto; max-width:100% }
 
 ~ End Vertical
 ~ Begin Vertical
 # Processing the output data
-# $\dot{q}^{\prime\prime}_{IRHF}$ from the fire test
+## $\dot{q}^{\prime\prime}_{IRHF}$ from the fire test
 
 ~ Begin Framed { padding:1ex; margin-top:1ex }
 ~ Equation  {#Equation4; caption:"Equation4" }
@@ -71,7 +71,7 @@ $\vspace{\baselineskip}$
 $T_{PT} \sim T_{AST}$
 ~
 
-# $\dot{q}^{\prime\prime}_{IRHF}$ in FDS
+## $\dot{q}^{\prime\prime}_{IRHF}$ in FDS
 
 ~ Begin Framed { padding:1ex; margin-top:1ex }
 ~ Equation  {#Equation4; caption:"Equation4" }
@@ -155,29 +155,6 @@ $T_{PT} \sim T_{AST}$
 * $T_{AST}$ can be used as an alternative means of expressing the thermal
   exposure to a surface in FDS
 ~
-
-~ Begin Vertical
-# Results
-
-## Thermocouples 5 cm grid
-![Figure5]
-[Figure5]: images/Figure5.png "Figure5" { width:auto; max-width:100% }
-
-## Thermometers 5 cm grid
-![Figure6]
-[Figure6]: images/Figure6.png "Figure6" { width:auto; max-width:100% }
-
-## $T_{AST}$ 5 cm grid
-![Figure7]
-[Figure7]: images/Figure7.png "Figure7" { width:auto; max-width:100% }
-
-## $\dot{q}^{\prime\prime}_{IRHF}$ 5 cm grid
-![Figure8]
-[Figure8]: images/Figure8.png "Figure8" { width:auto; max-width:100% }
-
-* Incident radiation $\dot{q}^{\prime\prime}_{INC}$ $(W/m^{2})$
-
-~ End Vertical
 
 [slide]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.html
 [slide-mdk]: https://www.madoko.net/editor.html?#url=http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/slidedemo.mdk&options={"delayedUpdate":"true"}
