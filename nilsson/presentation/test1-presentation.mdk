@@ -10,7 +10,10 @@ Beamer Theme  : singapore
 
 # Introduction
 * Part of an MSc thesis at Lund University
-* Evaluating FDS for modelling external fire spread
+* Need of a calculation tool for modelling external fire spread
+* Evaluate the tool before the following analysis was performed
+* An update in FDS $\neq$ every area is improved
+* SP FIRE 105 facade test
 * Large-scale fire test with data available
 * Previous numerical work showed promising results
 * Investigate differences in the program versions
@@ -147,8 +150,10 @@ $T_{PT} \sim T_{AST}$
   compared to FDS 5.5.3
 * To obtain credible results particularly close to the fire, a mesh
   resolution $D^{*}/\delta x$ of at least 30 is needed.
-* Plenty of choices in FDS - crucial to compare the same form of output
-  data
+* Plenty of choices in FDS regarding radiative heat fluxes means it's
+  crucial to compare the same form of output data
+* $T_{AST}$ can be used as an alternative means of expressing the thermal
+  exposure to a surface in FDS
 ~
 
 ~ Begin Vertical
