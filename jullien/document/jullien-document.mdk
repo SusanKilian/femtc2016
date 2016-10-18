@@ -305,7 +305,7 @@ Indeed, the density of people has influence on the congestion time and the avera
 
 ~ TableFigure { #table-3; caption: "Ranges of differents patterns for 100 simulations"; .wide ; page-align:forcehere}
 |                                |-------------------------|-------------------------|-------------------------|
-|                                | Pattern 1               | pattern 2               | pattern 3               |
+|                                | Pattern 1               | Pattern 2               | Pattern 3               |
 |:-------------------------------|:-----------------------:|:-----------------------:|:-----------------------:|
 | RSET&nbsp;(s)                  | [22.4&nbsp;;&nbsp;37.4] | [37.4&nbsp;;&nbsp;72.2] | [72.2&nbsp;;&nbsp;82.6] |
 | Occupants number               | [34&nbsp;;&nbsp;297]    | [297&nbsp;;&nbsp;806]   | [806&nbsp;;&nbsp;982]   |
