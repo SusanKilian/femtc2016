@@ -37,34 +37,40 @@ Email         : oriol.rios@upc.edu
   - The entire work was presented as master thesis within the IMFSE program in 2013
 ~
 
-# Before we begin, what is Izar?
+~ begin Vertical
+
+## Before we begin, what is Izar?
 
 [I am very happy with your question...]{ :red }
 
-
+## Izar is a system with... a gas burner
 ~ Center
  ![130815-6612]
-{.fragment}
+ 
 [130815-6612]: images/130815-6612.jpg "130815-6612" { width:auto; max-width:90% }
 ~
 
+## ... a gas supply system
 
-~ Begin Columns
-~ Column { width:50% }
+~ Center
 
 ![130815-6609]
-{.fragment}
-[130815-6609]: images/130815-6609.jpg "130815-6609" { width:auto; max-width:60% }
+
+[130815-6609]: images/130815-6609.jpg "130815-6609" { width:auto; max-width:100% }
 ~
 
-~ Column { width:50% }
+## ... and some fog generators
+
+~ Center
+
+[Our clients wanted to see the smoke,... and my boss too]{ :red }
 
 ![151117-9498]
-{.fragment}
-[151117-9498]: images/151117-9498.jpg "151117-9498" { width:auto; max-width:40% }
+
+[151117-9498]: images/151117-9498.jpg "151117-9498" { width:auto; heigth: auto}
 ~
 
-~ End Columns
+~ End Vertical
 
 # Nice! It sounds interesting, but what makes Izar something special?
 
@@ -242,20 +248,27 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
    {.fragment}
 ~
 
-## slide
+## 
 
-~ Column { width:50% }
+~ begin Column
+
+~ Column 
+
 
 ![Temperature 0_1 MW]
 
-[Temperature 0_1 MW]: images/Temperature-0_1-MW.jpg "Temperature 0_1 MW" { width:auto; max-width:90% }
+[Temperature 0_1 MW]: images/Temperature-0_1-MW.jpg "Temperature 0_1 MW" { width:280px; max-width:100% }
 
 ~
 
-~ Column { width:50% }
+~ Column 
 
-
+![Temperature 1_2 MW]
 ~
+
+[Temperature 1_2 MW]: images/Temperature-1_2-MW.jpg "Temperature 1_2 MW" { width:280px; max-width:100% }
+
+~ End Column
 
 ~ End Vertical
 
