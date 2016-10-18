@@ -231,21 +231,21 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 ~ begin Vertical
 
-## Validation of the FDS model
+# Validation of the FDS model
+
 ~ Align-Left
+
 * [You are probably thinking]{ :red }
   - {.fragment}Nice method
   - {.fragment}The theory is interesting, but I want to known if it works
   - {.fragment}Does he have more cool pictures?
 
-* Well, let's show the results
-  - And yes, there are some more cool pictures, for example..
-   {.fragment}
+* Well, let's show the result
+  - And yes there are some cool photos more...
 ~
 
-## 
+# 
 ~ begin Columns
-
 
 ~ Column  { width:50%}
 
@@ -267,10 +267,20 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 ~ End Vertical
 
 # Let's begin with the plume
+
 ~ Align-Left
 
+* Using the described initial inputs, Izar was modeled in FDS
+* A measurement grid was also programmed
+  - One temperature sensor each 20 cm in the axis X and Y
+  - Repeated each 19.5 cm in the Z-Axis
+~
 
+~ center
+![FDS grid]
 
+[FDS grid]: images/FDS-grid.JPG "FDS grid" { width:auto; max-width:90% }
+~
 ~
 
 
