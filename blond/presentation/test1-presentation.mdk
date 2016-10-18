@@ -229,9 +229,9 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 ~ End Vertical
 
-~ begin Vertical
+~ Begin Vertical
 
-# Validation of the FDS model
+## Validation of the FDS model
 
 ~ Align-Left
 
@@ -241,14 +241,16 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
   - {.fragment}Does he have more cool pictures?
 
 * Well, let's show the result
-  - And yes there are some cool photos more...
+  - And yes there are some cool photos more, [for example] [down]
+  {.fragment}
+
 ~
 
-# 
+## 
+
 ~ begin Columns
 
 ~ Column  { width:50%}
-
 
 ![Temperature 0_1 MW]
 
