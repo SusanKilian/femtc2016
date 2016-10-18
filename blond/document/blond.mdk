@@ -6,10 +6,11 @@ Affiliation   : Basler & Hofmann AG, Zürich, Switzerland
 Email         : juan.blond@baslerhofmann.ch
 
 Author     : Rios, Oriol
-Affiliation   : Department of Chemical Engineering, Centre for Technological Risk Studies. Universitat Politècnica de Catalunya Barcelona, Spain
+Affiliation   : Centre for Technological Risk Studies (CERTEC). Technical University of Catalonia, UPC – BarcelonaTech, Barcelona, Spain
+
 Email         : oriol.rios@upc.edu
 
-Bibliography  : blond_references.bib
+Bibliography  : Biblio_Blond.bib
 Logo          : False
 Tex Header    :
   \def\refname{&name-references;}
@@ -31,12 +32,11 @@ fog generators to visualize the smoke layer.
 
 The main characteristic of the system is the use of premixed flames as heat source. 
 The main advantage is the reduction, almost elimination, of the heat loses due to radiation and the elimination of the residues, soot yield, originated by the common diffusions flames.
-The use of premixed flames made of Izar a pure convective heat source capable of reproducing the equivalent 
-convective part released by the common natural fires with diffusion flames. 
+The use of premixed flames made of Izar a pure convective heat source capable of reproducing the equivalent convective part released by the common natural fires with diffusion flames. 
 
 The system can release a total power of 1,20 MW, which considered as a pure convective heat source, is equivalent to a natural fire of 1'80 MW. This equivalence considers the standard ratio 2/3 of the total heat released as convective heat and 1/3 as radiation heat. This ratio could be adjusted for each fuel if needed.
 
-This paper summarizes the main results obtained during the development of the hot smoke testing system regarding its modeling in FDS. The entire work was submitted as master thesis within the International  Master of Science in Fire Safety Engineering program [@Juanjo].
+This paper summarizes the main results obtained during the development of the hot smoke testing system regarding its modeling in FDS. The entire work was submitted as master thesis within the International  Master of Science in Fire Safety Engineering program [@BlondHernandez2013].
 
 ## A brief description of the work context 
 
@@ -50,9 +50,9 @@ Different equations and models are available in literature to calculate the plum
 
 The processes with premixed flames are normally used normally in closed environments such as industrial ovens, in which the main interest is the combustion efficiency rather than the plumes development and thus, the phenomena is not documented enough.
 
-The rectangular geometry of the burning chamber, made also impossible to consider these traditional models mainly based on experiments with circular fire sources such as the Heskestad plume model [@Drysdale:TeX] and extrapolate their results.
+The rectangular geometry of the burning chamber, made also impossible to consider these traditional models mainly based on experiments with circular fire sources such as the Heskestad plume model [@Drysdale2011] and extrapolate their results.
 
-A new framework had to be developed to study the temperature field in the plume created by Izar. The decision was to study the temperature field in the plume modeling the system with FDS. 
+A new framework had to be developed to study the temperature field in the plume created by Izar. The decision was to study the temperature field in the plume modeling the system with FDS [@McGrattan2013c], [@McGrattan2016]. 
 
 # Modeling the hot smoke testing system Izar with FDS
 
@@ -62,7 +62,7 @@ The solution to simulate premixed flames consists of modeling the combustion lik
 
 Izar uses propane gas as source of energy. The physical properties of the combustible are well documented in the literature. 
 The flame temperature is one of these and it is the main model parameter. The combustion in Izar occurs under stoichiometric conditions achieving very high combustion efficiencies, 
-an very high temperatures. The chosen flame temperature is the adiabatic temperature with dissociation. For the propane this temperature is 1995 °C [@Drysdale:TeX]. Above the combustion region, the plume can be represented using the fluid dynamic equations available in FDS.
+an very high temperatures. The chosen flame temperature is the adiabatic temperature with dissociation. For the propane this temperature is 1995 °C [@Drysdale2011]. Above the combustion region, the plume can be represented using the fluid dynamic equations available in FDS.
 
 The plume contains the combustion products generated during the combustion. In the diffusion flames the efficiency of the combustion process defines the amount of products and particles which are commonly called smoke.
 However in a premixed combustion these combustion products are well known and do not change under different environment conditions. By a simple chemical balance its is possible to calculate these combustion products and the amount of them:
@@ -86,7 +86,7 @@ Once the chemical balance is available, the fuel/product ratio can be defined fo
 |----------|------------------|--------------------|----------------------|
 ~
 
-The propane heat of combustion is well known and can be set to 46 kJ/g (REFF), it is straightforward to calculate the necessary kilograms of propane required to achieve a certain power.The chemical equation can be afterwards adjusted to determinate the kg of products produced. Using the mass ratio available in the Table [#malecular-weight], the amount of products generated can be calculated.
+The propane heat of combustion is well known and can be set to 46 kJ/g [@Heskestad2016], it is straightforward to calculate the necessary kilograms of propane required to achieve a certain power.The chemical equation can be afterwards adjusted to determinate the kg of products produced. Using the mass ratio available in the Table [#malecular-weight], the amount of products generated can be calculated.
 
 For example, in order to generate a power of 500 kW, a mass flow rate of 10.78 g/s of propane are needed. Using the mass ratio available in the Table [#Malecular-weight], the generated amount of products is calculated. The values for this example are in the Table [#Molecular-weight]
 
@@ -133,7 +133,7 @@ The definition of the initial temperature by means of the adiabatic temperatures
 ~ End Figure
 
 Regarding radiation the higher the combustion efficiency, the lower the flame radiation fraction, since less soot is produced and the flame becomes transparent. However a small heat fraction is still released as radiation. 
-The fraction of heat released as convective heat, can be calculated using the partial pressures of CO~2~ and water vapour in the products. Using the chemical balance, see above Equation [#propan-combustion], the molar quantities are calculated and these values correspond to the partial pressures (surrounding pressure, ambient pressure, 1 atm). The flame temperature T= 1995 °C is considered:
+The fraction of heat released as convective heat, can be calculated using the partial pressures of CO~2~ and water vapour in the products [@Drysdale2011]. Using the chemical balance, see above Equation [#propan-combustion], the molar quantities are calculated and these values correspond to the partial pressures (surrounding pressure, ambient pressure, 1 atm). The flame temperature T= 1995 °C is considered:
 
 
 * CO~2~: _p ~C02~_  --> 3 / (3 + 4 + 18.8 ) --> 0.116 atm
