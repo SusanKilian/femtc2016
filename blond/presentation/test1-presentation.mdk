@@ -31,7 +31,7 @@ Email         : oriol.rios@upc.edu
 
 * A premixed combustion is the source of energy for the test
 
-[(Oh yes, that's why I am here attending this presentation)]{ :lime}
+{.fragmented} [(Oh yes, that's why I am here attending this presentation)]{ :lime}
 
 * The results presented in this work are part of its development process
   - The entire work was presented as master thesis within the IMFSE program in 2013
@@ -41,9 +41,10 @@ Email         : oriol.rios@upc.edu
 
 [I am very happy with your question...]{ :red }
 
-~ Center
-![130815-6612]
 
+~ Center
+ ![130815-6612]
+{.fragment}
 [130815-6612]: images/130815-6612.jpg "130815-6612" { width:auto; max-width:90% }
 ~
 
@@ -52,14 +53,17 @@ Email         : oriol.rios@upc.edu
 ~ Column { width:50% }
 
 ![130815-6609]
-[130815-6609]: images/130815-6609.jpg "130815-6609" { width:auto; max-width:90% }
+{.fragment}
+[130815-6609]: images/130815-6609.jpg "130815-6609" { width:auto; max-width:60% }
 ~
+
 ~ Column { width:50% }
 
 ![151117-9498]
-
-[151117-9498]: images/151117-9498.jpg "151117-9498" { width:auto; max-width:50% }
+{.fragment}
+[151117-9498]: images/151117-9498.jpg "151117-9498" { width:auto; max-width:40% }
 ~
+
 ~ End Columns
 
 # Nice! It sounds interesting, but what makes Izar something special?
@@ -74,15 +78,20 @@ Well Izar is definitely a cool machine...
   - It is possible to follow fire curves like the t^2^-curve
 
 * A validated FDS model is available 
+{.fragment}
 
 [(Oh, a validated FDS for a testing system? It seems interesting, I will keep attending what this guy is saying...) ]{ :lime }
+{.fragment}
 ~
  
 # How is that you decided to combine FDS with Izar?
 
 [It is not the best idea to do a smoke test an burn the room... I needed to figure out how to avoid it.]{ :red }
-{.fragment} [Yes, that is definitely a good reason]{ :lime }
 {.fragment}
+
+[Yes, that is definitely a good reason]{ :lime }
+{.fragment}
+
 ~ Align-Left
 
 * The aim is to calculate the plume temperatures originated by Izar
@@ -97,11 +106,10 @@ Well Izar is definitely a cool machine...
   - What happens afterward? --> Not enough studied
 
 * A new framework is developed with FDS to calculate the temperature flames  
-
+{.fragment}
 ~
 
 # And how did you create the FDS model for Izar
-
 
 
 ~ Align-Left
@@ -114,6 +122,8 @@ Well Izar is definitely a cool machine...
   - Species
   - Temperature
   - Origin surface
+ 
+{.fragment}
 ~
 
 # The initial species (1/2)
@@ -165,6 +175,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 | H~2~O    | -              | 1.8       |            19.53    | 
 | N~2~     | -              | 13.16     |          142.78   | 
 |----------|----------------|-----------|--------------------| 
+
 ~ 
 
 ~ Align-Left
@@ -191,15 +202,62 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 * A 6.5 cm cell size was chosen after a sensitivity analysis   
 ~
 
-# Radiation
+~begin Vertical
+## Radiation
 ~ Align-Left
 * High combustion efficiency --> low radiation loses
 * The radiation fraction can be calculated considering the partial pressures 
 * The radiation loses of the system are around 3 % 
 
-[Juanjo, in maths, we trust, but a picture may help to believe what your are saying...]{ :lime }
-  
+[[Juanjo, in Maths, we trust, but a picture may help to believe what your are saying...]{ :lime }] [down] 
+{.fragment}
+
+[down]: # { .navigate-down }
 ~
+
+
+
+## Radiation {#vertical}
+~ Center
+![radiacion y mano]
+  
+
+[radiacion y mano]: images/radiacion-y-mano.jpg "radiacion y mano" { width:auto; max-width:200% }
+
+~
+
+~ End Vertical
+
+~ begin Vertical
+
+## Validation of the FDS model
+~ Align-Left
+* [You are probably thinking]{ :red }
+  - {.fragment}Nice method
+  - {.fragment}The theory is interesting, but I want to known if it works
+  - {.fragment}Does he have more cool pictures?
+
+* Well, let's show the results
+  - And yes, there are some more cool pictures, for example..
+   {.fragment}
+~
+
+## slide
+
+~ Column { width:50% }
+
+![Temperature 0_1 MW]
+
+[Temperature 0_1 MW]: images/Temperature-0_1-MW.jpg "Temperature 0_1 MW" { width:auto; max-width:90% }
+
+~
+
+~ Column { width:50% }
+
+
+~
+
+~ End Vertical
 
 # Validation of the FDS model
 ~ Align-Left
@@ -207,11 +265,22 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
   - {.fragment}Nice method
   - {.fragment}The theory is interesting, but I want to known if it works
   - {.fragment}Does he have more cool pictures?
- {.fragment}
+
 * Well, let's show the results
   - And yes, there are some more pictures
+   {.fragment}
 ~
+# Let's begin with the plume
+~ Align-Left
+* [You are probably thinking]{ :red }
+  - {.fragment}Nice method
+  - {.fragment}The theory is interesting, but I want to known if it works
+  - {.fragment}Does he have more cool pictures?
 
+* Well, let's show the results
+  - And yes, there are some more pictures
+   {.fragment}
+~
 
 
 ## Reveal.js
