@@ -1,0 +1,621 @@
+[INCLUDE=style/lncs]
+Title         : EVACUATION CONDITIONS IN SUBWAY STATIONS WITH PLATFORM SCREEN DOORS
+Subtitle      : 
+
+Author        : Daniel Octavio de Toledo
+Affiliation   : GEOCONTROL S.A.
+Email         : danieltoledo@geocontrol.es
+
+Author        : Rafael Sánchez
+Affiliation   : GEOCONTROL S.A.
+Email         : rsanchez@geocontrol.es
+
+
+Author        : 
+Affiliation   :
+Email         :
+
+Bibliography  : references.bib
+Logo          : False
+Tex Header    :
+  \def\refname{&name-references;}
+name-references : REFERENCES
+
+[TITLE]
+
+~ Abstract
+
+
+Safety concerns are playing a determinant role in the design of infrastructures, such as subway stations. 
+Therefore, new solutions are being studied and analyzed in order to improve the global safety level.
+
+Among these solutions, platform screen doors (PSD) are having a key role, since their use offers important advantages, 
+especially when it comes to facing an emergency situation involving a fire in a subway carriage.
+
+As a consequence of the placement of PSD in subway stations, the ventilation strategy must be adapted, because 
+if there is a fire inside a subway carriage, part of the smoke can more easily be isolated from the passengers 
+in the platform. Thus, two possible scenarios can be assessed depending on the existence or not of PSD:
+
+- Without PSD: smoke can’t be isolated and, thus, it can spread all along the platform, being mostly extracted 
+through the tunnel by a ventilation shaft.
+
+- With PSD: part of the smoke can be isolated from the passengers in the platform and it is extracted by one of the 
+tunnel ventilation shafts. The remaining part is extracted by the station exhaust system.
+
+The shape of the station has also its relevancy in terms of safety, mainly because in a fire event, the buoyancy force 
+makes smoke head toward certain places where the evacuation routes may be placed.
+
+The aim of the present document is to carry out a comparison between both situations in terms of evacuation conditions 
+during a fire event. This way, it is possible to quantify and compare visibility, temperature, CO concentration and 
+other variables in the evacuation routes.
+
+~
+
+# Introduction { #sec-intro }
+The design of subway stations is far more complex than other infrastructures, such as buildings, as many of the factors 
+that define them vary strongly, such as the occupation load, which is dependent on the hour of the day, and the sources 
+of a fire as well.
+
+Besides, more and more subway stations are being designed with cutting edge technology, as far as transportation is 
+concerned. There is an equipment that is increasingly being integrated in the stations: Platform Screen 
+Doors (PSD, from now on), as it is showed in **Figure 1.a**.
+
+~ Center
+![Fig 1.a]
+~
+[Fig 1.a]: images/Fig-1.a.jpg "Fig 1.a" { width:auto; max-width:55% }
+
+~ Center
+**Figure 1.a.- Platform Screen Doors in Barcelona's subway (Line 9).**
+~
+
+The goal of PSD is to provide an automatic operation for the trains in a subway network. These trains operate 
+autonomously, without a driver, and are coordinated with the PSD in such a way that, when they arrive at the 
+platform of a station, both the PSD and the carriage doors open and close simultaneously.
+
+A typical module of PSD is composed by a pair of sliding door leaves, two adjacent panels, a threshold and a 
+header box. Every sliding door consists of a glass panel (height of 2 – 2,2 m and 
+width of 1 – 1,2 m), a metallic frame, a door guide and door hangers.
+
+Fire safety is becoming more and more relevant in the design of infrastructures. In the case of a subway station, 
+a subway carriage constitutes the worst source of a fire, which may involve different parts of it and, therefore, 
+the heat release rate (HRR, from now on) and its distribution in time may be very different, depending on the part that ignites.
+
+The Firestarr project is a European research program that took place in 1997, aimed at studying the fire development 
+in rail and subway trains. This program stated that arson involving the interior of a train carriage was the main cause 
+for a fire in European trains. As far as the UK is referred, in the period from 1992 to 2000, 2.911 fires occurred in trains, 
+with a 77,8% of the total involving passenger trains. Arson was responsible for the 56% of these fires, which took place in 
+urban areas in the 90% of the cases.
+
+Some arson attacks in subway stations have caused multiple victims, as the case of the Daegu Subway (South Korea), which took 
+place in 2003, causing the death of 192 civilians.
+
+The goal of the present study is to carry out an assessment of the effect on the evacuation conditions in a subway station, 
+depending on the existence of PSD in an emergency situation because of a fire. Since arson has been documented as being the 
+main cause of a fire in a subway carriage, the present study is focused on fires caused by such event.
+
+# Subway stations
+
+In the present study, two types of stations have been considered:
+
+- **Cut and Cover stations.**
+
+Their main feature is the great volume inside them, which allows enough space to have both the escalators and the stairs 
+in the platform, connecting to the mezzanine level, as shown in **Figures 2.a-b**.
+
+~ Center
+![Fig 2.a]
+~
+
+[Fig 2.a]: images/Fig-2.a.jpg "Fig 2.a" { width:auto; max-width:50% }
+
+~ Center
+**Figure 2.a.- Cut & Cover station of Crossrail Paddington station in London (I).**
+~
+
+
+[Fig 2.a]: images/Fig-2.a.jpg "Fig 2.a" { width:auto; max-width:50% }
+
+
+~ Center
+![Fig 2.b]
+~
+[Fig 2.b]: images/Fig-2.b.jpg "Fig 2.b" { width:auto; max-width:50% }
+
+~ Center
+**Figure 2.b.- Cut & Cover station of Crossrail Paddington station in London (II)**.
+~
+
+
+
+- **Cavern stations.**
+
+Their main feature is the lack of space inside them, which usually forces both 
+the escalators and stairs to be placed in other places, being connected to the 
+platforms through passageways, as shown in **Figures 2.c-d**.
+
+~ Center
+![Fig 2.c]
+~ 
+[Fig 2.c]: images/Fig-2.c.png "Fig 2.c" { width:auto; max-width:40% }
+
+~ Center
+**Figure 2.c.- Design of subway station of Line 6 (Santiago, Chile) done by Geocontrol.**
+~
+
+~ Center
+![Fig 2.d]
+
+[Fig 2.d]: images/Fig-2.d.png "Fig 2.d" { width:auto; max-width:40% }
+~
+
+~ Center
+**Figure 2.d.- Platform in Line 5 Chueca station (Madrid, Spain).**
+~
+
+The comparison of both types of stations lets one foresee that the behavior of the 
+smoke will probably be different in each station.
+
+# Modeling of the fire event
+
+In order to design correctly the fire safety requirements of a station, it is vital 
+to have an accurate fire event modeling. According to the European Standard EN 45545 
+and to the ASHRAE Handbook, a fire from a new, hardened vehicle of a train can have 
+an HRR of around 10 MW. The tests of fire behavior done in the Eureka project 
+framework allow to have the HRR of a subway carriage, as shown in **Figure 3.a**.
+
+~ Center
+![Fig 3.a]
+~
+[Fig 3.a]: images/Fig-3.a.jpg "Fig 3.a" { width:auto; max-width:45% }
+
+~ Center
+**Figure 3.a.- HRR of a subway carriage.**
+~
+
+The HRR curve shown in Figure 3.a refers to a fire due to an arson attack 
+inside a subway carriage.
+
+The next step consists in creating a geometrical model that reproduces 
+the shape, volume and features of both types of stations, which has been 
+carried out with Pyrosim, as shown in **Figures 3.b-c**.
+
+~ Center
+![Fig 3.b]
+~
+[Fig 3.b]: images/Fig-3.b.png "Fig 3.b" { width:auto; max-width:45% }
+
+~ Center
+**Figure 3.b.- Geometrical model for Cut & Cover station.**
+~
+
+~ Center
+![Fig 3.c]
+~
+[Fig 3.c]: images/Fig-3.c.png "Fig 3.c" { width:auto; max-width:45% }
+
+~ Center
+**Figure 3.c.- Geometrical model for Cavern station.**
+~
+[Fig 3.c]: images/Fig-3.c.png "Fig 3.c" { width:auto; max-width:45% }
+
+[Figura 1.a]: images/Figura-1.a.jpg "Figura 1.a" { width:auto; max-width:90% }
+
+
+Once the geometry has been created, the ventilation strategy is the last step 
+to define the operation of a station in a fire event. An assessment will be 
+carried out between two ventilation strategies in a Cut & Cover station and in a 
+Cavern station in case of a fire event due to an arson attack in the inside of a 
+carriage.
+
+- **Strategy S.T. A.**
+
+There are PSD in the platform, isolating the platform from the trackway when 
+there is no train in the station. In this case, a train has just arrived to 
+the station and the fire has just begun to take place inside the last carriage.
+
+The train doors are open and so the PSD, which allows most of the smoke from the 
+carriage to invade the platform, where there is an amount of passengers. The rest 
+of the smoke is isolated in the volume of the tracks, because of the PSD, which 
+constitute a physical barrier.
+
+After 30s, the fire in the station is detected, two different ventilation systems 
+get activated: the station and the tunnel ventilation system. Thus, the smoke in the 
+platform is exhausted by the station ventilation system, while fire in the tracks 
+region is exhausted by the tunnel ventilation system.
+
+The station ventilation system connects with the platform through a ventilation duct 
+placed in the high part of the platform, as it is shown in the **Figure 3.d**.
+
+~ Center
+![Fig 3.d]
+~
+[Fig 3.d]: images/Fig-3.d.jpg "Fig 3.d" { width:auto; max-width:50% }
+
+~ Center
+**Figure 3.d. – Exhaust grids in the M5 subway line in Milan (Italy).**
+~
+
+The exhaust rates have been calculated with the formulas included in the NFPA 92 
+and are the following ones:
+
+~ Center
+![Table 3.I]
+~
+[Table 3.I]: images/Table-3.I.jpg "Table 3.I" { width:auto; max-width:35% }
+
+~ Center
+**Table 3.I.- Exhaust rates in the cases with PSD in the stations.**
+~
+
+- **Strategy S.T. B.**
+
+In this case, there are no PSD in any of the stations.
+
+The schedule of the events is the same: a train arrives and an arson attack is 
+carried out in the last carriage. In this case, due to the absence of PSD, the 
+smoke invades both platforms almost simultaneously, as no physical barrier protects 
+the passengers in the station.
+
+The ventilation strategy is based on exhausting the whole smoke generation with the 
+tunnel ventilation system. A station exhaust is ruled out in this case, as it would 
+interfere with the tunnel exhaust, jeopardizing the operation of each other, something 
+that didn’t happen with strategy S.T. A, since PSD are considered in the station. 
+Thus, the exhaust rate considered is the following one:
+
+~ Center
+![Table 3.II]
+~
+[Table 3.II]: images/Table-3.II.jpg "Table 3.II" { width:auto; max-width:22% }
+
+~ Center
+**Table 3.II. – Exhaust rates in the cases without PSD in the stations.**
+~
+
+# Assessment
+
+The comparison of both strategies will be carried out according to the NFPA 130 
+standard, which considers the temperature, the CO concentration and the visibility 
+as the main factors involved in the evacuation process, stating conditions for the 
+health of the passengers, as shown in **Tables 4.I** and **4.II**.
+
+~ Center
+![Table 4.I]
+~
+[Table 4.I]: images/Table-4.I.jpg "Table 4.I" { width:auto; max-width:40% }
+
+~ Center
+**Table 4.I. – Maximum exposure time to high levels of temperature.**
+~
+
+~ Center
+![Table 4.II]
+~
+[Table 4.II]: images/Table-4.II.jpg "Table 4.II" { width:auto; max-width:40% }
+
+~ Center
+**Table 4.II. – Maximum exposure time to high levels of CO concentration.**
+~
+
+The visibility affects the evacuation process, since a reduced level of this variable 
+means that the passengers move slower than if there were no smoke. It is required for 
+doors and walls to be discernible at a distance of 10m.
+
+Apart from the visibility, the required time for the complete evacuation of the station 
+will be assessed, surveilling if any passenger faces lethal conditions with an 
+exposition that surpasses the values outlined in Tables 4.I and 4.II.
+
+## Simulations in the Cut & Cover station.
+
+Some devices for the control of temperature, CO concentration and visibility have been 
+placed all along each platform, so that their value can be known in the egress routes 
+and inside the carriages during the fire.
+
+- **Main differences between both strategies.**
+
+The fire takes place in the inside of the last carriage on the right, as shown 
+in **Figure 4.1.a**.
+
+~ Center
+![Fig 4.1.a]
+~
+[Fig 4.1.a]: images/Fig-4.1.a.JPG "Fig 4.1.a" { width:auto; max-width:80% }
+
+~ Center
+**Figure 4.1.a. – Cut & Cover fire model created with Pyrosim.**
+~
+
+In the case of strategy S.T. A, the passengers on the platform PL. B are completely 
+isolated from the fire and the smoke. However, the passengers on Platform PL. A 
+(the one close to the train) must face the smoke coming from the inside of the 
+carriage.
+
+In the case of strategy B, both the passengers in platforms PL. A and PL. B are exposed 
+to the fire and must face harsh conditions during the evacuation, in contrast with 
+the situation described with the strategy S.T. A.
+
+- **Means of egress**.
+
+The passengers on each platform have four escape routes (E.R., from now on), as shown 
+in **Figure 4.1.a**.
+
+-	E.R. 1: toward the emergency door on the right side.
+-	E.R. 2: toward the escalators and stairs on the right side.
+-	E.R. 3: toward the escalators and stairs on the left side.
+-	E.R. 4: toward the emergency door on the left side of platform.
+
+The region in front of the vandalized carriage is the one most affected by the fire.
+
+- **Development of the fire**.
+
+All the 6 carriages are connected to each other, what facilitates the smoke to invade 
+the whole train, affecting all the people inside of it.
+
+Every carriage is built with 6 windows (3 per side), which break out when the temperature 
+reaches 470ºC. This affects the development of the fire event, since the smoke finds a 
+new way to escape from the train, heading to an isolated volume, not affecting the passengers.
+
+The variables that affect the evacuation of passengers are the temperature, concentration of CO 
+and visibility.  In both strategies it has been verified that smoke tend to move to the 
+upper level of the platforms because of the buoyancy effect. Thus, lethal levels of 
+temperature and CO concentration are only reached inside the vandalized carriage, as 
+shown in **Figure 4.1.b**, or in the highest part of the platform, far from a passenger, 
+as shown in **Figure 4.1.c**.
+
+
+~ Center
+![Fig 4.1.b]
+~
+
+~ Center
+**Figure 4.1.b. – Average temperature in the vandalized carriage at a height of 2m.**
+~
+
+[Fig 4.1.b]: images/Fig-4.1.b.jpg "Fig 4.1.b" { width:auto; max-width:55% }
+
+The reason for the rapid decrease of the temperature in the inside of the carriage 
+is that the threshold temperature is reached close to the windows, which break out, 
+allowing the smoke to leave the carriage through these places.
+
+~ Center
+![Fig 4.1.c]
+~
+[Fig 4.1.c]: images/Fig-4.1.c.png "Fig 4.1.c" { width:auto; max-width:55% }
+
+~ Center
+**Figure 4.1.c. – Temperature in Cut & Cover stations without PSD 
+(t=6min, 80ºC in bold).**
+~
+
+The highest levels of temperature in the platform without PSD are of 150ºC, 
+but at a height far from any passenger, as **Figure 4.1.c** shows.
+
+The highest temperatures that passengers must face without PSD are of 80ºC 
+in the stairs on the right side of the platform, but during less time than 
+3,8 min, which is the threshold time to be considered lethal. In contrast, 
+with PSD, the maximum temperature is 80ºC, but only in places close to the 
+vandalized carriage.
+
+The station’s ventilation has a positive effect on safety, because the air 
+exhausted is replaced by air through the connection between the stairs and 
+the mezzanine level, enhancing the evacuating conditions in the stairs, 
+since the passengers’ egress direction is opposite to the air direction.
+
+The effect of the smoke on the visibility is more notorious, and great 
+differences are appreciated between both strategies, as presented in 
+**Figure 4.1.d** in front of the vandalized carriage, where the conditions 
+are harsher.
+
+~ Center
+![Fig 4.1.d]
+~
+[Fig 4.1.d]: images/Fig-4.1.d.jpg "Fig 4.1.d" { width:auto; max-width:55% }
+
+~ Center
+**Figure 4.1.d. – Average visibility in front of vandalized carriage at a height of 2m.**
+~
+
+Finally, the comparison of the percentage of platform where visibility is less 
+than 10m has great differences between both strategies, as presented in **Figure 4.1.e**.
+
+~ Center
+![Fig 4.1.e]
+~
+[Fig 4.1.e]: images/Fig-4.1.e.jpg "Fig 4.1.e" { width:auto; max-width:55% }
+
+~ Center
+**Figure 4.1.e. – % of platform with less than 10m of visibility at a height of 2m.**
+~
+
+- **Evacuation time**
+
+The evacuation simulation has been done with the software Pathfinder, which 
+allows to integrate the FDS results in the evacuation process.
+
+The occupation load considered has been 320 passengers in platform PL. A, 320 
+passengers in Platform PL.B and 60 passengers in the carriages. Besides, the 
+walking speeds have been adapted depending on whether there is smoke in the 
+escape route; if it is the case, the values measured by Yin and Yamada have 
+been integrated in the model.
+
+The pre-movement times for each region of the platforms ranges from 15s to 90s, 
+depending on the proximity to the fire. The escalator on the side of the vandalized 
+carriage is out of service, as suggested in the NFPA 130.
+
+The time needed for the evacuation to the mezzanine level in the case of strategy 
+S.T. A was 140 s, while the time required in the case of the strategy S.T. B was 
+148 s. Both times are quite similar, because the occupation load is not very high, 
+and, due to the absence of queues, the passengers move quickly and are barely 
+affected by the smoke with strategy S.T. B.
+
+## Simulations in Cavern stations
+
+Unlike it has been done in the case of Cut & Cover stations, the study in Cavern 
+stations is focused on a geometry where there is only one platform.
+
+Some devices for the control of temperature, CO concentration and visibility have 
+been placed all along the escape routes. The fire takes place in the last carriage 
+on the right, as shown in **Figure 4.2.a**.
+
+~ Center
+![Fig 4.2.a]
+~
+[Fig 4.2.a]: images/Fig-4.2.a.JPG "Fig 4.2.a" { width:auto; max-width:55% }
+
+~ Center
+**Figure 4.2.a. – Cavern fire model created with Pyrosim.**
+~
+
+- **Main differences between both strategies.**
+
+The volume included in the platform is much smaller than in the case of the 
+Cut & Cover station. Then, the main difference between both strategies is the 
+fact that, in strategy S.T. A, part of the smoke can be isolated thanks to the 
+PSD, while the conditions are much harsher for passengers in strategy S.T. B.
+
+- **Means of egress.**
+
+The passengers have four means of egress:
+
+-	Emergency door on the right side of the platform.
+-	Passageway on the right side of the platform.
+-	Passageway on the left side of the platform.
+-	Emergency door on the left side of the platform.
+
+The region in front of the vandalized carriage is the one most affected by the fire.
+
+- **Development of the fire.**
+
+The beginning of the fire is similar to the case of Cut & Cover stations: the smoke 
+manages to get to every carriage, since they are connected to each other. Besides, 
+the windows on both sides of the vandalized carriage break out when the temperature 
+of 470ºC is reached.
+
+Since the volume of the platform is smaller with respect to the previous case, 
+the levels of temperature inside and in front of the vandalized carriage surpass 
+the lethal levels, as shown in **Figure 4.2.a**, but no passenger is likely to remain 
+the required time to become incapacitated.
+
+
+~ Center
+![Fig 4.2.b]
+~
+
+[Fig 4.2.b]: images/Fig-4.2.b.jpg "Fig 4.2.b" { width:auto; max-width:55% }
+
+~ Center
+**Figure 4.2.b. – Average temperature in the vandalized carriage.**
+~
+
+The maximum temperature registered in the platform without PSD is 200ºC, but 
+at a height far from any passenger, as presented in **Figure 4.2.c**. In contrast, 
+the maximum temperature on the platform, with PSD at a height of 2m is 80ºC, 
+but close to the vandalized carriage.
+
+
+~ Center
+![Fig 4.2.c]
+~
+[Fig 4.2.c]: images/Fig-4.2.c.png "Fig 4.2.c" { width:auto; max-width:45% }
+
+~ Center
+**Figure 4.2.c. – Temperature in Cavern stations without PSD (t=6min, 80ºC in bold).**
+~
+
+
+However, the visibility is quite affected because of the spread of the smoke, as 
+it is shown in **Figure 4.2.d** in the region of the platform in front of the vandalized 
+carriage, as it is where the conditions are harder.
+
+~ Center
+![Fig 4.2.d]
+~
+[Fig 4.2.d]: images/Fig-4.2.d.jpg "Fig 4.2.d" { width:auto; max-width:55% }
+
+~ Center
+**Figure 4.2.d. – Average visibility in front of vandalized carriage.**
+~
+
+The comparison between % of platform with less than 10m of visibility offers 
+great differences, as presented in **Figure 4.2.e**.
+
+
+~ Center
+![Fig 4.2.e]
+~
+
+[Fig 4.2.e]: images/Fig-4.2.e.jpg "Fig 4.2.e" { width:auto; max-width:55% }
+
+
+~ Center
+**Figure 4.2.e. – % of platform with less than 10m of visibility at a height of 2m.**
+~ 
+
+- **Evacuation time.**
+
+The software Pathfinder has been used as well for this simulation. The occupation 
+load considered is 320 passengers in the platform and 60 passengers in the train.
+
+In this case, the walking speeds have also been adapted to situations with 
+presence of smoke in the escape routes, taking into account the values from 
+Yin and Yamada. Besides, the comparison has been done on the time needed to 
+reach either an emergency door or one of the passageways, unlike in the previous 
+case where the goal was to reach the mezzanine level.
+
+The pre-movement times range from 15s to 100s, depending on the location of the 
+passengers, since the ones who are far will have more trouble to see the smoke.
+
+The time required for the complete evacuation in the case where the strategy 
+S.T. A was applied was 121 s, while in the case where strategy S.T. B was adopted, 
+the time needed was 116 s.
+
+As in the case of the Cut & Cover station, the difference is quite reduced, and the 
+reason for these values is that the occupation load is not very high. Thus, the 
+passengers manage to get to a safe place quickly, without being interrupted in their 
+route. Moreover, the pre-movement time is defined by a statistical distribution, what 
+means that the result will be slightly different every time one makes a simulation.
+
+Furthermore, in this particular case, no passenger has used the emergency door close 
+to the vandalized carriage, since the conditions are very hard there. This means that 
+nobody remains in a queue, but the majority of passengers evacuate through the 
+passageways, with a 5m – width, offering a great capacity for the evacuation purposes.
+
+# Conclusions
+
+After this study, it is possible to extract some conclusions from it.
+
+First, it has been demonstrated that the occupation load is a key factor on 
+evacuation, since, the more people to evacuate, the more likely people will have 
+to deal with smoke while trying to get to a safe place.
+
+Second, although PSD are installed to have an automatic operation of the trains in a 
+subway station, it has been demonstrated that they provide better evacuation 
+conditions in an emergency situation, since they isolate part of the smoke.
+
+Third, an advantage of PSD is that they make compatible an operation with station 
+and tunnel ventilation simultaneously. This allows to optimize this operation and 
+provides air velocity opposite to the egress direction of the passengers, which is 
+positive in terms of safety.
+
+Finally, the time for the detection of a fire is another aspect of great relevancy, 
+as it makes the exhaust system to get activated. The higher the delay of detection 
+is, the more dangerous the situation turns out to be.
+
+# Bibliography and references
+
+[1] National Fire Protection Association (NFPA) 130, Standard for Fixed Guideway Transit 
+and Passenger Rail Systems, 2014 Edition.
+
+[2] National Fire Protection Association (NFPA) 92, Standard for Smoke Control Systems, 
+2012 Edition.
+
+[3] British Standard BS 7974:2001, Application of fire safety engineering principles 
+to the design of buildings – Code of practice.
+
+[4] Model Scale Railcar Fire Tests. Brandforskproject 404-011 (Haukur Ingason).
+
+[5] Full-scale fire tests with a commuter train in a tunnel (Anders Lönnermark, 
+Alexander Claesson, Johan Lindström, Ying Zhen Li, Mia Kumm, Haukur Ingason).
+
+[6] Estudio de preinversión a nivel de perfil de la línea 4 de metro de Lima. 
+Ventilation design report.
