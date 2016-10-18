@@ -23,11 +23,11 @@ Beamer Theme  : singapore
 
 ~ Slide
 ~~ Center
-Modified SP Fire 105 test rig
+## Modified SP Fire 105 test rig
 ~~
 ~~ Center
 ![Namnlös1]
-[Namnlös1]: images/Namnl-s1.png "Namnlös1" { width:auto; max-width:100% }
+[Namnlös1]: images/Namnl-s1.png "Namnlös1" { width:auto; max-width:80% }
 ~~
 ~
 
@@ -119,7 +119,7 @@ $T_{PT} \sim T_{AST}$
 * Influence of mesh alignments
 * Influence of the choice of thermocouple position
 * Influence of increased radiation angles
-* Influence if increased HRRPUA
+* Influence of increased HRRPUA
 * Influence of increased soot yield
 ~
 
