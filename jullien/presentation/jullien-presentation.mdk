@@ -32,6 +32,8 @@ These parameters model human behavior and are scattered.
 
 &rarr; The results are prone to be scattered.
 
+This study proposes a analysis method to deal with it.
+
 
 
 ## Aim of the study
@@ -50,7 +52,19 @@ Benefits of the method:
 
 ~ Begin Vertical { data-background:Gainsbor }
 
-# Statistical analysis method {#vertical}
+# Statistical analysis method principles {#vertical}
+
+The egress phenomena is scattered in itself: evacuating a building can occur in a lot of different ways.
+
+The method tries to deal with the whole range of possibilities.
+
+A stochastic approach is used for that, generating distribution function for each outputs.
+
+The random aspects are processed by the mean of the confidence interval concept.
+
+
+
+## Statistical analysis method: calculation
 
 Example: 
 
@@ -65,6 +79,8 @@ Example:
 ~
 
 c equals to 1.645 for p=90%. 
+
+
 
 
 ## Calculating the empirical distribution function
@@ -171,7 +187,7 @@ Occupants are randomly located in the room and drawn between 1 and 1,000.
 
 
 
-## Observations (1)
+## Analysis
 
 It is impossible to statistically determine a RSET maximum.
 ~ Align-Left
@@ -188,7 +204,7 @@ In any case, a RSET max is bound to a catastrophic scenario.
 * The value of this parameter is essential to an egress study conclusions and has to be discussed.
 ~
 
-## Observations (2)
+## Analysis (2)
 The confidence interval decreases with the increase of the number of simulations. &bcheckmark;
 
 There are at least 3 separate evacuation patterns according to the number of occupants.
@@ -319,7 +335,7 @@ Resolution conflict time, position and RT vary.
 
 
 ~ Begin Vertical { data-background:Gainsbor }
-# Synthesis of results
+# Results synthesis
 
 |--------------------------|-----------------------------------------------------|-----------------------|
 | Studied parameters       | Variation range of the input parameter              | Qualitative influence |
@@ -337,9 +353,9 @@ Resolution conflict time, position and RT vary.
 
 
 
-# Synthesis of results (2)
+# Method assets
 
-Advantage of the method:
+
 
 ~ Align-Left
 * Give a methodological justification to the RSET quantification.
@@ -347,7 +363,7 @@ Advantage of the method:
 * Estimate quantitatively the influence on the RSET of the input parameters dispersion.
 ~
 
-# Synthesis of results (3)
+## Method assets
 
 ~ Align-Left
 
@@ -379,7 +395,7 @@ Advantage of the method:
 
 ~
 
-# Conclusion (2)
+## Conclusion
 
 Prospects:
 
