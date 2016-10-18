@@ -145,7 +145,7 @@ $T_{PT} \sim T_{AST}$
   5.5.3
 * FDS 6.2.0 produce results that are more in line with the test results
   compared to FDS 5.5.3
-* To obtain credible results, particularly close to the fire, a mesh
+* To obtain credible results particularly close to the fire, a mesh
   resolution $D^{*}/\delta x$ of at least 30 is needed.
 * Plenty of choices in FDS - crucial to compare the same form of output
   data
