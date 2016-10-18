@@ -1,18 +1,18 @@
 [INCLUDE=style/lncs]
-Title         : TITLE OF YOUR PAPER, IN CAPITAL LETTERS CENTERED ON PAGE, USING ONE OR MORE LINES AS NECESSARY
-Subtitle      : An optional subtitle.
+Title         : THE EFFECTS OF VARYING STAIRWAY WALKING SPEEDS ON EVCUATION MODELING RESULTS
+Subtitle      : A SENSITIVITY ANALYSIs
 
-Author        : First Author Name
-Affiliation   : Research institute
-Email         : you@bar.com
+Author        : Majed Almejmaj
+Affiliation   : BuroHappold Engineering, Worcester Polytechnic Institute
+Email         :Majed.Almejmaj@burohappold.com
 
-Author        : My co-author 1
-Affiliation   : Other institute
-Email         : other1@bar.com
+Author        : Sophie Washington
+Affiliation   : BuroHappold Engineering
+Email         : Sophie.Washington@burohappold.com
 
-Author        : My co-author 2
-Affiliation   : Other institute
-Email         : other2@bar.com
+Author        : Jonathan Hall
+Affiliation   : BuroHappold Engineering
+Email         : Jonathan.Hall
 
 Bibliography  : references.bib
 Logo          : False
@@ -23,10 +23,13 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-Papers should follow standard technical paper format, an abstract
-followed by the more detailed presentation. The abstract should be typed
-on this area of the first page, with the presentation following after two
-lines of space.
+The use of evacuation models has increased in recent years due to architectural complexity 
+of projects and in many cases code requirements. With the wide range of egress modeling software 
+packages available however, users are often unfamiliar with how sensitive these models are to the 
+various input parameters, especially when questioned by approving authorities. This paper examines 
+the sensitivity of varying walking speeds on stairways using  the results from the software package 
+‘Legion Evac’ to provide engineers with the justification needed when asked by the approving authority 
+to lower occupants’ stairway walking speeds as a safety precaution.
 ~
 
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
@@ -34,7 +37,63 @@ lines of space.
 [femtc2016]: https://github.com/thunderheadeng/femtc2016
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
-# GENERAL INSTRUCTIONS { #sec-intro }
+# INTRODUCTION { #sec-intro }
+When conducting a performance based-design, engineers tend use the timed egress model, 
+where the Available Safe Escape Time (ASET) is compared to the Required Safe Escape Time 
+(RSET) [1, 2]. ASET is the time it takes until untenable conditions are reached in 
+the space while RSET is the time it takes occupants to evacuate the space safely prior 
+to reaching untenable conditions [2]. To determine the RSET, engineers rely on published 
+data covering the time it took people to recognize / react to an emergency situation 
+along with walking speeds over horizontal and vertical means of egress components [1, 2].
+
+Engineers have a number of tools that can be used to determine the RSET, such as computer 
+evacuation models and the SFPE hydraulic model. While such tools vary in complexity, one 
+of the common input parameters in all  the tools is occupant walking speeds. This input 
+data can be found in various fire protection engineering guidelines [1, 3] however, it 
+is not clear when to use such data. While some computer evacuation models are preloaded 
+with preset walking speed data, such data is only applicable for specific occupant profiles 
+(e.g. commuter, tourists) that might not be applicable to other occupancies or even other 
+cultures, especially that studies have shown that culture can have a significant effect on
+ occupant walking speed [4]. This causes some approving authorities to question the results 
+ of evacuation models and in a few cases request the use of lower walking speeds to create a margin of safety. 
+ 
+This paper presents the effects of lowering agent evacuation speeds over stairs on occupant 
+flow and total evacuation time in a high-rise building.
+
+# OVERVIEW OF MODELING SOFTWARE USED { #sec-intro }
+
+The modeling software used for this study is an agent-based model called “LEGION EVAC”, 
+which has the ability to simulate people in either 2D [5] or 3D. The modeled space is 
+divided into a two-dimensional / continuous space that allows simulated occupants (entities)
+ to move freely and avoid modeled obstacles, walls and other entities [6]. Collision avoidance
+  with other entities and obstacles is achieved through the “least effort” algorithm 
+  developed by Still [5], where entities determine the path with the least cost towards 
+  their target [7] based on distance, speed and comfort [8].
+  
+  
+# STAIR WALKING SPEED { #sec-intro }
+
+Walking speeds over stairs in evacuation models are determined using two main approaches; 
+the first uses mathematical correlations derived from field observations, such as that 
+illustrated in the SFPE hydraulic model, Fruin’s levels of service or BS 7974:2001 [3, 9, 10] 
+where walking speeds are decreased based on the slop of the stair and crowd density. 
+The other approach is by allowing the user to input such speeds from scientific 
+publications [1, 2], which depends on the user’s familiarity with the published data.   
+
+While some researchers have been highlighting the limited availability for additional 
+human behavior data, including stair walking speeds, others have been questioning the 
+validity of the current data due to anthropometric changes over the past few decades [11].
+
+
+The user has the option to choose the predefined entity profiles within the software 
+(e.g. UK commuter, Asian commuter, UK tourist and Asian tourist), or input their own 
+parameters, such as entities size, walking speed and pre-movement time. In both options, 
+each entity is assigned its own unique parameters with various statistical distributions based on the available data. 
+Currently, the predefined profiles are not described in detailed within Legion Evac 
+user manual, which can cause some approving authorities to questions / request such 
+numbers to be provided when reviewing the results.
+
+  
 You are encouraged to use the [Madoko.net Editor][editor] while using
 the [Madoko Reference Manual][reference-manual] to edit/commit your
 documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
