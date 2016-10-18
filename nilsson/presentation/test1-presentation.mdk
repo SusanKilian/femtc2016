@@ -11,10 +11,10 @@ Beamer Theme  : singapore
 # Introduction
 * Part of an MSc thesis at Lund University
 * Need of a calculation tool for modelling external fire spread
-* Evaluate the tool before the following analysis was performed
+* Evaluating the tool before performing the following analysis
 * An update in FDS $\neq$ every area is improved
-* SP FIRE 105 facade test
 * Large-scale fire test with data available
+* SP FIRE 105 facade test - modified version
 * Previous numerical work showed promising results
 * Investigate differences in the program versions
 
