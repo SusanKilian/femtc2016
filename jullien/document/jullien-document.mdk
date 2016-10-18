@@ -45,9 +45,9 @@ As a result, the egress phenomena is scattered in itself,
 and a given starting situation can lead to many different evacuations process.
 
 Some previous work has already dealt with this scattered aspect of the phenomena. 
-For example, Tavares and Ronchi [1] propose a method to evaluate and take into account uncertainties 
-in egress engineering studies. Cuesta, Ronchi and Gwynne study some school building evacuation test data [2]. 
-They then use those data as inputs for numerical simulations of the egress process, 
+For example, Tavares and Ronchi [@Tavares:Uncertainties] propose a method to evaluate and take into account uncertainties 
+in egress engineering studies. Cuesta, Ronchi and Gwynne study some school building evacuation test data [@Ronchi:Collection]. 
+They then use those data as inputs for numerical simulations of the egress process 
 and propose a comparison method between experimental and numerical results.
 
 Although these previous work cover the scattered aspects of one particular situation, 
