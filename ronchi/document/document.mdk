@@ -51,15 +51,18 @@ The objective of this paper is to discuss future improvements in evacuation mode
 5. Validation methods.
 
 
-# 2.	Factors affecting people movement
-Main Headings are all upper case letters and underlined. In Madoko, a
-Single '#' symbol at the start of the line, followed by a space and then
-the heading text.
+# Factors affecting people movement
 
-## Subheadings Like This Style
-Subheadings within sections follow the same format as section titles, but
-with upper and lower case. In Madoko, a Double '#' symbol at the start of
-the line, followed by a space and then the heading text.
+The representation of people movement in evacuation models is generally based on the simulation of the unimpeded walking speed adopted by evacuees and the factors affecting it. This is one of the key inputs affecting the results obtained with evacuation models. Different methods are today used for the simulation of people movement such as steering behaviours [@reynolds_steering_1999], social force-based models [@helbing_social_1995], floor field cellular automaton [@lovreglio_calibrating_2015], etc.
+Evacuation models generally require as an input the distribution of the unimpeded walking speed and then they use different methods/sub-models/algorithms for the calculation of the impeded speed. The calculation of the impeded speed mostly takes into account for two factors 1) interaction of the simulated evacuees with other evacuees and 2) interactions of the evacuees with the environment (i.e. geometric layout, egress components, etc.).
+Evacuation models often make use of so called fundamental diagrams [@predtechenskii_planning_1978;@schadschneider_fundamental_2007] for the simulation of people movement or for the testing of emergent behaviours deriving from the modelling methods employed [@waldau_rimea_2007].
+While their use is able to capture the relationship between walking speed, people density and flow, there are additional factors that might affect the impeded walking speeds. Current evacuation models may present enough flexibility to simulate these additional factors implicitly, but apart from the two above mentioned factors, they rarely explicitly include other variables that may affect walking speed in case of fire evacuation scenarios. Four main variables have been identified here that should be object of improvements in existing evacuation models, namely 1) the impact of physical exertion, 2) the impact of smoke, 3) the impact of motivation and risk perception, and 4) deference behaviour and merging flows. Some of these issues have already been explored in research projects aimed at investigating how they can affect the evacuation process. A discussion based on the available findings from those projects is presented here.
+
+## The impact of physical exertion
+Physical exertion may play a key role in the reduction of walking speeds, especially in case of long distance covered and ascending evacuation [@kretz_upstairs_2008;@yeo_commuter_2009].
+Nowadays, infrastructures may be built several hundreds of metres below ground, often including ascending evacuation as an integral part of the evacuation strategy. Examples of such infrastructures are deep metro stations [@blixt_management_2016] or underground physics research facilities [@ronchi_evacuation_2016].
+
+
 
 ### Subsubheadings like this style
 Subsubheadings have no underline, and only the first letter capitalized.
