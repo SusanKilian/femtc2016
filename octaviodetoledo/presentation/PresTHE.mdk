@@ -1,0 +1,422 @@
+[INCLUDE=presentation]
+Title         : Evacuation conditions in subway stations with Platform Screen Doors
+Sub Title     : FEMTC 2016. Málaga, 16-18, 2016.
+Author        : Daniel Octavio de Toledo / Rafael Sánchez
+Affiliation   : Geocontrol
+Email         : danieltoledo@geocontrol.es / rsanchez@geocontrol.es
+Reveal Theme  : beige
+Beamer Theme  : singapore
+
+
+
+# Index
+
+* Introduction.
+
+* Subway stations.
+
+	 - Cut & Cover stations.
+  
+	 - Cavern stations.
+  
+* Modeling of the fire event.
+
+	 - HRR curve of the fire.
+  
+	 - Model for Cut & Cover and Cavern stations with Pyrosim.
+  
+	 - Ventilation strategy.
+  
+* Fire and evacuation simulations.
+
+	 - Cut & Cover stations.
+  
+	 - Cavern stations.
+  
+* Conclusions
+
+
+
+# 1.- Introduction
+
+## 1.1.- General overview
+
+* Fire safety in subway stations: BIG CONCERN.
+* Arson attacks in subway trains.
+
+  - Firestarr project: arson stated as the main cause of fire in subway trains.
+  - UK data: 2.911 fires in trains (from 1992 to 2000), 77,8% of which 
+  involving passenger trains (56% due to arson attacks).
+
+* Platform Screen Doors (PSD): Effect on evacuation and safety?
+
+## 1.2- Example of PSD
+
+* PSD on platform in subway Line 9 (Barcelona, Spain).
+
+~ Center
+![Fig 1.a]
+~
+[Fig 1.a]: images/Fig-1.a.jpg "Fig 1.a" { width:auto; max-width:80% }
+
+
+# 2.- Subway stations
+
+## 2.1.- General overview
+
+- Cut & Cover
+
+  - Main feature: big volume, escalators and stairs in platform.
+
+  - Platform: 135m (long) x 9m (wide) x 6,75m (high).
+
+  - Tracks: 7,5m (wide).
+
+- Cavern
+
+  - Less volume than C&C: escalators and stairs not in platform.
+
+  - Platform: 135m (long) x 4,25m (wide) x 6m (high).
+
+  - Tracks: 7,5m (wide).
+
+## 2.2.- Cut & Cover (I)
+
+* Crossrail Paddington station (London, UK).
+
+~ Center
+![Fig 2.a]
+~
+[Fig 2.a]: images/Fig-2.a.jpg "Fig 2.a" { width:auto; max-width:70% }
+
+
+## 2.2.- Cut & Cover (II)
+
+* Crossrail Paddington station (London, UK).
+
+~ Center
+![Fig 2.b]
+~
+[Fig 2.b]: images/Fig-2.b.jpg "Fig 2.b" { width:auto; max-width:70% }
+
+# 2.3.- Cavern (I)
+
+* Design concept in subway line 6 in Santiago, Chile (done by Geocontrol).
+
+~ Center
+![Fig 2.c]
+~
+[Fig 2.c]: images/Fig-2.c.png "Fig 2.c" { width:auto; max-width:60% }
+
+# 2.3.- Cavern (II)
+
+* Platform in Chueca station in Line 5 subway (Madrid, Spain).
+
+~ Center
+![Fig 2.d]
+~
+
+[Fig 2.d]: images/Fig-2.d.png "Fig 2.d" { width:auto; max-width:95% }
+
+# 3.- Modeling of the fire event
+
+## 3.1.- Fire curve
+
+* HRR fire curve: Eureka project (subway car).
+
+* Reference documents: EN 45545 standard, Firestarr project reports, ASHRAE Handbook.
+
+~ Center
+![Fig 3.a]
+~
+
+[Fig 3.a]: images/Fig-3.a.jpg "Fig 3.a" { width:auto; max-width:70% }
+
+## 3.2.- Cut & Cover model
+
+~ Center
+![Fig 3.b]
+~
+
+[Fig 3.b]: images/Fig-3.b.png "Fig 3.b" { width:auto; max-width:70% }
+
+## 3.3.- Cavern model
+
+~ Center
+![Fig 3.c]
+~
+
+[Fig 3.c]: images/Fig-3.c.png "Fig 3.c" { width:auto; max-width:70% }
+
+
+## 3.4.- Ventilation strategy
+
+* Strategy A: with PSD
+
+  - Station's exhaust: 83,3 m3/s (CyC), 61,1 m3/s (Cavern).
+
+  - Tunnel's exhaust: 87,5 m3/s.
+
+  - Exhausting from the station and  the tunnel is compatible.
+
+
+* Strategy B: without PSD
+
+  - Tunnel's exhaust: 87,5 m3/s.
+
+  - Exhausting from the station and  the tunnel isn't compatible.
+
+
+## 3.4.- Ventilation strategy
+
+* Example: platform in M5 subway line in Milan (Italy).
+
+~ Center
+![Fig 3.d]
+~
+
+[Fig 3.d]: images/Fig-3.d.jpg "Fig 3.d" { width:auto; max-width:80% }
+
+# 4.- Fire and evacuation simulations
+
+
+## 4.1.- Evacuation conditions
+
+* NFPA 130.
+
+* Visibility: 10m (doors, walls).
+
+* Temperature: threshold time for incapacitation.
+
+* CO concentration: threshold time for incapacitation.
+
+
+~ Center
+![Tabla conjunta T-CO]
+~
+
+[Tabla conjunta T-CO]: images/Tabla-conjunta-T-CO.jpg "Tabla conjunta T-CO" { width:auto; max-width:90% }
+
+
+## 4.2- Cut & Cover stations (I)
+
+
+* Design with Pyrosim.
+
+~ Center
+![Fig 4.1.a]
+~
+
+[Fig 4.1.a]: images/Fig-4.1.a.JPG "Fig 4.1.a" { width:auto; max-width:90% }
+
+
+* Means of egress.
+
+  - An emergency door on each side.
+
+  - Escalator + stairs on each side.
+
+
+
+## 4.2- Cut & Cover stations (II)
+
+
+* Development of the fire.
+
+  - Fire: last carriage on the right.
+  - Each carriage is connected to each other.
+  - Each carriage has 3 windows per side, which break out when T=470ºC.
+
+
+~ Center
+![Fig 4.1.b]
+~
+
+[Fig 4.1.b]: images/Fig-4.1.b.jpg "Fig 4.1.b" { width:auto; max-width:60% }
+
+
+## 4.2- Cut & Cover stations (III)
+
+
+* Development of the fire.
+
+  - Buoyancy: the smoke heads toward the upper part of the station (no PSD).
+  - Figure: Temperature levels (t=6min, 80ºC in bold).
+
+
+~ Center
+![Fig 4.1.c]
+~
+
+[Fig 4.1.c]: images/Fig-4.1.c.png "Fig 4.1.c" { width:auto; max-width:70% }
+
+## 4.2- Cut & Cover stations (IV)
+
+
+* Development of the fire.
+
+  - Highest T passengers face: 80ºC in the stairs (no PSD) and close to PSD (with PSD).
+
+  - Visibility: great differences in front of the carriage.
+
+
+~ Center
+![Fig 4.1.d]
+~
+
+[Fig 4.1.d]: images/Fig-4.1.d.jpg "Fig 4.1.d" { width:auto; max-width:60% }
+
+
+## 4.2- Cut & Cover stations (V)
+
+
+* Development of the fire.
+
+  - Visibility: great differences all along the platforms.
+
+~ Center
+![Fig 4.1.e]
+~
+
+[Fig 4.1.e]: images/Fig-4.1.e.jpg "Fig 4.1.e" { width:auto; max-width:70% }
+
+
+## 4.2- Cut & Cover stations (VI)
+
+
+* Evacuation simulation with Pathfinder.
+
+  - Occupation load: 380 p./platform + 60 p./train.
+
+  - Time to react: variable.
+
+  - Smoke makes passengers move slower.
+
+  - Escalator on the right side on the most affected platform: out of service.
+
+  - Similar time needed for evacuation: 140s (with PSD) and 148s (without PSD).
+
+    - Passengers react quickly, low occupation load: they are barely affected by the smoke.
+
+    - Harsh conditions: only without PSD, on the stairs.
+
+
+## 4.3- Cavern stations (I)
+
+
+* Model created with Pyrosim.
+
+
+~ Center
+![Fig 4.2.a]
+~
+
+[Fig 4.2.a]: images/Fig-4.2.a.JPG "Fig 4.2.a" { width:auto; max-width:80% }
+
+* Means of egress.
+
+  - An emergency door on each side of the platform.
+
+  - Two passageways.
+
+
+## 4.3- Cavern stations (II)
+
+
+* Development of the fire.
+
+  - The same conditions as in C&C stations.
+
+
+~ Center
+![Fig 4.2.b]
+~
+
+[Fig 4.2.b]: images/Fig-4.2.b.jpg "Fig 4.2.b" { width:auto; max-width:70% }
+
+
+## 4.3- Cavern stations (III)
+
+
+* Development of the fire.
+
+  - Buoyancy: the smoke heads toward the upper part of the station (no PSD).
+
+  - Figure: Temperature levels (t=6min, 80ºC in bold).
+
+
+~ Center
+![Fig 4.2.c]
+~
+
+[Fig 4.2.c]: images/Fig-4.2.c.png "Fig 4.2.c" { width:auto; max-width:45% }
+
+
+
+## 4.3- Cavern stations (IV)
+
+
+
+* Development of the fire.
+
+  - Highest T passengers face: 80ºC in the stairs (no PSD) and close to PSD (with PSD).
+
+  - Visibility: great differences in front of the carriage.
+
+
+~ Center
+![Fig 4.2.d]
+~
+
+[Fig 4.2.d]: images/Fig-4.2.d.jpg "Fig 4.2.d" { width:auto; max-width:60% }
+
+
+
+## 4.3- Cavern stations (V)
+
+
+* Development of the fire.
+
+  - Visibility: great differences all along the platforms.
+
+
+~ Center
+![Fig 4.2.e]
+~
+
+[Fig 4.2.e]: images/Fig-4.2.e.jpg "Fig 4.2.e" { width:auto; max-width:70% }
+
+
+
+## 4.3- Cut & Cover stations (VI)
+
+
+* Evacuation simulation with Pathfinder.
+
+  - Occupation load: 380 p./platform + 60 p./train.
+
+  - Time to react: variable.
+
+  - Smoke makes passengers move slower.
+
+  - Escalator on the right side on the most affected platform: out of service.
+
+  - Similar time needed for evacuation: 121s (with PSD) and 116s (without PSD).
+
+    - Passengers react quickly, low occupation load: they are barely affected by the smoke.
+
+    - Harsh conditions: only without PSD.
+
+
+# 5.- Conclusions
+
+
+- Occupation load: key factor.
+
+- PSD offer better evacuating conditions.
+
+- PSD make compatible exhaust from tunnel + station.
+
+- Time for detection: great relevancy.
+
+
