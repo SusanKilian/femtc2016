@@ -1,5 +1,7 @@
 [INCLUDE=style/lncs]
 Title         : A RESEARCH ROADMAP FOR EVACUATION MODELS USED IN FIRE SAFETY ENGINEERING
+Heading Depth: 3
+Heading Depth: 3
 
 Author        : Enrico Ronchi
 Affiliation   : Department of Fire Safety Engineering, Lund University, P.O. Box 118, SE-22100 Lund, Sweden
@@ -17,7 +19,7 @@ name-references : REFERENCES
 Evacuation models used in fire safety engineering have largely expanded their capabilities over the last decades. They started as simple computational tools in which people movement equations were implemented in discrete spaces, while they now often allow the simulation of complex behaviours and decision making through advanced agent-based simulation techniques in three-dimensional environments. While the progress of evacuation modelling techniques appears evident comparing their capabilities over the years, there are still quite a few areas in which there is room for significant improvements. What are those areas? This paper wants to open a discussion on a research roadmap for evacuation models used in fire safety engineering. In other words, this paper explores what features need to be possibly implemented, improved, or expanded in existing evacuation models for fire safety engineering applications. This considers both improvements based on existing knowledge in the evacuation research field as well as possible future research directions. Five areas of development concerning evacuation modelling are here discussed, namely 1) Factors affecting people movement, 2) Route choice modelling, 3) Behavioural uncertainty, 4) Integration with other models and 5) Validation methods. 
 ~
 
-**Keywords**. Evacuation modelling; Fire Safety; People movement; Route choice; behavioural uncertainty 
+**Keywords**. Evacuation modelling; Fire Safety; People movement; Route choice; behavioural uncertainty. 
 
 
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
@@ -26,7 +28,6 @@ Evacuation models used in fire safety engineering have largely expanded their ca
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
 # Introduction { #sec-intro }
-
 The quantity, capabilities, and uses of evacuation models in fire safety engineering have been improving significantly in the last decades [@ronchi_evacuation_2011]. 
 In fact, a recent review article showed an impressive growth in the number of publications in scientific journals which include evacuation modelling [@vermuyten_review_2016].
 Different types of studies are conducted with evacuation models. They may focus on the expansion of model capabilities, model applications in different contexts, empirical validation studies, computational optimization, etc. The growth in scientific studies seems to indicate a corresponding expansion of the evacuation modelling community itself.
@@ -52,7 +53,6 @@ The objective of this paper is to discuss future improvements in evacuation mode
 
 
 # Factors affecting people movement
-
 The representation of people movement in evacuation models is generally based on the simulation of the unimpeded walking speed adopted by evacuees and the factors affecting it. This is one of the key inputs affecting the results obtained with evacuation models. Different methods are today used for the simulation of people movement such as steering behaviours [@reynolds_steering_1999], social force-based models [@helbing_social_1995], floor field cellular automaton [@lovreglio_calibrating_2015], etc.
 Evacuation models generally require as an input the distribution of the unimpeded walking speed and then they use different methods/sub-models/algorithms for the calculation of the impeded speed. The calculation of the impeded speed mostly takes into account for two factors 1) interaction of the simulated evacuees with other evacuees and 2) interactions of the evacuees with the environment (i.e. geometric layout, egress components, etc.).
 Evacuation models often make use of so called fundamental diagrams [@predtechenskii_planning_1978;@schadschneider_fundamental_2007] for the simulation of people movement or for the testing of emergent behaviours deriving from the modelling methods employed [@waldau_rimea_2007].
@@ -86,6 +86,52 @@ While a 50:50 merging ratio has been shown to be a reasonably good approximation
 Research has been conducted for the definition of new sub-models for merging, for instance models which takes into account of the impact of merging flow ratio on vertical evacuation [@sano_pedestrian_2016].
 Evacuation models today mostly represent merging flow as an emergent behaviour deriving from the modelling method adopted for the representation of people movement. Future research should be conducted in order to investigate the conditions leading to different merging ratios and deference behaviours and models should give the users the option to modify explicitly the merging ratio in order evaluate its impact on the evacuation process.
 
+
+# Route choice modelling
+Different levels of behaviours can be adopted for the representation of route choice, namely 1) _path-finding_, intended as the initial and/or intermediate destination points (i.e. the strategic level of agent navigation) and 2) _local movement_, intended as the actual process of space navigation in the simulated environment and 3) _locomotion_, intended here as the representation of the people motion at an individual level, e.g. considering the biomechanics of body movement [@reynolds_steering_1999; @cuesta_basic_2016].
+To date, the representation of behaviours starting from the fundamental body structure and field of view exploration of a person is still at an early stage in crowd evacuation research [@moussaid_how_2011; @thompson_evacuation_2015].
+For this reason, evacuation models generally represent route choice using only two levels of behaviours, i.e., path-finding and local movement. Future research should investigate and implement the fundamental levels of biomechanics and cognitive processes deriving from visual cues into route choice modelling.
+
+Many methods are currently used for the representation of route choice and they generally aim at simulating the shortest or quickest paths in relation to different conditions. Several other behavioural variables may also be taken into consideration such as the presence of smoke, queuing, familiarity with the exits, available egress capacity, social influence, etc. [@fridolf_movement_2013; @kinateder_social_2014; @sime_movement_1985; @hurley_computer_2016].
+The assignment to routes can be made using deterministic or probabilistic algorithms.
+
+The underlying question concerning route choice in evacuation models should be: Are current route choice sub-models a reasonable approximation of the evacuation process? What other factors should be taken into consideration in order to represent a realistic navigation in evacuation models? In this area, the algorithms employed by evacuation models seem to start from basic assumptions based on the modelling methods adopted (i.e. shortest or quickest route) rather than employing data-driven models in which the actual path adopted by the agents is investigated [@lovreglio_calibrating_2015].
+While this approach seems to be reasonable in scenarios in which route choice has a limited impact on evacuation times (e.g. simple geometries and high densities in which flow dominates the evacuation times), this might not be the case for scenarios in which complex way-finding takes place [@carattin_lost_2014].
+This issue is mostly linked to the limited amount of experimental research conducted on understanding the underlying factors affecting pedestrian route choice in case of fire evacuation emergencies [@cheung_pedestrian_1998; @kinateder_social_2014; @vilar_effects_2014].
+In fact, to date there is limited knowledge on the factors affecting the choice between egress components made by different populations in the building. This choice becomes particularly difficult to predict when multiple options are available (e.g. stairs vs elevators [@kinsey_vertical_2011; @ronchi_modelling_2014]), and in complex buildings. 
+
+In addition, modern buildings are evolving towards being smart buildings in which dynamic systems and information may be given to evacuees in case of an emergency. Example of such systems include lighting systems for way-finding aid [@cosma_way-finding_2016] or dynamic signage systems [@galea_experimental_2014] including dissuasive signage [@olander_dissuasive_2017].
+Future evacuation models should include sub-models able to explicitly take into consideration the characteristics of modern smart buildings in the evacuation process. This should be reflected in algorithms for route choice which do not simply calculate the paths of the evacuees based on the evolution of the behaviour of the agents in space (e.g. queuing time, etc.) but they should also consider the evolution of the environment under consideration (i.e dynamic information given to the building occupants) and the interactions among agents. Initial attempts to simulate the impact of agent interactions on route choice have been made [@ehtamo_game_2010], but to date it is generally not possible to explicitly simulate the impact of a dynamic environment (intended as the information given to the building occupants in real time) on route choice. Further research should be conducted in this area.
+
+
+# Behavioural uncertainty
+The majority of evacuation models used in fire safety engineering makes use of a probabilistic approach for the simulation of human behaviour. This is generally done using distributions of properties of the simulated evacuees or using stochastic modelling approaches [@alvear_new_2014].
+The scope of these approaches is to account for the uncertainty associated with the variability of human behaviour, generally called behavioural uncertainty [@ronchi_method_2014].
+Evacuation models generally make use of pseudo-random number sampling from distributions for the representation of some of the key variables affecting the evacuation process (e.g., walking speeds, pre-evacuation times, etc.). Pseudo-random sampling includes a series of numerical methods for the generation of pseudo-random numbers according to a given distributions. 
+
+Fire safety engineers often perform probabilistic analyses while applying evacuation models, thus they implement model inputs using distribution laws and then their final inputs are automatically produced by evacuation models. Several runs of the same scenario are then produced in order to study the convergence of the results. Different methods have been proposed in the literature for the analysis of the uncertainty associated with the use of distribution laws. This includes the use of functional analysis operators [@ronchi_method_2014], functional analysis and inferential statistics [@lovreglio_calibrating_2015], polynomial chaos expansion [@xie_treatment_2013], a modified-Markov modelling approach [@averill_required_2008], etc.
+
+To date, only few evacuation models allow to automatically performing multiple runs of the same scenario at the same time. In addition, they generally do not include any method for the study of the uncertainty of the simulations given the use of distributions. In other words, although the process of choosing the number of repeated runs could be easily automatized by implementing any of the existing methods for the study of behavioural uncertainty, this is rarely done by evacuation model developers. This generally results in additional work to be performed by the model user in order to estimate the correct number of runs to be simulated as well as a possible waste of computational time in case unnecessary additional runs are performed. In fact, once the convergence criteria identified by the user are met, all additional simulations performed for the same scenario would just need additional computational resources which might have been saved. This is of particular importance for evacuation scenarios computationally demanding either due to a high level of complexity of the geometric layout/behaviours or a high number of evacuees.
+
+
+# Integration with other models 
+Given the need for the simulation fire evacuation disasters of larger scales (e.g. wildfires) and the rapid development of BIM (Building Information Modelling) in all phases of the building design process [@wang_applying_2015], the applicability of evacuation models is deemed to significantly expand in the future. Future evacuation models for fire safety engineering design should be seen in a larger picture of usage of a suite of software which allows the simulation of different aspects of safety design. For this reason, an expansion of the capabilities of evacuation models by enhancing their integrations with other models is deemed to be very important in the future. Current evacuation models used in fire safety engineering include integrations with other tools such as fire simulation tools or traffic models. It is advisable that the future developments of evacuation models should pursue the direction of further expanding the integration with other tools (e.g. structural modelling, lighting modelling, etc.) which are complementary to evacuation models in fire safety engineering application. In this context, the development of common data transfer interfaces would facilitate the interactions between models. This is deemed to increase the number of possible application of the models (for instance expanding the scale of model applications) as well as increasing the usage of evacuation models to inform the architectural design of buildings in light of fire safety issues.
+
+
+# Validation methods
+Different methods are today available for the analysis of evacuation model results against experimental data. The evacuation model community is very well aware of the lack of data concerning human behaviour, and ongoing efforts are conducted to address this issue [@averill_required_2008].
+In contrast, the lack of homogeneity in the methods adopted for the evaluation of evacuation model results in validation studies has not been deeply investigated. A variety of methods are used in the literature, ranging from the analysis of total evacuation times, analysis of arrival time curves (using functional analysis or other methods), analysis of evacuation travel paths or route choice, queuing analysis, travelled distances, time series of densities and relationships between flows, speeds and densities, study of emerging patterns in the crowd, etc. [@cuesta_school_2016; @galea_evacuation_2012; @koster_modelling_2011; @ronchi_process_2013; @umeo_fundamental_2008].
+Each of the methods may present advantages and limitations. A need for the assessment of which methods should be used (and in which scenarios) for the validation of evacuation models used for fire safety engineering is evident. The International Standards Organization ISO through its sub-committee on fire safety engineering (TC92/SC4) is currently working on the standardization of methods for the verification and validation of evacuation models. Once such assessment is performed, it is recommended that a careful re-evaluation of the methods employed in the validation of evacuation models should be made by model testers in order to ensure that current tools meet the required validity standards.
+
+
+# Conclusions
+This paper discusses a list of suggested areas in which future research on evacuation modelling should be conducted. The intention of the present work is to open a discussion on the areas to be included in a research roadmap on evacuation modelling research rather than giving a final answer to which areas should be prioritized. Such type of discussion is the “real priority” that this paper wants to highlight since this is deemed to be a fundamental tool to inform future research efforts of the evacuation modelling community.
+
+
+**ACKNOWLEDGEMENTS**
+
+
+Enrico Ronchi wishes to acknowledge a list of people who has worked with him in a variety of research projects and collaborations in the areas of evacuation research discussed in this paper, namely: Daniel Nilsson, Håkan Frantzich, Silvia Arias, Kalev Kuklane and Amitava Halder (Lund University), Karl Fridolf (WSP), Johan Norén (Briab), Mattias Delin (DeBrand), David Purser (Harford Environmental Research), Max Kinateder (Dartmouth University), Tomonori Sano (Waseda University), Erica Kuligowski, Paul Reneke and Richard Peacock (NIST), Steve Gwynne (NRC), Arturo Cuesta and Daniel Alvear (University of Cantabria), Ruggiero Lovreglio (University of Auckland), Aoife Hunt (AECOM), and Michael Kinsey (Arup). Special thanks go to Håkan Frantzich (Lund University) for reviewing the manuscript.
 
 
 [BIB]
