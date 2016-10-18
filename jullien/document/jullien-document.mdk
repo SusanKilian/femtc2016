@@ -16,11 +16,13 @@ Tex Header    :
   \def\refname{&name-references;}
 name-references : REFERENCES
 
+
+
 [TITLE]
 
 ~ Abstract
 The use of egress simulation models in performance-based analysis relies on the confidence in the input and output data.
-These data strongly depend on a large number of parameters. 
+These data strongly depend on a large number of parameters.
 The study presented here focuses on the statistical aspects of these data, 
 especially the population behavioral parameters which are the most likely to be scattered. 
 The study proposes a method to analyze the statistical aspects of an egress simulation model. 
@@ -618,3 +620,5 @@ Finally, the quantitative precision and evaluation criteria given by this approa
 can also help comparing simulations and experiments. It can also help setting up relevant
 test protocol in order to maximize the useful informations amount produced by these tests.
 This kind of work seems achievable once a good knowledge of the input parameters is available.
+
+[BIB]
