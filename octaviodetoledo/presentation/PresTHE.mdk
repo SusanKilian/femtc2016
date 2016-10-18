@@ -7,104 +7,71 @@ Email         : danieltoledo@geocontrol.es / rsanchez@geocontrol.es
 Reveal Theme  : beige
 Beamer Theme  : singapore
 
+[TITLE]
 
+#Contents
 
-# Index
+[TOC]
 
-* Introduction.
+# Introduction
 
-* Subway stations.
-
-	 - Cut & Cover stations.
-  
-	 - Cavern stations.
-  
-* Modeling of the fire event.
-
-	 - HRR curve of the fire.
-  
-	 - Model for Cut & Cover and Cavern stations with Pyrosim.
-  
-	 - Ventilation strategy.
-  
-* Fire and evacuation simulations.
-
-	 - Cut & Cover stations.
-  
-	 - Cavern stations.
-  
-* Conclusions
-
-
-
-# 1.- Introduction
-
-## 1.1.- General overview
+## General overview
 
 * Fire safety in subway stations: BIG CONCERN.
 * Arson attacks in subway trains.
-
   - Firestarr project: arson stated as the main cause of fire in subway trains.
   - UK data: 2.911 fires in trains (from 1992 to 2000), 77,8% of which 
   involving passenger trains (56% due to arson attacks).
-
 * Platform Screen Doors (PSD): Effect on evacuation and safety?
 
-## 1.2- Example of PSD
-
-* PSD on platform in subway Line 9 (Barcelona, Spain).
+## Example of PSD
 
 ~ Center
 ![Fig 1.a]
+
+PSD on platform in subway Line 9 (Barcelona, Spain)
 ~
-[Fig 1.a]: images/Fig-1.a.jpg "Fig 1.a" { width:auto; max-width:80% }
+[Fig 1.a]: images/Fig-1.a.jpg { width:auto; max-width:80% }
 
 
-# 2.- Subway stations
+# Subway stations
 
-## 2.1.- General overview
+## General overview
 
-- Cut & Cover
-
+* Cut & Cover
   - Main feature: big volume, escalators and stairs in platform.
-
   - Platform: 135m (long) x 9m (wide) x 6,75m (high).
-
   - Tracks: 7,5m (wide).
-
-- Cavern
-
+* Cavern
   - Less volume than C&C: escalators and stairs not in platform.
-
   - Platform: 135m (long) x 4,25m (wide) x 6m (high).
-
   - Tracks: 7,5m (wide).
 
-## 2.2.- Cut & Cover (I)
-
-* Crossrail Paddington station (London, UK).
+## Cut & Cover (I)
 
 ~ Center
 ![Fig 2.a]
+
+Crossrail Paddington station (London, UK).
 ~
 [Fig 2.a]: images/Fig-2.a.jpg "Fig 2.a" { width:auto; max-width:70% }
 
 
-## 2.2.- Cut & Cover (II)
-
-* Crossrail Paddington station (London, UK).
+## Cut & Cover (II)
 
 ~ Center
 ![Fig 2.b]
+
+Crossrail Paddington station (London, UK).
 ~
 [Fig 2.b]: images/Fig-2.b.jpg "Fig 2.b" { width:auto; max-width:70% }
 
 # 2.3.- Cavern (I)
 
-* Design concept in subway line 6 in Santiago, Chile (done by Geocontrol).
-
 ~ Center
 ![Fig 2.c]
+
+Design concept in subway line 6 in Santiago, Chile (done by Geocontrol).
 ~
 [Fig 2.c]: images/Fig-2.c.png "Fig 2.c" { width:auto; max-width:60% }
 
