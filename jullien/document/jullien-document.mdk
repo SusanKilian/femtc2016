@@ -36,27 +36,28 @@ This method will be applied to analyze case studies simulated with BuildingExodu
 
 # INTRODUCTION { #sec-intro }
 
-The practice of the egress engineering relies on numerical models. Their purpose
-is to determine the time taken by last occupant to evacuate a building either in normal or accidental
-situation. This time is called Required Safe Egress Time (RSET) all along
-the present document. The various human behavior phenomena
-occurring during an evacuation are not deterministic. Indeed, the
-intrinsic behavior of a person, for example its response time before movement,
-can be scattered from case to case.
+The practice of the egress engineering relies on numerical models. Their main purpose is to determine the time 
+taken by last occupant to evacuate a building either in normal or accidental situation. This time is called 
+Required Safe Egress Time (RSET) all along the present document. The various human behavior phenomena occurring 
+during an evacuation are not deterministic. Indeed, the intrinsic behavior of a person, for example 
+its response time before movement, can be scattered from case to case.
+As a result, the egress phenomena is scattered in itself, 
+and a given starting situation can lead to many different evacuations process.
 
-Furthermore, from a modeling point of view,
-the population distribution is not explicitly known. 
-The model takes into account a population panel supposed to be typical of the real situation. The fact that
-the input data of the simulation are subjected to a statistical
-spread implies a statistical spread on the outputs and particularly on the
-RSET. However, the main goal of an egress simulation is
-to calculate a RSET which insures 
-evacuation compatible tenability conditions in all cases. 
-Hence, 
-a statistical approach is relevant to explore the possible range
-for the RSET value. The numerical tool is
-appropriate as it allows to perform a large number of RSET evaluations,
-in order to determine a representative RSET value.
+Some previous work has already dealt with this scattered aspect of the phenomena. 
+For example, Tavares and Ronchi [1] propose a method to evaluate and take into account uncertainties 
+in egress engineering studies. Cuesta, Ronchi and Gwynne study some school building evacuation test data [2]. 
+They then use those data as inputs for numerical simulations of the egress process, 
+and propose a comparison method between experimental and numerical results.
+
+Although these previous work cover the scattered aspects of one particular situation, 
+it is still quite difficult to encompass the whole range of possibilities of an egress process. 
+The work presented here proposes a method to study these different possibilities.
+This method includes the scattered aspects of the human behavior, as well as the different usages for a given building.
+ A stochastic approach is set up for that purpose, in order to evaluate a relevant RSET value. 
+ A statistic treatment is also applied in order to take into account the random aspects of the resulting data.
+ Using a numerical tool is appropriate as it allows to easily perform a large number of RSET evaluations.
+
 
 The numerical tool used in this research study is BuildingExodus
 v6.2. It uses sophisticated sub-models means to take into
