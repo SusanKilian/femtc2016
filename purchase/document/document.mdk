@@ -69,7 +69,7 @@ differing guidance on the walkway location and elevation [@FIT2Rail;
 smoke control also varies. In countries such as the United States, United
 Kingdom and Australia, it is the authors' experiences that longitudinal
 smoke control is typically provided. In other countries, such as Sweden,
-this is not as common. Longitudinal smoke control may also be perceived
+this is not as common. Longitudinal smoke control in rail tunnels may also be perceived
 to increase the risk to life safety [@FIT2Rail].
 
 Given the number of rail tunnels worldwide it is interesting, but not
@@ -136,8 +136,8 @@ includes the work of empirical studies conducted by others, and is
 complemented with Fridolf's own work in both the laboratory and field
 (among other things, a full-scale evacuation experiment in the Stockholm
 Metro, including 135 participants). In addition, suggestions and
-recommendations on how that data be used in the application and design is
-given.
+recommendations on how that data be used in the application and for
+design is given.
 
 Kučera and Bradáčová [@Kucer2014] undertook FDS modeling of a
 bi-directional, 700m long rail tunnel fire. Fires were modelled on
@@ -202,23 +202,25 @@ evacuation outcomes. Figure [#fig-Scenario] shows a schematic of the
 scenarios modelled.
 
 ~ TableFigure { #ScenarioTable; caption: "Example Parameters For Scenario Selection"; .booktable; page-align:here}
-|:-----------------------|:-------:|:-------------------:|:------------------:|:-------------------:|
-| [CFD Scenario Parameters]{font-weight:bold}                                                   |||||
-| Fire location in train | -       | [Front]{color:grey} | _Middle_           | [Back]{color:grey}  |
-| Fire size              | MW      | [2]{color:grey}     | _5_                | [>10]{color:grey}   |
-| Fire growth rate       | kW/s^2^ | [0.003]{color:grey} | _0.012_            | [0.047]{color:grey} |
-| Tunnel grade           | %       | [-4]{color:grey}    | _0_                | _+4_                |
-| Tunnel velocity        | -       | _No velocity_       | _2m/s wind_$\dagger$        | _Critical velocity_ |
-| Tunnel area            | m^2^    | _23_                | _29_               | [45]{color:grey}$\ddagger$    |
-|------------------------|---------|---------------------|--------------------|---------------------|
-|[Evacuation Scenario Parameters]{font-weight:bold}                                             |||||
-| Walkway width          | m       | [<0.8]{color:grey}  | _0.8_              | _1.2_               |
-| Pre-movement           | s       | [120]{color:grey}   | _240_              | [360]{color:grey}   |
-| Occupant load          | p       | [600]{color:grey}   | _900_              | [1200]{color:grey}  |
-| Exit separation        | m       | _240_               | _300_              | _500_               |
-| Walkway elevation      | -       | _Track_             | [Semi]{color:grey} | _Elevated_          |
-|------------------------|---------|---------------------|--------------------|---------------------|
-| $\dagger$ Modeled as a pressure boundary             ||| $\ddagger$ Double track geometry        ||
+|:------------------------|:-------:|:-------------------:|:--------------------:|:--------------------------:|
+| [CFD Scenario Parameters]{font-weight:bold} ||||| | Fire location in
+train | - | [Front]{color:grey} | _Middle_ | [Back]{color:grey} | | Fire
+size | MW | [2]{color:grey} | _5_ | [>10]{color:grey} | | Fire growth
+rate | kW/s^2^ | [0.003]{color:grey} | _0.012_ | [0.047]{color:grey} | |
+Tunnel grade | % | [-4]{color:grey} | _0_ | _+4_ | | Tunnel velocity | -
+| _No velocity_ | _2m/s wind_$\dagger$ | _Critical velocity_ | | Tunnel
+area | m^2^ | _23_ | _29_ | [45]{color:grey}$\ddagger$ |
+|-------------------------|---------|---------------------|----------------------|----------------------------|
+|[Evacuation Scenario Parameters]{font-weight:bold} ||||| | Walkway width
+| m | [<0.8]{color:grey} | _0.8_ | _1.2_ | | Pre-movement $\diamond$ | s
+| [120]{color:grey} | _240_ | [360]{color:grey} | | Occupant load | p
+| [600]{color:grey} | _900_ | [1200]{color:grey} | | Exit separation | m
+| _240_ | _300_ | _500_ | | Walkway elevation | - | _Track_
+| [Semi]{color:grey} | _Elevated_ |
+|-------------------------|---------|---------------------|----------------------|----------------------------|
+| $\dagger$ Modeled as a pressure boundary ||| $\ddagger$ Double track
+geometry || | $\diamond$ Refers to agents in the fire car, other agents
+have a pre-movement time of +120s |||||
 ~
 
 ~ Figure { #fig-Scenario; caption:"Scenario modelled."; page-align:here}
@@ -250,14 +252,15 @@ representative of a European design [@FIT2Rail]. The
 walkway width could also govern the structural design and resulting
 tunnel cross-section. This is discussed as part of the CFD geometry.
 
-A single fire curve (5MW, medium t-squared, $\alpha = 0.012kW/s^2$) was used for all evacuation scenarios. In reality,
-this may not necessarily be the case with varying
-ventilation [@Carvel2016] and tunnel geometries [@Wu2014] impacting the
-fire size. However, a constant fire curve allowed the impact of the
-evacuation configurations to be compared. A value of 5MW may not
-represent a worst-case for metro rollingstock. However, based on project
-experience this value is considered reasonable in view of a possible
-project design requirement or a 'credible' tunnel evacuation design case.
+A single fire curve (5MW, medium t-squared, $\alpha = 0.012kW/s^2$) was
+used for all evacuation scenarios. In reality, this may not necessarily
+be the case with varying ventilation [@Carvel2016] and tunnel
+geometries [@Wu2014] impacting the fire curve. However, a constant fire
+curve allowed the impact of the evacuation configurations to be compared.
+A value of 5MW may not represent a worst-case for metro rollingstock.
+Based on project experience this value is considered reasonable in view
+of a possible project design requirement or a 'credible' tunnel
+evacuation design case.
 
 Other parameters such as the fire size, fire growth rate, pre-movement
 time and occupant load were nominally selected. These parameters could
@@ -270,8 +273,8 @@ positive grade having more potential for buoyant smoke to move in the
 direction of evacuation.
 
 ## CFD Modeling
-The CFD modeling was undertaken with FDS version 6.1.2 [@FDSUserGuide]. A
-5MW fire was modelled with the spread-rate function used to approximate
+The CFD modeling was undertaken with FDS version 6.1.2 [@FDSUserGuide].
+The fire was modelled with the spread-rate function used to approximate
 the medium t-squared growth rate. Once the fire reaches peak heat release
 rate it is kept at this value with no decay modelled. A soot yield of
 0.1kg/kg and a CO yield of 0.1kg/kg were used, along with a heat of
@@ -324,7 +327,7 @@ approach was considered suitable for the current investigation due to the
 relatively simple evacuation routes. This approach also provides complete
 control of the evacuation correlations and flow rates. It is acknowledged
 that the model does not include the more complex interactions in software
-such as Pathfinder [@PATHFINDER] and STEPs [@STEPS]. The 1-D
+such as Pathfinder [@PATHFINDER] and STEPs [@STEPS]. However, the 1-D
 model has been used to produce results that are comparable to these more
 advanced methods for similar tunnel situations.
 
@@ -337,13 +340,14 @@ values. A quasi-Lagrangian method is used to track agent locations which
 enables their exposure to reduced visibility and their accumulated Fractional
 Incapacitating  Dose (FID) to be calculated.
 
-The agent FID is calculated using the same equations implemented in
-Pathfinder [@PATHFINDER] and FDS+EVAC [@FDS-EVAC], which are based on the
-work of Purser [@Purser2009;@PurserSFPE]. The contribution from HCN and
-other irritants are not included in the calculation of FID. The FID is
-only accumulated once the occupants are leaving the train and while in
-the tunnel. Therefore, results may not be conservative for agents in the fire car,
-but the same simplification is used across all scenarios.
+The agent FID at each time-step is calculated using the same equations
+implemented in Pathfinder [@PATHFINDER] and FDS+EVAC [@FDS-EVAC], which
+are based on the work of Purser [@Purser2009;@PurserSFPE]. The
+contribution from HCN and other irritants are not included in the
+calculation of FID. The FID is only accumulated once the occupants are
+leaving the train and while in the tunnel. Therefore, results may not be
+conservative for agents in the fire car, but the same simplification is
+used across all scenarios.
 
 A hydraulic model is used to regulate the movement of agents along the
 walkway accounting for crowding and the walkway width. For the flow rate
@@ -359,8 +363,8 @@ Flow\ rate\ of\ people\ [p/s]=1.27 \cdot walkway\ width[m]+0.07
 
 When agents are walking adjacent to the train this situation is
 considered similar to a corridor. The correlation given in the Swedish
-building guidelines for analytical fire safety design [@BBRAD] were adopted. 
-Equation [#flowratenexttotrain].
+building guidelines for analytical fire safety design [@BBRAD] was
+adopted and shown as equation [#flowratenexttotrain].
 
 ~ Equation { #FlowRateNextToTrain }
 Flow\ rate\ of\ people\ [p/s]=1.2 \cdot walkway\ width[m]
@@ -590,7 +594,7 @@ across the train and improved tenability. This is in contrast to a flat
 grade without an applied velocity where exposures are generally higher.
 However, the results are not as definite with a 500m exit spacing without
 an applied velocity. For some 500m exit spacing configurations agents
-start to out-pace the naturally developing smoke layer.
+start to out-pace the worst of the naturally developing smoke layer.
 
 The effect of an applied velocity is interesting and somewhat
 counter-intuitive particularly when compared to the conclusions drawn by
