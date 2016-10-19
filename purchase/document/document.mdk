@@ -203,24 +203,23 @@ scenarios modelled.
 
 ~ TableFigure { #ScenarioTable; caption: "Example Parameters For Scenario Selection"; .booktable; page-align:here}
 |:------------------------|:-------:|:-------------------:|:--------------------:|:--------------------------:|
-| [CFD Scenario Parameters]{font-weight:bold} ||||| | Fire location in
-train | - | [Front]{color:grey} | _Middle_ | [Back]{color:grey} | | Fire
-size | MW | [2]{color:grey} | _5_ | [>10]{color:grey} | | Fire growth
-rate | kW/s^2^ | [0.003]{color:grey} | _0.012_ | [0.047]{color:grey} | |
-Tunnel grade | % | [-4]{color:grey} | _0_ | _+4_ | | Tunnel velocity | -
-| _No velocity_ | _2m/s wind_$\dagger$ | _Critical velocity_ | | Tunnel
-area | m^2^ | _23_ | _29_ | [45]{color:grey}$\ddagger$ |
+| [CFD Scenario Parameters]{font-weight:bold}                                                             |||||
+| Fire location in train  | -       | [Front]{color:grey} | _Middle_             | [Back]{color:grey}         |
+| Fire size               | MW      | [2]{color:grey}     | _5_                  | [>10]{color:grey}          |
+| Fire growth rate        | kW/s^2^ | [0.003]{color:grey} | _0.012_              | [0.047]{color:grey}        |
+| Tunnel grade            | %       | [-4]{color:grey}    | _0_                  | _+4_                       |
+| Tunnel velocity         | -       | _No velocity_       | _2m/s wind_$\dagger$ | _Critical velocity_        |
+| Tunnel area             | m^2^    | _23_                | _29_                 | [45]{color:grey}$\ddagger$ |
 |-------------------------|---------|---------------------|----------------------|----------------------------|
-|[Evacuation Scenario Parameters]{font-weight:bold} ||||| | Walkway width
-| m | [<0.8]{color:grey} | _0.8_ | _1.2_ | | Pre-movement $\diamond$ | s
-| [120]{color:grey} | _240_ | [360]{color:grey} | | Occupant load | p
-| [600]{color:grey} | _900_ | [1200]{color:grey} | | Exit separation | m
-| _240_ | _300_ | _500_ | | Walkway elevation | - | _Track_
-| [Semi]{color:grey} | _Elevated_ |
+|[Evacuation Scenario Parameters]{font-weight:bold}                                                       |||||
+| Walkway width           | m       | [<0.8]{color:grey}  | _0.8_                | _1.2_                      |
+| Pre-movement $\diamond$ | s       | [120]{color:grey}   | _240_                | [360]{color:grey}          |
+| Occupant load           | p       | [600]{color:grey}   | _900_                | [1200]{color:grey}         |
+| Exit separation         | m       | _240_               | _300_                | _500_                      |
+| Walkway elevation       | -       | _Track_             | [Semi]{color:grey}   | _Elevated_                 |
 |-------------------------|---------|---------------------|----------------------|----------------------------|
-| $\dagger$ Modeled as a pressure boundary ||| $\ddagger$ Double track
-geometry || | $\diamond$ Refers to agents in the fire car, other agents
-have a pre-movement time of +120s |||||
+| $\dagger$ Modeled as a pressure boundary              ||| $\ddagger$ Double track geometry                 ||
+| $\diamond$ Agents in the fire car, other agents have a pre-movement time of +120s             |||||
 ~
 
 ~ Figure { #fig-Scenario; caption:"Scenario modelled."; page-align:here}
