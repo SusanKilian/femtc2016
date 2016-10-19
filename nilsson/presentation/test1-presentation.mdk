@@ -18,7 +18,7 @@ Beamer Theme  : singapore
 * Previous numerical work on a large-scale fire test showed promising results
 * SP FIRE 105 facade test - modified test
 * An update in FDS $\neq$ every area is improved
-* Investigate differences in the program versions\
+* Investigate possible differences in the program versions\
  (FDS 6.2.0 vs FDS 5.5.3)
 
 ~ End Vertical
@@ -28,7 +28,7 @@ Beamer Theme  : singapore
 
 ~ Slide
 ~~ Center
-## Modified SP Fire 105 test rig
+## Modified SP FIRE 105 test rig
 ~~
 ~~ Center
 ![Namnlös1]
