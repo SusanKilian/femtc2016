@@ -352,8 +352,21 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 [Manegg measure sensor ]: images/Manegg-measure-sensor-.jpg "Manegg measure sensor " { width:auto; max-width:90% }
 
-# We modeled the full scale test with our FDS model
+# We modeled the full scale test with our FDS model...
 
+~ Center
 
+![bild_smokeview_manegg]
+~
 
+[bild_smokeview_manegg]: images/bild_smokeview_manegg.jpg "bild_smokeview_manegg" { width:auto; max-width:90% }
 
+# ... and these are the results
+
+~ Center
+
+![alle sensor Manegg]
+
+[alle sensor Manegg]: images/alle-sensor-Manegg.jpg "alle sensor Manegg" { width:auto; max-width:110% }
+
+~
