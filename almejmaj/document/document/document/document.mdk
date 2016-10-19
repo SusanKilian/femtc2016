@@ -31,10 +31,7 @@ The use of evacuation models has increased in recent years due to architectural 
 [femtc2016]: https://github.com/thunderheadeng/femtc2016
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
-<!-- begin merge (remove this line to resolve the conflict) -->
-~ Begin Remote
 
-~ End Remote
 # INTRODUCTION { #sec-intro }
 When conducting a performance based-design, engineers tend use the timed egress model, 
 where the Available Safe Escape Time (ASET) is compared to the Required Safe Escape Time 
