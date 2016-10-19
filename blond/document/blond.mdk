@@ -46,11 +46,11 @@ The testing system Izar works in buildings or tunnels already in use or just bef
 
 This was one of the challenges faced on this work: to study the temperature field created by the system and to draw valuable conclusions and guaranteeing its safety development. Additionally this work had to be done before the system was ready to use an no laboratory test was already possible at this point.
 
-Different equations and models are available in literature to calculate the plume temperatures for diffusion flames according to its geometry and flame configuration (jet flame, etc.). For the common hot smoke test based on pool fires exits a vast literature and experience which make it possible to adjust the size of the pools according to the room geometry [@Chow2001] [@Chow2009]. But no model was found to calculate these parameters for plumes generated during the combustion process occurred in premixed flames.
+Different equations and models are available in literature to calculate the plume temperatures for diffusion flames according to its geometry and flame configuration (jet flame, etc.). For the common hot smoke test based on pool fires exits a vast literature and experience which make it possible to adjust the size of the pools according to the room geometry [@Chow2001], [@Chow2009]. But no model was found to calculate these parameters for plumes generated during the combustion process occurred in premixed flames.
 
 The processes with premixed flames are normally used normally in closed environments such as industrial ovens, in which the main interest is the combustion efficiency rather than the plumes development and thus, the phenomena is not documented enough.
 
-The rectangular geometry of the burning chamber, made also impossible to consider these traditional models mainly based on experiments with circular fire sources such as the Heskestad plume model [@Drysdale2011] and extrapolate their results.
+The rectangular geometry of the burning chamber, made also impossible to consider these traditional models mainly based on experiments with circular fire sources such as the Heskestad plume model [@Heskestad2016a] and extrapolate their results.
 
 A new framework had to be developed to study the temperature field in the plume created by Izar. The decision was to study the temperature field in the plume modeling the system with FDS [@McGrattan2013c], [@McGrattan2016]. 
 
@@ -62,7 +62,7 @@ The solution to simulate premixed flames consists of modeling the combustion lik
 
 Izar uses propane gas as source of energy. The physical properties of the combustible are well documented in the literature. 
 The flame temperature is one of these and it is the main model parameter. The combustion in Izar occurs under stoichiometric conditions achieving very high combustion efficiencies, 
-an very high temperatures. The chosen flame temperature is the adiabatic temperature with dissociation. For the propane this temperature is 1995 °C [@Drysdale2011]. Above the combustion region, the plume can be represented using the fluid dynamic equations available in FDS.
+an very high temperatures. The chosen flame temperature is the adiabatic temperature with dissociation. For the propane this temperature is 1995 °C [@Drysdale2016]. Above the combustion region, the plume can be represented using the fluid dynamic equations available in FDS.
 
 The plume contains the combustion products generated during the combustion. In the diffusion flames the efficiency of the combustion process defines the amount of products and particles which are commonly called smoke.
 However in a premixed combustion these combustion products are well known and do not change under different environment conditions. By a simple chemical balance its is possible to calculate these combustion products and the amount of them:
