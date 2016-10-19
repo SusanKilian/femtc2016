@@ -1,9 +1,9 @@
 [INCLUDE=presentation]
-Title         : Demo presentation in Madoko
-Sub Title     : In both HTML and PDF
-Author        : Daan Leijen
-Affiliation   : Microsoft Research
-Email         : daan@microsoft.com
+Title         : THE EFFECTS OF VARYING STAIRWAY WALKING SPEEDS ON Evacuation MODELING RESULTS 
+Sub Title     : A SENSITIVITY ANALYSIS
+Author        : Majed Almejmaj
+Affiliation   : BuroHappold Engineering, Worcester Polytechnic Institute
+Email         : Majed.Almejmaj@burohappold.com
 Reveal Theme  : sky
 Beamer Theme  : singapore
 
@@ -13,11 +13,19 @@ Beamer Theme  : singapore
 
 [TOC]
 
-# Madoko Presentation
+# Introduction
 
 Using [Madoko] it is easy to create beautiful presentations.
 
-* [Html][slide]:
+* Increase use of Egress Analysis
+  - ASET / RSET
+  - Develop Evacuation Strategy
+
+* Number of tools available
+  - Hand Calculations (Hydraulic movement Model)
+  - Evacuation Modeling
+
+[Html][slide]:
   Uses the `Reveal.js` library by [Hakim El Hattab](http://hakim.se).\
   This slide demo in Madoko is an adaption of his online demo.
 * [Pdf][slide-pdf]:
@@ -28,7 +36,19 @@ Using [Madoko] it is easy to create beautiful presentations.
 
 [madoko]: http://madoko.codeplex.com
 
-## Reveal.js
+## Overview of modeling software
+
+* Legion Evac
+ - Agent Based Model
+ - Continuous space
+ - 2D and 3D
+* Collision avoidance using cost system
+ - Entities move towards least cost	cost depends distance to target, speed and comfort
+* Can use
+ - Preset entity profiles
+ - User can define profile: (size, horizontal / stair speed, familiarity)
+* Mainly validation / calibration studies (Berrou, J.L., et a)
+
 
 `reveal.js` is a framework for easily creating beautiful presentations using
 HTML. You'll need a browser with support for CSS 3D transforms to see it in
@@ -50,7 +70,38 @@ Oh hey, these are some notes. They'll be hidden in your presentation, but you
 can see them if you open the speaker notes window (hit 's' on your keyboard).
 ~~
 
-## Code
+## Study goal
+* Examine effects of lower stair descending speed on 
+ - Sensitivity to total evacuation time
+ - Occupant flow through stairs
+
+
+## Building Description
+* 10 story high-rise (38 meter high)
+* Office occupancy 
+* Exits on north and south side of ground floor
+* Stairways 1200 mm wide
+* Doors are 900 mm wide
+* Basement level not included in study
+ - Merging flow
+* Each floor area is 922 sq.m.
+* Elevators evacuation not included in the study
+* Level 10 accessed by only by one stair
+
+## Building Description
+
+![Building Layout]
+
+[Building Layout]: images/Building-Layout.png "Building Layout" { width:auto; max-width:90% }
+
+## Input parameters
+* Occupant load
+  - 72 occupants per floor (except level 10 = 31)
+
+* Entity body size
+  - Shoulder width 
+
+
 
 Here is code, highlighted by Madoko 
 
