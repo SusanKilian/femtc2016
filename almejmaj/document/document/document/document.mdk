@@ -205,26 +205,34 @@ Similar to level 4, the flow rates for stairways A and B on level 8 illustrated 
 
 ## Scenario 2
 
-The total evacuation time when using a 0.5 m/s walking speed when entities are descending a stairway was 11:43 minutes (average of two runs with 8 seconds difference).  
+The total evacuation time when using a 0.5 m/s walking speed when entities are descending a stairway 
+was 11:43 minutes (average of two runs with 8 seconds difference).
 
 
-The flow rates on the ground floor did not indicate any blockage occurring at that level as Figure 5  illustrates a consistent flow for both stairways A and B, with an average flow of 29 entities / minute. 
+The flow rates on the ground floor did not indicate any blockage occurring at that level as Figure 5
+illustrates a consistent flow for both stairways A and B, with an average flow of 29 entities / minute. 
 
 
-![1]
+![2.1]
 
-[1]: images/1.PNG "1" { width:auto; max-width:90% }
+[2.1]: images/2.1.PNG "2.1" { width:auto; max-width:90% }
+
 ~ Figure {; caption:"Scenario 2 Ground Floor Stairway A&B Flow Rate"}
 ~
 Level 4 flow rates shown in Figure 6 illustrate flow stoppage, similar to scenario 1. However, this only lasted for 1:35 minutes.
 
-![2]
 
-[2]: images/2.PNG "2" { width:auto; max-width:90% }
+
+![2.2]
+[2.2]: images/2.2.PNG "2.2" { width:auto; max-width:90% }
 ~ Figure {; caption:"Scenario 2 Fourth Floor Stairways A&B Flow Rates"}
 ~
 
-Similar to scenario 1, entities were unable to enter the stairways on level 8 for a longer period than level 4; however, this only lasted for 4:32 minutes. There is also an initial spike in the flow rate at time 42 seconds as entities move towards the exits, this is shortly followed by a sharp decline in stairway flow due to congestion from the floors below.
+
+
+Similar to scenario 1, entities were unable to enter the stairways on level 8 for a longer period than level 4; 
+however, this only lasted for 4:32 minutes. There is also an initial spike in the flow rate at time 42 seconds 
+as entities move towards the exits, this is shortly followed by a sharp decline in stairway flow due to congestion from the floors below.
 
 
 ![2.3]
@@ -373,8 +381,3 @@ This is part on an ongoing study that aims at conducting a more detailed sensiti
 12.	Eriksson Lantz, C., Modelling Ascending Stair Evacuation, in Department of Fire Safety Engineering. 2015, Lund University 
 13.	Qu, Y., et al., Modeling the pedestrian’s movement and simulating evacuation dynamics on stairs. Safety Science, 2014. 70: p. 189-201.
 14.	David, A., Metric Handbook Planning and Design Data. ed: Reed Educational and Professional Publishing Ltd. 1999.
-
-
-
-
-
