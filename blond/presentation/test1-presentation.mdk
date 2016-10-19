@@ -9,10 +9,11 @@ Email         : juan.blond@baslerhofmann.ch
 Reveal Theme  : sky
 Beamer Theme  : singapore
 
-Author     : Rios, Oriol 
+Author        : Rios, Oriol 
 Affiliation   : Department of Chemical Engineering, Centre for Technological Risk Studies. Universitat Politècnica de Catalunya Barcelona, Spain 
 Email         : oriol.rios@upc.edu 
 
+TOC Depth     : 1
 
 [TITLE]
 
@@ -22,453 +23,212 @@ Email         : oriol.rios@upc.edu
 
 # Introduction
 
-[Don't worry, this section is not long...]{ :red }
+[Don't worry, this section is not long...]{ color:red }
 
-~ Align-Left
 * This work is based on the hot smoke testing system, Izar
-
 * It was developed by the swiss company Basler & Hofmann AG
-
 * A premixed combustion is the source of energy for the test
-
-{.fragmented} [(Oh yes, that's why I am here attending this presentation)]{ :lime}
-
 * The results presented in this work are part of its development process
   - The entire work was presented as master thesis within the IMFSE program in 2013
-~
+{.fragmented}
 
-~ begin Vertical
+~ Begin Vertical
 
 ## Before we begin, what is Izar?
 
-[I am very happy with your question...]{ :red }
+~ Center
+[I am very happy with your question...]{ color:red }
+~
 
 ## Izar is a system with... a gas burner
 ~ Center
- ![130815-6612]
- 
-[130815-6612]: images/130815-6612.jpg "130815-6612" { width:auto; max-width:90% }
+![130815-6612]
 ~
+[130815-6612]: images/130815-6612.jpg "130815-6612"
 
 ## ... a gas supply system
 
 ~ Center
-
 ![130815-6609]
-
-[130815-6609]: images/130815-6609.jpg "130815-6609" { width:auto; max-width:100% }
 ~
+[130815-6609]: images/130815-6609.jpg "130815-6609"
 
 ## ... and some fog generators
 
 ~ Center
-
-[Our clients wanted to see the smoke,... and my boss too]{ :red }
-
+[Our clients wanted to see the smoke,... and my boss too]{ color:red }
 ![151117-9498]
-
-[151117-9498]: images/151117-9498.jpg "151117-9498" { width:auto; heigth: auto}
 ~
+[151117-9498]: images/151117-9498.jpg "151117-9498" { height:600px }
 
 ~ End Vertical
 
-# Nice! It sounds interesting, but what makes Izar something special?
+## It sounds interesting, but what makes Izar something special?
 
 Well Izar is definitely a cool machine...
 
-~ Align-Left
 * It doesn't generate soot yield
-  - Nobody likes to clean...
-
+ - Nobody likes to clean...
 * Live control of the HRR 
-  - It is possible to follow fire curves like the t^2^-curve
-
+ - It is possible to follow fire curves like the t^2^-curve
 * A validated FDS model is available 
+{.fragmented}
+
+[(Oh, a validated FDS for a testing system? It seems interesting, I will keep attending what this guy is saying...) ]{ color:green }
 {.fragment}
 
-[(Oh, a validated FDS for a testing system? It seems interesting, I will keep attending what this guy is saying...) ]{ :lime }
-{.fragment}
-~
- 
-# How is that you decided to combine FDS with Izar?
+## How is that you decided to combine FDS with Izar?
 
-[It is not the best idea to do a smoke test an burn the room... I needed to figure out how to avoid it.]{ :red }
-{.fragment}
+It is not the best idea to do a smoke test an burn the room... I needed to figure out how to avoid it.
+{.fragment }
 
-[Yes, that is definitely a good reason]{ :lime }
-{.fragment}
+[Yes, that is definitely a good reason]{ color:green }
+{.fragment }
 
-~ Align-Left
-
-* The aim is to calculate the plume temperatures originated by Izar
-  - The temperature is the one of the main factors to design the smoke tests
-  - The room limiting factor must be considered (sprinklers, lights, protected ceilings)
-  - Realistic test = high temperatures
-
+## Calculate the plume temperatures originated by Izar
+* The temperature is the one of the main factors to design the smoke tests
+* The room limiting factor must be considered (sprinklers, lights, protected ceilings)
+* Realistic test = high temperatures
 * Necessary data from temperatures from different powers at different heights 
 
-* How to calculate temperatures from premixed flames?
-  - The combustion efficiency is the most important factor for premixed flames
-  - What happens afterward? --> Not enough studied
+## How to calculate temperatures from premixed flames?
+ - The combustion efficiency is the most important factor for premixed flames
+ - What happens afterward? --> Not enough studied
+{.fragmented}
 
-* A new framework is developed with FDS to calculate the temperature flames  
-{.fragment}
-~
+## A new framework is developed with FDS to calculate the temperature flames.
 
 # And how did you create the FDS model for Izar
 
-~ Align-Left
 * The combustion itself is "not important", we want to model the plume
-  - The combustion will not be modeled 
-
+ - The combustion will not be modeled 
 * We model the combustion products which conform the plume, the "smoke"
-
 * Three initial factors
-  - Species
-  - Temperature
-  - Origin surface
- 
-{.fragment}
-~
+ - {.fragment}Species
+ - {.fragment}Temperature
+ - {.fragment}Origin surface
 
 # The initial species (1/2)
 
-~ Align-Left
 * The combustion takes place under stoichiometric conditions
-
 * Well known which the combustion products are
-~
 
 ~ Center
 C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 ~
 
-~ Align-Left
-* We define the mass ratio fuel/product 
-~
+## We define the mass ratio fuel/product 
 
 ~ Table  
-|----------|------------------|--------------------|----------------------| 
-| Specie   | Molecular weight | Amount of products | Mass ratio | 
-|          |               (g)   |        (g)           |                      | 
-+:--------:+:----------------:+:------------------:+:--------------------:+ 
-| C~3~H~4~ | 40               | -                  |-                     | 
-| CO~2~    | 44               | 132                |3.3                   | 
-| H~2~O    | 18               |72                  |1.8                   | 
-| N~2~     | 28               | 526.40             |13.16                 | 
-|----------|------------------|--------------------|----------------------| 
+|----------|------------------|--------------------|------------|
+| Specie   | Molecular weight | Amount of products | Mass ratio |
+|          | (g)              | (g)                |            |
++:--------:+:----------------:+:------------------:+:----------:+
+| C~3~H~4~ | 40               | -                  | -          |
+| CO~2~    | 44               | 132                | 3.3        |
+| H~2~O    | 18               | 72                 | 1.8        |
+| N~2~     | 28               | 526.40             | 13.16      |
+|------------------------------------------------------------||||
+|          |                  |                    |            |
 ~ 
+
 
 # The initial species (2/2)
 
-~ Align-Left
 * We calculate the necessary mass flow rate for a desired HRR with the fuel heat of combustion 
-
 * Example for 500 kW
-  - Propane heat of combustion: 46 kJ/g
-  - Mass flow to achieve 500 kW  500 kW / 46 kJ/g = 10.85 g/s
-~
+ - Propane heat of combustion: 46 kJ/g
+ - Mass flow to achieve 500 kW  
+   500 kW / 46 kJ/g = 10.85 g/s
 
 ~ Table 
-|----------|----------------|-----------|--------------------| 
-| Specie   | Amount of fuel | Mass ratio| Amount of products | 
-|          |       (g/s)          |           |               (g/s) | 
-|          |           |           |                    | 
-+:--------:+:--------------:+:---------:+:------------------:+ 
-| C~3~H~4~ | 10.85          | -         |-                   | 
-| CO~2~    | -              | 3.3       |       35.80         | 
-| H~2~O    | -              | 1.8       |            19.53    | 
-| N~2~     | -              | 13.16     |          142.78   | 
-|----------|----------------|-----------|--------------------| 
-
+|----------|----------------|-----------|--------------------|
+| Specie   | Amount of fuel | Mass ratio| Amount of products |
+|          | (g/s)          |           | (g/s)              |
+|          |                |           |                    |
++:--------:+:--------------:+:---------:+:------------------:+
+| C~3~H~4~ | 10.85          | -         |-                   |
+| CO~2~    | -              | 3.3       | 35.80              |
+| H~2~O    | -              | 1.8       | 19.53              |
+| N~2~     | -              | 13.16     | 142.78             |
+|----------|----------------|-----------|--------------------|
+|          |                |           |                    |
 ~ 
 
-~ Align-Left
-* These values are the inputs for the model
+[Proper initial values for the subsequent system mass balance]{font-size:smaller;}
 
-* Proper initial values for the subsequent system mass balance
-~
 
 # The initial temperature
-~ Align-Left
+
 * The initial temperature of the gas is related with the flame temperature
 * The combustion takes places under stoichiometric conditions
 * The adiabatic combustion temperature characterizes the flame temperature
-* For our case: Flame ~temperature~ = 1.995 °C (Propane adiabatic temperature)
-~
+* For our case: Flame temperature = 1.995 °C (Propane adiabatic temperature)
 
 # Grid mesh and geometry
 
-~ Align-Left
 * The mesh definition is a critical value in a FDS model
 * The combustion product must be introduced in kg/m^2^&sdot;s
 * The combustion surface defines the initial moment in the system
 * Our system has a geometry of 122 cm (length) x 17 cm (width)
 * A 6.5 cm cell size was chosen after a sensitivity analysis   
-~
 
-~begin Vertical
-  
+~ Begin Vertical
+
 ## Radiation
-~ Align-Left
+
 * High combustion efficiency --> low radiation loses
 * The radiation fraction can be calculated considering the [partial pressures] [down] 
 * The radiation loses of the system are around 3 % 
 
 [down]: # { .navigate-down }
-~
 
 ## You can find the equation in my paper... {#vertical}
 ~ Center
 ![radiacion y mano]
-  
-
-[radiacion y mano]: images/radiacion-y-mano.jpg "radiacion y mano" { width:auto; max-width:200% }
-
 ~
+[radiacion y mano]: images/radiacion-y-mano.jpg "radiacion y mano" { width:auto; max-width:200% }
 
 ~ End Vertical
 
 ~ Begin Vertical
+# Validation of the FDS model
 
-## Validation of the FDS model
-
-~ Align-Left
-
-* [You are probably thinking]{ :red }
-  - {.fragment}Nice method
-  - {.fragment}The theory is interesting, but I want to known if it works
-  - {.fragment}Does he have more cool pictures?
-
+* [You are probably thinking]{ color:red }
+ - Nice method
+ - The theory is interesting, but I want to known if it works
+ - Does he have more cool pictures?
 * Well, let's show the result
-  - And yes there are some cool photos more, [for example] [down]
-  {.fragment}
+ - And yes there are some cool photos
+{.fragmented}
 
-~
+## Slice Data
 
-## 
-
-~ begin Columns
-
-~ Column  { width:50%}
-
+~ Columns
+~~ Column { width:50% }
+~~~ Center
 ![Temperature 0_1 MW]
-
-[Temperature 0_1 MW]: images/Temperature-0_1-MW.jpg "Temperature 0_1 MW" { width:auto; max-width:100% }
-
-~
-
-~ Column  { width:50%}
-
+~~~
+~~
+~~ Column
+~~~ Center
 ![Temperature 1_2 MW]
-
-[Temperature 1_2 MW]: images/Temperature-1_2-MW.jpg "Temperature 1_2 MW" { width:auto; max-width:92% }
+~~~
+~~
 ~
-~ End Columns
+[Temperature 1_2 MW]: images/Temperature-1_2-MW.jpg "Temperature 1_2 MW" { width:auto; max-width:92% }
+[Temperature 0_1 MW]: images/Temperature-0_1-MW.jpg "Temperature 0_1 MW" { width:auto; max-width:100% }
 
 ~ End Vertical
 
 # Let's begin with the plume
 
-~ Align-Left
-
 * Using the described initial inputs, Izar was modeled in FDS
 * A measurement grid was also programmed
-  - One temperature sensor each 20 cm in the axis X and Y
-  - Repeated each 19.5 cm in the Z-Axis
-~
+ - Temperature sensor every 20 cm in the X and Y axis
+ - Repeated each 19.5 cm in the Z-Axis
 
-~ center
+~ Center
 ![FDS grid]
-
+~
 [FDS grid]: images/FDS-grid.JPG "FDS grid" { width:auto; max-width:90% }
-~
-~
-
-
-## Reveal.js
-
-`reveal.js` is a framework for easily creating beautiful presentations using
-HTML. You'll need a browser with support for CSS 3D transforms to see it in
-its full glory. 
-
-And any Madoko features just work. Here is some math:
-
-~ Begin Framed { padding:1ex; margin-top:1ex }
-A famous equation is $e = mc^2$, but this one is 
-famous too:
-
-~ Equation  {#eq-gaussian}
-\int_{-\infty}^\infty e^{-a x^2} d x = \sqrt{\frac{\pi}{a}} 
-~
-~ End Framed
-
-~~ Notes
-Oh hey, these are some notes. They'll be hidden in your presentation, but you
-can see them if you open the speaker notes window (hit 's' on your keyboard).
-~~
-
-## Code
-
-Here is code, highlighted by Madoko 
-
-``` javascript
-function sqr( x ) {
-  var \(&pi;\) = 3.141593;
-  return x*x;  /* the square */
-}
-```
-We used `\(` and `\)` to escape into markdown to write &pi;.
-
-<!-- Example of nested vertical slides -->
-~ Begin Vertical { data-background:Gainsboro }
-
-## Vertical Slides {#vertical}
-Slides can be nested inside of other slides,
-try pressing [down].
-
-[![arrowdown]][down]
-
-
-[down]: # { .navigate-down }
-[arrowdown]: images/arrow.png "Down arrow" { width:178px; height:238px }
-
-## Basement Level 1
-Press down or up to navigate.
-
-## Basement Level 2
-
-Use `columns` to put blocks next to each other:
-
-~ Begin Columns
-~ Column { width:50% }
-A monarch butterfly (shown to the right)
-spends the winter in Mexico.
-~
-~ Column
-![butterfly]
-~
-~ End Columns
-
-[butterfly]: images/butterfly.png "A Monarch butterfly" { width:280px; vertical-align:middle }
-
-
-<!-- 
-For local background images, we need to have a reference to the image
-such that it's data gets embedded into the HTML page. We define
-it using "display=none" so it is hidden in the presentation. 
-We can then refer to the image in "data-background-image". 
--->
-
-![bfly]
-[bfly]: images/butterfly.png "Butterfly" { display:none }
-
-## Basement Level 3 { data-background-image:images/butterfly.png }
-That's it, time to go back up.
-
-[![arrowup]][back2]
-
-[arrowup]:  images/arrow.png "Up arrow" { width:178px; height:238px; transform:rotate(180deg) }
-[back2]:    #vertical { .image }
-
-~ End Vertical
-
-
-## Themes {#themes}
-
-Reveal.js comes with a few themes built in:
-
-* [Default](?#/themes)
-* [Sky](?theme=sky#/themes)
-* [Beige](?theme=beige#/themes)
-* [Serif](?theme=serif#/themes)
-* [Simple](?theme=simple#/themes)
-* [Night](?theme=night#/themes)
-* [Moon](?theme=moon#/themes)
-* [Solarized](?theme=solarized#/themes)
-
-Theme demos are loaded after the presentation which leads to flicker. In
-production you should load your theme in the `<head>` using a
-`<link>`.
-
-## Transitions { #transitions }
-
-You can select from different transitions, like:\
-[Cube](?transition=cube#/transitions) -
-[Page](?transition=page#/transitions) -
-[Concave](?transition=concave#/transitions) -
-[Zoom](?transition=zoom#/transitions) -
-[Linear](?transition=linear#/transitions) -
-[Fade](?transition=fade#/transitions) -
-[None](?transition=none#/transitions) -
-[Default](?#/transitions)
-
-
-
-## Pauses?
-
-Some pauses.
-
-* {.fragment} One
-* {.fragment} Two
-* {.fragment} Three
-
-And more:
-
-- Test 1
-- Test 2
-- Test 3
-{.fragmented}
-
-Cool!.
-
-~ Slide
-A slide with no header
-~
-
-
-## Point of View
-
-In Reveal.js Press **ESC** to enter the slide overview.
-
-Hold down alt and click on any element to zoom in on it using 
- [zoom.js]. Alt + click anywhere to zoom back out.
-
-
-[zoom.js]: http://lab.hakim.se/zoom-js
-
-
-## Works in Mobile Safari
-
-Try it out! You can swipe through the slides and pinch your way to the
-overview.
-
-
-## Printing
-
-You can print a `revealjs` presentation nicely from the browser.
-
-First give the `?print-pdf` or `?print-paper` query on your final
-presentation (in the browser address bar) and then print from the Chrome
-browser selecting `Save to PDF`.
-
-Read more about it at the [revealjs documentation](https://github.com/hakimel/reveal.js#pdf-export)
-
-## RevealJS library
-
-Normally, the `revealjs` library is loaded from a CDN but you can specify your
-own url using metadata:
-
-    Reveal Url: <my url>
-
-This can be useful when using a [server to run revealjs](https://github.com/hakimel/reveal.js#full-setup)
-where you may use something like:
-
-    @nopreview Reveal Url: http://localhost:8000/reveal.js
-
-
-## Thanks for looking :-)
-
-[slide]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.html
-[slide-mdk]: https://www.madoko.net/editor.html?#url=http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/slidedemo.mdk&options={"delayedUpdate":"true"}
-[slide-pdf]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.pdf
