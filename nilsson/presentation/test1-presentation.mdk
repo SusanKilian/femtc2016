@@ -8,15 +8,20 @@ Beamer Theme  : singapore
 
 [TITLE]
 
+~ Begin Vertical
 # Introduction
+
+## Background
 * Part of an MSc thesis at Lund University
 * Need of a calculation tool for modelling external fire spread
 * Evaluating the tool before performing the following analysis
+* Previous numerical work on a large-scale fire test showed promising results
+* SP FIRE 105 facade test - modified test
 * An update in FDS $\neq$ every area is improved
-* Large-scale fire test with data available
-* SP FIRE 105 facade test - modified version
-* Previous numerical work showed promising results
-* Investigate differences in the program versions
+* Investigate differences in the program versions\
+ (FDS 6.2.0 vs FDS 5.5.3)
+
+~ End Vertical
 
 ~ Begin Vertical
 # Experimental setup
