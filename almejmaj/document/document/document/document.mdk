@@ -2,17 +2,17 @@
 Title         : TITLE OF YOUR PAPER, IN CAPITAL LETTERS CENTERED ON PAGE, USING ONE OR MORE LINES AS NECESSARY
 Subtitle      : An optional subtitle.
 
-Author        : First Author Name
-Affiliation   : Research institute
-Email         : you@bar.com
+Author        : Majed Almejmaj
+Affiliation   : BuroHappold Engineering, Worcester Polytechnic Institute
+Email         : majed.almejmaj@burohappold.com
 
-Author        : My co-author 1
-Affiliation   : Other institute
-Email         : other1@bar.com
+Author        : Sophie Washington
+Affiliation   : BuroHappold Engineering
+Email         : Sophie.Washington@burohappold.com
 
-Author        : My co-author 2
-Affiliation   : Other institute
-Email         : other2@bar.com
+Author        : Jonathan Hall
+Affiliation   : BuroHappold Engineering
+Email         : Jonathan.Hall@burohappold.com
 
 Bibliography  : references.bib
 Logo          : False
@@ -23,10 +23,7 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-Papers should follow standard technical paper format, an abstract
-followed by the more detailed presentation. The abstract should be typed
-on this area of the first page, with the presentation following after two
-lines of space.
+The use of evacuation models has increased in recent years due to architectural complexity of projects and in many cases code requirements. With the wide range of egress modeling software packages available however, users are often unfamiliar with how sensitive these models are to the various input parameters, especially when questioned by approving authorities. This paper examines the sensitivity of varying walking speeds on stairways using  the results from the software package ‘Legion Evac’ to provide engineers with the justification needed when asked by the approving authority to lower occupants’ stairway walking speeds as a safety precaution.
 ~
 
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
@@ -36,7 +33,7 @@ lines of space.
 
 <!-- begin merge (remove this line to resolve the conflict) -->
 ~ Begin Remote
-# GENERAL INSTRUCTIONS { #sec-intro }
+
 ~ End Remote
 # INTRODUCTION { #sec-intro }
 When conducting a performance based-design, engineers tend use the timed egress model, 
