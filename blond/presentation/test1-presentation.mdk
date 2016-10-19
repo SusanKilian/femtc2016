@@ -384,4 +384,16 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 # they look definitely similar
 
-~ 
+~ SubFigure {  }
+
+![temperature_Manegg]
+~
+~ SubFigure {  }
+
+![130815-6597]
+[temperature_Manegg]: images/temperature_Manegg.JPG "temperature_Manegg" { width:auto; max-width:90% }
+
+[130815-6597]: images/130815-6597.jpg "130815-6597" { width:auto; max-width:70%, heigth:auto }
+
+~
+
