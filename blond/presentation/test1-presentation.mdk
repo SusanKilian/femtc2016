@@ -342,6 +342,17 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 # The full scale test
 
 * We measured the temperatures within the smoke layer
+* We carried out tests at different powers
+
+~ Center
+  
+![Manegg measure sensor ]
+  
+~
+
+[Manegg measure sensor ]: images/Manegg-measure-sensor-.jpg "Manegg measure sensor " { width:auto; max-width:90% }
+
+# We modeled the full scale test with our FDS model
 
 
 
