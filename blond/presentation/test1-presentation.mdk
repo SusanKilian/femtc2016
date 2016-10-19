@@ -42,9 +42,12 @@ TOC Depth     : 1
 
 ## Izar is a system with... a gas burner
 ~ Center
-![130815-6612]
+
+![150416-3871]
 ~
-[130815-6612]: images/130815-6612.jpg "130815-6612"
+
+[150416-3871]: images/150416-3871.jpg "150416-3871" { width:auto; max-width:90% }
+
 
 ## ... a gas supply system
 
@@ -79,15 +82,17 @@ Well Izar is definitely a cool machine...
 
 ## How is that you decided to combine FDS with Izar?
 
-It is not the best idea to do a smoke test an burn the room... I needed to figure out how to avoid it.
+It is not the best idea to do a smoke test an burn the room... I needed to figure out how to avoid it { color:red }
 {.fragment }
 
 [Yes, that is definitely a good reason]{ color:green }
 {.fragment }
 
+* We do the test in rooms in use or just before commissioning
+* The room limiting factor must be considered (sprinklers, lights, protected ceilings)
+
 ## Calculate the plume temperatures originated by Izar
 * The temperature is the one of the main factors to design the smoke tests
-* The room limiting factor must be considered (sprinklers, lights, protected ceilings)
 * Realistic test = high temperatures
 * Necessary temperature data from Izar for different powers and room heights 
 
@@ -427,4 +432,13 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 * Optimize the smoke extraction system
   
 
-  
+# Thanks for your attention
+
+~ Center
+
+![150416-3880]
+
+[150416-3880]: images/150416-3880.jpg "150416-3880" { width:auto; max-width:100% }
+
+
+~
