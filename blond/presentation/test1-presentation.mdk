@@ -414,4 +414,17 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
   
 * Development of plume equations
 
-   
+# The future of the FDS Simulations?
+
+* The model can be used to validate FDS geometries "a priori"
+  - We can carry out a test with Izar
+  - We take the necessary measures
+  - We use the validated FDS model from Izar to calibrate the simulation
+  - We program the design fire
+  
+* This way we reduce the uncertainties related with the geometry
+* Reduce the safety factors 
+* Optimize the smoke extraction system
+  
+
+  
