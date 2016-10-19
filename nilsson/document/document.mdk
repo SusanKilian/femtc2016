@@ -175,11 +175,11 @@ Figure [#figure3], [@Evegren; @NilssonM].
 ## Incident radiation using a plate thermometer
 The incident radiation was studied using the retrieved temperatures from
 the thermometers and the thermocouples. The incident radiation
-$\dot{q}^{\prime\prime}_{INC}$ $(W/m^{2})$ was then derived from the
+$\dot{q}^{\prime\prime}_{inc}$ $(W/m^{2})$ was then derived from the
 following equation, Equation [#equation1], [@Evegren]:
 
 ~ Equation  {#Equation1; caption:"Equation1" }
-  \dot{q}^{\prime\prime}_{INC} = \sigma T_{S}^{4} - \dfrac{h_{c}(T_{g}-T_{s})}{\epsilon} + \dfrac{dc\rho}{\epsilon} \cdot \dfrac{dT}{dt}
+  \dot{q}^{\prime\prime}_{inc} = \sigma T_{S}^{4} - \dfrac{h_{c}(T_{g}-T_{s})}{\epsilon} + \dfrac{dc\rho}{\epsilon} \cdot \dfrac{dT}{dt}
 ~
 
 where $\sigma$ $(5.67 \times 10^{-8} W/(m^{2} \cdot K^{4}))$ is the
@@ -213,11 +213,11 @@ Note that Equation [#equation1] is based on the following simplified heat balanc
 
 where the suffix $PT$ refers to Plate Thermometer. The equation describes
 the heat balance on the exposed plate surface of a plate thermometer.
-From Equation [#equation3] the term $\dot{q}^{\prime\prime}_{INC}$ is
+From Equation [#equation3] the term $\dot{q}^{\prime\prime}_{inc}$ is
 extracted from the heat balance equation and conduction is neglected,
 forming Equation [#equation1]. However, in Equation [#equation1], the
 convective term is subtracted, which means in other words that the
-expression $\dot{q}^{\prime\prime}_{INC}$ is the incident radiative part
+expression $\dot{q}^{\prime\prime}_{inc}$ is the incident radiative part
 of the total heat transfer. Hence, the latter term is referred to as
 incident radiative heat flux, $\dot{q}^{\prime\prime}_{IRHF}$ $(W/m^{2})$
 in this paper.
@@ -336,8 +336,8 @@ devices were then placed at the backside of these plates to measure the
 surface temperature.
 
 In addition, measurements of adiabatic surface temperature ($T_{AST}$),
-incident heat flux ($\dot{q}^{\prime\prime}_{INC}$) and convective heat
-flux ($\dot{q}^{\prime\prime}_{conv}$) took place at the same positions
+incident heat flux ($\dot{q}^{\prime\prime}_{inc}$) and convective heat
+flux ($\dot{q}^{\prime\prime}_{c}$) took place at the same positions
 as for the wall temperature devices. The former was done in order to
 compare the retrieved temperatures from the plate thermometers during the
 reference test with the illustrative temperature $T_{AST}$ in FDS. The
@@ -355,13 +355,13 @@ Since there are no device that directly produce the same form of heat
 flux in FDS as computed from the reference test described above
 ($\dot{q}^{\prime\prime}_{IRHF}$), the information given in [@Overholt]
 was used. In FDS, the quantity incident heat flux
-$\dot{q}^{\prime\prime}_{INC} (W/m^{2})$ is the sum of the incoming
+$\dot{q}^{\prime\prime}_{inc} (W/m^{2})$ is the sum of the incoming
 radiation and convection, not including the outgoing
 radiation [@Overholt]. The quantity incident heat flux is described in
 the following equation, Equation [#equation4], [@FDSUser]:
 
 ~ Equation  {#Equation4; caption:"Equation4" }
-  \dot{q}^{\prime\prime}_{INC} = \dfrac{\dot{q}^{\prime\prime}_{rad}}{\epsilon} + \sigma T_{w}^{4} + \dot{q}^{\prime\prime}_{conv}
+  \dot{q}^{\prime\prime}_{inc} = \dfrac{\dot{q}^{\prime\prime}_{rad}}{\epsilon} + \sigma T_{w}^{4} + \dot{q}^{\prime\prime}_{c}
 ~
 
 Further, there is also a quantity called radiative heat flux, described
@@ -376,20 +376,20 @@ Substituting Equation [#equation5] in Equation [#equation4] results in
 the following equation, Equation [#equation6]:
 
 ~ Equation  {#Equation6; caption:"Equation6" }
-  \dot{q}^{\prime\prime}_{INC} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} + \dot{q}^{\prime\prime}_{conv}
+  \dot{q}^{\prime\prime}_{inc} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} + \dot{q}^{\prime\prime}_{c}
 ~
 
 At this stage, to be able to compare the quantity
-$\dot{q}^{\prime\prime}_{INC}$ in FDS with the computed
+$\dot{q}^{\prime\prime}_{inc}$ in FDS with the computed
 $\dot{q}^{\prime\prime}_{IRHF}$-values from the reference test, the
 convective term was subtracted from Equation [#equation6]. This means
 that the $\dot{q}^{\prime\prime}_{IRHF}$-output data in FDS were produced
-by subtracting the $\dot{q}^{\prime\prime}_{INC}$-values with the
-$\dot{q}^{\prime\prime}_{conv}$-values from FDS, resulting in the
+by subtracting the $\dot{q}^{\prime\prime}_{inc}$-values with the
+$\dot{q}^{\prime\prime}_{c}$-values from FDS, resulting in the
 following equation, Equation [#equation7]:
 
 ~ Equation  {#Equation7; caption:"Equation7" }
-  \dot{q}^{\prime\prime}_{IRHF} = \dot{q}^{\prime\prime}_{INC} - \dot{q}^{\prime\prime}_{conv} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} 
+  \dot{q}^{\prime\prime}_{IRHF} = \dot{q}^{\prime\prime}_{inc} - \dot{q}^{\prime\prime}_{c} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} 
 ~
 
 Again, this was done since in FDS there are no device that directly
