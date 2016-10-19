@@ -23,7 +23,15 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-The use of evacuation models has increased in recent years due to architectural complexity of projects and in many cases code requirements. With the wide range of egress modeling software packages available however, users are often unfamiliar with how sensitive these models are to the various input parameters, especially when questioned by approving authorities. This paper examines the sensitivity of varying walking speeds on stairways using  the results from the software package ‘Legion Evac’ to provide engineers with the justification needed when asked by the approving authority to lower occupants’ stairway walking speeds as a safety precaution.
+The use of evacuation models has increased in recent years due to architectural 
+complexity of projects and in many cases code requirements. With the wide range 
+of egress modeling software packages available however, users are often unfamiliar 
+with how sensitive these models are to the various input parameters, especially 
+when questioned by approving authorities. This paper examines the sensitivity 
+of varying walking speeds on stairways using  the results from the software 
+package ‘Legion Evac’ to provide engineers with the justification needed when 
+asked by the approving authority to lower occupants’ stairway walking speeds as 
+a safety precaution.
 ~
 
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
@@ -118,13 +126,9 @@ illustrated in Figure 1. Also, all doors which are part of the means of egress h
 width of 900 mm. 
 To eliminate the affects from the underground garage level and mainly focus on the effect 
 of walking speeds, only the tower section is considered for this study, where each floor has an area of 922 sq.m.
-  
-  
 
 ![Madoko 1]
-
 [Madoko 1]: images/Madoko-1.png "Madoko 1" { width:auto; max-width:90% }
-
 ~ Figure {; caption:"Emergency Stairs Location for High-rise Section (Level 5)"}
 ~
 
@@ -138,7 +142,8 @@ layout as illustrated in Figure 1.
 
 ## Entity Body Size   
 
-For uniformity, the body size for all occupants is assumed to follow a normal distribution as illustrated in Table 1 [14].
+For uniformity, the body size for all occupants is assumed to follow a normal distribution 
+as illustrated in Table 1 [14].
 
 ~ TableFigure { #table-sample; caption: " Entity Body Size"; .wide }
 
@@ -184,7 +189,6 @@ The flow rates on the ground floor did not indicate any blockage occurring at th
 
 
 ![Scenario 1 Ground]
-
 [Scenario 1 Ground]: images/Scenario-1-Ground.PNG "Scenario 1 Ground" { width:auto; max-width:90% }
 ~ Figure {; caption:"Scenario 1 Ground Floor Stairway A&B Flow Rates"}
 ~
@@ -193,7 +197,6 @@ The flow rates on level 4 seem to have stopped for short periods and lasted for 
 
 
 ![Scenario 1 4th]
-
 [Scenario 1 4th]: images/Scenario-1-4th.PNG "Scenario 1 4th" { width:auto; max-width:90% }
 ~ Figure {; caption:"Scenario 1 Fourth Floor Stairways A&B Flow Rates"}
 ~
@@ -202,7 +205,6 @@ Similar to level 4, the flow rates for stairways A and B on level 8 illustrated 
 
 
 ![Scenario 1 8th]
-
 [Scenario 1 8th]: images/Scenario-1-8th.PNG "Scenario 1 8th" { width:auto; max-width:90% }
 ~ Figure {; caption:"Scenario 1 Eighth Floor Stairways A&B Flow Rates"}
 ~
@@ -219,18 +221,16 @@ illustrates a consistent flow for both stairways A and B, with an average flow o
 
 
 ![Scenario 2 ground]
-
 [Scenario 2 ground]: images/Scenario-2-ground.PNG "Scenario 2 ground" { width:auto; max-width:90% }
-
 ~ Figure {; caption:"Scenario 2 Ground Floor Stairway A&B Flow Rate"}
 ~
+
 Level 4 flow rates shown in Figure 6 illustrate flow stoppage, similar to scenario 1. However, this only lasted for 1:35 minutes.
 
 
 
 ![Scenario 2 4th]
 [Scenario 2 4th]: images/Scenario-2-4th.PNG "Scenario 2 4th" { width:auto; max-width:90% }
-
 ~ Figure {; caption:"Scenario 2 Fourth Floor Stairways A&B Flow Rates"}
 ~
 
@@ -242,9 +242,7 @@ as entities move towards the exits, this is shortly followed by a sharp decline 
 
 
 ![Scenario 2 8th]
-
 [Scenario 2 8th]: images/Scenario-2-8th.PNG "Scenario 2 8th" { width:auto; max-width:90% }
-
 ~ Figure {; caption:"Scenario 2 Eighth Floor Stairways A&B Flow Rates"}
 ~
 
@@ -257,17 +255,13 @@ The flow rates on the ground floor for scenario 3 did not indicate any blockage 
 
 ![Scenario 3 Ground]
 [Scenario 3 Ground]: images/Scenario-3-Ground.PNG "Scenario 3 Ground" { width:auto; max-width:90% }
-
-
 ~ Figure {; caption:"Scenario 3 Ground Floor Stairway A&B Flow Rate"}
 ~
 
 Level 4 flow rates shown in Figure 6 illustrate flow stoppage, similar to previous scenarios; however, this only lasted for 1:25 minutes.
 
 ![Scenario 3  4th]
-
 [Scenario 3  4th]: images/Scenario-3-4th.PNG "Scenario 3  4th" { width:auto; max-width:90% }
-
 ~ Figure {; caption:"Scenario 3 Fourth Floor Stairways A&B Flow Rates"}
 ~
 
@@ -275,7 +269,6 @@ Similar to level 4, the flow rates for stairways A and B on level 8 illustrated 
 
 ![Scenario 3 8th]
 [Scenario 3 8th]: images/Scenario-3-8th.PNG "Scenario 3 8th" { width:auto; max-width:90% }
-
 ~ Figure {; caption:"Scenario 3 Fourth Floor Stairways A&B Flow Rates"}
 ~
 
@@ -297,19 +290,17 @@ Level 4 flow rates shown in Figure 12 illustrate flow stoppage, similar to previ
 
 ![Scenario 4 4th]
 [Scenario 4 4th]: images/Scenario-4-4th.PNG "Scenario 4 4th" { width:auto; max-width:90% }
-
-
 ~ Figure {; caption:"Scenario 4 Fourth Floor Stairways A&B Flow Rates"}
 ~
+
 Similar to level 4, the flow rates for stairways A and B on level 8 illustrated in Figure 13 show a stoppage time of 3:01 minutes, which would indicate that there was some congestion in the stairways.
 
 
 ![Scenario 4 8th]
 [Scenario 4 8th]: images/Scenario-4-8th.PNG "Scenario 4 8th" { width:auto; max-width:90% }
-
-
 ~ Figure {; caption:"Scenario 3 Eighth Floor Stairways A&B Flow Rates"}
 ~
+
 The results indicate that as stair walking speed decrease, so will the total evacuation time generated by Legion Evac in a high-rise building. For example, lowering the stairway walking speed by 42.86 percent can increase the total evacuation time by up to 53.49 percent.  Table 3 compares the decrease in stair walking speeds for each scenario with the increase in total evacuation time.
 
 ~ TableFigure { #table-sample; caption: "Scenario Total Evacuation Time and Walking Speed Comparison "; .wide }
