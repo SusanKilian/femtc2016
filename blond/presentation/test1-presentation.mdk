@@ -397,3 +397,21 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 ~
 
+# Conclusions
+
+* The methodology efficient tool to model the system Izar
+* The main inputs are:
+  - Combustion products
+  - Flame temperature
+  - Combustion region geometry
+* FDS resolves properly the turbulence around the plume
+  - The central temperatures confirm this point
+
+# Future work
+* Different configurations
+  - Different fuels
+  - Different geometries
+  
+* Development of plume equations
+
+   
