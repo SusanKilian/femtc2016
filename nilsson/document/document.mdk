@@ -179,7 +179,7 @@ $\dot{q}^{\prime\prime}_{inc}$ $(W/m^{2})$ was then derived from the
 following equation, Equation [#equation1], [@Evegren]:
 
 ~ Equation  {#Equation1; caption:"Equation1" }
-  \dot{q}^{\prime\prime}_{inc} = \sigma T_{S}^{4} - \dfrac{h_{c}(T_{g}-T_{s})}{\epsilon} + \dfrac{dc\rho}{\epsilon} \cdot \dfrac{dT}{dt}
+  \dot{q}^{\prime\prime}_{inc} = \sigma T_{s}^{4} - \dfrac{h_{c}(T_{g}-T_{s})}{\epsilon} + \dfrac{dc\rho}{\epsilon} \cdot \dfrac{dT}{dt}
 ~
 
 where $\sigma$ $(5.67 \times 10^{-8} W/(m^{2} \cdot K^{4}))$ is the
