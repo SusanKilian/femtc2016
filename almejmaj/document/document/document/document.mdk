@@ -1,5 +1,5 @@
 [INCLUDE=style/lncs]
-Title         : THE EFFECTS OF VARYING STAIRWAY WALKING SPEEDS ON EVCUATION MODELING RESULTS 
+Title         : THE EFFECTS OF VARYING STAIRWAY WALKING SPEEDS ON EVACUATION MODELING RESULTS 
 Subtitle      : A SENSITIVITY ANALYSIS
 
 Author        : Majed Almejmaj
@@ -101,7 +101,7 @@ numbers to be provided when reviewing the results.
 
 # METHODOLOGY { #sec-intro }
 A user defined entity profile will be setup within Legion Evac that will cover 
-entity size, walking speed and pre-	movement time. All variables will be obtained 
+entity size, walking speed and pre-movement time. All variables will be obtained 
 from published literature and only stair walking speed will be adjusted to eliminate 
 the effect of other variables. The used stair walking speed will be decreased in increments 
 of 0.1 and ranging between 0.7 m/s and 0.4 m/s. This will result in 4 scenarios with two 
@@ -140,7 +140,7 @@ While each floor can be occupied by 99 occupants using an occupancy load factor 
 For uniformity, the body size for all occupants is assumed to follow a normal distribution as illustrated in Table 1 [14].
 
 ~ TableFigure { #table-sample; caption: " Entity Body Size"; .wide }
-|                |                                ||||
+
 |                |---------|---------|---------|
 |                |         |         |         |
 |  Percentile    |  5th    | 50th    | 95th    |
@@ -156,7 +156,7 @@ The horizontal walking speed used in all the runs is 1.2 m/s, which is derived f
 The base stair descending speed used for this study is also derived from SFPE Engineering Guide on Human Behavior in Fire [1], which is 0.7 m/s. Due to the lack of published data on other descending stair speed with statistical distributions, the chosen speed for each scenario was applied to all entities. While this might not be a realistic approach as it eliminates some behaviours, such as overtaking slow entities, it does prevent such behaviours form distorting the results. The stair walking speeds used for each run are listed in Table 2.
 
 ~ TableFigure { #table-sample; caption: "Scenario Stair Walking Speed"; .wide }
-|                                            ||||
+
 |                |---------|---------|---------|-----------|
 |                |         |         |         |           |
 | Scenario   |  Descending Stair walking Speed (m/s)|
@@ -297,9 +297,9 @@ The results indicate that as stair walking speed decrease, so will the total eva
 ~ TableFigure { #table-sample; caption: "Scenario Total Evacuation Time and Walking Speed Comparison "; .wide }
 |                |                            ||||
 |                |-------------------|------------|------------|-----------|
-| Scenario       | Total Evacuation  | Percentage of Speed     |Percentage to Base |
-| Descending     |  Time (mm:ss)     | Decrease from Base (%)  | Scenario (%)      |
-| Speed (m/s)    |                   |                         |                   |
+|   Scenario     | Total Evacuation  | Percentage of Speed     |Percentage to Base |
+|                |  Time (mm:ss)     | Decrease from Base (%)  | Scenario (%)      |
+|                |                   |                         |                   |
 |:---------------|:-----------------:|:-----------------------:|:-----------------:|
 | Scenario 1       | 13:55           | 47.86                   | 53.49             |
 | Scenario 2       | 11:43           | 29.57                   | 29.23             |
@@ -314,8 +314,8 @@ Decreasing stair walking speed affected stairway flow at the ground level, thus 
 |                |                            ||||
 |                |----------------------|------------|------------|
 | Scenario       |Ground Level Average  | Percentage Comparison   |
-| Descending     | Flow(Entity / minute)| to Base Scenario   (%)  |
-| Speed (m/s)    |                      |                         |
+|                | Flow(Entity / minute)| to Base Scenario   (%)  |
+|                |                      |                         |
 |:---------------|:--------------------:|:-----------------------:|
 | Scenario 1       | 24                 | -35.14                  |
 | Scenario 2       | 29                 | -21.62                  |
@@ -329,8 +329,8 @@ When examining the results of the model, it was obvious that there was some cong
 |                |                            ||||
 |                |----------------------|------------|------------|
 | Scenario       |Level 4 Blockage      | Percentage Comparison   |
-| Descending     |Time (s)              | to Base Scenario   (%)  |
-| Speed (m/s)    |                      |                         |
+|                |Time (s)              | to Base Scenario   (%)  |
+|                |                      |                         |
 |:---------------|:--------------------:|:-----------------------:|
 | Scenario 1       | 122                | 100.00                  |
 | Scenario 2       | 95                 | 55.74                   |
@@ -342,8 +342,8 @@ When examining the results of the model, it was obvious that there was some cong
 |                |                            ||||
 |                |----------------------|------------|------------|
 | Scenario       |Level 8 Blockage      | Percentage Comparison   |
-| Descending     |Time (s)              | to Base Scenario   (%)  |
-| Speed (m/s)    |                      |                         |
+|                |Time (s)              | to Base Scenario   (%)  |
+|                |                      |                         |
 |:---------------|:--------------------:|:-----------------------:|
 | Scenario 1       | 320                | 76.80                   |
 | Scenario 2       | 272                | 50.28                   |
