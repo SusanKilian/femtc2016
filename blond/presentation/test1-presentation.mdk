@@ -89,16 +89,15 @@ It is not the best idea to do a smoke test an burn the room... I needed to figur
 * The temperature is the one of the main factors to design the smoke tests
 * The room limiting factor must be considered (sprinklers, lights, protected ceilings)
 * Realistic test = high temperatures
-* Necessary data from temperatures from different powers at different heights 
+* Necessary temperature data from Izar for different powers and room heights 
 
 ## How to calculate temperatures from premixed flames?
  - The combustion efficiency is the most important factor for premixed flames
  - What happens afterward? --> Not enough studied
-{.fragmented}
 
 ## A new framework is developed with FDS to calculate the temperature flames.
 
-# And how did you create the FDS model for Izar
+# And how did you create the FDS model for Izar?
 
 * The combustion itself is "not important", we want to model the plume
  - The combustion will not be modeled 
@@ -183,7 +182,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 [down]: # { .navigate-down }
 
-## You can find the equation in my paper... {#vertical}
+## Well you can find the equation in my paper... {#vertical}
 ~ Center
 ![radiacion y mano]
 ~
@@ -221,14 +220,129 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 ~ End Vertical
 
-# Let's begin with the plume
+# Let's begin with the plume in FDS
 
 * Using the described initial inputs, Izar was modeled in FDS
-* A measurement grid was also programmed
+* A grid was programmed to measure the temperature
  - Temperature sensor every 20 cm in the X and Y axis
  - Repeated each 19.5 cm in the Z-Axis
+* This way of simulating the system avoid possible uncertainties related with the combustion 
 
 ~ Center
+
 ![FDS grid]
 ~
+
 [FDS grid]: images/FDS-grid.JPG "FDS grid" { width:auto; max-width:90% }
+
+# Input values in FDS...
+
+* The gas burner is rectangle 130 cm (200 cells) x 19.5 cm (3 cells)
+* The amount of combustion products is in kg/m^2^&sdot;s 
+* The boundaries are open --> "free plume"
+
+~ Center
+![input pyrosim]
+
+[input pyrosim]: images/input-pyrosim.JPG "input pyrosim" { width:auto; max-width:90% }
+
+~
+
+# ... and it looks like that
+
+~ Center
+![imagen 800 kw]
+
+[imagen 800 kw]: images/imagen-800-kw.JPG "imagen 800 kw" { width:auto; max-width:90% }
+~
+
+~begin Vertical
+
+## The next step is to validate the results
+
+[And that means?]{ color:lime }
+
+* Switch on Izar
+* Do some real fire
+* Measure the temperatures in the plume
+{.fragmented}
+
+~ Center
+
+![Grid sensor full scale]
+{.fragmented}
+~
+
+[Grid sensor full scale]: images/Grid-sensor-full-scale.jpg "Grid sensor full scale" { width:auto; max-width:90% }
+
+
+[Therefore, some [action][down] out of the office]{ color :red }
+{.fragmented}
+
+##  
+
+![130815-6499]
+
+[130815-6499]: images/130815-6499.jpg "130815-6499" { width:auto; max-width:100% }
+
+
+~ End Vertical
+
+~begin Vertical
+
+## And it turns, that the results matched at 1.200 kW...
+
+~ Center
+
+![Temperatures plume_1200]
+
+[Temperatures plume_1200]: images/Temperatures-plume_1200.jpg "Temperatures plume_1200" { width:auto; max-width:80% }
+
+~
+
+## ... but also with Izar working at 400 kW...
+
+~ Center
+
+![temperatures_plume_400 kw]
+
+[temperatures_plume_400 kw]: images/temperatures_plume_400-kw.jpg "temperatures_plume_400 kw" { width:auto; max-width:80% }
+~
+
+## ... or just working at 100 kW
+
+~ Center
+
+![temperatures_plume_100 kw]
+
+[temperatures_plume_100 kw]: images/temperatures_plume_100-kw.jpg "temperatures_plume_100 kw" { width:auto; max-width:80% }
+
+~
+~ End Vertical
+
+~begin Vertical
+
+# Next step, a full scale test
+
+* The plume model works
+* Therefore, it should be possible to model a real scale
+* Is it really possible to simulate [that][down] ?
+
+# Full scale test 
+
+~ Center
+
+![130815-6504]
+
+[130815-6504]: images/130815-6504.jpg "130815-6504" { width:auto; max-width:95% }
+
+~
+~ End Vertical
+
+# The full scale test
+
+* We measured the temperatures within the smoke layer
+
+
+
+
