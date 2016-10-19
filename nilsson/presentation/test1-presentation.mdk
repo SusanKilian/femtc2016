@@ -46,13 +46,13 @@ Beamer Theme  : singapore
 
 ~ Begin Framed { padding:1ex; margin-top:1ex }
 ~ Equation  {#Equation4; caption:"Equation4" }
-  \dot{q}^{\prime\prime}_{INC} = \sigma T_{S}^{4} - \dfrac{h_{c}(T_{g}-T_{s})}{\epsilon} + \dfrac{dc\rho}{\epsilon} \cdot \dfrac{dT}{dt}
+  \dot{q}^{\prime\prime}_{inc} = \sigma T_{s}^{4} - \dfrac{h_{c}(T_{g}-T_{s})}{\epsilon} + \dfrac{dc\rho}{\epsilon} \cdot \dfrac{dT}{dt}
 ~
 ~ Equation  {#Equation4; caption:"Equation4" }
   h_{c} = 2.4 T_{f}^{0.085} \cdot u_{\infty}^{1/2} \cdot x^{-1/2}
 ~
 ~ Equation  {#Equation7; caption:"Equation7" }
-  \dot{q}^{\prime\prime}_{INC} = \dot{q}^{\prime\prime}_{IRHF}
+  \dot{q}^{\prime\prime}_{inc} = \dot{q}^{\prime\prime}_{IRHF}
 ~
 ~ End Framed
 
@@ -75,16 +75,16 @@ $T_{PT} \sim T_{AST}$
 
 ~ Begin Framed { padding:1ex; margin-top:1ex }
 ~ Equation  {#Equation4; caption:"Equation4" }
-  \dot{q}^{\prime\prime}_{INC} = \dfrac{\dot{q}^{\prime\prime}_{rad}}{\epsilon} + \sigma T_{w}^{4} + \dot{q}^{\prime\prime}_{conv}
+  \dot{q}^{\prime\prime}_{inc} = \dfrac{\dot{q}^{\prime\prime}_{rad}}{\epsilon} + \sigma T_{w}^{4} + \dot{q}^{\prime\prime}_{c}
 ~
 ~ Equation  {#Equation5; caption:"Equation5" }
   \dot{q}^{\prime\prime}_{rad} = \dot{q}^{\prime\prime}_{rad, in} - \dot{q}^{\prime\prime}_{rad, out} = \dot{q}^{\prime\prime}_{rad, in} - \epsilon \sigma T_{w}^{4}
 ~
 ~ Equation  {#Equation6; caption:"Equation6" }
-  \dot{q}^{\prime\prime}_{INC} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} + \dot{q}^{\prime\prime}_{conv}
+  \dot{q}^{\prime\prime}_{inc} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} + \dot{q}^{\prime\prime}_{c}
 ~
 ~ Equation  {#Equation7; caption:"Equation7" }
-  \dot{q}^{\prime\prime}_{IRHF} = \dot{q}^{\prime\prime}_{INC} - \dot{q}^{\prime\prime}_{conv} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} 
+  \dot{q}^{\prime\prime}_{IRHF} = \dot{q}^{\prime\prime}_{inc} - \dot{q}^{\prime\prime}_{c} = \dfrac{\dot{q}^{\prime\prime}_{rad, in}}{\epsilon} 
 ~
 ~ End Framed
 
