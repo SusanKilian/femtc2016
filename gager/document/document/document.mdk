@@ -1,0 +1,519 @@
+[INCLUDE=style/lncs]
+Title         : TITLE OF YOUR PAPER, IN CAPITAL LETTERS CENTERED ON PAGE, USING ONE OR MORE LINES AS NECESSARY
+Subtitle      : An optional subtitle.
+
+Author        : Arthur H. Gager III, PE 
+Affiliation   : Jensen Hughes
+Email         : agager@jensenhughes.com
+
+Author        : Gary Dominguez  
+Affiliation   : Jensen Hughes
+Email         : gdominguez@jensehughes.com
+
+Author        : 
+Affiliation   : 
+Email         : 
+
+Bibliography  : references.bib
+Logo          : False
+Tex Header    :
+  \def\refname{&name-references;}
+name-references : REFERENCES
+
+[TITLE]
+
+~ Abstract
+FDS is a tool that has been available to the public for over 15 years. It 
+has been used in many applications since its development, but is most commonly 
+used to evaluate tenability of interior building environments that occupants may 
+be exposed to during a fire scenario. Tenability criteria for visibility, 
+temperature and CO concentration in public buildings has become somewhat standard 
+in the fire protection industry. This presentation will look at tenability and 
+similar acceptance criteria in a wide range of buildings, including atriums, 
+prisons and enclosed amusement rides.  It will look at how increased exposure 
+times, due to code changes and unique building applications, have effected 
+applicable tenability criteria. The basis for the presentation includes case 
+studies and criteria that has been used in prisons throughout the United States 
+of America and amusement parks throughout the world. 
+~
+
+[editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
+[reference-manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html "Madoko Reference Manual"
+[femtc2016]: https://github.com/thunderheadeng/femtc2016
+[emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
+
+# INTRODUCTION
+
+Active smoke control systems are required to be provided in atriums, prisons, underground buildings, pressurized smokeproof enclosures and many other applications. One type of smoke control system, a smoke containment system, is designed to contain smoke in a given zone or keep smoke from entering an adjacent zone. These systems are typically based on maintaining pressure differences across barriers. Another type of system, a smoke management system, is designed to maintain tenable conditions inside the zone of fire origin. The latter system is typically based on smoke exhaust, smoke venting or smoke filling and was originally designed to maintain a smoke layer interface height 6 feet above occupied walking surfaces. This approach assumes an idealized upper smoke layer and smoke free lower layer.  
+
+Fire protection engineers often need to estimate the location of the interface between hot, smoke-laden upper layer and the cooler lower layer in a burning compartment.  Relatively simple fire models, often referred to as two-zone models, compute this directly, along with the average temperature of the upper and lower layers.  However, research into the movement of smoke shows smoke tends to bank down walls creating large transitional zones where smoke is present in some quantity. Use of a computational fluid dynamics (CFD) model like Fire Dynamics Simulator (FDS), which does not create two distinct zones but rather a continuous gradient   yields results that are more representative of actual smoke conditions. 
+
+FDS can be used to review tenability in a building environment with smoke present.  While NFPA 92A, Standard for Smoke Control Systems, recognizes use of smoke control systems designed on the principle of maintaining tenability, this standard provides no guidance with regard to the tenability thresholds to be used.  Standards such as NFPA 130, Standard for Fixed Guideway Transit and Passenger Rail Systems, provides guidance on tenability limits  An effort to continue to standardize tenability criteria in typical environments, such as atriums, has been made in recent years by organizations such as the Society of Fire Protection Engineers (SFPE).  In addition, the technical committee responsible for NFPA 92 has been working on standardized tenability criteria for typical environments.  However, tenability criteria in atypical environments has been quantified with far less frequency. 
+
+This paper will review tenability criteria in the atypical environments such as prisons and amusement rides. Changes to life safety, which are code and best practice driven, have caused prisons and enclosed amusement rides to be protected by a smoke management system.  Prisons and enclosed amusement rides have unique building, occupant and fire characteristics which affect the tenability criteria used for atrium and other typical environments. This paper presents a review of prisons and enclosed amusement rides as examples of atypical environments and discusses the approach for selecting tenability criteria for such occupancies. 
+ 
+
+# TENABILITY GUIDELINES
+
+Providing an environment for occupants that is safe from the dangerous effects of a fire, and provides a tenable means of egress during a fire, has historically been a goal of building codes and standards. Research into smoke control began as early as 1881, with the oldest successful use of a smoke control system dating back to 1911 .  Recently, as the complexity of buildings increase and codes and standards change, there has been a push for more performance based smoke control system designs through the use of CFD programs.  FDS is a CFD program which was developed specifically for fire applications and is validated by decades of research in CFD modeling of fire and smoke transport conducted at the National Institute of Standards and Technology (NIST) .   
+
+An objective of life safety design is to provide a tenable environment for occupants not intimate with the fire to egress through while providing building occupants with an acceptable level of safety from fire .  For example, should an event occur in which occupants are exposed to fire effluent and/or heat, the objective of the fire safety engineering strategy is to ensure that such exposure does not significantly impede or prevent the safe escape (if required) of essentially all occupants, without them experiencing or developing serious health effects .  Tenability limits typically include visibility and temperature as well as the toxic effects of other gaseous effluents. 
+
+
+## VISIBILITY
+
+Visibility is an indirect but fatal cause of death in fires.  While temperature and toxic gases are the final causes of dVisibility is an indirect but dangerous effect of fires.  While temperature and toxic gases are the final causes of death in fires, many evacuees are trapped in an early stage of the fire by relatively thin smoke that causes them not to be able to locate a safe exit.  The threshold of fire smoke density and visibility limits for safe evacuation has been examined by multiple sources. This has occurred through interviewing evacuees, analyzing questionnaires and performing experimental research by evaluating subjects under limited fire smoke conditions.
+
+The presence of smoke in an occupied enclosure obscures illumination from windows and other light sources, often causing escaping occupants to find themselves in dimly lit conditions.  Additionally, the smoke directly impairs the ability of the subject to see through it to surrounding objects and signage .  Tests of visibility of illuminated and reflecting signs through smoke were conducted at the Fire Research Institute (FRI) in Japan.  The test consisted of a chamber which was filled with smoke, and participants viewed signs in the chamber through a window .  Based on the FRI research, the relation between visibility and smoke obscuration was written as:
+
+
+~ Equation { #euler }
+S = \frac{K}{e} 
+~
+
+Where:
+
+~ Equation { #eq-alignment; caption:"Alignment example" }
+\begin{aligned} 
+ S &= visibility~(ft) \\
+K &= proportionality~constant\\
+e &= extinction~coefficient~(ft^{-1})
+\end{aligned}
+~
+
+The proportionality constant K is 8 for illuminated signs and 3 for reflecting signs or building components in reflected light.  Distinguishing the use of illuminated signs versus reflecting signs for a given space is important in determining the available visibility during a fire scenario. 
+
+Design visibility thresholds are based on an occupant’s ability to wayfind and egress during a fire scenario.  One of the standards which outlines specific visibility tenability criteria to be used is NFPA 130, Standard for Fixed Guideway Transit and Passenger Rail Systems.  It indicates smoke obscuration levels should be maintained below the point at which a sign internally illuminated is discernible at 30 meters and doors and walls are discernible at 10 meters. NFPA 130 provides quantified tenability criteria for a specific application, but for different applications tenability criteria must be derived from other sources.   
+
+The SFPE Handbook provides its own visibility criteria data, derived from an experiment conducted to monitor a subject’s emotional state of mind when exposed to fire smoke.  This was accomplished by having a subject hold a metal-tipped stylus in various progressively smaller hole sizes without touching the sides of the steadiness tester.  Most subjects began to be emotionally affected when the smoke density reached 0.1 [1/m] while most researchers began to show emotional fluctuations only when the smoke density reached 0.35 – 0.55 [1/m].  Subject’s representing the general public were more affected by fear of what was going to happen next than their physiological ability to withstand smoke.  They were not well informed about the geometry of the test room and smoke in the pre-test briefing.  A smoke density of 0.15 [1/m] at which most of the subjects analyzed began to feel uneasy, could be determined as the maximum smoke density for safe evacuation of a building to which the public have access.  In contrast, researchers who had some knowledge of the smoke from the pretest briefing and were well informed of the geometry of the test room, began to be emotionally affected when the smoke density exceeded 0.5 [1/m].  These facts indicate that subjects who are unfamiliar with the inside of a building should have a visibility of 13 meters for escape while subjects who are familiar with the inside of a building and their escape route only need a visibility of 4 meters.  The findings of this experiment are summarized in the table below:
+
+
+~ TableFigure { #table-sample; caption: "Visibility Criteria Based on Familiarity"; .wide }
+
+|                         | Smoke density    |             | 
+|Degree of familiarity    | (extinction      |             | 
+|with inside the building |  coefficient)    | Visibility  |        
+|:-----------------------:|:----------------:|:-----------:|
+| Unfamiliar              |   0.15 1/m       |   13m       |
+| Familiar                |   0.5  1/m       |     4m      |
+|-------------------------|------------------|-------------|
+~
+
+While familiarity of a building plays a large part towards determining appropriate tenability criteria, many other factors must be considered.  Visibility is also dependent on the geometry of the space being analyzed, specifically whether the space is a small or large enclosure.  Two studies, one in the United States of America and one in the United Kingdom, report occupant behavior in terms of distance traveled through smoke of different densities (expressed as visibility distance) and a number of occupants turning back or seeking refuge .  Both of the studies showed remarkably similar results.  The studies indicated it was possible to set tenability limits for smoke density appropriate to particular fire scenarios, in relation to the physiological effects on the ability of occupants to see sufficiently well to escape efficiently, and possible psychological effects on their escape behavior.  However, the appropriate limits depend on the building.  For small spaces with short travel distances to exits, it may be possible to set less stringent tenability criteria if occupants are familiar with the building.  For large spaces, it may be necessary to set more stringent tenability limits, particularly if occupants are likely to be unfamiliar with the building and need to be able to see much farther in order to orient themselves to find exits.  Based on these studies, a visibility tenability criteria to consider for small enclosures is 5 meters while a visibility tenability criteria for large enclosures is 10 meters.  The reported effects of smoke on visibility and behavior are summarized in the table below:
+
+~ TableFigure { #table-sample; caption: "Visibility Criteria Based on Enclosure Size"; .wide }
+
+
+|Enclosure Size                                 |      Visibility                   |        
+|:---------------------------------------------:|:---------------------------------:|
+| Small enclosures and short travel distances   |   OD/m 0.2 (visibility 5 m)       |
+| Large enclosures and long travel distances    |   OD/m 0.08 (visibility 10 m)     |
+|-------------------------|------------------------------|
+~
+
+Visibility is unquestionably a vital tenability criteria which must be examined for every tenability performance based analysis.  Determining the appropriate criteria for visibility can be influenced by a number of factors, including the geometry of the building (large vs small) and an occupant’s familiarity with the building. 
+
+## TEMPERATURE { #sec-intro }
+Exposure to heat can lead to incapacitation or death in fire victims in 3 ways: 
+
+1. Hyperthermia (Heat Stroke) 
+2. Body Surface Burns
+3. Respiratory Tract Burns
+
+Hyperthermia occurs during prolonged exposure (approximately 15 minutes or more) to heated environments too low to cause burns.  During these conditions, when air temperature is less than approximately 120 ºC for dry air or 80 ºC for saturated air, the main effect is a gradual increase in the body core temperature .  Above this temperature, onset of considerable pain followed by the production body burns are of a greater concern.  Thermal burns to the respiratory tract from inhalation of air containing less than 10 percent by volume of water vapor does not occur in the absence of burns to the skin or the face .  Therefore, tenability limits with regard to skin burns are normally lower than for burns to the respiratory tract.  However, thermal burns to the respiratory tract can occur upon inhalation of air above 60 ºC that is saturated with water vapor.
+
+NFPA 130 provides tenability criteria for temperature utilizing the following equation:
+
+~ Equation { #euler }
+t_{exp} = (1.125×〖10〗^7 ) T^{-3.4}
+~
+
+Where:
+
+~ Equation { #eq-alignment; caption:"Alignment example" }
+\begin{aligned} 
+ t_{exp} &= time~of~exposure~(min)~to~reach~a~FED~of~0.3 \\
+T &= temperature °C
+\end{aligned}
+~
+
+This equation gives the values in the following table:
+
+~ TableFigure { #table-sample; caption: "Visibility Criteria Based on Familiarity"; .wide }
+
+|                         | Smoke density    |             | 
+|Degree of familiarity    | (extinction      |             | 
+|with inside the building |  coefficient)    | Visibility  |        
+|:-----------------------:|:----------------:|:-----------:|
+| Unfamiliar              |   0.15 1/m       |   13m       |
+| Familiar                |   0.5  1/m       |     4m      |
+|-------------------------|------------------|-------------|
+~
+
+NFPA 130 provides quantified tenability criteria for a specific application.  For other applications, other sources such as the SFPE Handbook of Fire Protection Engineering has been widely used to determine applicable tenability criteria.  The SFPE Handbook provides data on the tolerance time (of occupants) for exposure to convected heat, which can be found in the figure below:
+
+~ Figure { caption:"Tolerance  Time for Exposure to Convected Heat"}
+![Tolerance Time for Exposure to Convected Heat]
+
+[Tolerance Time for Exposure to Convected Heat]: images/Tolerance-Time-for-Exposure-to-Convected-Heat.png "Tolerance Time for Exposure to Convected Heat" { width:auto; max-width:90% }
+~
+
+##TOXICITY
+
+It is known that most fire deaths are caused by toxic gases, oxygen deprivation and other effect by what is referred to as “smoke inhalation” . In many cases, the majority of fire deaths are not in the same compartment as a fire, but in remote areas where smoke has accumulated. Effects of smoke inhalation can be exacerbated because of impaired visibility, as previously discussed. However, smoke toxicity is the most lethal effect of a fire. 
+
+Combustion toxicity is discussed at length in The SFPE Handbook Chapter 62 and 63. The combustion process can produce many different effluents. These include carbon dioxide (CO2), carbon monoxide (CO), hydrogen cyanide (HCN), hydrogen chloride (HCl), nitrogen dioxide (NO2) and organics. All fires are likely to include CO2 and CO but the types of effluents present are impacted by the materials involved in a fire. For example, effluents of a fire involving nitrogen containing items, such as synthetic plastics, fire retardant materials and wool, would produce HCN. Furthermore, the yields of effluents vary based on the conditions of the fire. Fires that occur in under ventilated or oxygen deprived conditions, tend to produce greater amounts of CO and HCN than fires in well ventilated conditions .
+
+The impacts fire effluents have on occupants is as diverse as the range of gases produced. The gases that have been most researched for their impact on occupants are CO and HCN. Exposure to either gas can cause incapacitation and death. Decreased amounts of oxygen can also have negative impacts to occupants. When the oxygen concentration falls below 15%, effects of hypoxia start to occur. Notable effects of hypoxia include increased ventilation and reduced physical capability .  Also, low amounts of oxygen combined with high amounts of carbon dioxide can have an asphyxiate effect. 
+
+The effect that asphyxiate gases and lung irritants has on an individual can be simplified using Haber’s rule for dose accumulation. The concept of the rule is that effects are based on the dose accumulated, which is the product of the gas concentration and time. The concept of dose accumulation holds true for many gases, but is not true for CO and HCN at high concentrations. For CO and HCN, high concentrations for a short period of time have a more significant impact than the same dose accumulated over a longer time. Exposure to other sensory irritant gases is not time dependent and impacts occupants immediately. 
+
+Fractional effective dose (FED) is used to address exposure to effluents in which, the received dose of a gas is divided by the dose causing the effects.  For example, the concentration of gas present at any time during a fire can be expressed as a fraction of the concentration required to incapacitate an occupant.  This incapacitating threshold value must be determined based on the type of occupant present.
+
+NFPA 130 provides tenability criteria for Carbon Monoxide levels for a range of threshold values.  The allowable CO concentration (ppm) for different time intervals is summarized in the table below: 
+
+~ TableFigure { #table-sample; caption: "Various Tenability Criteria for Exposure to Carbon Monoxide"; .wide }
+|                | Tenability Limit          |||
+|                |---------|---------|---------|
+|     Time       |         |         |         | 
+|     (min)      |  AGEL2  |   0.3   |   0.5   | 
+|:---------------|:-------:|:-------:|:-------:|
+|4               | -       | 1706    | 2844    |
+| 6              | -       | 1138    | 1896    |         
+| 10             | 420     | 683     | 1138    |    
+| 15             |-        | 455     | 758     |   
+| 30             |150      | 228     | 379     |   
+| 60             |83       | 114     | 190     | 
+| 240            |33       | 28      | 47      | 
+|----------------|---------|---------|---------|
+~
+
+A value for the FED threshold limit of 0.5 is typical of healthy adult populations, 0.3 is typical in order to provide for escape by the more sensitive populations, and the AEGL 2 limits are intended to protect the general populations, including susceptible individuals, from irreversible or other serious long-lasting health effects. 
+
+NFPA 130 provides quantified tenability criteria for a specific application in regards to Carbon Monoxide Exposure.  However, when evaluating different applications tenability criteria must be derived from other sources.  The SFPE Handbook provides data on toxicity which can be utilized to extrapolate tenability criteria.
+
+As previously mentioned, the FED can be calculated by determining the concentration of gas present at any time during a fire as a fraction of the concentration required to incapacitate an occupant.  The SFPE Handbook provides a comparison of the relationship between time to incapacitation and concentration for HCN and CO exposure.  This comparison can be seen in the figure below:  
+
+
+~ Figure { caption:"Time to Loss of Concisness for Exposure to CO and HCN"}
+![Time to Loss of Conciseness for Exposure to CO and HCN]
+
+[Time to Loss of Conciseness for Exposure to CO and HCN]: images/Time-to-Loss-of-Conciseness-for-Exposure-to-CO-and-HCN.png "Time to Loss of Conciseness for Exposure to CO and HCN" { width:auto; max-width:90% }
+~
+
+Some standards such as NFPA 130 set quantified tenability criteria for specific occupancies.  Other standards such as NFPA 92, are working on determining quantified tenability criteria for typical occupancies such as atriums.  Without set tenability criteria outlined by Standards or Codes, tenability criteria must be determined by using resources such as The SFPE Handbook.  Efforts towards standardizing tenability criteria will create consistent and conservative levels of safety for occupants in fire conditions.  However, standardized tenability criteria can only be used for the environment to which they are applicable.  Atypical environments, specifically I-3 occupancies and amusement parks, require specific tenability criteria which are unique.
+
+#PRISONS
+
+The 2009 IBC was the first time that any of the national model building codes (IBC, NFPA 101 or NFPA 5000) required specific prison spaces to be provided with a tenable environment for exiting an area with a fire (IBC Section 408.9). Many of these prison spaces have low ceilings, which are not conducive to a design approach that is primarily intended to be used in large volume spaces where smoke concentrations are much more dilute and are more readily managed. 
+
+The low ceilings can also create conditions that are beyond the limitations of NFPA 92 algebraic equations . As such, a CFD tenability analysis is typically performed to analyze the space. Prison spaces are unique compared to atriums and other large spaces in fire characteristics, building characteristics and occupant characteristics. Fires in prisons are unique to other spaces because the possible fuel load is much more controlled by prison operations compared to a public space. The building characteristics are different because cell blocks in prisons are typically significantly smaller than atriums, which could be multiple stories tall. Lastly, the occupants are noticeably different. The inmates and guards are extremely familiar with the spaces they occupy. The people in these spaces practice fire drills and other emergencies on a regular basis . This is in contrast to atriums, where it is possible for most of the occupants to not be familiar with the space.  Also public spaces typically do not have the same level of staff to assist in an emergency compared to a prison. This is necessitated by the fact that a portion of the population (the prisoners) are located in a locked enclosure that requires staff assistance to evacuate.  Based on these evacuation times, the exposure time to temperature and toxicity becomes refined enough to determine specific tenability criteria.
+
+Prison occupancies are primarily inhabited by 2 groups of people, inmates and guards.  These occupancies are unique because in the event of a fire the prisoners are unable to freely egress. This is in contrast to the other occupants (guards), who will not immediately be egressing, instead they will be trying to organize the inmates for egress. In an event of an emergency requiring evacuation of the building, guards have a set evacuation plan for the inmates, which is rehearsed regularly.  Guards and inmates are extremely familiar with their surroundings and the spaces are generally small enclosures with short travel distances.  Also, inmates are typically egressed from one area of the prison to another, allowing for very short travel distances.  
+
+These building and occupant characteristics are different than those of large public spaces and would lead to lower visibility limits than would be applicable atriums or similar large public spaces. A critical visibility distance of 4 to 5 meters could be applicable for small prison spaces. 
+
+The procedures that must be undertaken to facilitate an evacuation of inmates has the potential to significantly increase egress times, which is important for exposure to elevated temperatures because as exposure time increases, the temperature that can cause untenable conditions decreases. Also, changes to the 2015 International Building Code changed the duration which smoke control systems must be designed for. As of the 2015 International Building Code, smoke control systems must be designed for 1.5 times the egress time or 20 minutes, whichever is greater, versus prior editions, which required smoke control systems be designed for 1.5 times the egress time or 20 minutes, whichever is less. 
+
+An FED approach can be used to determine temperature criteria. As stated earlier, NFPA 130 uses a simplified version of an FED the equation was created assuming that:
+
+1.	Evacuees are lightly clothed
+2.	FED reduced by 25 percent to allow for uncertainty
+3.	Exposure temperature is constant 
+4.	FED does not exceed 0.3 
+5.	Zero radiant heat flux
+
+The first four of these assumptions are also applicable to occupants in prisons. The fifth assumption, that there is a zero radiant heat flux, should be reviewed in more depth. This is because radiant heat flux is a function of the size of the fire and the proximity of a fire. The radiant heat flux can be estimated using the following equation:
+
+~ Equation { #euler }
+q"_r = Q_r/(R^2 4π)
+~
+
+Where:
+
+~ Equation { #eq-alignment; caption:"Alignment example" }
+\begin{aligned} 
+q"_r &=intensity~of~thermal~radiation (kW/m^2)  \\
+Q_r &=raddiant~HRR of the fire~(kW)=0.3~x~HRR~of~fire \\
+R &=radial~distance~from~a~fire (m)
+\end{aligned}
+~
+
+Occupants can be exposed to a radiant heat flux of 2.5 kW/m2 for a prolonged duration before experiencing burns and 2.5 kW/m2 is a typical tenability limit for radiant heat flux. As is shown in the equation, the amount of thermal radiation is decreased and the distance from a fire is increased. Occupants in atriums and other large spaces have the ability for free movement and can move away from a fire. For this reason, it is reasonable to assume that they would be exposed to a radiant heat flux less than 2.5 kW/m2. However, occupants in prisons do not have the ability for free egress and consideration for a radiant heat flux should be reviewed.
+
+The types and quantities of fire effluents is broad and can vary based on the combustible materials as well as conditions around the fire. However, it can be nearly impossible to account for all different scenarios in a fire modeling analysis. As such, assumptions or limitations must be created. 
+
+Assumptions are typically made for the materials in a fire. A fire could have plastics and cellulose materials, both creating respective effluents. However, if some of the materials are in significantly smaller quantities than others, then the smoke would have the characteristics similar to those of the majority of combustible items. The most commonly researched effluent is carbon monoxide. However, other gases such has HCN, are common asphyxiates. Prisons can contain fire retardant treated items that contain nitrogen and could produce HCN in a fire. As such, care should be given if a fire includes such items. 
+
+Increased amounts of CO2 can cause hyperventilation, which increases uptake of asphyxiate gases. The increase can be calculated using the equation below. 
+
+~ Equation { #euler }
+VCO_2=exp⁡ \left( \frac{YCO_2}{5} \right)〗
+~
+
+Where:
+
+~ Equation { #eq-alignment; caption:"Alignment example" }
+\begin{aligned} 
+VCO_2 &=frequency~factor~for~CO_2  \\
+YCO_2 &=average~volume~percent~of~CO_2 
+\end{aligned}
+~
+
+In a number of models of severe case fire scenarios, it was found that the average volume percent of CO2 did not exceed 0.7 when visibility criteria was met. An average volume percent of 0.7 CO2 creates a frequency factor of 1.15, which would slightly increase the uptake of asphyxiates. This value is small and likely higher than scenarios in large spaces, such as atriums, that have a greater tenability limit for visibility. 
+
+NFPA 130 considers only carbon monoxide as an asphyxiate gas. However, NFPA 130 includes a 35% uncertainty and uses a FED of 0.5 and 0.3 to account for health and at risk occupants, respectively. Only considering the asphyxiate effects of carbon dioxide and using an FED of 0.3 or 0.5 is an assumption which could be applied to prisons and amusement rides if other conservative measures, similar to NFPA 130, were utilized. 
+
+#ENCLOSED AMUSEMENT RIDES
+
+Another unique scenario where smoke control has been provided is in enclosed amusement rides. These spaces are classified as assembly or A-3 occupancies in accordance with NFPA 5000 and the IBC, respectively. Neither base building code requires such rides to be provided with smoke control. However, local jurisdictions in locations with amusement attractions and other stake holders require that smoke control systems are provided to limit the migration of products of combustion . These spaces also have different building, fire and occupant characteristics compared to atriums and other typical areas where smoke control is provided. The most prolific difference is that occupants are restrained during ride operation, something that is not addressed by the building code.  In the event of a fire, it is possible for occupants to become trapped or unable to egress freely until assisted by park staff.  
+
+Maintaining visibility is essential to providing an evacuee with the ability to wayfind and egress from a building.  As previously mentioned, determining the appropriate criteria for visibility can be influenced by a number of factors, including the geometry of the building and an occupant characteristics, such as familiarity with the building.  
+
+For amusement park rides, occupants are restrained during ride operation, and therefore at risk of being unable to egress freely from a malfunctioning ride in the event of a fire.  While smoke control systems are increasingly becoming required for these occupancies, standardized tenability criteria are not available.  NFPA 130, as well as the NFPA 92 standards in progress, would not be applicable to this scenario.  As such, tenability criteria for unique applications like amusement park rides must be further analyzed and studied. 
+
+Since a worst case scenario for occupants is being restrained in a ride during a fire, an occupant’s familiarity with the building, the geometry of the building (small vs large travel distances) and an occupant’s characteristics has little to do with evaluating applicable visibility tenability criteria.  Studies have not been performed to determine applicable visibility tenability requirements, but as a conservative approach minimum validated values can be considered.  While maintaining visibility for restrained occupants to wayfind and egress is not a concern, first responders will need visibility in order to free such occupants.  First responders, such as firefighters, often train extensively for rescue operations at theme parks and could be considered familiar with the inside of the building.  A tenability criteria of 4 to 5 meters could be applicable for occupants trapped in amusement park rides.  However, a reduced visibility tenability criteria should only be used for those occupants trapped or restrained on a ride.  Occupants who are able to egress freely must be subject to more stringent visibility tenability criteria.
+
+While visibility for trapped occupants has not been studied in depth, temperature and toxicity tenability criteria has.  By comparing visibility with both temperature and toxicity, it can be determined what temperature and toxicity values are when visibility tenability criteria is reached.  
+
+An FDS model was created of a scenario with a 5,000 kW fire located in large indoor ride.  The ride room is equipped with a smoke control system.  The occupants are intended to be trapped at the ceiling level, as such the tenability levels are measured at the ceiling.  It is important to maintain a level of visibility for first responders, who are looking for trapped occupants and not using illuminated signs to find an exit.  Therefore, a visibility proportionality constant of 3 was used.  
+
+Figure 3 shows a comparison of visibility and temperature for the duration of the fire.  The temperature remains around 30 ºC, even when visibility decreases to 4 meters. Similar to inmates in prisons, occupants in amusement parks can become restrained in malfunctioning amusement rides and consideration for a maximum radiant heat flux of 2.5 kW/m2 should be reviewed.
+
+~ Figure { caption:"Visibility and Temperature in an Enclosed Ride"}
+![Visibility versus Temperature 2]
+
+[Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90% }
+~
+Figure 4 shows a comparison of visibility and the CO Concentration.  The CO Concentration remains below 70 ppm, even when visibility decreases to 4 meters.
+
+~ Figure { caption:"Visibility and CO Concentration in an Enclosed Ride"}
+![Visibility versus CO]
+
+[Visibility versus CO]: images/Visibility-versus-CO.png "Visibility versus CO" { width:auto; max-width:90% }
+~
+
+The FDS analysis shows a condition in which occupants are trapped for 45 minutes and subjected to visibility levels of 4 meters.  However, CO concentration and temperature levels are maintained below tenability limits at an exposure time of 45 minutes.  This FDS analysis showed that the tenability limits for visibility can be reduced to 4 to 5 minutes, while still keeping toxicity and temperature levels below the more stringent values for extended exposure times.  While this analysis showed tenability criteria was met, an individual analysis must be performed for specific scenarios.
+
+#CONCLUSTION
+
+Prisons and amusement parks, specifically enclosed rides, are very different from one another, but they share some common traits which influence applicable tenability criteria.  Both prison occupancies and amusement parks present conditions in which occupants could be trapped for prolonged periods of time.  As such, temperature and toxicity tenability criteria could be more stringent than that of an atrium.  The temperature tenability criteria should be based on exposure time to prevent hyperthermia.
+
+As performance based design is utilized more frequently for smoke control systems, quantifiable tenability criteria is becoming more abundant.  NFPA 130 already sets specific guidelines for Fixed Guidway Transit and Passenger Rail Systems while NFPA 92 is in the process of standardizing tenability criteria for typical spaces such as atriums.  The standardization of these tenability criterion is a big step towards consistently creating adequately designed smoke control systems that provide a minimum level of safety.  However, as the standardizing of tenability criteria for typical spaces increases, these may not be applicable or may be over-conservative for the aforementioned atypical spaces.
+
+
+
+
+You are encouraged to use the [Madoko.net Editor][editor] while using
+the [Madoko Reference Manual][reference-manual] to edit/commit your
+documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
+More information about this method of contribution will be covered below.
+
+Text styling, links, sub- and super-script, footnotes and other topics
+are covered in section [Syntax: Inline
+elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--inline-elements)
+of the manual.
+
+Headings, Figures and Tables, Lists, Code Blocks, Mathematics, etc. are
+covered in section [Syntax: Block
+elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--block-elements)
+of the manual.
+
+The target length for submitted and invited papers is about eight pages.
+This length includes all figures and tables. However, because the
+Proceedings will not be printed on paper, there is no maximum limit on
+the number of pages. You are free to exceed the target length of eight
+pages.
+
+Please watch this short YouTube Video for a tutorial on how to use the system as intended.
+
+# MAIN HEADINGS LIKE THIS STYLE
+Main Headings are all upper case letters and underlined. In Madoko, a
+Single '#' symbol at the start of the line, followed by a space and then
+the heading text.
+
+## Subheadings Like This Style
+Subheadings within sections follow the same format as section titles, but
+with upper and lower case. In Madoko, a Double '#' symbol at the start of
+the line, followed by a space and then the heading text.
+
+### Subsubheadings like this style
+Subsubheadings have no underline, and only the first letter capitalized.
+In Madoko, a Triple '#' symbol at the start of the line, followed by a
+space and then the heading text.
+
+# FIGURES, TABLES, AND EQUATIONS
+Original drawings and photos may be included in your paper as figures.
+Diagrams may be in color.
+
+Figures and tables should immediately follow first mention of them in the
+text and can be placed in one column, or in the case of wider figures,
+can cover two columns (but only at the top or bottom of the page). The
+caption should start with either the word “figure” spelled out or
+abbreviated, followed by the figure number (i.e., Figure 1 or Fig. 1).
+The figure caption should be followed by a single line of space before
+the text resumes.
+
+## Figures
+Figure [#fig-smokeview] in Section [#sec-intro] shows an image from an
+older version of Smokeview. Note that you can drag&drop images into the
+editor pane to include them in the document, and similarly with bibtex
+files, latex style files, etc.
+
+~ Figure { #fig-smokeview; caption:"Illustration of placement of figure and caption. (use the `.wide` class for wide figure)."}
+![Ex1_0]
+~
+[Ex1_0]: images/Ex1_0.png "Ex1_0" { width:auto; max-width:90% }
+
+~ Note
+Images larger than about 1Mb in size will be rejected by the Madoko.net server.
+~
+
+## Tables
+Table [#table-sample] shows an example full width table figure.
+
+~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
+|                | $c(t)$                               ||||
+|                |---------|---------|---------|-----------|
+|                | (A0)    | (A1)    | (A2)    | (A3)      |
+|                | ohne    | Log     | Polynom | Stückweise|
+|                |         |         |         | konstant  |
+|:---------------|:-------:|:-------:|:-------:|:---------:|
+| Log likelihood | -6.798  | -6.733  | -6.715  | -6.686    |
+| Pseudeo $R^{2}$| 0,048   | 0,057   | 0,059   | -         |
+| AIC            | 13.615  | 13.489  | 13.456  | 13.483    |
+| BIC            | 13.711  | 13.594  | 13.580  | 14.009    |
+| N              | 105.484 | 105.484 | 105.484 | 105.484   |
+|----------------|---------|---------|---------|-----------|
+~
+
+## Equations
+Standard terminology should be used in equations. If possible, keep
+equations to one column. All equations should be numbered. A definition
+of $e$ is shown in Equation [#euler]:
+
+~ Equation { #euler }
+e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
+~
+
+Or to use &logolatex; to align equations.
+
+~ Equation { #eq-alignment; caption:"Alignment example" }
+\begin{aligned} 
+ f(x)  &= a x^2+b x +c   &   g(x)  &= d x^3 \\
+ f'(x) &= 2 a x +b       &   g'(x) &= 3 d x^2
+\end{aligned}
+~
+
+# FUN CONTENT EXAMPLES
+Let's program some JavaScript:
+``` javascript
+function hello() {
+  return "hello world!"
+}
+```
+Here is a footnote[^fn] reference.
+[^fn]: This is the content of the example footnote. 
+    You can continue a footnote by indenting content.
+    And notice the back link.
+
+# BIBLIOGRAPHY AND REFERENCES
+When references are used in the text, tie them to an alphabetical (by
+principal author) list of references to be included as the last item of
+your paper. The format commonly used in scientific literature follows:
+
+Smith, J. S., Bloggs, R. T. and Jones, E. R. (1974), "Magnetic Anomalies
+in Geothermal Systems", Journal of Fluid Mechanics, 254, 73-79
+
+Leslie Lamport, LaTeX: A Document Preparation System (2nd Edition), Addison-Wesley, 1994
+
+When using Madoko, edit the content of the .bib file in the document
+folder, and use the reference methods as shown in the [Bibliography and
+Citations
+Section](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-bib)
+of the Madoko Manual.
+
+A bibliography file consists of all your references in the BibTeX format, for example:
+
+    @BOOK{ Knuth:TeX,  
+        author   = "Knuth, Donald E.",  
+        title    = "The {\TeX} book",  
+        publisher= "Addison-Wesley",  
+        year     = 1984  
+    }
+
+
+Entries in the bibliography files can now be referenced using semi-colon
+separated references, for example:
+``` Markdown 
+Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX; @Klote
+```
+Results in: Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX; @Klote].
+
+Please include full title of journal articles or other references,
+journal, volume, date, pages. There is a nice [table on
+Wikipedia](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX)
+that shows all of the different data fields for the BibTeX file.
+
+# PAPER DEADLINE
+Your paper, in final form, must be received by October 15th, 2016. The
+best way to edit and submit is to use the Madoko [editor] to edit your
+document in the 'authoring' branch of the GitHub [femtc2016] repository.
+If you choose to use some other document format and editing tool, PDF
+format is preferred, but ODT, DOC, or DOCX formats are acceptable. Please
+e-mail the files to [conference@thunderheadeng.com][emaillink].
+
+# PRESENTATION
+Each author must present his/her paper within the allotted time, allowing
+for some minutes of open discussion. The session chair is responsible for
+keeping authors within their time limit, in order to ensure that each
+author has enough time for their presentation. When preparing your
+presentation slides, make sure they are clear and large enough so that
+your audience can read them from as far as 80 feet away.
+
+All presentations will be made using the computer projector available in
+the conference room. We will not have overhead projectors or slide
+projectors in the meeting rooms.
+
+Your presentation, in final form, must be received by **October 15th,
+2016**. A final commit of the files to the GitHub repository is
+preferred. Once the final draft is complete and reviewed it will be
+merged into the master branch of the repository. If you decide to use
+some other tool for creating your presentation, PDF format is preferred,
+but ODP, PPT, or PPTX formats are acceptable. Please e-mail the files
+to [conference@thunderheadeng.com][emaillink].
+
+All presentations will be pre-loaded on the computers that are present.
+Please note that this approach will make it necessary for us to receive
+the presentation files prior to the conference. If you have a different
+software requirement, it should still be possible for you to attach your
+own computer to the projector if you bring it with you. This is not
+optimal, as it takes time and slows down the session.
+
+# CONFERENCE CONTENT DISTRIBUTION
+The papers and presentation materials will be made available online
+during and after the conference. In addition, the organizers are planning
+to may broadcast live presentations online during the event. The papers,
+presentations, and videos will be archived and made available on the web
+after the conference.
+
+Author(s) retain all rights to submitted material. The organizers are
+granted a non-exclusive right to copy and redistribute conference
+material submitted by the author(s).
+
+[BIB]
+
+&pagebreak;
+
+# An appendix { @h1:"A" }
+"All the same, I should like it all plain and clear," said he
+obstinately, putting on his business manner (usually reserved for people
+who tried to borrow money off him), and doing his best to appear wise and
+prudent and professional and live up to Gandalf's recommendation. "Also I
+should like to know about risks, out-of-pocket expenses, time required
+and remuneration, and so forth" -- by which he meant: "What am I going to
+get out of it? and am I going to come back alive?"
+
+# Conclusion
+If you have any questions concerning your paper and/or the Conference,
+please email us at [conference@thunderheadeng.com][emaillink].
