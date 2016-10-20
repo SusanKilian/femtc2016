@@ -26,11 +26,13 @@ TOC Depth     : 1
 [Don't worry, this section is not long...]{ color:red }
 
 * This work is based on the hot smoke testing system, Izar
-* It was developed by the swiss company Basler & Hofmann AG
-* A premixed combustion is the source of energy for the test
+* It was developed by the swiss company Basler & Hofmann AG 
+* A premixed combustion is the source of energy for the test 
 * The results presented in this work are part of its development process
   - The entire work was presented as master thesis within the IMFSE program in 2013
 {.fragmented}
+
+
 
 ~ Begin Vertical
 
@@ -439,6 +441,4 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 ![150416-3880]
 
 [150416-3880]: images/150416-3880.jpg "150416-3880" { width:auto; max-width:100% }
-
-
 ~
