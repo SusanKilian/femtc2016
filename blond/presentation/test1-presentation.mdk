@@ -49,7 +49,7 @@ TOC Depth     : 1
 [150416-3871]: images/150416-3871.jpg "150416-3871" { width:auto; max-width:90% }
 
 
-## ... a gas supply system
+## ... a gas supply system...
 
 ~ Center
 ![130815-6609]
@@ -68,7 +68,7 @@ TOC Depth     : 1
 
 ## It sounds interesting, but what makes Izar something special?
 
-Well Izar is definitely a cool machine...
+[Well Izar is definitely a cool machine...]{color :red }
 
 * It doesn't generate soot
  - Nobody likes to clean...
@@ -82,7 +82,7 @@ Well Izar is definitely a cool machine...
 
 ## How is that you decided to combine FDS with Izar?
 
-It is not the best idea to do a smoke test an burn the room... I needed to figure out how to avoid it { color:red }
+[It is not the best idea to do a smoke test an burn the room... I needed to figure out how to avoid it]{color:red }
 {.fragment }
 
 [Yes, that is definitely a good reason]{ color:green }
@@ -278,7 +278,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 {.fragmented}
 ~
 
-[Grid sensor full scale]: images/Grid-sensor-full-scale.jpg "Grid sensor full scale" { width:auto; max-width:90% }
+[Grid sensor full scale]: images/Grid-sensor-full-scale.jpg "Grid sensor full scale" { width:auto; max-width:60% }
 
 
 [Therefore, some [action][down] out of the office]{ color :red }
@@ -355,7 +355,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
   
 ~
 
-[Manegg measure sensor ]: images/Manegg-measure-sensor-.jpg "Manegg measure sensor " { width:auto; max-width:90% }
+[Manegg measure sensor ]: images/Manegg-measure-sensor-.jpg "Manegg measure sensor " { width:auto; max-width:70% }
 
 # We modeled the full scale test with our FDS model...
 
@@ -372,7 +372,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 ![alle sensor Manegg]
 
-[alle sensor Manegg]: images/alle-sensor-Manegg.jpg "alle sensor Manegg" { width:auto; max-width:100% }
+[alle sensor Manegg]: images/alle-sensor-Manegg.jpg "alle sensor Manegg" { width:auto; max-width:70% }
 
 [I know that you cannot see too much here...]{color :red }
 ~
@@ -414,10 +414,9 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 # Future work
 * Different configurations
-  - Validate FDS in tunnels
   - Different fuels
   - Different geometries
-  
+* Validate the model in tunnels
 * Development of plume equations
 
 # The future of the FDS Simulations?
