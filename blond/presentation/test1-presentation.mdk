@@ -1,6 +1,6 @@
 [INCLUDE=presentation]
 
-Title : Simulation of premixed flames with FDS. 
+Title : Simulation of premixed flames with FDS 
 Subtitle: Application to the hot smoke testing system Izar
 
 Author        : Blond Hernández, Juan José
@@ -10,7 +10,7 @@ Reveal Theme  : sky
 Beamer Theme  : singapore
 
 Author        : Rios, Oriol 
-Affiliation   : Department of Chemical Engineering, Centre for Technological Risk Studies. Universitat Politècnica de Catalunya Barcelona, Spain 
+Affiliation   : Centre for Technological Risk Studies (CERTEC). Universitat Politècnica de Catalunya Barcelona, Spain 
 Email         : oriol.rios@upc.edu 
 
 TOC Depth     : 1
@@ -92,7 +92,7 @@ It is not the best idea to do a smoke test an burn the room... I needed to figur
 * The room limiting factor must be considered (sprinklers, lights, protected ceilings)
 
 ## Calculate the plume temperatures originated by Izar
-* The temperature is the one of the main factors to design the smoke tests
+* The temperature is one of the main factors to design the smoke tests
 * Realistic test = high temperatures
 * Necessary temperature data from Izar for different powers and room heights 
 
@@ -100,7 +100,7 @@ It is not the best idea to do a smoke test an burn the room... I needed to figur
  - The combustion efficiency is the most important factor for premixed flames
  - What happens afterward? --> Not enough studied
 
-## A new framework is developed with FDS to calculate the temperature flames.
+## A new framework is developed with FDS to calculate the plume temperature
 
 # And how did you create the FDS model for Izar?
 
@@ -295,7 +295,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 ~begin Vertical
 
-## And it turns, that the results match at 1.200 kW...
+## And it turns out that the results match at 1.200 kW...
 
 ~ Center
 
@@ -396,9 +396,9 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 ~ SubFigure {  }
 
 ![130815-6597]
-[temperature_Manegg]: images/temperature_Manegg.JPG "temperature_Manegg" { width:auto; max-width:90% }
+[temperature_Manegg]: images/temperature_Manegg.JPG "temperature_Manegg" { width:auto; max-width:50% }
 
-[130815-6597]: images/130815-6597.jpg "130815-6597" { width:auto; max-width:70%, heigth:auto }
+[130815-6597]: images/130815-6597.jpg "130815-6597" {max-width:50%, heigth:auto }
 
 ~
 
@@ -409,8 +409,8 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
   - Combustion products
   - Flame temperature
   - Combustion region geometry
-* FDS resolves properly the turbulence around the plume
-  - The central temperatures confirm this point
+* FDS resolves properly the turbulence and entrainment around the plume
+  - The centerline plume temperatures confirm this point
 
 # Future work
 * Different configurations
