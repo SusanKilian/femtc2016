@@ -446,6 +446,8 @@ separated references, for example:
 ``` Markdown 
 Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX; @Klote
 ```
+
+
 Please include full title of journal articles or other references,
 journal, volume, date, pages. There is a nice [table on
 Wikipedia](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX)
