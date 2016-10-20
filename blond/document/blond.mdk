@@ -5,13 +5,15 @@ Author        : Blond Hernández, Juan José
 Affiliation   : Basler & Hofmann AG, Zürich, Switzerland
 Email         : juan.blond@baslerhofmann.ch
 
-Author     : Rios, Oriol
+Author        : Rios, Oriol
 Affiliation   : Centre for Technological Risk Studies (CERTEC). Universitat Politècnica de Catalunya, UPC – BarcelonaTech, Barcelona, Spain
-
 Email         : oriol.rios@upc.edu
 
 Bibliography  : Biblio_Blond.bib
 Logo          : False
+
+Csl Style     : madoko-numeric-nosort
+
 Tex Header    :
   \def\refname{&name-references;}
 name-references : 
@@ -36,7 +38,7 @@ The use of premixed flames made of Izar a pure convective heat source capable of
 
 The system can release a total power of 1,20 MW, which considered as a pure convective heat source, is equivalent to a natural fire of 1,80 MW. This equivalence considers the standard ratio 2/3 of the total heat released as convective heat and 1/3 as radiation heat. This ratio could be adjusted for each fuel if needed.
 
-This paper summarizes the main results obtained during the development of the hot smoke testing system regarding its modeling in FDS. The entire work was submitted as master thesis [@BlondHernandez2013] within the International  Master of Science in Fire Safety Engineering program .
+This paper summarizes the main results obtained during the development of the hot smoke testing system regarding its modeling in FDS. The entire work was submitted as master thesis [@BlondHernandez2013] within the International  Master of Science in Fire Safety Engineering program.
 
 ## A brief description of the work context 
 
