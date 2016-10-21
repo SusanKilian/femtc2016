@@ -148,10 +148,10 @@ This equation gives the values in the following table {@SFPEHB61incollection}:
 
 NFPA 130 provides quantified tenability criteria for a specific application.  For other applications, other sources such as the SFPE Handbook of Fire Protection Engineering has been widely used to determine applicable tenability criteria.  The SFPE Handbook provides data on the tolerance time (of occupants) for exposure to convected heat, which can be found in the figure below {@SFPEHB63incollection}:
 
-~ Figure { caption:"Tolerance  Time for Exposure to Convected Heat"}
-![Tolerance Time for Exposure to Convected Heat]
+~ Figure { caption:"Tolerance Time for Exposure to Convected Heat"}
+![Tolerance Time for Exposure to Convected Heat no heading]
 
-[Tolerance Time for Exposure to Convected Heat]: images/Tolerance-Time-for-Exposure-to-Convected-Heat.png "Tolerance Time for Exposure to Convected Heat" { width:auto; max-width:90% }
+[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90% }
 ~
 
 ##TOXICITY
@@ -272,7 +272,7 @@ While visibility for trapped occupants has not been studied in depth, temperatur
 
 An FDS model was created of a scenario with a 5,000 kW fire located in large indoor ride.  The ride room is equipped with a smoke control system.  The occupants have the possibility to be trapped at the ceiling level, as such the tenability levels are measured at the ceiling.  It is important to maintain a level of visibility for first responders, who are looking for trapped occupants and not using illuminated signs to find an exit.  Therefore, a visibility proportionality constant of 3 was used.  
 
-Figure 3 shows a comparison of visibility and temperature for the duration of the fire.  The temperature remains around 30 ºC, even when visibility decreases to 4 meters. Similar to inmates in prisons, occupants in amusement parks can become restrained in malfunctioning amusement rides and consideration for a maximum radiant heat flux of 2.5 kW/m^2^ should be reviewed.
+Figure 3 shows a comparison of visibility and temperature for the duration of the fire.  The temperature remains around 30 ºC, even when visibility decreases to 4 meters. Similar to inmates in prisons, occupants in amusement parks can become restrained in malfunctioning amusement rides and consideration for a maximum radiant heat flux of 2.5 kW/m^2 should be reviewed.
 
 ~ Figure { caption:"Visibility and Temperature in an Enclosed Ride"}
 ![Visibility versus Temperature 2]
