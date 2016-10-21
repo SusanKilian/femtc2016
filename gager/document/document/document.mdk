@@ -47,14 +47,12 @@ Fire protection engineers often need to estimate the location of the interface b
 FDS can be used to review tenability in a building environment with smoke present.  While NFPA 92, Standard for Smoke Control Systems, recognizes use of smoke control systems designed on the principle of maintaining tenability, this standard provides no guidance with regard to the tenability thresholds to be used.  Standards such as NFPA 130, Standard for Fixed Guideway Transit and Passenger Rail Systems, provides guidance on tenability limits.  An effort to continue to standardize tenability criteria in typical environments, such as atriums, has been made in recent years by organizations such as the Society of Fire Protection Engineers (SFPE).  In addition, the technical committee responsible for NFPA 92 has been working on standardized tenability criteria for typical environments.  However, tenability criteria in atypical environments has been quantified with far less frequency. 
 
 This paper will review tenability criteria in the atypical environments of prisons and enclosed amusement rides. Changes to life safety, which are code and best practice driven, have caused prisons and enclosed amusement rides to be protected a smoke management systems.  Prisons and enclosed amusement rides have unique building, occupant and fire characteristics which affect the tenability criteria. This paper presents an approach for selecting tenability criteria for such areas. 
- 
 
 # TENABILITY GUIDELINES
 
 Providing an environment for occupants that is safe from the dangerous effects of a fire, and provides a tenable means of egress during a fire, has historically been a goal of building codes and standards. Research into smoke control began as early as 1881, with the oldest successful use of a smoke control system dating back to 1911 {@HSC15} .  Recently, as the complexity of buildings increase and codes and standards change, there has been a push for more performance based smoke control system designs through the use of CFD programs.  FDS is a CFD program which was developed specifically for fire applications and is validated by decades of research in CFD modeling of fire and smoke transport conducted at the National Institute of Standards and Technology (NIST) {@NFPA92} .   
 
 An objective of life safety design is to provide a tenable environment for occupants not intimate with the fire to egress through while providing building occupants with an acceptable level of safety from fire {@NFPA5000}.  For example, should an event occur in which occupants are exposed to fire effluent and/or heat, the objective of the fire safety engineering strategy is to ensure that such exposure does not significantly impede or prevent the safe escape (if required) of essentially all occupants, without them experiencing or developing serious health effects {@ISO}.  Tenability limits typically include visibility and temperature as well as the toxic effects of other gaseous effluents. 
-
 
 ## VISIBILITY
 
@@ -98,7 +96,6 @@ The SFPE Handbook provides more visibility criteria data, som of which is derive
 While familiarity of a building plays a large part towards determining appropriate tenability criteria, many other factors must be considered.  Visibility is also dependent on the geometry of the space being analyzed, specifically whether the space is a small or large enclosure.  Two studies, one in the United States of America and one in the United Kingdom, report occupant behavior in terms of distance traveled through smoke of different densities (expressed as visibility distance) and a number of occupants turning back or seeking refuge {@SFPEHB61incollection} .  Both of the studies showed remarkably similar results.  The studies indicated it was possible to set tenability limits for smoke density appropriate to particular fire scenarios, in relation to the physiological effects on the ability of occupants to see sufficiently well to escape efficiently, and possible psychological effects on their escape behavior.  However, the appropriate limits depend on the building.  Based on these studies, a visibility tenability criteria to consider for small enclosures is 5 meters while a visibility tenability criteria for large enclosures is 10 meters.  The reported effects of smoke on visibility and behavior are summarized in the table below {@SFPEHB63incollection}:
 
 ~ TableFigure { #table-sample; caption: "Visibility Criteria Based on Enclosure Size"; .wide }
-
 
 |Enclosure Size                                 |      Visibility                   |        
 |:---------------------------------------------:|:---------------------------------:|
@@ -188,7 +185,6 @@ A value for the FED threshold limit of 0.5 is typical of healthy adult populatio
 
 As previously mentioned, the FED can be calculated by determining the concentration of gas present at any time during a fire as a fraction of the concentration required to incapacitate an occupant.  The SFPE Handbook provides a comparison of the relationship between time to incapacitation and concentration for HCN and CO exposure.  This comparison can be seen in the figure below {@SFPEHB63incollection}:  
 
-
 ~ Figure { caption:"Time to Loss of Concisness for Exposure to CO and HCN"}
 ![Time to Loss of Conciseness for Exposure to CO and HCN]
 
@@ -272,7 +268,7 @@ While visibility for trapped occupants has not been studied in depth, temperatur
 
 An FDS model was created of a scenario with a 5,000 kW fire located in large indoor ride.  The ride room is equipped with a smoke control system.  The occupants have the possibility to be trapped at the ceiling level, as such the tenability levels are measured at the ceiling.  It is important to maintain a level of visibility for first responders, who are looking for trapped occupants and not using illuminated signs to find an exit.  Therefore, a visibility proportionality constant of 3 was used.  
 
-Figure 3 shows a comparison of visibility and temperature for the duration of the fire.  The temperature remains around 30 ºC, even when visibility decreases to 4 meters. Similar to inmates in prisons, occupants in amusement parks can become restrained in malfunctioning amusement rides and consideration for a maximum radiant heat flux of 2.5 kW/m^2 should be reviewed.
+Figure 3 shows a comparison of visibility and temperature for the duration of the fire.  The temperature remains around 30 ºC, even when visibility decreases to 4 meters. Similar to inmates in prisons, occupants in amusement parks can become restrained in malfunctioning amusement rides and consideration for a maximum radiant heat flux of 2.5 kW/m^2^ should be reviewed.
 
 ~ Figure { caption:"Visibility and Temperature in an Enclosed Ride"}
 ![Visibility versus Temperature 2]
