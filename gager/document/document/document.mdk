@@ -95,7 +95,7 @@ The SFPE Handbook provides more visibility criteria data, some of which is deriv
 
 While familiarity of a building plays a large part towards determining appropriate tenability criteria, many other factors must be considered.  Visibility is also dependent on the geometry of the space being analyzed, specifically whether the space is a small or large enclosure.  Two studies, one in the United States of America and one in the United Kingdom, report occupant behavior in terms of distance traveled through smoke of different densities (expressed as visibility distance) and a number of occupants turning back or seeking refuge {@SFPEHB61incollection} .  Both of the studies showed remarkably similar results.  The studies indicated it was possible to set tenability limits for smoke density appropriate to particular fire scenarios, in relation to the physiological effects on the ability of occupants to see sufficiently well to escape efficiently, and possible psychological effects on their escape behavior.  However, the appropriate limits depend on the building.  Based on these studies, a visibility tenability criteria to consider for small enclosures is 5 meters while a visibility tenability criteria for large enclosures is 10 meters.  The reported effects of smoke on visibility and behavior are summarized in the table below {@SFPEHB63incollection}:
 
-~ TableFigure { #table-sample; caption: "Visibility Criteria Based on Enclosure Size"; .wide }
+~ TableFigure { #table-sample; caption: "Visibility Criteria Based on Enclosure Size"; .wide; page-align=here }
 
 |Enclosure Size                                 |      Visibility                   |        
 |:---------------------------------------------:|:---------------------------------:|
@@ -132,7 +132,7 @@ T &= temperature~°C
 
 This equation gives the values in the following table {@NFPA130}:
 
-~ TableFigure { #table-sample; caption: "Maximum Expsoure Time Before Encapatation"; .wide }
+~ TableFigure { #table-sample; caption: "Maximum Expsoure Time Before Encapatation"; .wide; page-align=here }
 
 |                 | Without       |
 | Exposure        |Incapacitation |
@@ -155,7 +155,7 @@ NFPA 130 provides quantified tenability criteria for a specific application.  Fo
 ~ Figure { caption:"Tolerance Time for Exposure to Convected Heat"}
 ![Tolerance Time for Exposure to Convected Heat no heading]
 
-[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90% }
+[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90%; page-align=here }
 ~
 
 ##TOXICITY
@@ -172,7 +172,7 @@ Fractional effective dose (FED) is used to address exposure to effluents in whic
 
 NFPA 130 provides tenability criteria for Carbon Monoxide levels for a range of threshold values.  The allowable CO concentration (ppm) for different time intervals is summarized in the table below {@NFPA130}: 
 
-~ TableFigure { #table-sample; caption: "Various Tenability Criteria for Exposure to Carbon Monoxide"; .wide }
+~ TableFigure { #table-sample; caption: "Various Tenability Criteria for Exposure to Carbon Monoxide"; .wide; page-align=here }
 |                | Tenability Limit          |||
 |                |---------|---------|---------|
 |     Time       |         |         |         | 
@@ -195,7 +195,7 @@ As previously mentioned, the FED can be calculated by determining the concentrat
 ~ Figure { caption:"Time to Loss of Concisness for Exposure to CO and HCN"}
 ![Time to Loss of Conciseness for Exposure to CO and HCN]
 
-[Time to Loss of Conciseness for Exposure to CO and HCN]: images/Time-to-Loss-of-Conciseness-for-Exposure-to-CO-and-HCN.png "Time to Loss of Conciseness for Exposure to CO and HCN" { width:auto; max-width:50% }
+[Time to Loss of Conciseness for Exposure to CO and HCN]: images/Time-to-Loss-of-Conciseness-for-Exposure-to-CO-and-HCN.png "Time to Loss of Conciseness for Exposure to CO and HCN" { width:auto; max-width:50%; page-align=here }
 ~
 
 Some standards such as NFPA 130 set quantified tenability criteria for specific occupancies.  Other standards such as NFPA 92, are working on determining quantified tenability criteria for typical occupancies such as atriums.  Without set tenability criteria outlined by Standards or Codes, tenability criteria must be determined by using other resources.  Efforts towards standardizing tenability criteria will create consistent and conservative levels of safety for occupants in fire conditions.  However, standardized tenability criteria can only be used for the environment to which they are applicable.  Atypical environments, specifically prisons and amusement parks, require specific tenability criteria which are unique.
@@ -280,14 +280,14 @@ Figure 3 shows a comparison of visibility and temperature for the duration of th
 ~ Figure { caption:"Visibility and Temperature in an Enclosed Ride"}
 ![Visibility versus Temperature 2]
 
-[Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90% }
+[Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90%; page-align=here }
 ~
 Figure 4 shows a comparison of visibility and the CO Concentration.  The CO Concentration remains below 70 ppm, even when visibility decreases to 4 meters.
 
 ~ Figure { caption:"Visibility and CO Concentration in an Enclosed Ride"}
 ![Visibility versus CO]
 
-[Visibility versus CO]: images/Visibility-versus-CO.png "Visibility versus CO" { width:auto; max-width:90% }
+[Visibility versus CO]: images/Visibility-versus-CO.png "Visibility versus CO" { width:auto; max-width:90%; page-align=here }
 ~
 
 The FDS analysis shows a condition in which occupants are trapped for 45 minutes and subjected to visibility levels of 4 meters.  However, CO concentration and temperature levels are maintained below tenability limits at an exposure time of 45 minutes.  This FDS analysis showed that the tenability limits for visibility can be reduced to 4 to 5 meters, while still keeping toxicity and temperature levels below the more stringent values for extended exposure times.  While this analysis showed tenability criteria was met, an individual analysis must be performed for specific scenarios.
