@@ -126,7 +126,7 @@ Where:
 ~ Equation { #eq-alignment; caption:"Alignment example" }
 \begin{aligned} 
  t_{exp} &= time~of~exposure~(min)~to~reach~a~FED~of~0.3 \\
-T &= temperature~°C
+T &= temperature~(°C)
 \end{aligned}
 ~
 
@@ -155,7 +155,7 @@ NFPA 130 provides quantified tenability criteria for a specific application.  Fo
 ~ Figure { caption:"Tolerance Time for Exposure to Convected Heat"}
 ![Tolerance Time for Exposure to Convected Heat no heading]
 
-[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90%; page-align=here }
+[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90%;  page-align=forcehere}
 ~
 
 ##TOXICITY
@@ -195,7 +195,7 @@ As previously mentioned, the FED can be calculated by determining the concentrat
 ~ Figure { caption:"Time to Loss of Concisness for Exposure to CO and HCN"}
 ![Time to Loss of Conciseness for Exposure to CO and HCN]
 
-[Time to Loss of Conciseness for Exposure to CO and HCN]: images/Time-to-Loss-of-Conciseness-for-Exposure-to-CO-and-HCN.png "Time to Loss of Conciseness for Exposure to CO and HCN" { width:auto; max-width:50%; page-align=here }
+[Time to Loss of Conciseness for Exposure to CO and HCN]: images/Time-to-Loss-of-Conciseness-for-Exposure-to-CO-and-HCN.png "Time to Loss of Conciseness for Exposure to CO and HCN" { width:auto; max-width:50% }
 ~
 
 Some standards such as NFPA 130 set quantified tenability criteria for specific occupancies.  Other standards such as NFPA 92, are working on determining quantified tenability criteria for typical occupancies such as atriums.  Without set tenability criteria outlined by Standards or Codes, tenability criteria must be determined by using other resources.  Efforts towards standardizing tenability criteria will create consistent and conservative levels of safety for occupants in fire conditions.  However, standardized tenability criteria can only be used for the environment to which they are applicable.  Atypical environments, specifically prisons and amusement parks, require specific tenability criteria which are unique.
@@ -280,14 +280,14 @@ Figure 3 shows a comparison of visibility and temperature for the duration of th
 ~ Figure { caption:"Visibility and Temperature in an Enclosed Ride"}
 ![Visibility versus Temperature 2]
 
-[Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90%; page-align=here }
+[Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90% }
 ~
 Figure 4 shows a comparison of visibility and the CO Concentration.  The CO Concentration remains below 70 ppm, even when visibility decreases to 4 meters.
 
 ~ Figure { caption:"Visibility and CO Concentration in an Enclosed Ride"}
 ![Visibility versus CO]
 
-[Visibility versus CO]: images/Visibility-versus-CO.png "Visibility versus CO" { width:auto; max-width:90%; page-align=here }
+[Visibility versus CO]: images/Visibility-versus-CO.png "Visibility versus CO" { width:auto; max-width:90% }
 ~
 
 The FDS analysis shows a condition in which occupants are trapped for 45 minutes and subjected to visibility levels of 4 meters.  However, CO concentration and temperature levels are maintained below tenability limits at an exposure time of 45 minutes.  This FDS analysis showed that the tenability limits for visibility can be reduced to 4 to 5 meters, while still keeping toxicity and temperature levels below the more stringent values for extended exposure times.  While this analysis showed tenability criteria was met, an individual analysis must be performed for specific scenarios.
