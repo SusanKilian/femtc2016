@@ -130,17 +130,24 @@ T &= temperature~°C
 \end{aligned}
 ~
 
-This equation gives the values in the following table {@SFPEHB61incollection}:
+This equation gives the values in the following table {@NFPA130}:
 
-~ TableFigure { #table-sample; caption: "Visibility Criteria Based on Familiarity"; .wide }
+~ TableFigure { #table-sample; caption: "Maximum Expsoure Time Before Encapatation"; .wide }
 
-|                         | Smoke density    |             | 
-|Degree of familiarity    | (extinction      |             | 
-|with inside the building |  coefficient)    | Visibility  |        
-|:-----------------------:|:----------------:|:-----------:|
-| Unfamiliar              |   0.15 1/m       |   13m       |
-| Familiar                |   0.5  1/m       |     4m      |
-|-------------------------|------------------|-------------|
+|                 | Without       |
+| Exposure        |Incapacitation |
+| Temperature (C) | (min.)        |
+|:---------------:|:-------------:|
+| 80              | 3.8           |
+| 75              | 4.7           |
+| 70              | 6.0           |
+| 65              | 7.7           |
+| 60              | 10.1          |
+| 55              | 13.6          |
+| 50              | 18.8          |
+| 45              | 26.9          |
+| 40              | 40.2          |
+|-----------------|---------------|
 ~
 
 NFPA 130 provides quantified tenability criteria for a specific application.  For other applications, other sources such as the SFPE Handbook of Fire Protection Engineering has been widely used to determine applicable tenability criteria.  The SFPE Handbook provides data on the tolerance time (of occupants) for exposure to convected heat, which can be found in the figure below {@SFPEHB63incollection}:
