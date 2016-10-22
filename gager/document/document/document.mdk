@@ -155,7 +155,7 @@ NFPA 130 provides quantified tenability criteria for a specific application.  Fo
 ~ Figure { caption:"Tolerance Time for Exposure to Convected Heat"}
 ![Tolerance Time for Exposure to Convected Heat no heading]
 
-[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90%;  page-align=}
+[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90%;  page-align:inplace}
 ~
 
 ##TOXICITY
