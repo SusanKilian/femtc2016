@@ -152,10 +152,10 @@ This equation gives the values in the following table {@NFPA130}:
 
 NFPA 130 provides quantified tenability criteria for a specific application.  For other applications, other sources such as the SFPE Handbook of Fire Protection Engineering has been widely used to determine applicable tenability criteria.  The SFPE Handbook provides data on the tolerance time (of occupants) for exposure to convected heat, which can be found in the figure below {@SFPEHB63incollection}:
 
-~ Figure { caption:"Tolerance Time for Exposure to Convected Heat"}
+~ Figure {page-align:here; caption:"Tolerance Time for Exposure to Convected Heat" }
 ![Tolerance Time for Exposure to Convected Heat no heading]
 
-[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { page-align: here; width:auto; max-width:90%; }
+[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" {width:auto; max-width:90%; }
 ~
 
 ##TOXICITY
@@ -192,7 +192,7 @@ A value for the FED threshold limit of 0.5 is typical of healthy adult populatio
 
 As previously mentioned, the FED can be calculated by determining the concentration of gas present at any time during a fire as a fraction of the concentration required to incapacitate an occupant.  The SFPE Handbook provides a comparison of the relationship between time to incapacitation and concentration for HCN and CO exposure.  This comparison can be seen in the figure below {@SFPEHB63incollection}:  
 
-~ Figure { caption:"Time to Loss of Concisness for Exposure to CO and HCN"}
+~ Figure { page-align:here; caption:"Time to Loss of Concisness for Exposure to CO and HCN"}
 ![Time to Loss of Conciseness for Exposure to CO and HCN]
 
 [Time to Loss of Conciseness for Exposure to CO and HCN]: images/Time-to-Loss-of-Conciseness-for-Exposure-to-CO-and-HCN.png "Time to Loss of Conciseness for Exposure to CO and HCN" { width:auto; max-width:50% }
@@ -277,14 +277,14 @@ An FDS model was created of a scenario with a 5,000 kW fire located in large ind
 
 Figure 3 shows a comparison of visibility and temperature for the duration of the fire.  The temperature remains around 30 ºC, even when visibility decreases to 4 meters. Similar to inmates in prisons, occupants in amusement parks can become restrained in malfunctioning amusement rides and consideration for a maximum radiant heat flux of 2.5 kW/m^2^ should be reviewed.
 
-~ Figure { caption:"Visibility and Temperature in an Enclosed Ride"}
+~ Figure { page-align:here; caption:"Visibility and Temperature in an Enclosed Ride"}
 ![Visibility versus Temperature 2]
 
 [Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90% }
 ~
 Figure 4 shows a comparison of visibility and the CO Concentration.  The CO Concentration remains below 70 ppm, even when visibility decreases to 4 meters.
 
-~ Figure { caption:"Visibility and CO Concentration in an Enclosed Ride"}
+~ Figure { page-align:here; caption:"Visibility and CO Concentration in an Enclosed Ride"}
 ![Visibility versus CO]
 
 [Visibility versus CO]: images/Visibility-versus-CO.png "Visibility versus CO" { width:auto; max-width:90% }
