@@ -139,7 +139,7 @@ Metro, including 135 participants). In addition, suggestions and
 recommendations on the application and design use of that data is also given.
 
 Kučera and Bradáčová [@Kucer2014] undertook FDS modeling of a
-bi-directional, 700m long rail tunnel fire. Fires were modelled on
+bi-directional, 700m long rail tunnel fire. Fires were modeled on
 5% grade and with an applied velocity of 1m/s with a maximum fire size of
 12MW. Evacuation simulations were undertaken with FDS+Evac [@FDS-EVAC],
 with 640 people, a maximum exit distance of approximately 660m and 1.5m
@@ -151,7 +151,7 @@ strategies for passenger train fires in tunnels. This work concluded that
 if passengers are on both sides of the fire that longitudinal ventilation
 should not be used as people could be exposed to untenable conditions
 within a few minutes. The authors put particular emphasis that the
-conclusions are only applicable to the scenarios modelled. The fire
+conclusions are only applicable to the scenarios modeled. The fire
 curves used were intended to represent high-speed rail, and included a
 linear growth from 0 to 45MW in 4 minutes and a linear growth from 0 to
 10MW in 20 minutes. The larger fire was intended to account for the
@@ -161,7 +161,7 @@ impact that applied ventilation could have on the fire size.
 
 ## Limitations
 The intent of this paper is to develop a comparative set of results for
-different evacuation configurations in a metro rail tunnel. However, the
+different evacuation configurations in a metro tunnel. However, the
 work in this paper is no substitute for a project specific fire safety
 analysis. It should be understood that to simplify the number of
 simulations and to provide direct comparison of key parameters, some
@@ -198,7 +198,7 @@ separate CFD models and 144 evacuation scenarios. The parameters selected
 are intended to focus on the interaction of the walkway width and elevation,
 exit spacing, tunnel area and grade, and in-tunnel velocity conditions on
 evacuation outcomes. Figure [#fig-Scenario] shows a schematic of the
-scenarios modelled.
+scenarios modeled.
 
 ~ TableFigure { #ScenarioTable; caption: "Example Parameters For Scenario Selection"; .booktable; page-align:here}
 |:------------------------|:-------:|:-------------------:|:--------------------:|:--------------------------:|
@@ -221,7 +221,7 @@ scenarios modelled.
 | $\diamond$ Agents in the fire car, other agents have a pre-movement time of +120s                       |||||
 ~
 
-~ Figure { #fig-Scenario; caption:"Scenario Modelled."; page-align:here}
+~ Figure { #fig-Scenario; caption:"Scenario Modeled."; page-align:here}
 ![Scenario]                      
 ~
 
@@ -272,9 +272,9 @@ direction of evacuation towards the furthest exit.
 
 ## CFD Modeling
 The CFD modeling was undertaken with FDS version 6.1.2 [@FDSUserGuide].
-The fire was modelled with the spread-rate function used to approximate
+The fire was modeled with the spread-rate function used to approximate
 the medium t-squared growth rate. Once the fire reaches peak heat release
-rate it is kept at this value with no decay modelled. A soot yield of
+rate it is kept at this value with no decay modeled. A soot yield of
 0.1kg/kg and a CO yield of 0.1kg/kg were used, along with a heat of
 combustion of 20MJ/kg.
 
@@ -285,10 +285,10 @@ $D^*/dx = 9.1$ and $Q^*=0.6$ in the vicinity of the fire. A grid
 convergence study was not undertaken, however, grid sizes are considered adequate
 based on previous experience.
 
-The tunnel was modelled as being 900m in length. This allows for the
+The tunnel was modeled as being 900m in length. This allows for the
 maximum exit spacing of 500m. At least 100m of tunnel was allowed beyond
 each exit to keep the areas of interest away from the boundary
-conditions. The two tunnel cross-sections were modelled as per
+conditions. The two tunnel cross-sections were modeled as per
 Figure [#fig-geometry]. The width varies to allow for different
 cross-sectional areas. The tunnel height was kept constant to eliminate
 another variable for consideration.
@@ -301,11 +301,11 @@ the reduced tunnel area. For the 28m^2^ tunnel a 800mm walkway on
 the opposite side to the evacuation walkway could be accommodated, but
 this was not used in the evacuation analysis. 
 
-The train was modelled with a cross-sectional area of approximately
+The train was modeled with a cross-sectional area of approximately
 11m^2^ with a length of approximately 140m. The train is a three car
-consist, although each car is modelled as being a separate unit without
+consist, although each car is modeled as being a separate unit without
 inter-car doors (i.e. smoke cannot spread inside the train between cars).
-The train doors were modelled to be closed until the start of evacuation.
+The train doors were modeled to be closed until the start of evacuation.
 Windows stayed in-tact for the duration of the simulation. The fire was
 not oxygen limited.
 
@@ -444,9 +444,9 @@ ends of the train.
 For the still air conditions on 0% grade there is a somewhat symmetrical
 spread of smoke which is biased one way due to the asymmetry in the fire
 location relative to the train length. When the still air conditions are
-modelled on 4% grade the smoke buoyancy induces a significant airflow in
+modeled on 4% grade the smoke buoyancy induces a significant airflow in
 the tunnel. For a real system the magnitude of this airflow could vary
-depending on many factors, but for the scenario modelled, the high grade
+depending on many factors, but for the scenario modeled, the high grade
 results in a situation similar to a tunnel with forced ventilation.
 
 When a pressure boundary is applied the smoke is biased towards the
@@ -460,7 +460,7 @@ boundary and to illustrate a velocity condition less than critical
 velocity. With a 4% grade, the flow is biased toward the direction of
 egress for the reasons noted above.
 
-When a critical velocity is modelled the outcome is as expected. The
+When a critical velocity is modeled the outcome is as expected. The
 tunnel ventilation is started at 300 seconds and ramps to capacity in 60
 seconds. The calculated critical velocity for each area and grade varied,
 but was generally estimated [@NFPA130-2014] to be 1-1.3m/s upstream of
@@ -675,7 +675,7 @@ Simplifications were used to focus on particular configurations of exit
 spacing, walkway width and elevation, and in-tunnel velocity conditions.
 The interaction with tunnel grade and area were also considered.
 
-The tunnel fires were modelled with FDS and the output used to visualize
+The tunnel fires were modeled with FDS and the output used to visualize
 visibility for different configurations. Visibility provides an insight
 into the smoke movement which is a broad indication of tenability
 conditions. These results showed the influence of tunnel grade on smoke
