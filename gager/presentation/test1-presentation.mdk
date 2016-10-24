@@ -77,14 +77,6 @@ Beamer Theme  : singapore
 [Books]: images/Books.png "Books" { width:400px}
 
 
-#Tenability Guides
-~ { #fig-myfigure; float:right; width:50%; margin-left:1em}
-Here is a right figure.
-~
-
-
-
-
 #VISIBILITY
 
 * While temperature and toxic gases are the final causes of death, many evacuees are trapped in an early stage of fire by relatively thin smoke.
