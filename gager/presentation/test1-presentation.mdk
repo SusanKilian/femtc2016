@@ -33,6 +33,7 @@ Beamer Theme  : singapore
 ![FDS Picture]
 
 [FDS Picture]: images/FDS-Picture.png "FDS Picture" { width:auto; max-width:90% }
+
 ~
 ~ End Columns
 
@@ -41,17 +42,53 @@ Beamer Theme  : singapore
 #HISTORY OF SMOKE CONTROL
 
 ~ Begin Columns
-~ Column { width:50% }
-
-![History of SC 2]
-~
-~ Column
+~ Column { width:40% }
+[Research into smoke control began after the 1881 Ring Theater Fire in Vienna]{ text-align=center }
 
 ![History of SC 1]
+
+[History of SC 1]: images/History-of-SC-1.jpg "History of SC 1" { width:auto; max-width:90% }
+~
+~ Column
+[First successful use of smoke control in 1911 during the Empire Palace Theater Fire in Edinburg]{ text-align=center }
+
+![History of SC 2]
+
+[History of SC 2]: images/History-of-SC-2.png "History of SC 2" { width:auto; max-width:90% }
+
 ~
 ~ End Columns
 
+#TENABILITY GUIDES
+
+~ Begin Columns
+~ Column { width:50% }
+![NFPA 130]
+
+[NFPA 130]: images/NFPA-130.png "NFPA 130" { width:300px; max-width:70% }
+![SFPE HANDBOOK]
+
+[SFPE HANDBOOK]: images/SFPE-HANDBOOK.png "SFPE HANDBOOK" { width:300px; max-width:70% }
+~
+~ Column
+![NFPA 92]
+
+[NFPA 92]: images/NFPA-92.png "NFPA 92" { width:300px; max-width:90% }
+
+
+![HBSC]
+
+[HBSC]: images/HBSC.png "HBSC" { width:300px}
+
+~
+~End Columns
+
+
+
+
 ## Reveal.js
+
+
 
 `reveal.js` is a framework for easily creating beautiful presentations using
 HTML. You'll need a browser with support for CSS 3D transforms to see it in
