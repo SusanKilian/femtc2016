@@ -1,6 +1,5 @@
 [INCLUDE=presentation]
 Title         : TENABILITY CRITERIA IN UNIQUE SITUTATIONS AND ATYPICAL BUILDINGS
-Sub Title     : In both HTML and PDF
 Author        : Arthur Gager PE, Gary Dominguez
 Affiliation   : Jensen Hughes
 Email         : agager@jensenhughes.com, gdominguez@jensenhughes.com
@@ -58,30 +57,33 @@ Beamer Theme  : singapore
 
 ~
 ~ End Columns
-
-#TENABILITY GUIDES
-
-~ Begin Columns
-~ Column { width:50% }
-![NFPA 130]
-
-[NFPA 130]: images/NFPA-130.png "NFPA 130" { width:200px}
-![SFPE HANDBOOK]
-
-[SFPE HANDBOOK]: images/SFPE-HANDBOOK.png "SFPE HANDBOOK" { width:200px}
-~
-~ Column
-![NFPA 92]
-
-[NFPA 92]: images/NFPA-92.png "NFPA 92" { width:250px}
+#Tenability Guides
 
 
-![HBSC]
 
-[HBSC]: images/HBSC.png "HBSC" { width:250px}
+~  { #fig-myfigure; caption:"My caption."; float:right; width:50%; margin-left:1em}
+
+* Visibility
+* Temperature
+* Toxicity
+ 
+
 
 ~
-~End Columns
+
+
+![Books]
+
+[Books]: images/Books.png "Books" { width:400px}
+
+
+#Tenability Guides
+~ { #fig-myfigure; float:right; width:50%; margin-left:1em}
+Here is a right figure.
+~
+
+
+
 
 #VISIBILITY
 
@@ -200,20 +202,29 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 
 #TENABILITY
 
-![15V60]
-
-[15V60]: images/15V60.png "15V60" { width:300PX; max-width:90% }
-
-![15C60]
-
-[15C60]: images/15C60.png "15C60" { width:300; max-width:90% }
+~ Center
 
 
-![15T60]
 
-[15T60]: images/15T60.png "15T60" { width:auto; max-width:90% }
+![1560s]
+
+[1560s]: images/1560s.png "1560s" { width:auto; max-width:90% }
 
 
+~
+#TENABILITY
+~ FlushRight
+![15V200]
+
+[15V200]: images/15V200.png "15V200" { width:auto; max-width:90% }
+~
+![15C200]
+
+[15C200]: images/15C200.png "15C200" { width:auto; max-width:90% }
+
+![15T200]
+
+[15T200]: images/15T200.png "15T200" { width:auto; max-width:90% }
 
 
 ## Reveal.js
