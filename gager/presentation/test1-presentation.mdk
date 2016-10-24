@@ -185,20 +185,40 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 
 ![FED2]
 
-[FED2]: images/FED2.png "FED2" { width:800px }
+[FED2]: images/FED2.png "FED2" { width:600px }
 
 ![FED3]
 
 [FED3]: images/FED3.png "FED3" { width:300px }
 
 ~
+# PRISONS
+* Different characteristics compared to atrium and other buildings were smoke control is typically provided 
+* Smaller with shorter travel distances to exits
+* Controlled items and limited combustibles
+* Occupants who are familiar with the space but free egress is not the first goal or possible for most
+
+#TENABILITY
+
+![15V60]
+
+[15V60]: images/15V60.png "15V60" { width:300PX; max-width:90% }
+
+![15C60]
+
+[15C60]: images/15C60.png "15C60" { width:300; max-width:90% }
+
+
+![15T60]
+
+[15T60]: images/15T60.png "15T60" { width:auto; max-width:90% }
 
 
 
 
-
-# Visib
 ## Reveal.js
+
+
 
 
 
