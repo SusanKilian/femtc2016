@@ -1,9 +1,9 @@
 [INCLUDE=presentation]
-Title         : Demo presentation in Madoko
+Title         : TENABILITY CRITERIA IN UNIQUE SITUTATIONS AND ATYPICAL BUILDINGS
 Sub Title     : In both HTML and PDF
-Author        : Daan Leijen
-Affiliation   : Microsoft Research
-Email         : daan@microsoft.com
+Author        : Arthur Gager PE, Gary Dominguez
+Affiliation   : Jensen Hughes
+Email         : agager@jensenhughes.com, gdominguez@jensenhughes.com
 Reveal Theme  : sky
 Beamer Theme  : singapore
 
@@ -13,7 +13,46 @@ Beamer Theme  : singapore
 
 [TOC]
 
-# Madoko Presentation
+# INTRODUCTION
+
+* Active Smoke Control Systems
+  - Smoke Containment 
+  - Smoke Management
+* Analysis of Smoke Management Systems
+  - Algebraic Equations 
+  - CFD
+
+~ Begin Columns
+~ Column { width:50% }
+
+![SFPE 29.1]
+
+[SFPE 29.1]: images/SFPE-29.1.png "SFPE 29.1" { width:auto; max-width:90%; page-align=right}
+~
+~ Column
+![FDS Picture]
+
+[FDS Picture]: images/FDS-Picture.png "FDS Picture" { width:auto; max-width:90% }
+~
+~ End Columns
+
+
+
+
+#HISTORY OF SMOKE CONTROL
+
+~ Begin Columns
+~ Column { width:50% }
+
+![History of SC 2]
+~
+~ Column
+
+![History of SC 1]
+~
+
+~ End Columns
+
 
 Using [Madoko] it is easy to create beautiful presentations.
 
@@ -26,7 +65,6 @@ Using [Madoko] it is easy to create beautiful presentations.
   Click to see the source of this presentation.
 
 
-[madoko]: http://madoko.codeplex.com
 
 ## Reveal.js
 
