@@ -38,7 +38,6 @@ Beamer Theme  : singapore
 
 
 
-
 #HISTORY OF SMOKE CONTROL
 
 ~ Begin Columns
@@ -50,21 +49,7 @@ Beamer Theme  : singapore
 
 ![History of SC 1]
 ~
-
 ~ End Columns
-
-
-Using [Madoko] it is easy to create beautiful presentations.
-
-* [Html][slide]:
-  Uses the `Reveal.js` library by [Hakim El Hattab](http://hakim.se).\
-  This slide demo in Madoko is an adaption of his online demo.
-* [Pdf][slide-pdf]:
-  Uses the `Beamer` package for LaTeX
-* [Source][slide-mdk]:
-  Click to see the source of this presentation.
-
-
 
 ## Reveal.js
 
