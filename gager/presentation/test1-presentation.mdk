@@ -85,31 +85,29 @@ Beamer Theme  : singapore
 
 #VISIBILITY
 
-[Indirect but significant factor contributing to death in fires
-]{ text-align=center }
-
-![Smoke]
-
-[Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:90% }
-
-##VISIBILITY - FAMILIARITY WITH BUILDING
-
-
 * While temperature and toxic gases are the final causes of death, many evacuees are trapped in an early stage of fire by relatively thin smoke.
 
 * The presence of smoke in an occupied enclosure obscures illumination from windows and other light sources, so that escaping occupants can find themselves in dimly lit conditions.
 
 * The threshold of fire smoke density and visibility limits for safe evacuation has been examined by multiple institutions.
 
+~Center
+![Smoke]
 
+[Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:90% }
+~
+##VISIBILITY 
+
+~Center
 ![Table 61.3]
 
-[Table 61.3]: images/Table-61.3.png "Table 61.3" { width:auto; max-width:90% }
+[Table 61.3]: images/Table-61.3.png "Table 61.3" { width:700px }
 
-##VISIBILITY - SIZE OF ENCLOSURE
 ![Table 63.5]
 
-[Table 63.5]: images/Table-63.5.png "Table 63.5" { width:auto; max-width:90% }
+[Table 63.5]: images/Table-63.5.png "Table 63.5" { width:800px; vertical-align:middle;}
+
+~
 
 ##VISIBILITY - CALCULATIONS
 ~ Columns
@@ -164,13 +162,36 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 ![Table B.2.1.1]
 
 [Table B.2.1.1]: images/Table-B.2.1.1.png "Table B.2.1.1" { width:auto; max-width:90% }
-
-
-
 ~~
 ~
 
+#TOXICITY
+* Death from smoke inhalation 
+* Products of combustion
+  - Impacted by type of fuel and conditions where combustion occurs
+* Wide range of effects on occupants
+  - Asphyxiants, sensory/ respiratory irritants, toxic
 
+![Smoke history]
+
+[Smoke history]: images/Smoke-history.png "Smoke history" { width:auto; max-width:90% }
+
+#FRACTIONAL EFFECTIVE DOSE (FED)
+
+~Center
+![FED1]
+
+[FED1]: images/FED1.png "FED1" { width:auto; max-width:90% }
+
+![FED2]
+
+[FED2]: images/FED2.png "FED2" { width:auto; max-width:90% }
+
+![FED3]
+
+[FED3]: images/FED3.png "FED3" { width:auto; max-width:90% }
+
+~
 
 
 
