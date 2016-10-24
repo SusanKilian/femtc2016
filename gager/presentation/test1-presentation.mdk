@@ -65,27 +65,118 @@ Beamer Theme  : singapore
 ~ Column { width:50% }
 ![NFPA 130]
 
-[NFPA 130]: images/NFPA-130.png "NFPA 130" { width:300px; max-width:70% }
+[NFPA 130]: images/NFPA-130.png "NFPA 130" { width:200px}
 ![SFPE HANDBOOK]
 
-[SFPE HANDBOOK]: images/SFPE-HANDBOOK.png "SFPE HANDBOOK" { width:300px; max-width:70% }
+[SFPE HANDBOOK]: images/SFPE-HANDBOOK.png "SFPE HANDBOOK" { width:200px}
 ~
 ~ Column
 ![NFPA 92]
 
-[NFPA 92]: images/NFPA-92.png "NFPA 92" { width:300px; max-width:90% }
+[NFPA 92]: images/NFPA-92.png "NFPA 92" { width:250px}
 
 
 ![HBSC]
 
-[HBSC]: images/HBSC.png "HBSC" { width:300px}
+[HBSC]: images/HBSC.png "HBSC" { width:250px}
 
 ~
 ~End Columns
 
+#VISIBILITY
+
+[Indirect but significant factor contributing to death in fires
+]{ text-align=center }
+
+![Smoke]
+
+[Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:90% }
+
+##VISIBILITY - FAMILIARITY WITH BUILDING
+
+
+* While temperature and toxic gases are the final causes of death, many evacuees are trapped in an early stage of fire by relatively thin smoke.
+
+* The presence of smoke in an occupied enclosure obscures illumination from windows and other light sources, so that escaping occupants can find themselves in dimly lit conditions.
+
+* The threshold of fire smoke density and visibility limits for safe evacuation has been examined by multiple institutions.
+
+
+![Table 61.3]
+
+[Table 61.3]: images/Table-61.3.png "Table 61.3" { width:auto; max-width:90% }
+
+##VISIBILITY - SIZE OF ENCLOSURE
+![Table 63.5]
+
+[Table 63.5]: images/Table-63.5.png "Table 63.5" { width:auto; max-width:90% }
+
+##VISIBILITY - CALCULATIONS
+~ Columns
+~~ Column { width:"50%" }
+[Reflecting Sign Proportionality Constant = 3
+]{ text-align=center }
+![Exit Sign - Reflecting]
+
+[Exit Sign - Reflecting]: images/Exit-Sign---Reflecting.png "Exit Sign - Reflecting" { width:auto; max-width:90% }
+
+~~
+~~ Column
+[Illuminating Sign Proportionality Constant = 8
+]{ text-align=center }
+![Exit Sign - Illuminated]
+
+[Exit Sign - Illuminated]: images/Exit-Sign---Illuminated.png "Exit Sign - Illuminated" { width:auto; max-width:90% }
+
+~~
+~
+
+~ Equation { #euler }
+S = \frac{K}{e} 
+~
+
+Where:
+
+~ Equation { #eq-alignment}
+\begin{aligned} 
+ S &= visibility~(ft) \\
+K &= proportionality~constant\\
+e &= extinction~coefficient~(ft^{-1})
+\end{aligned}
+~
+
+#TEMPERATURE
+
+Exposure to heat can lead to incapacitation or death in fire victims in three ways :
+
+* Hyperthermia
+* Body Surface Burns
+* Respiratory Tract Burns 
+
+~ Columns
+~~ Column { width:"50%" }
+![Tolerance Time for Exposure to Convected Heat no heading]
+
+[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90% }
+
+~~
+~~ Column
+![Table B.2.1.1]
+
+[Table B.2.1.1]: images/Table-B.2.1.1.png "Table B.2.1.1" { width:auto; max-width:90% }
 
 
 
+~~
+~
+
+
+
+
+
+
+
+# Visib
 ## Reveal.js
 
 
