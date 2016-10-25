@@ -206,18 +206,23 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 
 ~
 #TENABILITY
-~ FlushRight
-![15V200]
+~center
 
-[15V200]: images/15V200.png "15V200" { width:auto; max-width:90% }
+![15200s]
+
+[15200s]: images/15200s.png "15200s" { width:auto; max-width:90% }
 ~
-![15C200]
+#TENABILITY
+~ Center
 
-[15C200]: images/15C200.png "15C200" { width:auto; max-width:90% }
 
-![15T200]
+![151200]
 
-[15T200]: images/15T200.png "15T200" { width:auto; max-width:90% }
+[151200]: images/151200.png "151200" { width:auto; max-width:90% }
+
+
+~
+
 
 
 ## Reveal.js
