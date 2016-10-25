@@ -277,11 +277,13 @@ An FDS model was created of a scenario with a 5,000 kW fire located in large ind
 
 Figure 3 shows a comparison of visibility and temperature for the duration of the fire.  The temperature remains around 30 ºC, even when visibility decreases to 4 meters. Similar to inmates in prisons, occupants in amusement parks can become restrained in malfunctioning amusement rides and consideration for a maximum radiant heat flux of 2.5 kW/m^2^ should be reviewed.
 
+
 ~ Figure {page-align:here; caption:"Visibility and Temperature in an Enclosed Ride"}
 ![Visibility versus Temperature 2]
 
 [Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90% }
 ~
+
 Figure 4 shows a comparison of visibility and the CO Concentration.  The CO Concentration remains below 70 ppm, even when visibility decreases to 4 meters.
 
 ~ Figure { page-align:here; caption:"Visibility and CO Concentration in an Enclosed Ride"}
