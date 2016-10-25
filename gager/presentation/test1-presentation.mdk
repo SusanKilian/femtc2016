@@ -77,19 +77,14 @@ Beamer Theme  : singapore
 
 
 
-#VISIBILITY {data-background-image:images/smoke.png }
-
+#VISIBILITY 
 * While temperature and toxic gases are the final causes of death, many evacuees are trapped in an early stage of fire by relatively thin smoke.
 
 * The presence of smoke in an occupied enclosure obscures illumination from windows and other light sources, so that escaping occupants can find themselves in dimly lit conditions.
 
 * The threshold of fire smoke density and visibility limits for safe evacuation has been examined by multiple institutions.
 
-~Center
-![Smoke]
 
-[Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:90% }
-~
 ##VISIBILITY 
 
 ~Center
@@ -166,9 +161,15 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 * Wide range of effects on occupants
   - Asphyxiants, sensory/ respiratory irritants, toxic
 
+
+~ Center
 ![Smoke history]
 
-[Smoke history]: images/Smoke-history.png "Smoke history" { width:auto; max-width:90% }
+[Smoke history]: images/Smoke-history.png "Smoke history" { width:400px; max-width:90% }
+~
+
+
+
 
 #FRACTIONAL EFFECTIVE DOSE (FED)
 
