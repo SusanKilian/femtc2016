@@ -16,7 +16,7 @@ Csl Style     : madoko-numeric-nosort
 
 Tex Header    :
   \def\refname{&name-references;}
-name-references : 
+name-references : REFERENCES
 
 [TITLE]
 
@@ -76,16 +76,15 @@ C_{3}H_{8}+5 O_{2}+5\cdot3.76N_{2}=3CO_{2}+4H_{2}O+5\cdot3.76N_{2}
 Once the chemical balance is available, the fuel/product ratio can be defined for each specie. This ratio allows calculating the amount of product (kg) produced for each mass unit of fuel.
 
 ~ Tablefigure {#Malecular-weight; caption:"Molecular weight, and mass ratio between propane and combustion products"}
-
-|----------|------------------|--------------------|----------------------|
+|----------|------------------|--------------------|------------|
 | Specie   | Molecular weight | Amount of products | Mass ratio |
-|          |               (g)   |        (g)           |                      |
-+:--------:+:----------------:+:------------------:+:--------------------:+
-| C~3~H~4~ | 40               | -                  |-                     |
-| CO~2~    | 44               | 132                |3.3                   |
-| H~2~O    | 18               |72                  |1.8                   |
-| N~2~     | 28               | 526.40             |13.16                 |
-|----------|------------------|--------------------|----------------------|
+|          | (g)              | (g)                |            |
++:--------:+:----------------:+:------------------:+:----------:+
+| C~3~H~4~ | 40               | -                  | -          |
+| CO~2~    | 44               | 132                | 3.3        |
+| H~2~O    | 18               | 72                 | 1.8        |
+| N~2~     | 28               | 526.40             | 13.16      |
+|----------|------------------|--------------------|------------|
 ~
 
 The propane heat of combustion is well known and can be set to 46 kJ/g [@Heskestad2016], it is straightforward to calculate the necessary kilograms of propane required to achieve a certain power.The chemical equation can be afterwards adjusted to determinate the kg of products produced. Using the mass ratio available in the Table [#malecular-weight], the amount of products generated can be calculated.
@@ -93,16 +92,15 @@ The propane heat of combustion is well known and can be set to 46 kJ/g [@Heskest
 For example, in order to generate a power of 500 kW, a mass flow rate of 10.78 g/s of propane are needed. Using the mass ratio available in the Table [#Malecular-weight], the generated amount of products is calculated. The values for this example are in the Table [#Molecular-weight]
 
 ~ Tablefigure {#Molecular-weight; caption:"Calculation example to determine the amount of product released from a 500 kW fire"}
-
 |----------|----------------|-----------|--------------------|
 | Specie   | Amount of fuel | Mass ratio| Amount of products |
-|          |       (g/s)          |           |               (g/s) |
-|          |           |           |                    |
+|          | (g/s)          |           | (g/s)              |
+|          |                |           |                    |
 +:--------:+:--------------:+:---------:+:------------------:+
 | C~3~H~4~ | 10.85          | -         |-                   |
-| CO~2~    | -              | 3.3       |       35.80         |
-| H~2~O    | -              | 1.8       |            19.53    |
-| N~2~     | -              | 13.16     |          142.78   |
+| CO~2~    | -              | 3.3       | 35.80              |
+| H~2~O    | -              | 1.8       | 19.53              |
+| N~2~     | -              | 13.16     | 142.78             |
 |----------|----------------|-----------|--------------------|
 ~
 
@@ -116,6 +114,7 @@ Another significant factor in the model is the initial temperature of the combus
 The definition of the initial temperature by means of the adiabatic temperatures guarantees that the initial energy represents the correct energy system and the subsequent energy balance in the model are based on proper initial values.
 
 ~ begin Figure {#plume-comparison; caption:"Comparison between two models with different powers. The different heigths of the hot region can be observed. These represent the flames, according to the power of the simulation "}
+  
 ~ begin SubFigureRow
 ~ SubFigure {caption:"100 kW"}
 ![Temperature 0_1 MW]
@@ -161,15 +160,15 @@ The validated FDS model for Izar eliminates also the uncertainties related to th
 ~ begin Figure  {#grid; caption:"The figure shows the measure grids use in FDS model and during the full scale tests"}
 ~begin SubFigureRow
 ~ SubFigure {caption:"FDS Model"}
-  ![FDS grid]
-[FDS grid]: images/FDS-grid.JPG "FDS grid" { width:auto; max-width:90% }
+![FDS grid]
 ~
 ~ SubFigure {caption:"Full scale test grid"}
-
 ![Grid sensor full scale]
 ~
 ~ End SubFigureRow
 ~ end Figure 
+
+[FDS grid]: images/FDS-grid.JPG "FDS grid" { width:auto; max-width:90% }
 
 [Grid sensor full scale]: images/Grid-sensor-full-scale.jpg "Grid sensor full scale" { width:auto; max-width:120% }
 
@@ -179,7 +178,6 @@ These measurements can be defined as local.
 The graphs in figure [#central] show the comparison between the recorded temperatures in the simulations and the ones recorded during the full scale test.
 
 ~ figure {#central; caption:"Temperature comparison between the measured temperatures during the real scale test (blue) and the measured temepratures in FDS (green). The indicated heigths are referred to the burning surface. Temperatures obtained with the system working at full power, 1.200 kW"}
-
 
 ![Temperatures plume_1200]
 ~ 
@@ -263,7 +261,4 @@ These temperature measurements can be used to calibrate and validate the FDS geo
 
 These kind of "a priori" validated simulations offer a greater grade of confidence and may reduce the safety factors taken in the design of the smoke management systems and thus, optimizing the solutions.
 
-
-
-## References   {-}
 [BIB]
