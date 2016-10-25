@@ -77,7 +77,7 @@ Beamer Theme  : singapore
 
 
 
-#VISIBILITY{ data-background-image:images/smoke.png }
+#VISIBILITY {data-background-image:images/smoke.png }
 
 * While temperature and toxic gases are the final causes of death, many evacuees are trapped in an early stage of fire by relatively thin smoke.
 
