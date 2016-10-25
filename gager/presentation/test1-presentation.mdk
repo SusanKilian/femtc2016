@@ -74,7 +74,8 @@ Beamer Theme  : singapore
 
 ![Books]
 
-[Books]: images/Books.png "Books" { width:400px}
+[Books]: images/Books.png "Books" { width:400px }
+
 
 
 #VISIBILITY
@@ -131,9 +132,9 @@ Where:
 
 ~ Equation { #eq-alignment}
 \begin{aligned} 
- S &= visibility~(ft) \\
+ S &= visibility~(m) \\
 K &= proportionality~constant\\
-e &= extinction~coefficient~(ft^{-1})
+e &= extinction~coefficient~(m^{-1})
 \end{aligned}
 ~
 
