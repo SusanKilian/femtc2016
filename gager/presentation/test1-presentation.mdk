@@ -152,6 +152,18 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 * Body Surface Burns
 * Respiratory Tract Burns 
 
+~ Equation { #euler }
+t_{exp} = (1.125×〖10〗^7 ) T^{-3.4}
+~
+
+Where:
+
+~ Equation { #eq-alignment; caption:"Alignment example" }
+\begin{aligned} 
+ t_{exp} &= time~of~exposure~(min)~to~reach~a~FED~of~0.3 \\
+T &= temperature~(°C)
+\end{aligned}
+~
 
 
 
@@ -184,10 +196,15 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 [Smoke history]: images/Smoke-history.png "Smoke history" { width:400px; max-width:90% }
 ~
 
+#TOXICITY - CO AND HCN
 
-
-
+~ COLUMNS
+~~COLUMN
+  
+  
 #FRACTIONAL EFFECTIVE DOSE (FED)
+
+
 
 ~Center
 ![FED1]
