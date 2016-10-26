@@ -1,10 +1,9 @@
 [INCLUDE=presentation]
-Title         : Demo presentation in Madoko
-Sub Title     : In both HTML and PDF
-Author        : Daan Leijen
-Affiliation   : Microsoft Research
-Email         : daan@microsoft.com
-Reveal Theme  : sky
+Title         : ADVANCED SIMULATIONS FOR BUILDING DESIGN - Best Practice and Future developments
+Author        : Gabriele Vigne and Jimmy Jönsson
+Affiliation   : JVVA Fire & Risk
+Email         : gabriele.vigne@jvvafire.com
+Reveal Theme  : simple
 Beamer Theme  : singapore
 
 [TITLE]
@@ -13,204 +12,174 @@ Beamer Theme  : singapore
 
 [TOC]
 
-# Madoko Presentation
+# Introduction
 
-Using [Madoko] it is easy to create beautiful presentations.
+The increased use of performance-based design to develop fire safety solutions requires, for complex buildings, the use of advanced tools
 
-* [Html][slide]:
-  Uses the `Reveal.js` library by [Hakim El Hattab](http://hakim.se).\
-  This slide demo in Madoko is an adaption of his online demo.
-* [Pdf][slide-pdf]:
-  Uses the `Beamer` package for LaTeX
-* [Source][slide-mdk]:
-  Click to see the source of this presentation.
+* Spaces can be particularly vast
+* Evacuation paths particularly complicated 
+* Architectural layout might impose restrictions 
 
+# The Perfomance based design process
 
-[madoko]: http://madoko.codeplex.com
+The role of Advanced Modelling into the PBD process
 
-## Reveal.js
+![PBD Chart]
 
-`reveal.js` is a framework for easily creating beautiful presentations using
-HTML. You'll need a browser with support for CSS 3D transforms to see it in
-its full glory. 
+[PBD Chart]: images/PBD-Chart.jpg "PBD Chart" { width:auto; max-width:70% }
 
-And any Madoko features just work. Here is some math:
+# Fire Model Selection Flow Chart
 
-~ Begin Framed { padding:1ex; margin-top:1ex }
-A famous equation is $e = mc^2$, but this one is 
-famous too:
+Once the evaluation phase is reached in the performance base design process, it is time to get into the modelling exercise
 
-~ Equation  {#eq-gaussian}
-\int_{-\infty}^\infty e^{-a x^2} d x = \sqrt{\frac{\pi}{a}} 
-~
-~ End Framed
+![Modelling_flowchart]
 
-~~ Notes
-Oh hey, these are some notes. They'll be hidden in your presentation, but you
-can see them if you open the speaker notes window (hit 's' on your keyboard).
-~~
+[Modelling_flowchart]: images/Modelling_flowchart.png "Modelling_flowchart" { width:auto; max-width:70% }
 
-## Code
+# Case studies
 
-Here is code, highlighted by Madoko 
+This section shows some example of complex projects where advanced modelling was an essential part of the design process
 
-``` javascript
-function sqr( x ) {
-  var \(&pi;\) = 3.141593;
-  return x*x;  /* the square */
-}
-```
-We used `\(` and `\)` to escape into markdown to write &pi;.
+* Large Airport
+* Interchange Station
+* Hight Rise Apartment Hotel
+* Logistics Centre
 
-<!-- Example of nested vertical slides -->
-~ Begin Vertical { data-background:Gainsboro }
+# Airport
+* The first example is the largest and busiest airport in Spain
+* The overall objective of the project was to evaluate the current fire safety level for all existing terminals
+* Both advanced evacuation analysis and Fire and Smoke modelling were performed
 
-## Vertical Slides {#vertical}
-Slides can be nested inside of other slides,
-try pressing [down].
+![Barajas1]
+[Barajas1]: images/Barajas1.png "Barajas1" { width:auto; max-width:90% }
 
-[![arrowdown]][down]
 
+## Evacuation analysis
+* The first example is the largest and busiest airport in Spain
+* The overall objective of the project was to evaluate the current fire safety level for all existing terminals
+* Both advanced evacuation analysis and Fire and Smoke modelling were performed
 
-[down]: # { .navigate-down }
-[arrowdown]: images/arrow.png "Down arrow" { width:178px; height:238px }
+## Evacuation analysis
+* The first step in the analysis was to evaluate the existing configuration
+* The analysis shows a few large bottleneck using the current evacuation strategy for this level
 
-## Basement Level 1
-Press down or up to navigate.
+![Barajas4]
+[Barajas4]: images/Barajas4.png "Barajas4" { width:auto; max-width:90% }
 
-## Basement Level 2
+## Evacuation analysis
+By the increment of two corridors width together with the redirection of the part of the occupants toward the bridges instead of into a long corridors that was currently in use, the overall evacuation time was reduce by means of 30%.
 
-Use `columns` to put blocks next to each other:
+![Barajas_6]
+[Barajas_6]: images/Barajas_6.jpg "Barajas_6" { width:auto; max-width:90% }
 
-~ Begin Columns
-~ Column { width:50% }
-A monarch butterfly (shown to the right)
-spends the winter in Mexico.
-~
-~ Column
-![butterfly]
-~
-~ End Columns
+## Evacuation analysis
+Results of current and proposed configuration
 
-[butterfly]: images/butterfly.png "A Monarch butterfly" { width:280px; vertical-align:middle }
+![Barajas_5]
+[Barajas_5]: images/Barajas_5.jpg "Barajas_5" { width:auto; max-width:90% }
 
+## Fire and Smoke analysis
 
-<!-- 
-For local background images, we need to have a reference to the image
-such that it's data gets embedded into the HTML page. We define
-it using "display=none" so it is hidden in the presentation. 
-We can then refer to the image in "data-background-image". 
--->
+* The whole terminal has been modelled
+* FDS v.6.2.0, 30 different meshes assigned to 30 MPI processes
 
-![bfly]
-[bfly]: images/butterfly.png "Butterfly" { display:none }
+![Barajas1]
+![Barajas2]
 
-## Basement Level 3 { data-background-image:images/butterfly.png }
-That's it, time to go back up.
+## Fire and Smoke analysis
+The overall results of the fire and smoke modelling shown that, despite the great volume of the terminal area, smoke had enough buoyancy to raise and fill the smoke reservoirs guaranteeing smoke layer stratification even with reasonably small fires with large spills (resulting in more and colder smoke). 
+![Barajas3]
 
-[![arrowup]][back2]
+# Interchange Station
+* The second example is the largest interchange station in Turin, Italy
+* The objective of the study was to evaluate the fire safety level for the station, and this to be performed for the whole building
+* This was done by using the well-established ASET vs RSET methodology
 
-[arrowup]:  images/arrow.png "Up arrow" { width:178px; height:238px; transform:rotate(180deg) }
-[back2]:    #vertical { .image }
+![TPS]
+[TPS]: images/TPS.jpg "TPS" { width:auto; max-width:90% }
 
-~ End Vertical
+## Evacuation analysis
+Pathfinder was used to determine the overall evacuation time of the station both due to legislative requirements and to evaluate those areas where the smoke was rapidly descending and affecting the evacuation routes
 
+![Porta Susa_Evac]
 
-## Themes {#themes}
+[Porta Susa_Evac]: images/Porta-Susa_Evac.png "Porta Susa_Evac" { width:auto; max-width:90% }
 
-Reveal.js comes with a few themes built in:
+## Evacuation analysis
 
-* [Default](?#/themes)
-* [Sky](?theme=sky#/themes)
-* [Beige](?theme=beige#/themes)
-* [Serif](?theme=serif#/themes)
-* [Simple](?theme=simple#/themes)
-* [Night](?theme=night#/themes)
-* [Moon](?theme=moon#/themes)
-* [Solarized](?theme=solarized#/themes)
+![Porta Susa_Evac3]
+[Porta Susa_Evac3]: images/Porta-Susa_Evac3.png "Porta Susa_Evac3" { width:auto; max-width:90% }
 
-Theme demos are loaded after the presentation which leads to flicker. In
-production you should load your theme in the `<head>` using a
-`<link>`.
+## Fire and Smoke analysis
+The CFD model was processed with FDS v.6.0.0, the domain was split into 15 different meshes assigned to 15 MPI processes, with a resolution varying from 0.15 m in the fire region up to 0.30 m in the regions far from the fire
 
-## Transitions { #transitions }
+[Porta Susa_1]
+[Porta Susa_1]: images/Porta-Susa_1.png "Porta Susa_1" { width:auto; max-width:90% }
 
-You can select from different transitions, like:\
-[Cube](?transition=cube#/transitions) -
-[Page](?transition=page#/transitions) -
-[Concave](?transition=concave#/transitions) -
-[Zoom](?transition=zoom#/transitions) -
-[Linear](?transition=linear#/transitions) -
-[Fade](?transition=fade#/transitions) -
-[None](?transition=none#/transitions) -
-[Default](?#/transitions)
+## Fire and Smoke analysis
+Effectiveness of the smoke ventilation shaft between station and platforms
+![Porta Susa_2]
 
+# High Rise Apartment Hotel
+* The third example is a heritage protected multiuse building in the centre of Madrid, Spain
+* Part of the building was to be transformed into an apartment hotel, the refurbishment was heavily limited due to the heritage status of the building
 
+![GranVia_Pic]
+[GranVia_Pic]: images/GranVia_Pic.png "GranVia_Pic" { width:auto; max-width:90%}
 
-## Pauses?
+## Evacuation Analysis
+The final solution was based on the concept of introducing a protected corridor connecting the two stairs
 
-Some pauses.
+![GranVia_1]
 
-* {.fragment} One
-* {.fragment} Two
-* {.fragment} Three
+## Evacuation Analysis
 
-And more:
+![GranVia2]
 
-- Test 1
-- Test 2
-- Test 3
-{.fragmented}
+[GranVia2]: images/GranVia2.png "GranVia2" { width:auto; max-width:90% }
 
-Cool!.
+# Logistics Centre
+* The last example is a large logistics centre
+* The objective of the study was to develop an alternative floor slab design, compared to the code requirement, so that the operation of the centre was not compromised
 
-~ Slide
-A slide with no header
-~
+![Amazon_Pic]
+[Amazon_Pic]: images/Amazon_Pic.jpg "Amazon_Pic" { width:auto; max-width:90% }
 
+# Logistics Centre
+* The national fire safety industrial code, specifically requirements regarding smoke movement, requires that intermediate floors have an opening area of at least 50% of the floor slab in the circulation areas, this is to permit smoke movement upwards
 
-## Point of View
+* The operation of the centre, the use of trolleys, needed a significantly less percentage of the floor to be open (steel mesh) due to operations procedures
 
-In Reveal.js Press **ESC** to enter the slide overview.
+# Comparative analysis (prescriptive vs proposed)
 
-Hold down alt and click on any element to zoom in on it using 
- [zoom.js]. Alt + click anywhere to zoom back out.
+![Amazon1]
+[Amazon1]: images/Amazon1.png "Amazon1" { width:auto; max-width:90% }
 
+![Amazon3]
+[Amazon3]: images/Amazon3.png "Amazon3" { width:auto; max-width:90% }
 
-[zoom.js]: http://lab.hakim.se/zoom-js
+# Results (prescriptive vs proposed)
 
+![Amazon4]
+[Amazon4]: images/Amazon4.png "Amazon4" { width:auto; max-width:60% }
 
-## Works in Mobile Safari
+# Conclusions
 
-Try it out! You can swipe through the slides and pinch your way to the
-overview.
+* The role of modelling in PBD projects is clearly gaining more and more importance
+* Both models used and shown in this paper, Pathfinder and FDS, has substantially evolved during the years
 
+All that being said, engineers must be aware that buildings might have been designed with the first versions of FDS and when Pathfinder was not as developed as it is now or probably not even born.
 
-## Printing
+Are those buildings unsafe? 
 
-You can print a `revealjs` presentation nicely from the browser.
+# Conclusions
 
-First give the `?print-pdf` or `?print-paper` query on your final
-presentation (in the browser address bar) and then print from the Chrome
-browser selecting `Save to PDF`.
+* Such buildings are (or at least should be) as safe as modern buildings built nowadays and this is because of the engineering judgement undertaken in the analysis
+* Without the Engineering Judgement, the results obtained by advanced models might be totally useless; and this is not because of the models themselves but because of the inaccurate approach to them.
 
-Read more about it at the [revealjs documentation](https://github.com/hakimel/reveal.js#pdf-export)
+# Driving a car
+* It requires the driver to skillfully deal with the steering wheel, use the brake, the clutch the gear and the accelerator
+* And what about cars circulating in the opposite direction, curves, slopes, velocity limits, signs to be read in real time, rear mirrors to be used simultaneously when looking at the road in front of you?
+* Knowing how to deal with the controls is not enough to survive in a busy street
 
-## RevealJS library
-
-Normally, the `revealjs` library is loaded from a CDN but you can specify your
-own url using metadata:
-
-    Reveal Url: <my url>
-
-This can be useful when using a [server to run revealjs](https://github.com/hakimel/reveal.js#full-setup)
-where you may use something like:
-
-    @nopreview Reveal Url: http://localhost:8000/reveal.js
-
-
-## Thanks for looking :-)
-
-[slide]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.html
-[slide-mdk]: https://www.madoko.net/editor.html?#url=http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/slidedemo.mdk&options={"delayedUpdate":"true"}
-[slide-pdf]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.pdf
+# Please drive safe
