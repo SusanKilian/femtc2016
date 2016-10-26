@@ -2,21 +2,21 @@
 Title         : PERFORMANCE OF OPTIMIZATION ALGORITHMS FOR DERIVING MATERIAL DATA FROM BENCH SCALE TESTS
 Subtitle      : 
 
-Author        : Patrick Lauer
+Author        : Patrick\ Lauer
 Affiliation   : University of Wuppertal
 Email         : lauer@uni-wuppertal.de
 
-Author        : Corinna Trettin
+Author        : Corinna\ Trettin
 Affiliation   : University of Wuppertal
 Email         : trettin@uni-wuppertal.de
 
-Author        : Friedrich-Wilhelm Wittbecker
+Author        : Friedrich-Wilhelm\ Wittbecker
 Affiliation   : University of Wuppertal
 Email         : wittbeck@uni-wuppertal.de
 
-Author        : Lukas Arnold
+Author        : Lukas\ Arnold
 Affiliation   : Forschungszentrum Jülich
-Email         : wittbeck@uni-wuppertal.de
+Email         : l.arnold@fz-juelich.de
 
 Bibliography  : references.bib
 Logo          : False
@@ -27,286 +27,393 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-Inferring material parameters for fire modeling from bench scale tests trough optimization strategies 
-is a widely used process. Unknown input parameters are estimated by processing them in a pyrolysis model
-and fit these results to bench scale test results. Though in order to find the best fitting solution, 
-computing time significantly rises by making the model more complex via increasing the number of
-unknown material parameters. Hence there is a need to find good performing optimization algorithms.
+In this work the performance of optimization algorithms for inferring material parameters for fire modeling from bench scale tests is compared to each other.
 
-Former research on gaining material property parameters through optimization showed that a parameter
-optimization method called Shuffled Complex Evolution Algorithm (SCE-UA) is the most efficient
-(how quickly it converges to a solution) and accurate (how close the solution to the global optimum is)
-performing method in many applications among the already examined methods in the past. 
-Thus, SCE-UA provides as comparative basis for other algorithms that will be presented in this work
-pertaining to efficiency and accuracy.
-
-The used optimization strategies that are compared to SCE-UA are Modified Shuffled Complex Evolution
-algorithm (MSCE), Artificial Bee Colony algorithm (ABC) and Fitness-Scaled Chaotic Artificial
-Bee Colony (FSCABC). First, these algorithms are tested with synthetic data, where all the
-properties are certain in advance. After that, the algorithms are tested with real data gained
-from bench scale tests, namely thermogravimetric analysis (TGA) and mass loss calorimeter (MLC),
-for different materials. Fire Dynamics Simulator (FDS) with its implemented pyrolysis model is
-used to carry out the simulations in an automated optimization framework on a high performance
-computing cluster.
-
+The well known Shuffled Complex Evolution algorithm (SCE) is compared to Artificial Bee Colony algorithm (ABC) and Fitness Scaled Chaotic Artificial Bee Colony algorithm (FSCABC). First, these algorithms are tested with synthetic data, where all the properties are certain in advance. After that, the algorithms are tested with real data gained from bench scale tests, namely thermogravimetric analysis (TGA) and mass loss calorimeter (MLC). Fire Dynamics Simulator (FDS) with its implemented pyrolysis model is used to carry out the simulations in an automated optimization framework on a high performance computing cluster in parallel.
 The achieved results show which of the compared optimization strategies perform better than
-SCE-UA related to efficiency and accuracy.
+SCE related to efficiency and accuracy.
 ~
 
-[editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
-[reference-manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html "Madoko Reference Manual"
-[femtc2016]: https://github.com/thunderheadeng/femtc2016
-[emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
+# INTRODUCTION { #sec-intro }
 
-# Introduction { #sec-intro }
-You are encouraged to use the [Madoko.net Editor][editor] while using
-the [Madoko Reference Manual][reference-manual] to edit/commit your
-documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
-More information about this method of contribution will be covered below.
+Inferring material parameters for fire modeling from bench scale tests trough optimization strategies is a widely used process. Unknown input parameters are estimated by processing them in a pyrolysis model and fit these results to bench scale test results. In order to find the best fitting solution, computing time significantly rises by making the model more complex via increasing the number of unknown material parameters. Hence, there is a need to find good performing optimization algorithms.
 
-Text styling, links, sub- and super-script, footnotes and other topics
-are covered in section [Syntax: Inline
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--inline-elements)
-of the manual.
+Former research on gaining material property parameters through optimization showed that a parameter optimization method called Shuffled Complex Evolution Algorithm (SCE) is the most efficient (how quickly it converges to a solution) and accurate (how close the solution to the global optimum is) performing method in many applications among the already examined methods in the past [@lautenberger2011optimization]. Thus, SCE provides a comparative basis for other algorithms that will be presented in this work pertaining to efficiency and accuracy.
 
-Headings, Figures and Tables, Lists, Code Blocks, Mathematics, etc. are
-covered in section [Syntax: Block
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--block-elements)
-of the manual.
+# METHOD
 
-The target length for submitted and invited papers is about eight pages.
-This length includes all figures and tables. However, because the
-Proceedings will not be printed on paper, there is no maximum limit on
-the number of pages. You are free to exceed the target length of eight
-pages.
+Solid fuel consist of long molecules chains. The process of pyrolysis breaks these chains and implies the breakdown into smaller molecules. This process is a requirement of transfer the molecules from the solid into the gas phase. Different material characteristics, like properties thermal conductivity, specific heat or the permeability influence this process. However, the most pyrolysis reaction rates are described by the Arrhenius equation, which expresses the temperature dependence of the physical and chemical reaction. The kinetic constants, activation energy $E$ and pre-exponential factor $A$, characterize next to the reaction order the Arrhenius equation [@hurley2015sfpe]. These parameters are often unknown but they correlate to the mass loss of a sample while heating it. This can be observed in bench scale tests like thermogravimetric analysis and mass loss calorimetry. Also, there are several models available to simulate pyrolysis [@McGrattan:2015eo;@lautenberger2008gpyro]. In this work, Fire Dynamic Simulator (FDS) [@McGrattan:2015gv] is used.
 
-Please watch this short YouTube Video for a tutorial on how to use the system as intended.
+With the output of bench scale tests and pyrolysis models the method shown in figure [#fig-method] can be applied. The outputs (e.g. mass loss) of test and simulation are compared. Then, the input parameters of the simulation are systematically altered by an optimization strategy until both outputs satisfy prescribed criteria.
 
-# Method
-Main Headings are all upper case letters and underlined. In Madoko, a
-Single '#' symbol at the start of the line, followed by a space and then
-the heading text.
+~ Figure { #fig-method; caption:"Applied method in this work"}
+![Ex1_2]
+~
+[Ex1_2]: images/method.[svg,pdf] "Ex1_2" { width:100%}
 
-## Pyrolysis and Simulation Modell
-Subheadings within sections follow the same format as section titles, but
-with upper and lower case. In Madoko, a Double '#' symbol at the start of
-the line, followed by a space and then the heading text.
 
-## Synthetic Data and Bench Scale Tests
-Subsubheadings have no underline, and only the first letter capitalized.
-In Madoko, a Triple '#' symbol at the start of the line, followed by a
-space and then the heading text.
+## Bench Scale Tests and Synthetic Data 
 
-~ Figure { #fig-smokeview; caption:"Left: Equipment of the TGA with PU and PMMA samples, Right: MLC with a Wood sample"}
+For this work, two different bench scale tests were used. First, a thermogravimetric analysis (TGA) was used to measure the mass loss of a small sample exposed to a constant heating rate. Second, a mass loss cone calorimeter (MLC) was used to measure the mass loss of a sample exposed to a constant heat flux. In figure [#fig-tga_mlc] the sample chamber of a TGA is shown with the specimen holder marked red.
+
+~ Figure { #fig-tga_mlc; caption:"Left: Equipment of the TGA with PU sample (right)"}
 ![Ex1_1]
 ~
-[Ex1_1]: images/TGA_MLC.png "Ex1_0" { width:auto; max-width:90% }
+[Ex1_1]: images/TGA_.png "Ex1_1" { width:normal;}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics [width=0.97\textwidth]{figs/TGA_MLC.png}
-	
-	\caption{Left: Equipment of the TGA with PU and PMMA samples, Right: MLC with a Wood sample}
-	\label{fig:WP1-1}
-\end{figure}
 
-### Synthetic Data
 
-### Thermogravimetric Analysis
+### Thermogravimetric Analysis (TGA)
+ 
+  
+The pyrolysis parameters determined by the TGA specify the thermal decomposition of a solid material. In general and in common practice, the temperature dependence of the pyrolysis reaction rate tends to be described by the Arrhenius equation [#arrh] with reaction rate constant ($r$), pre-exponential factor ($A$), activation energy ($E$), universal gas constant ($R$) and temperature ($T$).
 
-###Mass Loss Cone Calorimeter
+~ Equation { #arrh }
+r = A \cdot e^{-\frac{E}{RT}}
+~
+
+The mass loss data gained from the TGA will be used to infer absolute pre-exponential factor ($A$) and activation energy ($E$) through optimization strategies. To ensure a thermal equilibrium of the sample, the pyrolysis process will be observed likewise for low heating rates (5 K/min). Here, the sample is polyurethane (PU).
+
+### Mass Loss Cone Calorimeter (MLC)
+ 
+ 
+The thermal properties of materials like density, conductivity, specific heat and emissivity are essential to describe the heating behavior. These properties can be examined by the mass loss calorimeter [@fire-testing2016]. MLC is similar to a cone calorimeter without measuring of the heat release rate.
+
+Multiple physical processes affect the heating behavior. To include a part of those processes, a sample will be exposed by different irradiances. In this case, applied heat fluxes are 20\ kW/m^2^, 30\ kW/m^2^, 40\ kW/m^2^, 50\ kW/m^2^ and 75\ kW/m^2^. The examined material is poly(methyl methacrylate) (PMMA).
+
+The experiments are conducted with two different background layers, conductor (aluminum) as well as insulator (ceramic wool), to distinguish different heat losses due to conduction properties.
+
+### Synthetic Data {#synth}
+ 
+ 
+For the test series with synthetic data, the same model set-up as in the TGA series was used. With the input parameters of table [#table-synth-tga] for two materials synthetic data was produced with a heating rate of 10 K/min.
+
+
+~ TableFigure { #table-synth-tga; caption: "Material parameters for generation of a synthetic data set"; .wide }
+|:-------------------------|:---------:|:-------------------:|
+| Density~1~               | $\rho_1$  | 500 kg/m^3^         |
+| Conductivity~1~          | $k_1$     | 0.2 W/(m$\cdot$K)   |
+| Specific Heat~1~         | $c_1$     | 1.0 kJ/(kg$\cdot$K) |
+| Reference Temperature~1~ | $T_{p,1}$ | 315 °C              |
+| Reference Rate~1~        | $r_{p,1}$ | 0.0056 s^-1^        |
+| Density~2~               | $\rho_2$  | 500 kg/m^3^         |
+| Conductivity~2~          | $k_2$     | 0.2 W/(m$\cdot$K)   |
+| Specific Heat~2~         | $c_2$     | 1.0 kJ/(kg$\cdot$K) |
+| Reference Temperature~2~ | $T_{p,2}$ | 430 °C              |
+| Reference Rate~2~        | $r_{p,2}$ | 0.0075 s^-1^        |
+|--------------------------|-----------|---------------------|
+~
+
+## Simulation Model
+
+According to the experiments, simulations has to be conducted on a TGA set-up and a MLC set-up. Both numerical setups are based on the  recommended realizations in the FDS User's Guide [@McGrattan:2015gv]. These recommendations were adapted to the reaction and decomposition steps observed in the experiments. Further details are explained later on.
+
+### TGA
+ 
+ 
+The pyrolysis model of FDS is based on equation [#arrh] and is extended by the reaction order and the local oxygen volume fraction [@McGrattan:2015gv]. For the modeling of the TGA experiment series, the reaction order is fixed to one. A very thin sample (1 mm) is modeled to minimize the influence of the thermal properties and to focus on the pyrolysis process only. Due to a high heat coefficient of the sample, the simulation results are not influenced by the heating behavior. Three decomposition reactions are assumed, which are responsible for a mass loss of 94\% of the sample. These boundary conditions are based mainly on the FDS User's Guides recommended TGA set-up and on the results of the experiments.
+To get the best fitting of modeling results compared to the experimental results for the Arrhenius parameters $A$ and $E$, the pyrolysis parameters will be varied and the mass loss of the TGA experiments will be compared with the modeling results until the convergence criteria is satisfied. [@trettin2016fspread]
+
+### MLC
+ 
+ 
+A modeling approach similar to the TGA's is used here. However, the thermal properties, like density, specific heat, conductivity and emissivity will be additionally varied to the pyrolysis parameters. This is done because the thickness of the sample and their influence on the modeling results has to be taken into account. The burning rate and the time of ignition are used to compare the modeling results to the experimental ones. Therefore, the mentioned thermal properties, as well as the pyrolysis parameters will be varied per simulation until the best fitting of mass loss of the experiments is reached.
+
+Two different approaches are carried out. The first utilizes only one heat flux (50\ kW/m^2^), the second uses all mentioned heat fluxes.
 
 ## Optimization Process
-Subsubheadings have no underline, and only the first letter capitalized.
-In Madoko, a Triple '#' symbol at the start of the line, followed by a
-space and then the heading text.
 
-###FDS
+Figure [#fig-opt_proc] shows the general optimization approach used in this work  in a simplified diagram. Firstly, parameters that characterizes thermophysical and pyrolysis material properties were generated as input data for the simulation by a predefined parameter estimation method. Based on these parameters an input file for the simulation is created and the simulation is performed. Then the simulation output data for normalized mass and mass loss rate is compared to experimental data by applying a fitness function. For all algorithms a root-mean-square error function (RMSE) is applied to calculate the fitness. The negation of this value is used to generate a maximization problem. If the calculated fitness satisfies predefined convergence criteria, the optimization process is stopped and the associated input values are displayed. Else, the parameter estimation method generates new input parameters based on the previous simulation for a following evaluation loop until the convergence criteria are satisfied. How these parameters are generated depends on the single parameter estimation method and is described in section [#algorithms].
 
-###Spotpy
-
-## Optimization Algorithms
-Subsubheadings have no underline, and only the first letter capitalized.
-In Madoko, a Triple '#' symbol at the start of the line, followed by a
-space and then the heading text.
-
-###Shuffled Complex Evolution
-
-###Modified Shuffled Complex Evolution
-
-###A
-
-# Results
-Original drawings and photos may be included in your paper as figures.
-Diagrams may be in color.
-
-Figures and tables should immediately follow first mention of them in the
-text and can be placed in one column, or in the case of wider figures,
-can cover two columns (but only at the top or bottom of the page). The
-caption should start with either the word “figure” spelled out or
-abbreviated, followed by the figure number (i.e., Figure 1 or Fig. 1).
-The figure caption should be followed by a single line of space before
-the text resumes.
-
-## Figures
-Figure [#fig-smokeview] in Section [#sec-intro] shows an image from an
-older version of Smokeview. Note that you can drag&drop images into the
-editor pane to include them in the document, and similarly with bibtex
-files, latex style files, etc.
-
-~ Figure { #fig-smokeview; caption:"Illustration of placement of figure and caption. (use the `.wide` class for wide figure)."}
-![Ex1_0]
-~
-[Ex1_0]: images/Ex1_0.png "Ex1_0" { width:auto; max-width:90% }
-
-~ Note
-Images larger than about 1Mb in size will be rejected by the Madoko.net server.
+~ Figure { #fig-opt_proc; caption:"Optimization process"}
+![opt_01]
 ~
 
-## Tables
-Table [#table-sample] shows an example full width table figure.
+[opt_01]: images/optimization.[svg,pdf] "opt_01" { width:100%}
 
-~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
-|                | $c(t)$                               ||||
-|                |---------|---------|---------|-----------|
-|                | (A0)    | (A1)    | (A2)    | (A3)      |
-|                | ohne    | Log     | Polynom | Stückweise|
-|                |         |         |         | konstant  |
-|:---------------|:-------:|:-------:|:-------:|:---------:|
-| Log likelihood | -6.798  | -6.733  | -6.715  | -6.686    |
-| Pseudeo $R^{2}$| 0,048   | 0,057   | 0,059   | -         |
-| AIC            | 13.615  | 13.489  | 13.456  | 13.483    |
-| BIC            | 13.711  | 13.594  | 13.580  | 14.009    |
-| N              | 105.484 | 105.484 | 105.484 | 105.484   |
-|----------------|---------|---------|---------|-----------|
+The decision for an specific optimization algorithm is often not based on performance for a specific problem but on availability for the used framework, computing system and simulation model. Thus, an open source framework was chosen for this work to make the application of the used algorithms publicly available and reproducible, easy to use and capable of parallel computing.
+
+The software package the satisfies the above requirements is is an open source python based package called SPOTpy used in version 1.2.25 [@houska2015spotting] and for the actual simulation, FDS 6.3.2 [@McGrattan:2015gv] was used. Thereby SPOTpy hosts the parameter optimization methods, generates input files for the simulation, calls the simulation, applies the fitness function on the data gained from the simulation and checks for convergence. The simulations for each generation were computed in parallel via Message Passing Interface (MPI) to increase the speed of the algorithms. FDS is used as serial single core version whereas several FDS simulations were computed in parallel. Most simulations were done on the HPC system JURECA at the Jülich Supercomputing Centre (JSC).
+
+## Optimization Algorithms {#algorithms}
+
+As the 'No free lunch' theorem states, there is no optimization algorithm that is most efficient globally. The computational cost, averaged over all problems, is the same for any method [@wolpert1995n]. But, for specific problems there are, in fact, more efficient algorithms than others. One way to determine if a algorithm is suitable for a specific class of problems, is to compare its performance the performance of other algorithms on a exemplary problem. Here, two algorithms were selected to be compared to an algorithm (SCE) that is the state of the technology in this field of application.
+
+### Shuffled Complex Evolution (SCE)
+ 
+ 
+SCE was introduced by Duan for hydrologic model calibration [@duan1993shuffled]. It combines random and deterministic approaches and uses the concepts of clustering, systematic evolution of a complex of points towards a global improvement and competetive evolution. By this, a local, global and random search takes place. SCE was also widely tested and discussed in application of material data estimation [@chaos2011evaluation;@chaos2010bench] and its process was thoroughly explained on a practical example [@Khan2016]. Its efficiency and accuracy has been tested against other algorithms and SCE has been stated superior [@lautenberger2011optimization].
+
+The basic concept of SCE is to divide a population $N$ into $n_{gs}$ complexes where a local search is done per generation and then compared globally with all complexes.
+
+The parallelization in connection with SPOTpy follows equation [#para-sce].
+
+~ Equation { #para-sce }
+c = n_{gs} = \frac{N}{2 \cdot n_{opt} +1}
 ~
 
-## Equations
-Standard terminology should be used in equations. If possible, keep
-equations to one column. All equations should be numbered. A definition
-of $e$ is shown in Equation [#euler]:
+Here, $c$ is the number of used MPI processes, $n_{gs}$ is the number of complexes of SCE, $N$ is the size of population and $n_{opt}$ is the number of parameters to be optimized. In this work, we set $n_{gs}$=48. 
 
-~ Equation { #euler }
-e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
+### Artificial Bee Colony (ABC) {#abc}
+ 
+ 
+ABC is a swarm intelligence optimization algorithm derived from the foraging behavior of a honey bee swarm [@karaboga2005idea]. It outperforms frequently used optimization algorithms in standard benchmark tests [@karaboga2007powerful].
+
+~ Figure {#fig-abc; caption:"Flow chart of ABC Algorithm"}
+![abc_01]
+~
+[abc_01]: images/abc.[svg,pdf] "abc_01" { width:50%;}
+
+Figure [#fig-abc] shows how ABC works. A Population $N$ is divided into 
+$N/2$ employed bees and $N/2$ onlooker bees which both later can become scout bees. Each Bee utilizes a food source $x_i$ that has $n$ elements. To initialize the algorithm, for $x_{i,m,0}$, where $i=1...N/2$ and $m=1...n$, an initial solution is produced by equation [#rand-abc] with $l_m$ and $u_m$ as lower respective upper bound of $x_{i,m}$.
+
+~ Equation { #rand-abc }
+x_{i,m,0} = l_m + rand(0,1)\cdot(u_m-l_m)
 ~
 
-Or to use &logolatex; to align equations.
+Then $f(x_{i})$ is calculated and a fitness function, in this case RMSE, is applied to generate $fit(x_{i})$.
 
-~ Equation { #eq-alignment; caption:"Alignment example" }
-\begin{aligned} 
- f(x)  &= a x^2+b x +c   &   g(x)  &= d x^3 \\
- f'(x) &= 2 a x +b       &   g'(x) &= 3 d x^2
-\end{aligned}
+In the employed bee phase, a new food source $v_i$ in the neighborhood of $x_i$ is evaluated. It is generated by equation [#emp-abc] where $t$ is a random chosen parameter index, $\Phi$ a random number in $[-a,a]$, a predefined factor, and $x_k$ a random selected food source with $k \ne i$.
+
+~ Equation { #emp-abc }
+v_{i,t} = x_{i,t} + \Phi (x_{i,t} - x_{k,t})
 ~
 
-# Results
-Let's program some JavaScript:
-``` javascript
-function hello() {
-  return "hello world!"
-}
-```
-Here is a footnote[^fn] reference.
-[^fn]: This is the content of the example footnote. 
-    You can continue a footnote by indenting content.
-    And notice the back link.
+Then $f(v_{i})$ is calculated and a fitness function, in this case RMSE, is applied to generate $fit(v_{i})$ and a greedy selection is applied between $fit(x_{i})$ and $fit(v_{i})$. The better solution survives and replaces $x_{i}$.
 
-# BIBLIOGRAPHY AND REFERENCES
-When references are used in the text, tie them to an alphabetical (by
-principal author) list of references to be included as the last item of
-your paper. The format commonly used in scientific literature follows:
+The onlooker bee phase is characterized by an probability distributed assignment based on the probability values calculated by equation [#pb-abc]. The assignment is done by a roulette wheel selection method. So it is more likely that a onlooker bee explores a food source near a food source with a good $f(x_{i})$.
 
-Smith, J. S., Bloggs, R. T. and Jones, E. R. (1974), "Magnetic Anomalies
-in Geothermal Systems", Journal of Fluid Mechanics, 254, 73-79
+~ Equation { #pb-abc }
+p_i = \frac{fit(x_i)}{\sum_{i=1}^{N/2} fit(x_i)}
+~
 
-Leslie Lamport, LaTeX: A Document Preparation System (2nd Edition), Addison-Wesley, 1994
+After $x_i$ is chosen for a single onlooker bee, $v_i$ is calculated by equation [#emp-abc] and a greedy selection is applied between $fit(x_{i})$ and $fit(v_{i})$. The better solution survives and replaces $x_{i}$.
 
-When using Madoko, edit the content of the .bib file in the document
-folder, and use the reference methods as shown in the [Bibliography and
-Citations
-Section](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-bib)
-of the Madoko Manual.
+If there can't be found a better fitness in the employed or onlooker phase, after $z$ trials a bee becomes a scout bee and discovers a new random food source. A new random solution is generated by equation [#rand-abc], where $z$ is a limit that ensures not to get trapped in local extrema with $z=N/c$ with $c \in \{1;2;4\}$. This is called the scout bee phase.
 
-A bibliography file consists of all your references in the BibTeX format, for example:
+These Steps are repeated until a convergence criterion is satisfied.
 
-    @BOOK{ Knuth:TeX,  
-        author   = "Knuth, Donald E.",  
-        title    = "The {\TeX} book",  
-        publisher= "Addison-Wesley",  
-        year     = 1984  
-    }
+To recap, there are two parameters beside the population/generation ratio to tweak this algorithm. Through all the simulations, it was chosen $z=N/4$, $a=0.1$ and $N=96$. 
 
-Entries in the bibliography files can now be referenced using semi-colon
-separated references, for example:
-``` Markdown 
-Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
-```
-Results in: Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
+Parallelization here is reasonably possible with $c = N/2$, because the single phases proceed successive.
 
-Please include full title of journal articles or other references,
-journal, volume, date, pages. There is a nice [table on
-Wikipedia](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX)
-that shows all of the different data fields for the BibTeX file.
+### Fitness Scaled Chaotic Artificial Bee Colony (FSCABC)
+ 
+ 
+FSCABC is a modified Version of ABC. It was first introduced for path planning of unmanned combat air 
+vehicles [@zhang2011ucav] and also successfully used for classifying magnetic resonance brain images
+ [@zhang2011magnetic]. In both cases FSCABC performed significantly better in efficiency
+ and accuracy than all other tested algorithms, including ABC, while SCE was not taken into account.
 
-# PAPER DEADLINE
-Your paper, in final form, must be received by October 15th, 2016. The
-best way to edit and submit is to use the Madoko [editor] to edit your
-document in the 'authoring' branch of the GitHub [femtc2016] repository.
-If you choose to use some other document format and editing tool, PDF
-format is preferred, but ODT, DOC, or DOCX formats are acceptable. Please
-e-mail the files to [conference@thunderheadeng.com][emaillink].
+Compared to ABC the enhancements are a changed fitness scaling function
+ and an altered (pseudo) random number generator. The fitness function is shown in equation [#fit-fscabc] and is called power rank fitness scaling [@zhang2013ucav].
 
-# PRESENTATION
-Each author must present his/her paper within the allotted time, allowing
-for some minutes of open discussion. The session chair is responsible for
-keeping authors within their time limit, in order to ensure that each
-author has enough time for their presentation. When preparing your
-presentation slides, make sure they are clear and large enough so that
-your audience can read them from as far as 80 feet away.
+~ Equation { #fit-fscabc }
+fit(x_i) = \frac{r^k_i}{\sum_{i=1}^N r_i^k}
+~
 
-All presentations will be made using the computer projector available in
-the conference room. We will not have overhead projectors or slide
-projectors in the meeting rooms.
+$fit(x_i)$ is used in equation [#pb-abc] where $r_i$ is the rank of
+the $i$th individual bee after sorting the bees of the population (which size is $N$) ascending by there raw fitness value. $k$ is an exponent, that has to be defined. In this work, we set $k=4$.
 
-Your presentation, in final form, must be received by **October 15th,
-2016**. A final commit of the files to the GitHub repository is
-preferred. Once the final draft is complete and reviewed it will be
-merged into the master branch of the repository. If you decide to use
-some other tool for creating your presentation, PDF format is preferred,
-but ODP, PPT, or PPTX formats are acceptable. Please e-mail the files
-to [conference@thunderheadeng.com][emaillink].
+The used (pseudo) random number generator [@bose1999implementing] is a chaotic random number generator shown in Equation [#cng-fscabc].
 
-All presentations will be pre-loaded on the computers that are present.
-Please note that this approach will make it necessary for us to receive
-the presentation files prior to the conference. If you have a different
-software requirement, it should still be possible for you to attach your
-own computer to the projector if you bring it with you. This is not
-optimal, as it takes time and slows down the session.
+~ Equation {#cng-fscabc}
+{x_{n+1}=4 \cdot x_n \cdot (1-{x_n})}
+~
 
-# CONFERENCE CONTENT DISTRIBUTION
-The papers and presentation materials will be made available online
-during and after the conference. In addition, the organizers are planning
-to may broadcast live presentations online during the event. The papers,
-presentations, and videos will be archived and made available on the web
-after the conference.
+Equation [#cng-fscabc] with $x_0 \in (0,1)$ and $x_0 \notin \{0.25,0.5,0.75\}$ produces a chaotic sequence. It is used to generate the random solution in the scout bee phase. Compared to a normal random number generator, $x$ can travel ergodically over the defined space.
 
-Author(s) retain all rights to submitted material. The organizers are
-granted a non-exclusive right to copy and redistribute conference
-material submitted by the author(s).
+With this algorithm, it is also $z=N/4$, $a=0.1$. The same rule for parallelization as ABC applies here, too.
+
+
+# RESULTS
+
+Overall, the three algorithms were compared in four different experimental setups. Two were conducted on a TGA setup, where one was conducted with synthetic data and one with bench scale TGA data, while the other two were conducted on a MLC setup, both using data from bench scale MLC experiments, one with only one heat flux applied and the other one with five different heat fluxes. 
+
+## Synthetic data
+
+In this case, ten input parameters were determined on a TGA setup with synthetic data as target. For two reactions, parameters density, thermal conductivity, specific heat, reference temperature and reference rate were used each, while the two latter ones characterize $A$ and $E$.
+
+For each algorithm 100000 evaluations where done, each repeated five times to evaluate robustness of the algorithms with the model described in section [#synth]. In table [#table-exp_synth] the best fit ($fit_{best}$) as raw (RMSE) fitness value is shown for each trial and algorithm. Also the number of evaluations ($j$) after which it was achieved is stated. As can be seen, ABC and FSCABC reach a similar fitness value in all of the five trials while ABC clearly needs more evaluations (factor 1.5...6.2) to reach the same fitting. In this case, SCE is faster than ABC and partly FSCABC but stagnates at a far superior fit than the other to algorithms.
+
+~ TableFigure { #table-exp_synth; caption: "Results of optimization (synthetic data)";.wide}
+|:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:-----|:-----------|:----|
+|      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4           ||Trial 5          ||
+|      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$   |$fit_{best}$|$j$  |
+|ABC   |0,0442      |69243|0,0444      |67589|0,0439      |80906|0,0451      |94351 |0,0439      |62951|
+|FSCABC|0,0440      |35173|0,0434      |51296|0,0440      |37980|0,0440      |15686 |0,0439      |41798|
+|SCE   |0,0492      |11609|0,0571      |34611|0,0477      |68659|0,0571      |51781 |0,0504      |28148|
+|------|------------|-----|------------|-----|------------|-----|------------|------|------------|-----|
+~
+
+In figure [#fig-syn] the development of $fit_{best}$ for all algorithms is shown during trial\ 4. It can be seen that all three algorithms after 20000 evaluations only improve little at a time. FSCABC has achieved the highest fitness with the highest slop, ABC a similar value and SCE a way superior fitting until then.
+
+~ Figure {#fig-syn; caption:"Fitness evolution during optimization process, trial 4"}
+![syn_01]
+~
+[syn_01]: images/synthetic.[svg,pdf] "syn_01" { width:100%;}
+
+In table [#table-exp_synthetic-values] the parameters associated with $fit_{best}$ are shown. $l$ and $u$ describe the lower and upper bounds, respectively. For material one the values achieved with ABC and FSCABC remotely close to the target values. All other values are not close to the target values. However, this is nothing a metaheuristic optimization process can provide in the first place, especially if many different solutions generate a similar output, as it is here.
+
+~ TableFigure { #table-exp_synthetic-values; caption: "Results of optimization (synthetic data), trial 4";.wide}
+|:-----------------------------------|:---------:|:-------|:-------|:-------|:---------|:------|:---|
+|                                    |           | Target |ABC     |FSCABC  |SCE       |$l$    |$u$ |
+| Density~1~/(kg/m^3^)               | $\rho_1$  | 500    |631     |400     |513       |250    |750 |
+| Conductivity~1~/(W/(m$\cdot$K))    | $k_1$     | 0.2    |0.269   |0.607   | 0.950    |10^-4^ |2   |
+| Specific Heat~1~/(kJ/(kg$\cdot$K)) | $c_1$     | 1.0    |0.819   |1.07    | 0.739    |10^-4^ |2   |
+| Reference Temperature~1~/°C        | $T_{p,1}$ | 315    |320     |316     |399       |100    |500 |
+| Reference Rate~1~/s^-1^            | $r_{p,1}$ | 0.0056 |0.00384 |0.00478 |0.0007101 |10^-4^ |0.9 |
+| Density~2~/(kg/m^3^)               | $\rho_2$  | 500    |355     |297     |464       |250    |750 |
+| Conductivity~2~/(W/(m$\cdot$K))    | $k_2$     | 0.2    |1.16    |1.67    |0.946     |10^-4^ |2   |
+| Specific Heat~2~/(kJ/(kg$\cdot$K)) | $c_2$     | 1.0    |0.871   |1.27    |0.749     |10^-4^ |2   |
+| Reference Temperature~2~/°C        | $T_{p,2}$ | 430    |400     |400     |238       |100    |500 |
+| Reference Rate~2~/s^-1^            | $r_{p,2}$ | 0.0075 |0.0462  |0.0624  |0.486     |10^-4^ |0.9 |
+|------------------------------------|-----------|--------|--------|--------|----------|-------|----|
+~
+
+The normalized mass against temperature associated with values from table [#table-exp_synthetic-values] is plotted in figure [#fig-syn2]. The graph of ABC and FSCABC are similar and follows the target closely, whereas the SCE graph is only loosely similar to the target.
+
+~ Figure {#fig-syn2; caption:"Best fit (synthetic date), trial 4"}
+![syn_02]
+~
+[syn_02]: images/bestfit_syntheticdata.[svg,pdf] "syn_01" { width:100%;}
+
+## TGA
+
+A similar setup is used as in the case before. The target data (normalized mass loss) is gained from a TGA experiment (heating rate 5 K/min) with PU. The pyrolysis here is characterized in three reactions with parameters reference temperature and pyrolysis range, each. Hence, six parameters have to be optimized.
+
+As with the synthetic data, here are also 100000 evaluations conducted, repeated three times, for ABC, FSCABC and SCE, each. The results are shown in table [#table-exp_tga]. SCE reaches the same $fit_{best}$ after at most 29000 evaluations. FSCABC needs between 18000 and 96000 evaluations for a slightly inferior $fit_{best}$. ABC needs at least 54000 evaluations to find a $fit_{best}$ that is inferior to both, FSCABC and SCE.
+
+~ TableFigure { #table-exp_tga; caption: "Results of optimization (TGA data)";.wide}
+|:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|
+|      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4          ||Trial 5          ||
+|      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |
+|ABC   |0,4335      |86161|0,4300      |70716|0,4288      |57842|0,4467      |54370|0,4222      |89871|
+|FSCABC|0,4177      |96426|0,4181      |87020|0,4179      |76092|0,4210      |17875|0,4177      |23540|
+|SCE   |0,4175      |14652|0,4175      |24736|0,4175      |29279|0,4175      |22977|0,4175      |29243|
+|------|------------|-----|------------|-----|------------|-----|------------|-----|------------|-----|
+~
+
+Figure [#fig-tga] shows the optimization process of trial\ 3. FSCABC and SCE are characterized with a similar development, where $fit_{best}$ of FSCABC rises slightly earlier and SCE achieves a insignificantly better solution in the end. After 10000 evaluations, both improve only marginally. ABC rises significantly slower and achieves a inferior result after 58000 evaluations.
+
+~ Figure {#fig-tga; caption:"Fitness evolution during optimization process, trial 3"}
+![tga_01]
+~
+[tga_01]: images/tga.[svg,pdf] "tga_01" { width:100%;}
+
+Table [#table-exp_tga-values] shows the corresponding input values for $fit_{best}$ of trial\ 3 and the applicated boundary values. As stated before, the values of FSCABC and SCE differ only insignificantly, while the values of ABC differs significantly. 
+
+~ TableFigure { #table-exp_tga-values; caption: "Results of optimization (TGA), trial 3";.wide}
+|:-----------------------------------|:---------:|:-------|:-------|:---------|:------|:---|
+|                                    |           |ABC     |FSCABC  |SCE       |$l$    |$u$ |
+| Reference Temperature~1~/°C        | $T_{p,1}$ |275     |279     |277       |250    |400 |
+| Pyrolysis Range~1~/°C              | $T_{r,1}$ |123     |103     |99        |50     |200 |
+| Reference Temperature~2~/°C        | $T_{p,2}$ |369     |368     |368       |250    |450 |
+| Pyrolysis Range~2~/°C              | $T_{r,2}$ |88      |98      |98        |50     |200 |
+| Reference Temperature~3~/°C        | $T_{p,3}$ |596     |619     |625       |550    |750 |
+| Pyrolysis Range~3~/°C              | $T_{r,3}$ |49      |102     |98        |20     |200 |
+|------------------------------------|-----------|--------|--------|----------|-------|----|
+~
+
+Figure [#fig-tga2] shows the normalized mass against time for the target function and the simulations conducted with the parameters from table [#table-exp_tga-values]. The graphs for the target function, FSCABC and SCE are hardly distinguishable from each other. Only the graph for ABC is discernable different. 
+
+~ Figure {#fig-tga2; caption:"Fitness evolution during optimization process, trial 3"}
+![tga_02]
+~
+[tga_02]: images/bestfit_tga.[svg,pdf] "tga_02" { width:100%;}
+
+## MLC~50~
+
+For MLC~50~, a MLC setup was used, were a PMMA sample is exposed one heat flux (50\ kW/m^2^). The decomposition of PMMA is modeled as one reaction, hence there are five parameters to be optimized: density, thermal conductivity, specific heat, reference temperature and pyrolysis range.
+
+In table\ [#table-exp_mlc50], $fit_{best}$ for each algorithm is shown and when it was achieved. For each algorithm, 100000 evaluations per trial were done for a heat flux of 50 kW/m^2^. Like in the previous case, here SCE and FSCABC have a very similar $fit_{best}$, too. Also, $fit_{best}$ of SCE is a bit better than $fit_{best}$ of FSCABC and is reached faster. ABC is inferior in both, efficiency and accuracy.
+
+~ TableFigure { #table-exp_mlc50; caption: "Results of optimization (MLC~50~ data)";.wide}
+|:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|
+|      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4          ||Trial 5          ||
+|      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |
+|ABC   |1,2931      |63167|1,3272      |6955 |1,2645      |16999|1,1588      |55819|1,1626      |73290|
+|FSCABC|1,1402      |95545|1,1471      |78981|1,1405      |68869|1,1428      |50929|1,1407      |89018|
+|SCE   |1,1391      |36072|1,1391      |17250|1,1391      |18854|1,1390      |32574|1,1390      |31724|
+|------|------------|-----|------------|-----|------------|-----|------------|-----|------------|-----|
+~
+
+What can be seen in table [#table-exp_mlc50] is shown for trial\ 1 in figure [#fig-mlc_data] against the realized evaluations. Even if SCE and FSCABC work totally different, they have almost the same behavior in finding $fit_{best}$ while ABC needs more evaluations to achieve a comparable $fit_{best}$.
+
+~ Figure {#fig-mlc_data; caption:"Fitness evolution during optimization process, trial 1"}
+![mlc50_01]
+~
+[mlc50_01]: images/mlc2_runde2.[svg,pdf] "mlc50_01" { width:100%;}
+
+Table [#table-exp_mlc50] shows the material parameters gained through $fit_{best}$ of each algorithm. Those of SCE and FSCABC are very similar.
+
+~ TableFigure { #table-exp_mlc50_val; caption: "Results of optimization (MLC~50~ data), trial 1";.wide}
+|:-----------------------------------|:---------:|:-----|:------|:-----|:------|:-----|
+|                                    |           |ABC   |FSCABC |SCE   |$l$    |$u$   |
+| Density~1~/(kg/m^3^)               | $\rho_1$  |1451  |1229   |1217  |1      |10000 |
+| Conductivity~1~/(W/(m$\cdot$K))    | $k_1$     |0.150 |0.116  |0.117 |10^-5^ |1     |
+| Specific Heat~1~/(kJ/(kg$\cdot$K)) | $c_1$     |1.631 |1.936  |1.996 |10^-5^ |2     |
+| Reference Temperature~1~/°C        | $T_{p,1}$ |159   |217    |217   |1      |1000  |
+| Pyrolysis Range~1~/°C              | $T_{r,1}$ |424   |334    |332   |1      |1000  |
+|------------------------------------|-----------|------|-------|------|-------|------|
+~
+
+Figure [#fig-mlc_02] shows the normalized mass against time for the target function and the simulations conducted with the parameters from table [#table-exp_tga-values] for all three algorithms with two different background layers each. The graphs for the target function, FSCABC and SCE are hardly distinguishable from each other. Only the graph for ABC is discernable different. 
+
+~ Figure {#fig-mlc_02; caption:"Fitness evolution during optimization process, trial 3"}
+![mlc_02]
+~
+[mlc_02]: images/bestfit_mlc50data.[svg,pdf] "mlc_02" { width:100%;}
+
+## MLC~all~
+
+For MLC~all~, a MLC setup was used, were ten PMMA samples with identical properties are exposed to five heat fluxes (20\ kW/m^2^, 30\ kW/m^2^, 40\ kW/m^2^, 50\ kW/m^2^ and 75\ kW/m^2^) with each an isolating and a heat conducting background layer to take into account effects that occur at different heat fluxes. The decomposition of PMMA in this setup is also modeled as one reaction, hence there are five parameters to be optimized: density, thermal conductivity, specific heat, reference temperature and pyrolysis range.
+
+For all heat fluxes, 30000 evaluations were carried out for each algorithm with five repetitions. The subsequent $fit_{best}$ for each algorithm and trial is shown in [#table-exp_mlcall]. It can be observed a similar behavior as in the optimization of MLC~50~ for $fit_{best}$. SCE has the best, FSCABC follows closely and ABC by far. The needed evaluations for $fit_{best}$ of SCE and FSCABC on the other hand, are both now in the range of 18000 to 29000. 
+
+~ TableFigure { #table-exp_mlcall; caption: "Results of optimization (MLC~all~ data)";.wide}
+|:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|
+|      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4          ||Trial 5          ||
+|      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |
+|ABC   |2,5287      |16486|1,8774      |48305|1,7966      |28439|1,4523      |51624|3,0999      |12838|
+|FSCABC|1,3970      |21627|1,4096      |26392|1.4519      |18872|1,4060      |20584|1,4498      |28671|
+|SCE   |1,3945      |18351|1,3945      |14216|1,3945      |21843|1,3945      |14326|1,3945      |26514|
+|------|------------|-----|------------|-----|------------|-----|------------|-----|------------|-----|
+~
+
+Figure [#fig-mlcall] shows trial\ 3 for example of the development of the optimization for all of the three algorithms. Here, FSCABC and SCE are acting very similar again while ABC needs more evaluations to find a proper solution. Table [#table-exp_mlcall_val] shows the gained material parameters and corresponding boundary values. In a plot of normalized mass against time for the target function and $fit_{best}$ of all algorithms, the graphs are indistinguishable as in the plot of MLC~50~, so this plot is not shown.
+
+
+~ Figure {#fig-mlcall; caption:"Fitness evolution during optimization process, trial 3"}
+![mlcall_01]
+~
+[mlcall_01]: images/mlc.[svg,pdf] "mlcall_01" { width:100%;}
+
+~ TableFigure { #table-exp_mlcall_val; caption: "Results of optimization (MLC~all~ data), trial 3";.wide}
+|:-----------------------------------|:---------:|:-----|:------|:-----|:------|:-----|
+|                                    |           |ABC   |FSCABC |SCE   |$l$    |$u$   |
+| Density~1~/(kg/m^3^)               | $\rho_1$  |2036  |1428   |1192  |1      |10000 |
+| Conductivity~1~/(W/(m$\cdot$K))    | $k_1$     |0.217 |0.131  |0.119 |10^-5^ |1     |
+| Specific Heat~1~/(kJ/(kg$\cdot$K)) | $c_1$     |1.738 |1.828  |1.766 |10^-5^ |2     |
+| Reference Temperature~1~/°C        | $T_{p,1}$ |205   |228    |239   |1      |1000  |
+| Pyrolysis Range~1~/°C              | $T_{r,1}$ |301   |310    |336   |1      |1000  |
+|------------------------------------|-----------|------|-------|------|-------|------|
+~
+
+
+# CONCLUSION
+
+In this work, two optimization algorithms, Artificial Bee Colony and Fitness Scaled Chaotic Artificial Bee Colony, which bases on ABC, were presented in application for material parameter estimation in fire simulation. The performance in accuracy and efficiency of these algorithms is compared to the current standard algorithm SCE with synthetic data and data from bench scale tests in a parallelized computing environment.
+
+FSCABC is superior in all test cases to ABC regarding accuracy and efficiency. Even if SCE in most cases found the best solution, the solution of FSCABC is very close to SCE's solution. It can be stated that the performance of FSCABC is at least very similar to the performance of SCE. Furthermore, it was shown that both, ABC and FSCABC produce robust solutions.
+
+In future research it has to be examined, if tweaking parameters of FSCABC like $N$,$a$,$k$ and $z$ can obtain a superior performance.
+
+# ACKNOWLEDGMENTS
+
+The authors gratefully acknowledge the computing time granted (project
+jjsc27) on the HPC-cluster JURECA Jülich Supercomputing Centre (JSC).
 
 [BIB]
 
 &pagebreak;
-
-# An appendix { @h1:"A" }
-"All the same, I should like it all plain and clear," said he
-obstinately, putting on his business manner (usually reserved for people
-who tried to borrow money off him), and doing his best to appear wise and
-prudent and professional and live up to Gandalf's recommendation. "Also I
-should like to know about risks, out-of-pocket expenses, time required
-and remuneration, and so forth" -- by which he meant: "What am I going to
-get out of it? and am I going to come back alive?"
-
-# Conclusion
-If you have any questions concerning your paper and/or the Conference,
-please email us at [conference@thunderheadeng.com][emaillink].
