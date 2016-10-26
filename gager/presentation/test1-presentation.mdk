@@ -28,9 +28,12 @@ Beamer Theme  : singapore
 [SFPE 29.1]: images/SFPE-29.1.png "SFPE 29.1" { width:auto; max-width:90%; page-align=right}
 ~
 ~ Column
-![FDS Picture]
 
-[FDS Picture]: images/FDS-Picture.png "FDS Picture" { width:auto; max-width:90% }
+
+![FDS Slice File]
+
+[FDS Slice File]: images/FDS-Slice-File.JPG "FDS Slice File" { width:auto; max-width:90% }
+
 
 ~
 ~ End Columns
@@ -84,17 +87,26 @@ Beamer Theme  : singapore
 
 * The threshold of fire smoke density and visibility limits for safe evacuation has been examined by multiple institutions.
 
+~center
+![Table 61.3]
 
+[Table 61.3]: images/Table-61.3.png "Table 61.3" { width:500px }
+~
 ##VISIBILITY 
 
 ~Center
-![Table 61.3]
 
-[Table 61.3]: images/Table-61.3.png "Table 61.3" { width:700px }
+
+
+![Travel Distance]
+
+[Travel Distance]: images/Travel-Distance.JPG "Travel Distance" { width:auto; max-width:90% }
+
+
 
 ![Table 63.5]
 
-[Table 63.5]: images/Table-63.5.png "Table 63.5" { width:800px; vertical-align:middle;}
+[Table 63.5]: images/Table-63.5.png "Table 63.5" { width:600px; vertical-align:middle;}
 
 ~
 
@@ -140,6 +152,10 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 * Body Surface Burns
 * Respiratory Tract Burns 
 
+
+
+
+#Temperature
 ~ Columns
 ~~ Column { width:"50%" }
 ![Tolerance Time for Exposure to Convected Heat no heading]
