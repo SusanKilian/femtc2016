@@ -146,11 +146,11 @@ Where:
 \begin{aligned} 
  S &= visibility~(m) \\
 K &= proportionality~constant\\
-e &= extinction~coefficient~(ft^{-1})
+e &= extinction~coefficient~(m^{-1})
 \end{aligned}
 ~
 
-##VISIBILITY-CURRENT STANDARDS
+##VISIBILITY - CURRENT STANDARDS
 
 * NFPA 130: Smoke obscuration levels should be maintained below the point at which a sign internally illuminated is discernible at 30 m and doors and walls are discernible at 10 m.
 
@@ -224,11 +224,7 @@ T &= temperature~(°C)
 ~
 
 
-#FRACTIONAL EFFECTIVE DOSE (FED)
-
-
-
-
+##FRACTIONAL EFFECTIVE DOSE (FED)
 
 ~Center
 ![FED1]
@@ -244,7 +240,7 @@ T &= temperature~(°C)
 [FED3]: images/FED3.png "FED3" { width:300px }
 ~
 
-##TOXICITY- CURRENT STANDARDS
+##TOXICITY - CURRENT STANDARDS
 ~columns 
 ~~column { width:"50%" }
 
@@ -269,7 +265,7 @@ T &= temperature~(°C)
 ~~
 ~
 ~center
-NFPA 92: No current standards for toxicity tenability limits, but the technical committee responsible for NFPA 92 has been working on standardized tenability criteria.
+NFPA 92: No current standards for toxicity tenability limits.
 ~
 
 #PRISONS
@@ -340,10 +336,10 @@ NFPA 92: No current standards for toxicity tenability limits, but the technical 
 ~
 
 # AMUSEMENT PARKS
-* Different characteristics compared to atrium and other buildings were smoke control is typically provided 
-* Required by stake holders and local jurisdictions in locations with amusement attractions 
-* Occupants can become trapped or unable to egress freely
-* Park staff and dedicated emergency personal are familiar with the building and evacuation procedures
+
+* Required for enclosed by some local jurisdictions in locations with amusement attractions and other stake holders. 
+* Occupants can become trapped or unable to egress freely.
+* Park staff and dedicated emergency personal are familiar with the building and evacuation procedures.
 
 ##AMUSEMENT PARKS - CHALLENGES
 * Worst case scenario is occupant being restrained in a ride during a fire.
@@ -391,11 +387,6 @@ NFPA 92: No current standards for toxicity tenability limits, but the technical 
 ![FDS Section]
 
 [FDS Section]: images/FDS-Section.JPG "FDS Section" { width:400px; max-width:90% }
-
-
-
-
-
 
 ~
 ##AMUSEMENT PARKS - VISIBILITY
