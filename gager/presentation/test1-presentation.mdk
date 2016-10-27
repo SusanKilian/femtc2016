@@ -204,7 +204,7 @@ T &= temperature~(°C)
 [Smoke history]: images/Smoke-history.png "Smoke history" { width:400px; max-width:90% }
 ~
 
-#TOXICITY - CO AND HCN
+##TOXICITY - CO AND HCN
 
 ~columns 
 ~~column { width:"50%" }
@@ -236,8 +236,42 @@ T &= temperature~(°C)
 ![FED3]
 
 [FED3]: images/FED3.png "FED3" { width:300px }
-
 ~
+
+##TOXICITY- CURRENT STANDARDS
+~columns 
+~~column { width:"50%" }
+
+
+
+![NFPA 130 Toxicity]
+
+[NFPA 130 Toxicity]: images/NFPA-130-Toxicity.JPG "NFPA 130 Toxicity" { width:auto; max-width:90% }
+
+
+
+
+
+
+
+~~
+~~Column
+ *AEGL 2: General population including susceptible individuals
+* 0.3: More sensitive populations
+* 0.5: Healthy Adult Population
+~~
+~
+~center
+NFPA 92: No current standards for toxicity tenability limits, but the technical committee responsible for NFPA 92 has been working on standardized tenability criteria.
+~
+  
+  
+  
+  
+  
+  
+  
+  
 # PRISONS
 * Different characteristics compared to atrium and other buildings were smoke control is typically provided 
 * Smaller with shorter travel distances to exits
