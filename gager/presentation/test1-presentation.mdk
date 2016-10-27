@@ -147,6 +147,7 @@ e &= extinction~coefficient~(m^{-1})
 ##VISIBILITY - NFPA 130 
 
 * Smoke obscuration levels should be maintained below the point at which a sign internally illuminated is discernible at 30 meters and doors and walls are discernible at 10 meters.
+
 ~center
 
 ![Smoke]
@@ -181,7 +182,7 @@ T &= temperature~(°C)
 ##Temperature - Hyperthermia
 
 ~ center
-  Hyperthermia involves prolonged exposure to heated environments at temperatures to low to cause burns
+  **Hyperthermia involves prolonged exposure to heated environments at temperatures to low to cause burns**
 
   
   ![Tolerance Time for Exposure to Convected Heat no heading]
@@ -323,7 +324,7 @@ Maximum Temperature Exposure Times Table B.2.1.1
 ~~
 ~
 
-##TENABILITY
+##PRISON TENABILITY
 
 ~ Center
 
@@ -333,14 +334,14 @@ Maximum Temperature Exposure Times Table B.2.1.1
 
 ~
 
-##TENABILITY
+##PRISON TENABILITY
 ~center
 
 ![15200s]
 
 [15200s]: images/15200s.png "15200s" { width:auto; max-width:90% }
 ~
-#TENABILITY
+#PRISON TENABILITY
 ~ Center
 
 
