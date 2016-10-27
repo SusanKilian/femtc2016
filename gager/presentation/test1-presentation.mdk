@@ -81,7 +81,7 @@ Beamer Theme  : singapore
 
 
 #VISIBILITY 
-* While temperature and toxic gases are the final causes of death, many evacuees are trapped in an early stage of fire by relatively thin smoke.
+* While temperature and toxic gases are the final causes of death, many evacuees are trapped in an early stage of a fire by relatively thin smoke.
 
 * The presence of smoke in an occupied enclosure obscures illumination from windows and other light sources, so that escaping occupants can find themselves in dimly lit conditions.
 
@@ -167,7 +167,7 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 * Respiratory Tract Burns 
 
 ~ Equation { #euler }
-t_{exp} = (1.125×〖10〗^7 ) T^{-3.4}
+t_{exp} = (1.125 ×〖10〗^7 ) T^{-3.4}
 ~
 
 Where:
