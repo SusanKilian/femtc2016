@@ -256,7 +256,8 @@ T &= temperature~(°C)
 
 ~~
 ~~Column
- *AEGL 2: General population including susceptible individuals
+
+* AEGL 2: General population including susceptible individuals
 * 0.3: More sensitive populations
 * 0.5: Healthy Adult Population
 ~~
@@ -307,6 +308,61 @@ NFPA 92: No current standards for toxicity tenability limits, but the technical 
 
 
 ~
+
+# AMUSEMENT PARKS
+* Different characteristics compared to atrium and other buildings were smoke control is typically provided 
+* Required by stake holders and local jurisdictions in locations with amusement attractions 
+* Occupants can become trapped or unable to egress freely
+* Park staff and dedicated emergency personal are familiar with the building and evacuation procedures
+
+##AMUSEMENT PARKS - CHALLENGES
+* Worst case scenario: Occupant being restrained in a ride during a fire
+* Toxicity and Temperature must be evaluated for extended periods of time, sometimes at elevated levels (higher than 6 feet above highest walking surface)
+* Visibility not required for occupants to wayfind and egress is not a concern
+* Visibility is required for park staff and first responders in order to free occupants who are restrained.  These occupants are could be familiar with their surroundings.
+
+##AMUSEMENT PARKS - EXAMPLES
+~columns 
+~~column { width:"50%" }
+  
+~~
+~~Column
+
+
+![FDS Overview]
+
+[FDS Overview]: images/FDS-Overview.JPG "FDS Overview" { width:auto; max-width:90% }
+~~
+ ~ 
+
+##AMUSEMENT PARKS - EXAMPLES
+~columns 
+~~column { width:"50%" }
+
+
+![Theme Park Section]
+
+[Theme Park Section]: images/Theme-Park-Section.JPG "Theme Park Section" { width:auto; max-width:90% }
+
+
+
+
+~~
+~~Column
+  
+  
+  
+![FDS Section]
+  [FDS Section]: images/FDS-Section.JPG "FDS Section" { width:auto; max-width:90% }
+  
+  
+  ~~
+  ~
+
+
+
+
+
 
 
 
