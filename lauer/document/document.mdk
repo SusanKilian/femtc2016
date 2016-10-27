@@ -86,7 +86,7 @@ The experiments are conducted with two different background layers, conductor (a
 ### Synthetic Data {#synth}
  
  
-For the test series with synthetic data, the same model set-up as in the TGA series was used. With the input parameters of table [#table-synth-tga] for two materials synthetic data was produced with a heating rate of 10 K/min.
+For the test series with synthetic data, the same model setup as in the TGA series was used. With the input parameters of table [#table-synth-tga] for two materials synthetic data was produced with a heating rate of 10 K/min.
 
 
 ~ TableFigure { #table-synth-tga; caption: "Material parameters for generation of a synthetic data set"; .wide }
@@ -106,12 +106,12 @@ For the test series with synthetic data, the same model set-up as in the TGA ser
 
 ## Simulation Model
 
-According to the experiments, simulations has to be conducted on a TGA set-up and a MLC set-up. Both numerical setups are based on the  recommended realizations in the FDS User's Guide [@McGrattan:2015gv]. These recommendations were adapted to the reaction and decomposition steps observed in the experiments. Further details are explained later on.
+According to the experiments, simulations has to be conducted on a TGA setup and a MLC setup. Both numerical setups are based on the  recommended realizations in the FDS User's Guide [@McGrattan:2015gv]. These recommendations were adapted to the reaction and decomposition steps observed in the experiments. Further details are explained later on.
 
 ### TGA
  
  
-The pyrolysis model of FDS is based on equation [#arrh] and is extended by the reaction order and the local oxygen volume fraction [@McGrattan:2015gv]. For the modeling of the TGA experiment series, the reaction order is fixed to one. A very thin sample (1 mm) is modeled to minimize the influence of the thermal properties and to focus on the pyrolysis process only. Due to a high heat coefficient of the sample, the simulation results are not influenced by the heating behavior. Three decomposition reactions are assumed, which are responsible for a mass loss of 94\% of the sample. These boundary conditions are based mainly on the FDS User's Guides recommended TGA set-up and on the results of the experiments.
+The pyrolysis model of FDS is based on equation [#arrh] and is extended by the reaction order and the local oxygen volume fraction [@McGrattan:2015gv]. For the modeling of the TGA experiment series, the reaction order is fixed to one. A very thin sample (1 mm) is modeled to minimize the influence of the thermal properties and to focus on the pyrolysis process only. Due to a high heat coefficient of the sample, the simulation results are not influenced by the heating behavior. Three decomposition reactions are assumed, which are responsible for a mass loss of 94\% of the sample. These boundary conditions are based mainly on the FDS User's Guides recommended TGA setup and on the results of the experiments.
 To get the best fitting of modeling results compared to the experimental results for the Arrhenius parameters $A$ and $E$, the pyrolysis parameters will be varied and the mass loss of the TGA experiments will be compared with the modeling results until the convergence criteria is satisfied. [@trettin2016fspread]
 
 ### MLC
@@ -234,26 +234,26 @@ Overall, the three algorithms were compared in four different experimental setup
 
 In this case, ten input parameters were determined on a TGA setup with synthetic data as target. For two reactions, parameters density, thermal conductivity, specific heat, reference temperature and reference rate were used each, while the two latter ones characterize $A$ and $E$.
 
-For each algorithm 100000 evaluations where done, each repeated five times to evaluate robustness of the algorithms with the model described in section [#synth]. In table [#table-exp_synth] the best fit ($fit_{best}$) as raw (RMSE) fitness value is shown for each trial and algorithm. Also the number of evaluations ($j$) after which it was achieved is stated. As can be seen, ABC and FSCABC reach a similar fitness value in all of the five trials while ABC clearly needs more evaluations (factor 1.5...6.2) to reach the same fitting. In this case, SCE is faster than ABC and partly FSCABC but stagnates at a far superior fit than the other to algorithms.
+For each algorithm 100000 evaluations where done, each repeated five times to evaluate robustness of the algorithms with the model described in section [#synth]. In table [#table-exp_synth] the best fit ($fit_{best}$) as raw (RMSE) fitness value is shown for each trial and algorithm. Also the number of evaluations ($j$) after which it was achieved is stated. As can be seen, ABC and FSCABC reach a similar fitness value in all of the five trials while ABC clearly needs more evaluations (factor 1.5...6.2) to reach the same fitting. In this case, SCE is faster than ABC and partly FSCABC but stagnates at a far inferior fit than the other two algorithms.
 
 ~ TableFigure { #table-exp_synth; caption: "Results of optimization (synthetic data)";.wide}
 |:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:-----|:-----------|:----|
 |      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4           ||Trial 5          ||
 |      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$   |$fit_{best}$|$j$  |
-|ABC   |0,0442      |69243|0,0444      |67589|0,0439      |80906|0,0451      |94351 |0,0439      |62951|
-|FSCABC|0,0440      |35173|0,0434      |51296|0,0440      |37980|0,0440      |15686 |0,0439      |41798|
-|SCE   |0,0492      |11609|0,0571      |34611|0,0477      |68659|0,0571      |51781 |0,0504      |28148|
+|ABC   |0.0442      |69243|0.0444      |67589|0.0439      |80906|0.0451      |94351 |0.0439      |62951|
+|FSCABC|0.0440      |35173|0.0434      |51296|0.0440      |37980|0.0440      |15686 |0.0439      |41798|
+|SCE   |0.0492      |11609|0.0571      |34611|0.0477      |68659|0.0571      |51781 |0.0504      |28148|
 |------|------------|-----|------------|-----|------------|-----|------------|------|------------|-----|
 ~
 
-In figure [#fig-syn] the development of $fit_{best}$ for all algorithms is shown during trial\ 4. It can be seen that all three algorithms after 20000 evaluations only improve little at a time. FSCABC has achieved the highest fitness with the highest slop, ABC a similar value and SCE a way superior fitting until then.
+In figure [#fig-syn] the development of $fit_{best}$ for all algorithms is shown during trial\ 4. It can be seen that all three algorithms after 20000 evaluations improve only a little. FSCABC has achieved the highest fitness with the highest slope, ABC a similar value and SCE a way inferior fitting until then.
 
 ~ Figure {#fig-syn; caption:"Fitness evolution during optimization process, trial 4"}
 ![syn_01]
 ~
 [syn_01]: images/synthetic.[svg,pdf] "syn_01" { width:100%;}
 
-In table [#table-exp_synthetic-values] the parameters associated with $fit_{best}$ are shown. $l$ and $u$ describe the lower and upper bounds, respectively. For material one the values achieved with ABC and FSCABC remotely close to the target values. All other values are not close to the target values. However, this is nothing a metaheuristic optimization process can provide in the first place, especially if many different solutions generate a similar output, as it is here.
+In table [#table-exp_synthetic-values] the parameters associated with $fit_{best}$ are shown. $l$ and $u$ describe the lower and upper bounds, respectively. For material one the values achieved with ABC and FSCABC are remotely close to the target values. All other values are not close to the target values. However, this is nothing a metaheuristic optimization process can provide in the first place, especially if many different solutions generate a similar output, as it is here.
 
 ~ TableFigure { #table-exp_synthetic-values; caption: "Results of optimization (synthetic data), trial 4";.wide}
 |:-----------------------------------|:---------:|:-------|:-------|:-------|:---------|:------|:---|
@@ -271,7 +271,7 @@ In table [#table-exp_synthetic-values] the parameters associated with $fit_{best
 |------------------------------------|-----------|--------|--------|--------|----------|-------|----|
 ~
 
-The normalized mass against temperature associated with values from table [#table-exp_synthetic-values] is plotted in figure [#fig-syn2]. The graph of ABC and FSCABC are similar and follows the target closely, whereas the SCE graph is only loosely similar to the target.
+The normalized mass against temperature associated with values from table [#table-exp_synthetic-values] is plotted in figure [#fig-syn2]. Graphs of ABC and FSCABC are similar and follow the target closely, whereas the SCE graph represents only the trend of the target function.
 
 ~ Figure {#fig-syn2; caption:"Best fit (synthetic date), trial 4"}
 ![syn_02]
@@ -280,17 +280,17 @@ The normalized mass against temperature associated with values from table [#tabl
 
 ## TGA
 
-A similar setup is used as in the case before. The target data (normalized mass loss) is gained from a TGA experiment (heating rate 5 K/min) with PU. The pyrolysis here is characterized in three reactions with parameters reference temperature and pyrolysis range, each. Hence, six parameters have to be optimized.
+A similar setup is used as in the case before. The target data (normalized mass loss) is gained from a TGA experiment (heating rate 5 K/min) with PU. The pyrolysis is characterized by three reactions with the parameters reference temperature and pyrolysis range for each reaction. Hence, six parameters have to be optimized.
 
-As with the synthetic data, here are also 100000 evaluations conducted, repeated three times, for ABC, FSCABC and SCE, each. The results are shown in table [#table-exp_tga]. SCE reaches the same $fit_{best}$ after at most 29000 evaluations. FSCABC needs between 18000 and 96000 evaluations for a slightly inferior $fit_{best}$. ABC needs at least 54000 evaluations to find a $fit_{best}$ that is inferior to both, FSCABC and SCE.
+As with the synthetic data, here are also 100000 evaluations are conducted and repeated three times for each optimization method. The results are shown in table [#table-exp_tga]. SCE reaches the same $fit_{best}$ after at most 29000 evaluations. FSCABC needs between 18000 and 96000 evaluations for the same $fit_{best}$. ABC needs at least 54000 evaluations to find a $fit_{best}$ that is inferior to both, FSCABC and SCE.
 
 ~ TableFigure { #table-exp_tga; caption: "Results of optimization (TGA data)";.wide}
 |:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|
 |      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4          ||Trial 5          ||
 |      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |
-|ABC   |0,4335      |86161|0,4300      |70716|0,4288      |57842|0,4467      |54370|0,4222      |89871|
-|FSCABC|0,4177      |96426|0,4181      |87020|0,4179      |76092|0,4210      |17875|0,4177      |23540|
-|SCE   |0,4175      |14652|0,4175      |24736|0,4175      |29279|0,4175      |22977|0,4175      |29243|
+|ABC   |0.4335      |86161|0.4300      |70716|0.4288      |57842|0.4467      |54370|0.4222      |89871|
+|FSCABC|0.4177      |96426|0.4181      |87020|0.4179      |76092|0.4210      |17875|0.4177      |23540|
+|SCE   |0.4175      |14652|0.4175      |24736|0.4175      |29279|0.4175      |22977|0.4175      |29243|
 |------|------------|-----|------------|-----|------------|-----|------------|-----|------------|-----|
 ~
 
@@ -324,17 +324,17 @@ Figure [#fig-tga2] shows the normalized mass against time for the target functio
 
 ## MLC~50~
 
-For MLC~50~, a MLC setup was used, were a PMMA sample is exposed one heat flux (50\ kW/m^2^). The decomposition of PMMA is modeled as one reaction, hence there are five parameters to be optimized: density, thermal conductivity, specific heat, reference temperature and pyrolysis range.
+For MLC~50~, a MLC setup was used, were a PMMA sample is exposed to a single heat flux (50\ kW/m^2^). The decomposition of PMMA is modeled as one reaction, hence there are five parameters to be optimized: density, thermal conductivity, specific heat, reference temperature and pyrolysis range.
 
-In table\ [#table-exp_mlc50], $fit_{best}$ for each algorithm is shown and when it was achieved. For each algorithm, 100000 evaluations per trial were done for a heat flux of 50 kW/m^2^. Like in the previous case, here SCE and FSCABC have a very similar $fit_{best}$, too. Also, $fit_{best}$ of SCE is a bit better than $fit_{best}$ of FSCABC and is reached faster. ABC is inferior in both, efficiency and accuracy.
+In table\ [#table-exp_mlc50], $fit_{best}$ for each algorithm is shown and when it was achieved. For each algorithm, 100000 evaluations per trial were done for a heat flux of 50\ kW/m^2^. Like in the previous case, SCE and FSCABC have a very similar $fit_{best}$, too. Also, $fit_{best}$ of SCE is a bit better than $fit_{best}$ of FSCABC and is reached faster. ABC is inferior in both, efficiency and accuracy.
 
 ~ TableFigure { #table-exp_mlc50; caption: "Results of optimization (MLC~50~ data)";.wide}
 |:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|
 |      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4          ||Trial 5          ||
 |      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |
-|ABC   |1,2931      |63167|1,3272      |6955 |1,2645      |16999|1,1588      |55819|1,1626      |73290|
-|FSCABC|1,1402      |95545|1,1471      |78981|1,1405      |68869|1,1428      |50929|1,1407      |89018|
-|SCE   |1,1391      |36072|1,1391      |17250|1,1391      |18854|1,1390      |32574|1,1390      |31724|
+|ABC   |1.2931      |63167|1.3272      |6955 |1.2645      |16999|1.1588      |55819|1.1626      |73290|
+|FSCABC|1.1402      |95545|1.1471      |78981|1.1405      |68869|1.1428      |50929|1.1407      |89018|
+|SCE   |1.1391      |36072|1.1391      |17250|1.1391      |18854|1.1390      |32574|1.1390      |31724|
 |------|------------|-----|------------|-----|------------|-----|------------|-----|------------|-----|
 ~
 
@@ -360,7 +360,7 @@ Table [#table-exp_mlc50] shows the material parameters gained through $fit_{best
 
 Figure [#fig-mlc_02] shows the normalized mass against time for the target function and the simulations conducted with the parameters from table [#table-exp_tga-values] for all three algorithms with two different background layers each. The graphs for the target function, FSCABC and SCE are hardly distinguishable from each other. Only the graph for ABC is discernable different. 
 
-~ Figure {#fig-mlc_02; caption:"Fitness evolution during optimization process, trial 3"}
+~ Figure {#fig-mlc_02; caption:"Fitness evolution during optimization process, trial 1"}
 ![mlc_02]
 ~
 [mlc_02]: images/bestfit_mlc50data.[svg,pdf] "mlc_02" { width:100%;}
@@ -369,19 +369,19 @@ Figure [#fig-mlc_02] shows the normalized mass against time for the target funct
 
 For MLC~all~, a MLC setup was used, were ten PMMA samples with identical properties are exposed to five heat fluxes (20\ kW/m^2^, 30\ kW/m^2^, 40\ kW/m^2^, 50\ kW/m^2^ and 75\ kW/m^2^) with each an isolating and a heat conducting background layer to take into account effects that occur at different heat fluxes. The decomposition of PMMA in this setup is also modeled as one reaction, hence there are five parameters to be optimized: density, thermal conductivity, specific heat, reference temperature and pyrolysis range.
 
-For all heat fluxes, 30000 evaluations were carried out for each algorithm with five repetitions. The subsequent $fit_{best}$ for each algorithm and trial is shown in [#table-exp_mlcall]. It can be observed a similar behavior as in the optimization of MLC~50~ for $fit_{best}$. SCE has the best, FSCABC follows closely and ABC by far. The needed evaluations for $fit_{best}$ of SCE and FSCABC on the other hand, are both now in the range of 18000 to 29000. 
+For all heat fluxes, 30000 evaluations were carried out for each algorithm with five repetitions. The subsequent $fit_{best}$ for each algorithm and trial is shown in table [#table-exp_mlcall]. It can be observed a similar behavior as in the optimization of MLC~50~ for $fit_{best}$. SCE has the best, FSCABC follows closely and ABC by far. The needed evaluations for $fit_{best}$ of SCE and FSCABC on the other hand, are both now in the range of 18000 to 29000. 
 
 ~ TableFigure { #table-exp_mlcall; caption: "Results of optimization (MLC~all~ data)";.wide}
 |:-----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|:-----------|:----|
 |      |Trial 1          ||Trial 2          ||Trial 3          ||Trial 4          ||Trial 5          ||
 |      |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |$fit_{best}$|$j$  |
-|ABC   |2,5287      |16486|1,8774      |48305|1,7966      |28439|1,4523      |51624|3,0999      |12838|
-|FSCABC|1,3970      |21627|1,4096      |26392|1.4519      |18872|1,4060      |20584|1,4498      |28671|
-|SCE   |1,3945      |18351|1,3945      |14216|1,3945      |21843|1,3945      |14326|1,3945      |26514|
+|ABC   |2.5287      |16486|1.8774      |48305|1.7966      |28439|1.4523      |51624|3.0999      |12838|
+|FSCABC|1.3970      |21627|1.4096      |26392|1.4519      |18872|1.4060      |20584|1.4498      |28671|
+|SCE   |1.3945      |18351|1.3945      |14216|1.3945      |21843|1.3945      |14326|1.3945      |26514|
 |------|------------|-----|------------|-----|------------|-----|------------|-----|------------|-----|
 ~
 
-Figure [#fig-mlcall] shows trial\ 3 for example of the development of the optimization for all of the three algorithms. Here, FSCABC and SCE are acting very similar again while ABC needs more evaluations to find a proper solution. Table [#table-exp_mlcall_val] shows the gained material parameters and corresponding boundary values. In a plot of normalized mass against time for the target function and $fit_{best}$ of all algorithms, the graphs are indistinguishable as in the plot of MLC~50~, so this plot is not shown.
+Figure [#fig-mlcall] shows the development of the optimization for all of the three algorithms of trial 3. Here, FSCABC and SCE are acting very similar again while ABC needs more evaluations to find a proper solution. Table [#table-exp_mlcall_val] shows the gained material parameters and corresponding boundary values. In a plot of normalized mass against time for the target function and $fit_{best}$ of all algorithms, the graphs are indistinguishable as in the plot of MLC~50~, so this plot is not shown.
 
 
 ~ Figure {#fig-mlcall; caption:"Fitness evolution during optimization process, trial 3"}
