@@ -198,11 +198,21 @@ T &= temperature~(°C)
 
 #TOXICITY - CO AND HCN
 
-~ COLUMNS
-~~COLUMN
-  
-  
+~columns 
+~~column { width:"50%" }
+![Toxicity]
+ [Toxicity]: images/Toxicity.JPG "Toxicity" { width:auto; max-width:90% }
+~~
+~~column
+* CO exposure accounts for the majority of total fire fatalities
+* Fractional Effective Dose (FED) is used to address exposure to effluents as a function of time 
+~~
+~
+
+
 #FRACTIONAL EFFECTIVE DOSE (FED)
+
+
 
 
 
