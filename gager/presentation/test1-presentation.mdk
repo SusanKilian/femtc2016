@@ -92,7 +92,7 @@ Beamer Theme  : singapore
 
 [Table 61.3]: images/Table-61.3.png "Table 61.3" { width:500px }
 ~
-##VISIBILITY 
+##VISIBILITY - SIZE OF ENCLOSURE
 
 ~Center
 
@@ -143,6 +143,14 @@ K &= proportionality~constant\\
 e &= extinction~coefficient~(ft^{-1})
 \end{aligned}
 ~
+
+##VISIBILITY-CURRENT STANDARDS
+
+* NFPA 130: Smoke obscuration levels should be maintained below the point at which a sign internally illuminated is discernible at 30 m and doors and walls are discernible at 10 m.
+
+* NFPA 92: No current standards for visibility levels, but future NFPA 92 editions are likely to have a visibility criteria limit around 10 meters.
+
+
 
 #TEMPERATURE
 
