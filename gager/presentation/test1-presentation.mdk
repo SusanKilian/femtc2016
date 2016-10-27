@@ -8,10 +8,6 @@ Beamer Theme  : singapore
 
 [TITLE]
 
-# Content
-
-[TOC]
-
 # INTRODUCTION
 
 * **Active Smoke Control Systems**
@@ -101,11 +97,9 @@ Beamer Theme  : singapore
 ~Center
 
 
+![Traveldistance6]
 
-![Travel Distance]
-
-[Travel Distance]: images/Travel-Distance.JPG "Travel Distance" { width:auto; max-width:90% }
-
+[Traveldistance6]: images/Traveldistance6.png "Traveldistance6" { width:auto; max-width:40%; transform:rotate(270deg) }
 
 
 ![Enclosure Size]
@@ -150,12 +144,17 @@ e &= extinction~coefficient~(m^{-1})
 \end{aligned}
 ~
 
-##VISIBILITY - CURRENT STANDARDS
+##VISIBILITY - NFPA 130 
 
-* NFPA 130: Smoke obscuration levels should be maintained below the point at which a sign internally illuminated is discernible at 30 m and doors and walls are discernible at 10 m.
+* Smoke obscuration levels should be maintained below the point at which a sign internally illuminated is discernible at 30 meters and doors and walls are discernible at 10 meters.
+~center
 
-* NFPA 92: No current standards for visibility levels, but future NFPA 92 editions are likely to have a visibility criteria limit around 10 meters.
+![Smoke]
 
+[Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:90% }
+
+
+~
 
 
 #TEMPERATURE
@@ -167,7 +166,7 @@ Exposure to heat can lead to incapacitation or death in fire victims in three wa
 * Respiratory Tract Burns 
 
 ~ Equation { #euler }
-t_{exp} = (1.125 ×〖10〗^7 ) T^{-3.4}
+t_{exp} = (1.125X10〗^7 ) T^{-3.4}
 ~
 
 Where:
@@ -179,22 +178,30 @@ T &= temperature~(°C)
 \end{aligned}
 ~
 
+##Temperature - Hyperthermia
 
+~ center
+  Hyperthermia involves prolonged exposure to heated environments at temperatures to low to cause burns
 
-##Temperature - CURRENT STANDARDS
-~ Columns
-~~ Column { width:"50%" }
-![Tolerance Time for Exposure to Convected Heat no heading]
+  
+  ![Tolerance Time for Exposure to Convected Heat no heading]
 
 [Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90% }
+  
+  
+  
+ 
+~
+##Temperature - NFPA 130
 
-~~
-~~ Column
+~Center
+  
+Maximum Temperature Exposure Times Table B.2.1.1
 ![Table B.2.1.1]
 
 [Table B.2.1.1]: images/Table-B.2.1.1.png "Table B.2.1.1" { width:auto; max-width:90% }
-~~
 ~
+
 
 #TOXICITY
 * Death from smoke inhalation 
@@ -227,20 +234,26 @@ T &= temperature~(°C)
 ##FRACTIONAL EFFECTIVE DOSE (FED)
 
 ~Center
-![FED1]
 
-[FED1]: images/FED1.png "FED1" { width:300px}
 
-![FED2]
+![Equation 1]
 
-[FED2]: images/FED2.png "FED2" { width:600px }
+[Equation 1]: images/Equation-1.JPG "Equation 1" { width:auto; max-width:40% }
 
-![FED3]
 
-[FED3]: images/FED3.png "FED3" { width:300px }
+![Equation 2]
+
+[Equation 2]: images/Equation-2.JPG "Equation 2" { width:auto; max-width:70% }
+
+
+![Equation 3]
+
+[Equation 3]: images/Equation-3.JPG "Equation 3" { width:auto; max-width:40% }
+
+
 ~
 
-##TOXICITY - CURRENT STANDARDS
+##TOXICITY - NFPA 130
 ~columns 
 ~~column { width:"50%" }
 
@@ -263,9 +276,6 @@ T &= temperature~(°C)
 * 0.3: More sensitive populations
 * 0.5: Healthy Adult Population
 ~~
-~
-~center
-NFPA 92: No current standards for toxicity tenability limits.
 ~
 
 #PRISONS
@@ -290,9 +300,15 @@ NFPA 92: No current standards for toxicity tenability limits.
 ~columns 
 ~~column { width:"40%" }
 
-![Red Rock]
+![Travel Distance1]
 
-[Red Rock]: images/Red-Rock.png "Red Rock" { width:auto; max-width:90% }
+[Travel Distance1]: images/Travel-Distance1.JPG "Travel Distance1" { width:auto; max-width:90%; transform:rotate(90deg) }
+
+
+
+
+
+
 
 
 ~~
@@ -344,8 +360,9 @@ NFPA 92: No current standards for toxicity tenability limits.
 ##AMUSEMENT PARKS - CHALLENGES
 * Worst case scenario is occupant being restrained in a ride during a fire.
 * Toxicity and Temperature must be evaluated for extended periods of time, sometimes at elevated levels (higher than 6 feet above highest walking surface).
-* Visibility criteria could be different for restrained occupants becuase wayfinding and egress is different. 
-* Visibility is required for park staff and first responders in order to assist occupants who are restrained.  These occupants are could be familiar with their surroundings.
+* Visibility criteria could be different for restrained occupants because wayfinding is not a concern. 
+* Visibility is required for park staff and first responders in order to assist occupants who are restrained.  These occupants are familiar with their surroundings.
+* Researched tenability criteria should be used. 
 
 ##AMUSEMENT PARKS - EXAMPLES
 ~columns 
