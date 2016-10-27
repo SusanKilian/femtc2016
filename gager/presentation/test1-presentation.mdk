@@ -336,6 +336,7 @@ NFPA 92: No current standards for toxicity tenability limits, but the technical 
  ~ 
 
 ##AMUSEMENT PARKS - EXAMPLES
+
 ~columns 
 ~~column { width:"50%" }
 
@@ -344,27 +345,38 @@ NFPA 92: No current standards for toxicity tenability limits, but the technical 
 
 [Theme Park Section]: images/Theme-Park-Section.JPG "Theme Park Section" { width:auto; max-width:90% }
 
-
-
-
 ~~
 ~~Column
   
-  
-  
 ![FDS Section]
-  [FDS Section]: images/FDS-Section.JPG "FDS Section" { width:auto; max-width:90% }
-  
-  
-  ~~
-  ~
+[FDS Section]: images/FDS-Section.JPG "FDS Section" { width:auto; max-width:90% }
 
 
+~~
+~
+##AMUSEMENT PARKS - VISIBILITY
 
+~CENTER
+![TP Visibility]
 
+[TP Visibility]: images/TP-Visibility.JPG "TP Visibility" { width:auto; max-width:90% }
+~
 
+##AMUSEMENT PARKS - VISIBILITY VS TEMPERATURE
 
+~CENTER
+![Visibility versus Temperature 2]
 
+[Visibility versus Temperature 2]: images/Visibility-versus-Temperature-2.png "Visibility versus Temperature 2" { width:auto; max-width:90% }
+~
+
+##AMUSEMENT PARKS - VISIBILITY VS CO CONCENTRATION
+
+~CENTER
+![Visibility versus CO]
+
+[Visibility versus CO]: images/Visibility-versus-CO.png "Visibility versus CO" { width:auto; max-width:90% }
+~
 
 ## Reveal.js
 
