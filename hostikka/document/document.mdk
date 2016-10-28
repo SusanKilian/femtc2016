@@ -1,18 +1,22 @@
 [INCLUDE=style/lncs]
-Title         : TITLE OF YOUR PAPER, IN CAPITAL LETTERS CENTERED ON PAGE, USING ONE OR MORE LINES AS NECESSARY
-Subtitle      : An optional subtitle.
+Title         : FIRE MODELLING OF ENERGY-EFFICIENT APARTMENT BUILDINGS
+Subtitle      : Consideration of air-tightness and mechanical ventilation
 
-Author        : First Author Name
-Affiliation   : Research institute
-Email         : you@bar.com
+Author        : Simo Hostikka
+Affiliation   : Aalto University
+Email         : simo.hostikka@aalto.fi
 
-Author        : My co-author 1
-Affiliation   : Other institute
-Email         : other1@bar.com
+Author        : Rahul Kallada Janardhan
+Affiliation   : Aalto University
+Email         : 
 
-Author        : My co-author 2
-Affiliation   : Other institute
-Email         : other2@bar.com
+Author        : Umar Riaz
+Affiliation   : Aalto University
+Email         : 
+
+Author        : Topi Sikanen
+Affiliation   : VTT Technical Research Centre of Finland Ltd.
+Email         : 
 
 Bibliography  : references.bib
 Logo          : False
@@ -23,16 +27,182 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-Papers should follow standard technical paper format, an abstract
-followed by the more detailed presentation. The abstract should be typed
-on this area of the first page, with the presentation following after two
-lines of space.
+The current trends in building construction, such as the energy efficiency and high-rise construction, require more careful consideration of the mechanical ventilation systems and the building envelope's air-tightness from the fire modelers. In this paper we present recent experiments, validation studies and a case-study application, focusing on modelling process. 
 ~
 
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
 [reference-manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html "Madoko Reference Manual"
 [femtc2016]: https://github.com/thunderheadeng/femtc2016
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
+
+# INTRODUCTION
+
+In the modeling of enclosure fires, it has been common to assume that the buildings that we analyze are not air-tight, with a few exceptions, such as the special industrial facilities like nuclear power plants. Pressure build-up in the simulations has been avoided because (i) it has been deemed sufficient to focus on the hydrostatic pressure driving the flows in the space, (ii) accurate information about the air-tightness of the constructions, and (iii) the means of calculating the leakage flows have been difficult to integrate with the numerical fire models. For long, it was a common practice to define a 10 by 10 cm leakage hole to the rooms when modeling them with zone or CFD models. With the current trends of energy-efficiency and high-rise buildings, the situation has changed. Both trends pose much more strict requirements for the building envelope's air-tightness than what has been the common practice before. As a result, the development of over- and under-pressures has become an essential feature of building fires and their simulations. 
+
+At the same time with building envelopes becoming more air-tight, the ventilation systems are getting more complicated. Meeting the energy-efficiency requirements necessitates the use of mechanical supply and exhaust ventilation with heat recovery. Integration with building services and active fire protection technologies makes the systems complicated and challenging for modeling. 
+
+In FDS, the technical capability to simulate HVAC systems and leakages was introduced by the implementation of a dedicated HVAC module [@Floyd:2011]. 
+
+
+# Features of modern buildings
+
+## Ventilation systems
+
+The traditional ventilation systems in residential buildings have been based on mechanical or buouyancy driven exhaust, with the supply air provided through the building envelope either as an uncontrolled leakage or through valves. In modern HVAC systems, there are usually separate networks for supply and exhaust air. Both networks are typically equipped with a fan unit to control the flow rate and to implement the heating/cooling, as well as heat recovery and air filtration for indoor air quality control. Single fan unit may serve entire building or a single floor of a multi-storey apartment building. The coils and filters introduce drag to the flow. As a result, the fan unit will cause pressure losses even when the fans are turned off.  For fire compartmentation and smoke control, fire and/or smoke dampers are typically installed to the ducts entering and leaving the apartments. In addition, the modern ventilation fans are often equipped with dampers that automatically close the ambient connection when the fan is turned off. In fire situation, turning off the fan can therefore lead to complete closing of the ventilation system.  
+
+In principle, the ventilation system could be modelled starting from the drawing describing the design or 'as built' status. This is possible if we know the exact dimensions and characteristics of the various components of the system. The losses were determined using based on individual pressure loss of each duct fitting and the friction loss of the duct. The volume flow or velocity of flow through the ducts is required to find the loss coefficient $K_{j}$ appearing in the duct momentum equation
+~ Equation {#duct_momentum}
+\rho_jL_j\frac{du}{dt} = (P_i - P_k) + (\rho g \Delta{z})_j + \Delta{P_j} + 0.5K_j\rho_j|u_j|u_j
+~
+
+For example, assuming a duct of length 1m and diameter of 0.1m with an expansion fitting which leads to a duct of 0.125m and a damper regulating the flow to 25 L/s. The loss coefficient for this duct is calculated as follows:
+
+* The value of friction loss for a give diameter and volume flow/velocity can be found from a friction loss chart for a duct. In this case, friction loss is about 1.6...1.8 Pa, and $F_{\rm loss} = 1 \times 1.8 = 1.8$ Pa.
+* For an expansion, loss would be calculated using the equation $\Delta P = \frac{\rho V^2}{2}(1 - \frac{A_1}{A_2})^2 $ which give us the value of $\Delta P$ as 0.8.03 Pa.
+* The loss across the damper is usually the highest. Here we can assume that it causes a loss of 50 Pa. 
+* The total loss accounts to 52.603 Pa. This value should equal to the last term in Equation [#duct_momentum]:
+$0.5K_j\rho_j|u_j|u_j = 52.603$ Pa $\Rightarrow K_j = 8.476$.
+
+This kind of process requires a lot of information that can be difficult or impossible to obtain for a fire engineer. Additionally, the process is sentitive for errors. Practical experiences from the two validation studies and two case studies showed us that the practical HVAC modelling procedure is like this:
+
+1. Gather the basic design information about flow rates, known pressure losses of the HVAC valves and fan unit components, and the fan operating characteristics of the (fan curve).
+2. Model the HVAC network in the simplest possible way, maintaining the physical dimensions (diameters, lengths and heights) of the system.
+3. Assign some realistic value for the duct roughness to introduce main duct pressure losses. 
+4. Specify additional losses to the ducts and adjust them to reach the expected flow rates through the system.
+5. Verify the pressure levels and flow rates in a normal state by adding measurements for the flows and node pressures.
+
+So, the actual system information is limited to the design flow rates and the fan characteristics, as the fan pressure levels are dominating for the whole system's performance. 
+ 
+## Air-tight envelopes
+
+The building envelope air-tightness is important for many building performance aspects, including the energy-efficiency of buildings and for the control of indoor environment and ventilation in high-rise buildings. In energy-efficiency, the goal is to reduce the energy losses by convection through the cracks and gaps of the envelope. The convection is driven by the pressure difference between the interior and exterior, which small houses can vary from few tens of Pa underpressure to a few Pa overpressure. For the moisture control, it is, at least in Finland, common to maintain the buildings at small negative pressure. In high-rise buildings, the pressure differences can be much higher.
+
+The envelope air-tightness is commonly measured using a blower-door test [@EN13829] where a powerfull fan was attached to a door leading outside (see Fig. [#blower-door]), and the other vents of
+the building are closed tightly. The fan is used to create a
+pressure difference between the interior and the ambient. The amount of air ﬂow
+through the fan is measured at diﬀerent pressure diffrences. The normal practice
+in the energy efficiency studies is to report the leakage rate at 50 Pa underpressure in a
+form of a volumetric ﬂow rate $\dot{V}_{50}$, air permeability $q_{50}=\dot{V}_{50}/A_{\rm env}$ or air exchange rate $n_{50}=\dot{V}_{50}/V$. Here, $A_{env}$ is the envelope area and $V$ is the building volume. 
+
+~ Figure { #blower-door; caption:"Blower-door test (left) and sealed exhaust ventilation duct. (Photographs by Mikko Yli-Piipari (Vertia Oy)."}
+![V__F6BE]
+![V__38B7]
+~
+[V__F6BE]: images/V__F6BE.jpg "V__F6BE" { width:6cm; max-width:30% }
+
+[V__38B7]: images/V__38B7.jpg "V__38B7" { width:auto; max-width:30% }
+
+FDS utilizes the HVAC module to solve the leakage flow
+~ Equation {#leakage_rate}
+ \dot{V}_{leak} = A_{L} \mathrm{sign}(\Delta p) \left(\frac{2\Delta p}{\rho} \right)^{1/2} \label{eq_leakage_FDS}
+~
+The main input for the leakage modelling is therefore the effective leakage area, which can now be determined from the air-tightness measurements as
+~ Equation {#leakage_area}
+A_{\rm L} = \frac{\dot{V_{50}}}{C_d \left(\frac{2\times 50}{\rho_{\infty}} \right)^{1/2}} \; {\rm [m^2]}
+~ 
+Of course, the area can be calculated using the leakage flow at some other pressure than 50 Pa, if available.
+
+# VALIDATION
+
+## FOA Test series
+
+Two ﬁrst two sets of experiments were conducted by the Swedish FOA Defence Research Establishment [@FOA1996,@FOA1998]. The first series [@FOA1996] consists of three tests with $t^2$ fires of different growth rates between medium and ultra-fast.
+The fire room was 4.0 m $\times$ 5.5 m $\times$ 2.6 m (high) and the fire source was a heptane pan of 0.73 m $\times$ 1 m (c.f. Fig. [#foa_geometry]). These tests did not include actual ventilation network, but the fire room had a circular opening ($D$ = 0.2 m) connected to a  2.2 m long tube. Temperature and flow speed were measured at the end of the tube. The opening was located at 0.6 m from the floor. The fire room was divided in two parts with a wall, and the wall had a 1.9 m wide opening from floor to ceiling. The $t^2$ behaviour of the HRR was achieved using a lid that was moved over the pan at a given rate thereby increasing the heptane burning area.  The quantitative value of HRR was obtained by assuming 1600 kW/m$^2$ for the HRR per unit area of pool surface.
+
+~ Figure { #FOA_geometry; caption:"FOA test geometry."}
+  
+![FOA_Geometry] 
+~
+[FOA_Geometry]: images/FOA_Geometry.png "FOA_Geometry" { width:auto; max-width:60% }
+
+The second series [@FOA1998] consists of three groups of experiments with the same room and same fire types as the first set, but with different ventilation configurations. The leakage openings of different diameters were connected to a $0.32$ m diameter and $3.2$ m long tube connecting to the ambient. The opening was located at $0.6$m height from the floor on one wall of the room. In the first group, there was not ventilation system, only leakage opening. In the second group, the room was equipped with an exhaust system, shown in the top part Fig.[#foa_systems]. A supply network (Fig. [#foa_systems] lower part) was added in the third group.
+
+The HVAC model components are nodes, ducts, and a fan. The other components such as dampers and expansion/contraction fittings are accounted for in the loss terms. Multiple ducts have been combined into a single duct with appropriate loss coefficients for further simplification. Dampers only limit the volume flow through the ducts to 25 l/s.  
+
+The exhaust network was modelled using 8 nodes, starting from Node 1 which connects the computational domain to the main duct which is also connected to three fictive compartments maintained at ambient pressure. The total length of the duct from Node 1 to 5 was about 7.5 m. Nodes 5,6,7 and 8 are maintained at ambient pressure. The exhaust fan that drives the flow is placed in the last duct connecting nodes 4 and 5. The fan curve was defined by specifying the flow rates (0, 60 and 120 Ls) at three static pressures (310, 190 and 18 Pa), respectively. 
+
+~ Figure { #FOA_systems; caption:"FOA exhaust and supply ventilation systems."}
+  
+![Exhaust1]
+![Supply]
+
+~
+
+[Supply]: images/Supply.PNG "Supply" { width:auto; max-width:80% }
+
+[Exhaust1]: images/Exhaust1.PNG "Exhaust1" { width:auto; max-width:80% }
+
+## Aalto University test series
+
+The third series of validation experiments consists of experiments carried out in 2015 in a 1970's apartment building in western Finland. A detailed explanation of the experiments is given in [@Janardhan2016]. The apartment (see Fig. [#kurikka_geometry]) had two exhaust ventilation ducts leading to the roof. All the other ventilation paths were closed during the experiments. The originally natural ventilation had been enforced by post-installed fan in the bathroom exhaust. Two different fires (Fig. [#Kurikka_fires]) and three exhaust damper configurations (Fig. [#kurikka_ventilation]) were used. Open configuration means that the dampers were removed completely, normal configuration that the orinal dampers were in place, and closed configuration that the exhaust ducts were tightly sealed.
+
+
+~ Figure {#Kurikka_geometry, caption: Geometry of the Aalto experiments.}
+
+![Kurikka_geometry]
+~
+
+[Kurikka_geometry]: images/Kurikka_geometry.png "Kurikka_geometry" { width:auto; max-width:50% }
+
+~ Figure {#Kurikka_fires, caption: Heptane pool (top) and Polyurethane foam fires.}
+
+![ignition]
+
+![foam]
+~
+
+[foam]: images/foam.png "foam" { width:auto; max-width:70% }
+
+[ignition]: images/ignition.png "ignition" { width:auto; max-width:70% }
+
+
+
+The ventilation ducts were modelled as combinations of two or three duct segments. The first duct was installed for the measurements, and the third segment of the bathroom duct was used for including the fan. 
+
+~ Figure {#Kurikka_ventilation, caption: Ventilation system configurations. Open, normal, and closed.}
+
+![Ventilation]
+~
+
+[Ventilation]: images/Ventilation.png "Ventilation" { width:auto; max-width:80% }
+
+## Validation results
+
+The experimental and simulated fire room pressures in FOA Series 1 are shown in Fig. [#foa_results]. The positive pressures during the fire growth stage are reproduced by the simulation model with good accuracy. The negative pressures after the fire suppression, in turn, are not captured as well. The same behaviour was observed in all three validation series. Figure [#aalto_results] shows the correponding comparisons for the heptane pool tests of the Aalto University's series. The simulations were performed using the bulk leakage method. Now the peak pressures are overpredicted by 21 % but the underpressure peaks are captured at least qualitatively. 
+
+~ Figure {#FOA_results, caption: Measured and simulated gas pressures in FOA series 1.}
+
+![FOA_results]
+~
+
+[FOA_results]: images/FOA_results.png "FOA_results" { width:auto; max-width:90% }
+~ Figure {#Aalto_results, caption: Measured and simulated gas pressures in heptane pool tests in Aalto series.}
+
+![Test3_pressure]
+![Test8_pressure]
+![Test5_pressure]
+~
+
+[Test3_pressure]: images/Test3_pressure.png "Test3_pressure" { width:auto; max-width:48% }
+
+[Test8_pressure]: images/Test8_pressure.png "Test8_pressure" { width:auto; max-width:48% }
+
+[Test5_pressure]: images/Test5_pressure.png "Test5_pressure" { width:auto; max-width:48% }
+A summary of the validation results is presented in Fig. for the peak gas temperature and peak gas pressure. Gas temperature comparisons were made for all the individual temperature measurements, not for the averaged layer temperatures as in the FDS Validation Guide. The temperatures are overpredicted by 11 \% in average. Overall, the temperature uncertainties are satisfactory, considering the uncertainties associated with the input  HRR curves. The peak overpressures are underpredicted by 7 \% in average. The model relative standard deviation is dominated by the combined experimental uncertainty. For the Aalto series, the bulk method overpredicted pressures by 21 %, but the localized leak method was found to produce 4 % underprediction. The differences are at least partially explained by the different pressure driving the leak flow, in these two methods.
+
+~ Figure {#validation_summary, caption: Summary of validation results.}
+
+![Temp_summary]
+![P_summary]
+~
+
+[P_summary]: images/P_summary.png "P_summary" { width:auto; max-width:60% }
+
+[Temp_summary]: images/Temp_summary.png "Temp_summary" { width:auto; max-width:60% }
+
+
+# APARTMENT BUILDING CASE STUDY
+
 
 # GENERAL INSTRUCTIONS { #sec-intro }
 You are encouraged to use the [Madoko.net Editor][editor] while using
