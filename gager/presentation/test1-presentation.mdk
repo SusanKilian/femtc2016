@@ -44,7 +44,7 @@ Beamer Theme  : singapore
 
 ![History of SC 1]
 
-[History of SC 1]: images/History-of-SC-1.jpg "History of SC 1" { width:300px; max-width:90%;page-align:center }
+[History of SC 1]: images/History-of-SC-1.jpg "History of SC 1" { width:300px; max-width:90%}
 ~
 ~ Column
 [First successful use of smoke control in 1911 during the Empire Palace Theater Fire in Edinburg]{ text-align=center }
