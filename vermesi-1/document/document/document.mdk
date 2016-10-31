@@ -81,18 +81,21 @@ the line, followed by a space and then the heading text.
 
 
 ~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
-|                | $c(t)$                               ||||
-|                |---------|---------|---------|-----------|
-|                | (A0)    | (A1)    | (A2)    | (A3)      |
-|                | ohne    | Log     | Polynom | Stückweise|
-|                |         |         |         | konstant  |
-|:---------------|:-------:|:-------:|:-------:|:---------:|
-| Log likelihood | -6.798  | -6.733  | -6.715  | -6.686    |
-| Pseudeo $R^{2}$| 0,048   | 0,057   | 0,059   | -         |
-| AIC            | 13.615  | 13.489  | 13.456  | 13.483    |
-| BIC            | 13.711  | 13.594  | 13.580  | 14.009    |
-| N              | 105.484 | 105.484 | 105.484 | 105.484   |
-|----------------|---------|---------|---------|-----------|
+|                 |                    |
+|                 |---------|---------|
+| Scenario number | Time to peak   | Peak irradiation    | 
+|                 | [s]   | [kW/m^2^]    | 
+|                 |         |         |
+|:----------------|:-------:|:-------:|
+| 0               | constant | 20  | 
+|1                | 320  | 30  |
+| 2               | 260  | 30  | 
+| 3               | 480  | 30  | 
+| 4               | 160 | 40 | 
+| 5               |     320    |    40     |
+| 6               |   160      |   35      | 
+|7                |   320      |     35    |
+|-----------------|---------|---------|
 ~
 # PYROLYSIS MODEL { #model }
 Original drawings and photos may be included in your paper as figures.
@@ -120,23 +123,37 @@ files, latex style files, etc.
 e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
 ~
 ## Chemical Kinetics
-
+~ TableFigure { #table-sample; caption: "Kinetic constants used in the modelling, following Di Blasi's kinetic scheme"; .wide }
+|             | Kinetic constants                   ||||
+|            |---------|---------|----------|---------|
+|            | Log A   | E       | &Delta;H | n       |
+|:-----------|:-------:|:-------:|:--------:|:-------:|
+| Drying | 8.12 | 67.8  | 270   | 2.37  |
+| hc     | 12.9   | 165  | 256    | 2.4      |
+| cc     | 13.6| 189  | 256  | 0.84  |
+| lc     | 16.3  | 238 | 256   | 10.4 |
+| rc     | 13.6| 149 | 256  | 4.7 |
+| Units  |  log (1/s)       | kJ/mol        |   kJ/kg       |     -    |
+|Reference    |  Huang        |   Huang      |   Li       |   Huang      |
+|--------|---------|---------|----------|---------|
+~
 ## Model Parameters
 Table [#table-sample] shows an example full width table figure.
 
-~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
-|                | $c(t)$                               ||||
-|                |---------|---------|---------|-----------|
-|                | (A0)    | (A1)    | (A2)    | (A3)      |
-|                | ohne    | Log     | Polynom | Stückweise|
-|                |         |         |         | konstant  |
-|:---------------|:-------:|:-------:|:-------:|:---------:|
-| Log likelihood | -6.798  | -6.733  | -6.715  | -6.686    |
-| Pseudeo $R^{2}$| 0,048   | 0,057   | 0,059   | -         |
-| AIC            | 13.615  | 13.489  | 13.456  | 13.483    |
-| BIC            | 13.711  | 13.594  | 13.580  | 14.009    |
-| N              | 105.484 | 105.484 | 105.484 | 105.484   |
-|----------------|---------|---------|---------|-----------|
+~ TableFigure { #table-sample; caption: "Modelling parameters for MDF"; .wide }
+|                                     | Temperature-dependent properties          ||||
+|                                     |---------|---------------|---------|----------|
+|                                     | Value   |Exponent Value | Units   | Reference|
+|                                     |         |               |         |          |
+|:------------------------------------|:-------:|:-------------:|:-------:|:--------:|
+| Thermal conductivity k              | 0.12 | 0.49        | W/mK | Li et al  |
+| Density &rho;                       | 605   | -         | kg/m^3^  | measurement       |
+| Specific heat capacity c~p~         | 1489 | 0.85       | J/kgK  | Li et al  |
+| Surface emissivity of MDF &epsilon; | 0.8  | -      | -  | Boulet et al  |
+| Thermal conductivity of char k~char~|0.09       |3.90            |W/mK      |Li et al        |
+| Density of char &rho;~char~         | 330 | -      | kg/m^3^| Li et al  |
+| Specific heat capacity of char c~p,char~|   600| 1.15            |     J/kgK  |     Li et al   |       
+|-------------------------------------|---------|---------------|---------|----------|
 ~
 
 Equations
