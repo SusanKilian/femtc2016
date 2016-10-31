@@ -64,10 +64,22 @@ Subheadings within sections follow the same format as section titles, but
 with upper and lower case. In Madoko, a Double '#' symbol at the start of
 the line, followed by a space and then the heading text.
 
-~ Figure { #fig-smokeview; caption:"Illustration of placement of figure and caption. (use the `.wide` class for wide figure)."}
-![Ex1_0]
+~ Figure { #fig-samplesketch; caption:"Sketch of the MDF sample placed in the FPA  for the constant and transient irradiation experiments"}
+![samplesketch]
 ~
-[Ex1_0]: images/Ex1_0.png "Ex1_0" { width:auto; max-width:90% }
+[samplesketch]: images/samplesketch.png "samplesketch" { width:70%; max-width:90% }
+
+~ Figure { #fig-heatfluxcontroller; caption:"Heater controller validaton"}
+![heatfluxcontroller]
+~
+[heatfluxcontroller]: images/heatfluxcontroller.png "heatfluxcontroller" { width:60%; max-width:90% }
+
+~ Figure { #fig-heatfluxes; caption:"Summary of the parabolic irradiation curves used in the experiments and described in Table 1"}
+![heatfluxes2]
+~
+[heatfluxes2]: images/heatfluxes2.png "heatfluxes2" { width:60%; max-width:90% }
+
+
 ~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
 |                | $c(t)$                               ||||
 |                |---------|---------|---------|-----------|
@@ -85,6 +97,11 @@ the line, followed by a space and then the heading text.
 # PYROLYSIS MODEL { #model }
 Original drawings and photos may be included in your paper as figures.
 Diagrams may be in color.
+~ Figure { #fig-domain2; caption:"The computation domain used in the Gpyro simulations: "}
+![domain3]
+~
+[domain3]: images/domain3.png "domain3" { width:30%; max-width:90% }
+
 
 Figures and tables should immediately follow first mention of them in the
 text and can be placed in one column, or in the case of wider figures,
@@ -95,7 +112,7 @@ The figure caption should be followed by a single line of space before
 the text resumes.
 
 ## Governing equations
-Figure [#fig-smokeview] in Section [#sec-intro] shows an image from an
+Figur in Section [#sec-intro] shows an image from an
 older version of Smokeview. Note that you can drag&drop images into the
 editor pane to include them in the document, and similarly with bibtex
 files, latex style files, etc.
@@ -133,6 +150,43 @@ e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
 ~
 
 # RESULTS { #results }
+~ Begin Figure { #fig-subfigs; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for constant irradiation (Scenario 0)" }
+~ Begin SubFigureRow { vertical-align: bottom }
+~ SubFigure { #fig-subfig1; caption:"Surface temperature" }
+![constanthf_temp]
+~
+~ SubFigure { #fig-subfig2; caption:"Mass loss rate"; }
+![constanthf_mlr]
+~
+~ End SubFigureRow
+
+
+~ End Figure
+
+[constanthf_temp]: images/constanthf_temp.png "constanthf_temp" { width:100%; max-width:90% } 
+
+
+[constanthf_mlr]: images/constanthf_mlr.png "constanthf_mlr" { width:100%; max-width:90% }
+
+~ Begin Figure { #fig-subfigs; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for the transient irradiation (Scenario 1)" }
+~ Begin SubFigureRow { vertical-align: bottom }
+~ SubFigure { #fig-subfig1; caption:"Surface temperature" }
+![transienthf_temp]
+~
+~ SubFigure { #fig-subfig2; caption:"Mass loss rate"; }
+![transienthf_mlr]
+~
+~ End SubFigureRow
+
+
+~ End Figure
+
+[transienthf_temp]: images/transienthf_temp.png "constanthf_temp" { width:80%; max-width:90% } 
+
+
+[transienthf_mlr]: images/transienthf_mlr.png "constanthf_mlr" { width:80%; max-width:90% }
+
+
 Let's program some JavaScript:
 ``` javascript
 function hello() {
@@ -145,6 +199,17 @@ Here is a footnote[^fn] reference.
     And notice the back link.
 
 # DISCUSSION { #discussion }
+
+~ Figure { #fig-domain; caption:"The influence of using temperature dependent properties: surface temperature and mass loss rate variation"}
+![propertiesinfluence]
+~
+[propertiesinfluence]: images/propertiesinfluence.png "domain" { width:60%; max-width:90% }
+
+~ Figure { #fig-domain; caption:"The influence of using a drying step in the kinetics scheme: surface temperature and mass loss rate variation"}
+![dryinginfluence]
+~
+[dryinginfluence]: images/dryinginfluence.png "domain" { width:60%; max-width:90% }
+
 # CONCLUSION { #conclusion }
 # BIBLIOGRAPHY AND REFERENCES
 When references are used in the text, tie them to an alphabetical (by
