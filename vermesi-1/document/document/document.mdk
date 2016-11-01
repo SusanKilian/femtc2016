@@ -55,47 +55,41 @@ One of the simplifications used in the majority of studies in the literature is 
 
 
 # IGNITION EXPERIMENTS { #experiments }
-Main Headings are all upper case letters and underlined. In Madoko, a
-Single '#' symbol at the start of the line, followed by a space and then
-the heading text.
-
-
-Subheadings within sections follow the same format as section titles, but
-with upper and lower case. In Madoko, a Double '#' symbol at the start of
-the line, followed by a space and then the heading text.
+The experiments used in this work were conducted in the FM Global Fire Propagation Apparatus (FPA). The MDF sample of a thickness of 30 mm was placed onto an aluminium plate of 25 mm thickness, used for a better defined bottom boundary condition [ref], and then covered in 5 layers on the bottom and 3 layers on the side of Cotronics insulation that minimize the heat losses to the environment. The surface temperature was read using an infrared pryometer and the mass loss was recorded using the load cell. A wireless thermocouple was inserted in the aluminium plate to measure the in-depth temperature. The ethylene-air pilot was placed 10 mm above the sample surface and 10 mm away from the perimeter of the specimen. A sketch of the prepared sample is shown in Fig.1. 
 
 ~ Figure { #fig-samplesketch; caption:"Sketch of the MDF sample placed in the FPA  for the constant and transient irradiation experiments"}
 ![samplesketch]
 ~
 [samplesketch]: images/samplesketch.png "samplesketch" { width:70%; max-width:90% }
 
+The novelty of the experiments is in using transient irradiation on MDF sample. Parabolic irradiation curves that imitate both the growth and the decay are chosen to illustrate a case that challenges the assumptions of constant irradiation used in the majority of the literature. The validation of the heater controller is shown in Fig.2. 
 ~ Figure { #fig-heatfluxcontroller; caption:"Heater controller validaton"}
 ![heatfluxcontroller]
 ~
 [heatfluxcontroller]: images/heatfluxcontroller.png "heatfluxcontroller" { width:60%; max-width:90% }
-
+A number of 7 parabolas are used, as shown in Fig. 3, with the addition of a constant irradiation scenario of 20 kW/m^2^  which was done to validate the setup and provide a link to literature. The two varying parameters of the parabolic curves are the time to peak and the peak irradiation. Four times to peak were used in the investigation, ranging from 160 s to 480 s and the peak irradiations are 30, 35 and 40 kW/m^2^. The details about the peak irradiation time to peak which characterize the parabolas are summarized in Table 1.
 ~ Figure { #fig-heatfluxes; caption:"Summary of the parabolic irradiation curves used in the experiments and described in Table 1"}
 ![heatfluxes2]
 ~
 [heatfluxes2]: images/heatfluxes2.png "heatfluxes2" { width:60%; max-width:90% }
 
-
-~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
-|                 |                    |
-|                 |---------|---------|
-| Scenario number | Time to peak   | Peak irradiation    | 
-|                 | [s]   | [kW/m^2^]    | 
-|                 |         |         |
-|:----------------|:-------:|:-------:|
-| 0               | constant | 20  | 
-|1                | 320  | 30  |
-| 2               | 260  | 30  | 
-| 3               | 480  | 30  | 
-| 4               | 160 | 40 | 
-| 5               |     320    |    40     |
-| 6               |   160      |   35      | 
-|7                |   320      |     35    |
-|-----------------|---------|---------|
+Time to ignition was observed visually 
+~ TableFigure { #table-sample; caption: "Summary of the parabolic irradiation scenarios"; .wide }
+|                 |          |          |
+|-----------------|---------|---------|---------|
+| Scenario  | Time to peak   | Peak irradiation    | Time to ignition |
+|   number              | [s]   | [kW/m^2^]    | [s]|
+|                 |         |         ||
+|---------------|-------|-------|-------|
+| 0               | constant | 20  |408 |
+|1                | 320  | 30  |280|
+| 2               | 260  | 30  |256 |
+| 3               | 480  | 30  | 360|
+| 4               | 160 | 40 |161 |
+| 5               |     320    |    40     |224|
+| 6               |   160      |   35      | 180|
+|7                |   320      |     35    |252|
+|-----------------|---------|---------|---|
 ~
 # PYROLYSIS MODEL { #model }
 Original drawings and photos may be included in your paper as figures.
@@ -115,14 +109,24 @@ The figure caption should be followed by a single line of space before
 the text resumes.
 
 ## Governing equations
-Figur in Section [#sec-intro] shows an image from an
-older version of Smokeview. Note that you can drag&drop images into the
-editor pane to include them in the document, and similarly with bibtex
-files, latex style files, etc.
-~ Equation { #euler }
-e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
+
+~ Equation {mass}
+\frac{\partial\bar{\rho}}{\partial t}=-\dot{\omega}'''_{fg}
+~
+~ Equation {species}
+\frac{\partial(\bar{\rho}Y_i)}{\partial t}=-\dot{\omega}'''_{di}}
+~
+~ Equation {energy}
+\frac{\partial(\bar{\rho}\bar{h)}}{\partial t}=\frac{\partial}{\partial z}\left(\bar{k}\frac{\partial T}{\partial z}\right)+\sum\limits_{i=1}^K (-\dot{\omega}'''_{i})\Delta H_s-\frac{\partial \dot{q_r}^"}{\partial z}
+~
+~ Equation
+-\frac{\partial \dot{q_r}^"}{\partial z}=\bar{\varepsilon}\dot{q}^"_e\bar{\kappa}e^{-\bar{\kappa}z}
 ~
 ## Chemical Kinetics
+~ Equation
+\dot{\omega}'''_i= \bar{\rho} Y_{A,k} A_k exp({-E_k/RT})
+~
+
 ~ TableFigure { #table-sample; caption: "Kinetic constants used in the modelling, following Di Blasi's kinetic scheme"; .wide }
 |             | Kinetic constants                   ||||
 |            |---------|---------|----------|---------|
