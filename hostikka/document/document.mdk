@@ -84,13 +84,15 @@ through the fan is measured at diﬀerent pressure diffrences. The normal practi
 in the energy efficiency studies is to report the leakage rate at 50 Pa underpressure in a
 form of a volumetric ﬂow rate $\dot{V}_{50}$, air permeability $q_{50}=\dot{V}_{50}/A_{\rm env}$ or air exchange rate $n_{50}=\dot{V}_{50}/V$. Here, $A_{env}$ is the envelope area and $V$ is the building volume. 
 
-~ Figure { #blower-door; caption:"Blower-door test (left) and sealed exhaust ventilation duct. (Photographs by Mikko Yli-Piipari (Vertia Oy)."}
-![V__F6BE]
-![V__38B7]
-~
-[V__F6BE]: images/V__F6BE.jpg "V__F6BE" { width:6cm; max-width:30% }
+~ Figure { #blower-door; caption:"Blower-door test (left) and sealed exhaust ventilation duct (right). (Photographs by Mikko Yli-Piipari (Vertia Oy)."}
 
-[V__38B7]: images/V__38B7.jpg "V__38B7" { width:auto; max-width:30% }
+![blower_door]
+![Closed_vent]
+~
+[blower_door]: images/blower_door.png "blower_door" { width:auto; max-width:30% }
+
+[Closed_vent]: images/Closed_vent.PNG "Closed_vent" { width:auto; max-width:30% }
+
 
 FDS utilizes the HVAC module to solve the leakage flow
 ~ Equation {#leakage_rate}
@@ -101,6 +103,7 @@ The main input for the leakage modelling is therefore the effective leakage area
 A_{\rm L} = \frac{\dot{V_{50}}}{C_d \left(\frac{2\times 50}{\rho_{\infty}} \right)^{1/2}} \; {\rm [m^2]}
 ~ 
 Of course, the area can be calculated using the leakage flow at some other pressure than 50 Pa, if available.
+
 
 # VALIDATION
 
@@ -203,12 +206,24 @@ A summary of the validation results is presented in Fig. for the peak gas temper
 
 # APARTMENT BUILDING CASE STUDY
 
+The influence of the envelope air-tightness on the fire-induced pressures and smoke spreading in the ventilation network was studied through the fire simulations in a hypothetical residential building. 
+The simulation geometry for the case study consists of a single floor of a multi storey apartment building. There are 11 apartments with 50 m$^2$ or 100 m$^2$ floor areas and a corridor. The model does not include a staircase connecting the domain to the other floors of the building, and the corridor pressure conditions are not studied here. The ceiling height is 2.5 meters. The room walls and ceiling are made of 15 cm thick concrete.  The fire is assumed to ignite in one of the smaller apartments. Within this apartment, the structures dividing the apartment into rooms are included, but the doors are assumed to be open.  Fig. \ref{fig_case_study} shows the geometry.  
+
+~ Figure {#apartment, caption: Apartment building geometry}
+
+![Apartment]
+~
+
+[Apartment]: images/Apartment.png "Apartment" { width:auto; max-width:10% }
+
 
 # GENERAL INSTRUCTIONS { #sec-intro }
 You are encouraged to use the [Madoko.net Editor][editor] while using
 the [Madoko Reference Manual][reference-manual] to edit/commit your
 documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
 More information about this method of contribution will be covered below.
+
+[Apartment]: images/Apartment.png "Apartment" { width:auto; max-width:90% }
 
 Text styling, links, sub- and super-script, footnotes and other topics
 are covered in section [Syntax: Inline
