@@ -9,42 +9,61 @@ Beamer Theme  : singapore
 [TITLE]
 
 
-## Survey 
-
+~ slide
 ![Survey]
 
-[Survey]: images/Survey_Snapshot.png "Fire Model Survey" { width:800px; vertical-align:top }
+[Survey]: images/Survey_Snapshot.png "Fire Model Survey" { width:1000px; vertical-align:top }
 
 Courtesy, Combustion Science and Engineering
-
-
-
-## The Proliferation of Models
-
-Over the past 40 years, 50+ zone models have been developed by variousuniversities and research organizations. Only a handful are still maintained.
-
-Why? Probably because these models are not commercially viable, nor are theyof active research interest. 
-
-But, they are still used, in particular by federal regulatory authorities like theNuclear Regulatory Commission and various agencies within the Departmentof Energy.
-
-Who is responsible for maintaining these models going forward?
-
-
-## So what’s new in CFAST?
-
-Frankly, not much. And that’s the point. Over the years, CFAST and other zone models became bloated with too many special features that werenot particularly robust, well-formulated, well-validated,and/or well-maintained. We now add advanced fire physics to the CFD model FDS, and we have restored CFAST to its original mission – fast reliable compartment fire analyses.
+~
 
 
 ## CFAST Graphical User Interface
 
 ![CFAST_GUI]
 
-[CFAST_GUI]: images/CFAST_Snapshot.png "CFAST GUI" { width:800px; vertical-align:top }
+[CFAST_GUI]: images/CFAST_Snapshot.png "CFAST GUI" { width:1000px; vertical-align:top }
 
--
-## Smokeview showing CFAST results
+
+~ slide
+CFAST in Smokeview
 
 ![Smokeview]
 
-[Smokeview]: images/Smokeview_Snapshot.png "Smokeview" { width:800px; vertical-align:top }
+[Smokeview]: images/Smokeview_Snapshot.png "Smokeview" { width:1000px; vertical-align:top }
+~
 
+~ slide
+Radiation Measurements
+
+![Fleury]
+
+[Fleury]: images/Fleury_Image.png "Fleury" { width:1000px; vertical-align:top }
+
+Rob Fleury and Mike Spearpoint, U of Canterbury, New Zealand
+~
+
+~ slide
+Smoke Movement in Stairwells
+
+![NRCC]
+
+[NRCC]: images/NRCC_Smoke_Tower.png "NRCC" { width:400px; vertical-align:top ; text-align:center }
+
+Modeling: Paul Tyson, U of Ulster
+
+Experiments: Cathy Wang, National Research Council, Canada
+~
+
+
+~ slide
+Ventilation Effects
+
+![PRISME]
+
+[PRISME]: images/PRISME_Image.png "PRISME" { width:800px; vertical-align:top ; text-align:center }
+
+Modeling: Jonathan Wahlqvist, Simo Hostikka, Topi Sikanen
+
+Experiments: OECD PRISME Project
+~
