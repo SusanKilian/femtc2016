@@ -208,7 +208,7 @@ A summary of the validation results is presented in Fig. [#validation_summary] f
 # APARTMENT BUILDING CASE STUDY
 
 The influence of the envelope air-tightness on the fire-induced pressures and smoke spreading in the ventilation network was studied through the fire simulations in a hypothetical residential building. 
-The simulation geometry for the case study consists of a single floor of a multi storey apartment building. There are 11 apartments with 50 m$^2$ or 100 m$^2$ floor areas and a corridor. The model does not include a staircase connecting the domain to the other floors of the building, and the corridor pressure conditions are not studied here. The ceiling height is 2.5 meters. The room walls and ceiling are made of 15 cm thick concrete.  The fire is assumed to ignite in one of the smaller apartments. Within this apartment, the structures dividing the apartment into rooms are included, but the doors are assumed to be open.  Fig. [#apartment] shows the geometry.  
+The simulation geometry for the case study consists of a single floor of a multi storey apartment building. There are 11 apartments with 50 m$^2$ or 100 m$^2$ floor areas and a corridor. The model does not include a staircase connecting the domain to the other floors of the building, and the corridor pressure conditions are not studied here. The ceiling height is 2.5 meters. The room walls and ceiling are made of 15 cm thick concrete.  The fire is assumed to ignite in one of the smaller apartments. Within this apartment, the structures dividing the apartment into rooms are included, but the doors are assumed to be open. Fig. [#apartment] shows the geometry.
 
 ~ Figure {#apartment, caption: "Apartment building geometry"}
 ![Apartment] 
