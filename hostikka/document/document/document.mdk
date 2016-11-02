@@ -98,6 +98,7 @@ FDS utilizes the HVAC module to solve the leakage flow
 ~ Equation {#leakage_rate}
  \dot{V}_{leak} = A_{L} \mathrm{sign}(\Delta p) \left(\frac{2\Delta p}{\rho} \right)^{1/2} \label{eq_leakage_FDS}
 ~
+
 The main input for the leakage modelling is therefore the effective leakage area, which can now be determined from the air-tightness measurements as
 ~ Equation {#leakage_area}
 A_{\rm L} = \frac{\dot{V_{50}}}{C_d \left(\frac{2\times 50}{\rho_{\infty}} \right)^{1/2}} \; {\rm [m^2]}
@@ -109,7 +110,7 @@ Of course, the area can be calculated using the leakage flow at some other press
 
 ## FOA Test series
 
-Two ﬁrst two sets of experiments were conducted by the Swedish FOA Defence Research Establishment [@FOA1996,@FOA1998]. The first series [@FOA1996] consists of three tests with $t^2$ fires of different growth rates between medium and ultra-fast.
+Two ﬁrst two sets of experiments were conducted by the Swedish FOA Defence Research Establishment [@FOA1996;@FOA1998]. The first series [@FOA1996] consists of three tests with $t^2$ fires of different growth rates between medium and ultra-fast.
 The fire room was 4.0 m $\times$ 5.5 m $\times$ 2.6 m (high) and the fire source was a heptane pan of 0.73 m $\times$ 1 m (c.f. Fig. [#foa_geometry]). These tests did not include actual ventilation network, but the fire room had a circular opening ($D$ = 0.2 m) connected to a  2.2 m long tube. Temperature and flow speed were measured at the end of the tube. The opening was located at 0.6 m from the floor. The fire room was divided in two parts with a wall, and the wall had a 1.9 m wide opening from floor to ceiling. The $t^2$ behaviour of the HRR was achieved using a lid that was moved over the pan at a given rate thereby increasing the heptane burning area.  The quantitative value of HRR was obtained by assuming 1600 kW/m$^2$ for the HRR per unit area of pool surface.
 
 ~ Figure { #FOA_geometry; caption:"FOA test geometry."}
@@ -245,15 +246,15 @@ Three different levels of the building envelope air-tightness were investigated.
 Simulations were carried out using $t^2$ fire scenarios with peak heat release rate of 4 MW. 
 
 ~ TableFigure { #TableLeak; caption: "Envelope specifications"; .wide }
-|--------------|---------------------------|----------------------|-----------|------------|----------|
-|Envelope type | $q_{50}$                  | $q_{50}$             | $V_{50}$  | $n_{50}$   | $A_{L}$  |
-|:~~~~~~~~~~~~~+:~~~~~~~~~~~~~~~~~~~~~~~~~:|:~~~~~~~~~~~~~~~~~~~~:|:~~~~~~~~~:|:~~~~~~~~~~~|:~~~~~~~~:|
-|              | (m$^{3}$m$^{-2}$h$^{-1}$) | (l m$^{-2}$s$^{-1}$) | (m$^3$/s) | (h$^{-1}$) | (m$^2$)  |
-|--------------|---------------------------|----------------------|-----------|------------|----------|
-| Traditional  | 3                         | 0.83                 | 0.146     | 4.2        | 0.02690  |
-| Modern       | 1.5                       | 0.42                 |0.073      | 2.1        | 0.01345  |
-| Near-zero    | 0.75                      | 0.21                 | 0.036     | 1.05       | 0.006725 |
-|--------------|---------------------------|----------------------|-----------|------------|----------|
+|-----------------|---------------------------|----------------------|------------------|-----------------|-------------------|
+|Envelope type    | $q_{50}$                  | $q_{50}$             | $V_{50}$         | $n_{50}$        | $A_{L}$           |
+|:~~{width:3cm}~~~+:~~~{width:3cm}~~~~~~~~~~~:|:~~~{width:2.5cm}~~~~:|:~{width:2.5cm}~~:|:~~{width:2cm}~~:|:~{width:2.5cm}~~~:|
+|                 | (m$^{3}$m$^{-2}$h$^{-1}$) | (l m$^{-2}$s$^{-1}$) | (m$^3$/s)        | (h$^{-1}$)      | (m$^2$)           |
+|-----------------|---------------------------|----------------------|------------------|-----------------|-------------------|
+| Traditional     | 3                         | 0.83                 | 0.146            | 4.2             | 0.02690           |
+| Modern          | 1.5                       | 0.42                 |0.073             | 2.1             | 0.01345           |
+| Near-zero       | 0.75                      | 0.21                 | 0.036            | 1.05            | 0.006725          |
+|-----------------|---------------------------|----------------------|------------------|-----------------|-------------------|
 ~
 
 The observed peak pressures are summarized in Fig. [#peak_pressures]. These results were corrected for the estimated model bias of 0.84, and the error bars indicate the 95 \% confidence limits.  The trends in the results are clear and consistent. All the three parameters - fire growth rate, damper configuration and air-tightness - are found to be important for the expected peak pressure. Interestingly, the sensitivity of the pressure to the parameter values seems to increase when moving towards a scenario with higher pressure. For instance, the damper configuration is not very important in traditional and normal buildings, but can become crucially important very air-tight buildings. The results of Fig. [#peak_pressures] were found to be independent of the fan operation (on or off) and the position of the fan unit's damper. This means that the leakages through the other apartments can compensate for the fan pressure differences and complete closing of the ventilation system. Of course, this means that smoke will spread to the other apartments through the network.
@@ -292,14 +293,43 @@ A more quantitative presentation of the same results is given in Fig. [#visibili
 
 [Visibility]: images/Visibility.png "Visibility" { width:auto; max-width:95% }
 
-#CONCLUSIONS
+# CONCLUSIONS
 
-We used experimental results (own and literature) to understand the pressure development in fires taking place within closed but mechanically ventilated compartments. We then used the experimental data to validate FDS modelling approach, including the modelling of HVAC systems and building envelope leakages. 
-In this context, mainly due to the high experimental uncertainties, the validation is focusing mainly to the modelling approach and procedure, not so much to the predictive capability of FDS. Nevertheless, using the validated modelling procedure, we investigated the influence of the damper configuration, envelope air-tightness and fire growth rate on the pressures and smoke spreading to neighbouring apartments in a mechanically ventilated building with many apartments.   
+We used experimental results (own and literature) to understand the
+pressure development in fires taking place within closed but mechanically
+ventilated compartments. We then used the experimental data to validate
+FDS modelling approach, including the modelling of HVAC systems and
+building envelope leakages. In this context, mainly due to the high
+experimental uncertainties, the validation is focusing mainly to the
+modelling approach and procedure, not so much to the predictive
+capability of FDS. Nevertheless, using the validated modelling procedure,
+we investigated the influence of the damper configuration, envelope
+air-tightness and fire growth rate on the pressures and smoke spreading
+to neighbouring apartments in a mechanically ventilated building with
+many apartments.
 
-The numerical simulations of the apartment building fire scenarios showed that the peak overpressure is sensitive to the damper configuration, envelope air-tightness and fire growth rate, but practically independent on the fan operation. The pressure was found to increase with improving air-tightness (reduced leakage), increased use of fire or smoke dampers, and the increased rate of fire growth. The peak pressures were found to be sufficiently high to prevent escape through an inwards-opening door in modern, air-tight buildings. The durations of high pressure were found to be long enough to put the occupants in danger. The risk of structural damage was found to exist with fast fires. The risk of structural damage was limited to the very air-tight buildings with dampers installed in both inlet and exhaust ducts. 
+The numerical simulations of the apartment building fire scenarios showed
+that the peak overpressure is sensitive to the damper configuration,
+envelope air-tightness and fire growth rate, but practically independent
+on the fan operation. The pressure was found to increase with improving
+air-tightness (reduced leakage), increased use of fire or smoke dampers,
+and the increased rate of fire growth. The peak pressures were found to
+be sufficiently high to prevent escape through an inwards-opening door in
+modern, air-tight buildings. The durations of high pressure were found to
+be long enough to put the occupants in danger. The risk of structural
+damage was found to exist with fast fires. The risk of structural damage
+was limited to the very air-tight buildings with dampers installed in
+both inlet and exhaust ducts.
 
-The simulations of the different damper configurations and fan operation modes showed that the smoke spreading to the neighbouring apartments can be avoided if only the inlet ventilation branch is closed with a damper and exhaust fan is kept at running. This mode of operation was found to be the only combination where the smoke spread can be prevented, simultaneously maintaining the pressure at acceptable level.  The situation can of course be improved by introducing additional technical means of pressure management. These should be among the future applications of the newly developed simulation capability. 
+The simulations of the different damper configurations and fan operation
+modes showed that the smoke spreading to the neighbouring apartments can
+be avoided if only the inlet ventilation branch is closed with a damper
+and exhaust fan is kept at running. This mode of operation was found to
+be the only combination where the smoke spread can be prevented,
+simultaneously maintaining the pressure at acceptable level. The
+situation can of course be improved by introducing additional technical
+means of pressure management. These should be among the future
+applications of the newly developed simulation capability.
 
 [BIB]
 
