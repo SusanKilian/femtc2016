@@ -84,7 +84,7 @@ through the fan is measured at several pressure differences. The normal practice
 in the energy efficiency studies is to report the leakage rate at 50 Pa underpressure in a
 form of a volumetric ﬂow rate $\dot{V}_{50}$, air permeability $q_{50}=\dot{V}_{50}/A_{\rm env}$ or air exchange rate $n_{50}=\dot{V}_{50}/V$. Here, $A_{env}$ is the envelope area and $V$ is the building volume. 
 
-~ Figure { #blower-door; caption:"Blower-door test (left) and sealed exhaust ventilation duct (right). (Photographs by Mikko Yli-Piipari (Vertia Oy)."}
+~ Figure { #blower-door; caption:"Blower-door test (left) and sealed exhaust ventilation duct (right). (Photographs by Mikko Yli-Piipari, Vertia Oy)."}
 
 ![blower_door]
 ![Closed_vent]
@@ -162,7 +162,6 @@ were tightly sealed.
 ~ Figure {#Kurikka_fires, caption: Heptane pool (top) and Polyurethane foam fires.}
 
 ![ignition]
-
 ![foam]
 ~
 
