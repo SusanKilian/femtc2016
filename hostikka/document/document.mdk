@@ -204,7 +204,7 @@ A summary of the validation results is presented in Fig. [#validation_summary] f
 
 [FDS_HGL_Temperature_Forced_Ventilation]: images/FDS_HGL_Temperature_Forced_Ventilation.png "FDS_HGL_Temperature_Forced_Ventilation" { width:auto; max-width:60% }
 
-$e = mc^2$
+
 # APARTMENT BUILDING CASE STUDY
 
 The influence of the envelope air-tightness on the fire-induced pressures and smoke spreading in the ventilation network was studied through the fire simulations in a hypothetical residential building. 
