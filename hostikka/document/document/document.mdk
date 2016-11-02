@@ -48,7 +48,7 @@ In FDS, the technical capability to simulate HVAC systems and leakages was intro
 
 ## Ventilation systems
 
-The traditional ventilation systems in residential buildings have been based on mechanical or buouyancy driven exhaust, with the supply air provided through the building envelope either as an uncontrolled leakage or through valves. In modern HVAC systems, there are usually separate networks for supply and exhaust air. Both networks are typically equipped with a fan unit to control the flow rate and to implement the heating/cooling, as well as heat recovery and air filtration for indoor air quality control. Single fan unit may serve entire building or a single floor of a multi-storey apartment building. The coils and filters introduce drag to the flow. As a result, the fan unit will cause pressure losses even when the fans are turned off.  For fire compartmentation and smoke control, fire and/or smoke dampers are typically installed to the ducts entering and leaving the apartments. In addition, the modern ventilation fans are often equipped with dampers that automatically close the ambient connection when the fan is turned off. In fire situation, turning off the fan can therefore lead to complete closing of the ventilation system.  
+The traditional ventilation systems in residential buildings have been based on mechanical or buoyancy driven exhaust, with the supply air provided through the building envelope either as an uncontrolled leakage or through valves. In modern HVAC systems, there are usually separate networks for supply and exhaust air. Both networks are typically equipped with a fan unit to control the flow rate and to implement the heating/cooling, as well as heat recovery and air filtration for indoor air quality control. Single fan unit may serve entire building or a single floor of a multi-storey apartment building. The coils and filters introduce drag to the flow. As a result, the fan unit will cause pressure losses even when the fans are turned off.  For fire compartmentation and smoke control, fire and/or smoke dampers are typically installed to the ducts entering and leaving the apartments. In addition, the modern ventilation fans are often equipped with dampers that automatically close the ambient connection when the fan is turned off. In fire situation, turning off the fan can therefore lead to complete closing of the ventilation system.  
 
 In principle, the ventilation system could be modelled starting from the drawing describing the design or 'as built' status. This is possible if we know the exact dimensions and characteristics of the various components of the system. The losses were determined using based on individual pressure loss of each duct fitting and the friction loss of the duct. The volume flow or velocity of flow through the ducts is required to find the loss coefficient $K_{j}$ appearing in the duct momentum equation
 ~ Equation {#duct_momentum}
@@ -63,7 +63,7 @@ For example, assuming a duct of length 1m and diameter of 0.1m with an expansion
 * The total loss accounts to 52.603 Pa. This value should equal to the last term in Equation [#duct_momentum]:
 $0.5K_j\rho_j|u_j|u_j = 52.603$ Pa $\Rightarrow K_j = 8.476$.
 
-This kind of process requires a lot of information that can be difficult or impossible to obtain for a fire engineer. Additionally, the process is sentitive for errors. Practical experiences from the two validation studies and two case studies showed us that the practical HVAC modelling procedure is like this:
+This kind of process requires a lot of information that can be difficult or impossible to obtain for a fire engineer. Additionally, the process is sensitive for errors. Practical experiences from the two validation studies and two case studies showed us that the practical HVAC modelling procedure is like this:
 
 1. Gather the basic design information about flow rates, known pressure losses of the HVAC valves and fan unit components, and the fan operating characteristics of the (fan curve).
 2. Model the HVAC network in the simplest possible way, maintaining the physical dimensions (diameters, lengths and heights) of the system.
@@ -77,10 +77,10 @@ So, the actual system information is limited to the design flow rates and the fa
 
 The building envelope air-tightness is important for many building performance aspects, including the energy-efficiency of buildings and for the control of indoor environment and ventilation in high-rise buildings. In energy-efficiency, the goal is to reduce the energy losses by convection through the cracks and gaps of the envelope. The convection is driven by the pressure difference between the interior and exterior, which small houses can vary from few tens of Pa underpressure to a few Pa overpressure. For the moisture control, it is, at least in Finland, common to maintain the buildings at small negative pressure. In high-rise buildings, the pressure differences can be much higher.
 
-The envelope air-tightness is commonly measured using a blower-door test [@EN13829] where a powerfull fan was attached to a door leading outside (see Fig. [#blower-door]), and the other vents of
+The envelope air-tightness is commonly measured using a blower-door test [@EN13829] where a powerful fan was attached to a door leading outside (see Fig. [#blower-door]), and the other vents of
 the building are closed tightly. The fan is used to create a
 pressure difference between the interior and the ambient. The amount of air ﬂow
-through the fan is measured at diﬀerent pressure diffrences. The normal practice
+through the fan is measured at several pressure differences. The normal practice
 in the energy efficiency studies is to report the leakage rate at 50 Pa underpressure in a
 form of a volumetric ﬂow rate $\dot{V}_{50}$, air permeability $q_{50}=\dot{V}_{50}/A_{\rm env}$ or air exchange rate $n_{50}=\dot{V}_{50}/V$. Here, $A_{env}$ is the envelope area and $V$ is the building volume. 
 
@@ -110,7 +110,7 @@ Of course, the area can be calculated using the leakage flow at some other press
 
 ## FOA Test series
 
-Two ﬁrst two sets of experiments were conducted by the Swedish FOA Defence Research Establishment [@FOA1996;@FOA1998]. The first series [@FOA1996] consists of three tests with $t^2$ fires of different growth rates between medium and ultra-fast.
+Two first two sets of experiments were conducted by the Swedish FOA Defence Research Establishment [@FOA1996;@FOA1998]. The first series [@FOA1996] consists of three tests with $t^2$ fires of different growth rates between medium and ultra-fast.
 The fire room was 4.0 m $\times$ 5.5 m $\times$ 2.6 m (high) and the fire source was a heptane pan of 0.73 m $\times$ 1 m (c.f. Fig. [#foa_geometry]). These tests did not include actual ventilation network, but the fire room had a circular opening ($D$ = 0.2 m) connected to a  2.2 m long tube. Temperature and flow speed were measured at the end of the tube. The opening was located at 0.6 m from the floor. The fire room was divided in two parts with a wall, and the wall had a 1.9 m wide opening from floor to ceiling. The $t^2$ behaviour of the HRR was achieved using a lid that was moved over the pan at a given rate thereby increasing the heptane burning area.  The quantitative value of HRR was obtained by assuming 1600 kW/m$^2$ for the HRR per unit area of pool surface.
 
 ~ Figure { #FOA_geometry; caption:"FOA test geometry."}
@@ -147,7 +147,7 @@ during the experiments. The originally natural ventilation had been
 enforced by post-installed fan in the bathroom exhaust. Two different
 fires (Fig. [#Kurikka_fires]) and three exhaust damper configurations
 (Fig. [#kurikka_ventilation]) were used. Open configuration means that
-the dampers were removed completely, normal configuration that the orinal
+the dampers were removed completely, normal configuration that the original
 dampers were in place, and closed configuration that the exhaust ducts
 were tightly sealed.
 
@@ -183,7 +183,7 @@ The ventilation ducts were modelled as combinations of two or three duct segment
 
 ## Validation results
 
-The experimental and simulated fire room pressures in FOA Series 1 are shown in Fig. [#foa_results]. The positive pressures during the fire growth stage are reproduced by the simulation model with good accuracy. The negative pressures after the fire suppression, in turn, are not captured as well. The same behaviour was observed in all three validation series. Figure [#aalto_results] shows the correponding comparisons for the heptane pool tests of the Aalto University's series. The simulations were performed using the bulk leakage method. The peak pressures are overpredicted by 21 % but the underpressure peaks are captured at least qualitatively. It was noticed that the pressure predictions were affected by the method of leakage modelling. Using  the localized leakage method, the pressures were lower than with the bulk method.  
+The experimental and simulated fire room pressures in FOA Series 1 are shown in Fig. [#foa_results]. The positive pressures during the fire growth stage are reproduced by the simulation model with good accuracy. The negative pressures after the fire suppression, in turn, are not captured as well. The same behaviour was observed in all three validation series. Figure [#aalto_results] shows the corresponding comparisons for the heptane pool tests of the Aalto University's series. The simulations were performed using the bulk leakage method. The peak pressures are overpredicted by 21 % but the underpressure peaks are captured at least qualitatively. It was noticed that the pressure predictions were affected by the method of leakage modelling. Using  the localized leakage method, the pressures were lower than with the bulk method.  
 
 ~ Figure {#FOA_results, caption: Measured and simulated gas pressures in FOA series 1.}
 
@@ -276,7 +276,7 @@ Challenges for the structural integrity can be expected when the fire developmen
 
 ## Smoke spreading through the ventilation network
 
-Based on the above pressure results it seems that open ventilation ducts could be used as a potential path of pressure relief at least in the buildings built according to the current air-tightness expectations, and in very air-tight buildings with modifications. The possibility of smoke spread to the other apartments and the resulting loss of compartmentation becomes then an issue. Figure [#Smoke] visualizes the smoke concentration in the neighbouring apartments 170 s from the ignition. If no dampers are used, the smoke spreads to the neighbours regardless of the fan operation.  The third figure corresponds to a situation where the damper is used only on the inlet side and the exhaust ventilation fan is kept running. Interestingly, the smoke is not spreading to other apartments in this case. Obviously, the cases with both dampers operating can be expected to be safe in this respect. 
+Based on the above pressure results it seems that open ventilation ducts could be used as a potential path of pressure relief at least in the buildings built according to the current air-tightness expectations, and in very air-tight buildings with modifications. The possibility of smoke spread to the other apartments and the resulting loss of compartmentation becomes then an issue. Figure [#Smoke] visualizes the smoke concentration in the neighbouring apartments 170 s from the ignition. If no dampers are used, the smoke spreads to the neighbors regardless of the fan operation.  The third figure corresponds to a situation where the damper is used only on the inlet side and the exhaust ventilation fan is kept running. Interestingly, the smoke is not spreading to other apartments in this case. Obviously, the cases with both dampers operating can be expected to be safe in this respect. 
 
 ~ Figure { #Smoke; caption:"Visualization of smoke density in neighbouring apartments."}
   
@@ -285,7 +285,7 @@ Based on the above pressure results it seems that open ventilation ducts could b
 
 [Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:95% }
 
-A more quantitative presentation of the same results is given in Fig. [#visibility] showing the minimum visibility over the entire fire duration in the different combinations. The red horizontal bars show the median values from all the neighbouring apartments, and the boxes indicate a "typical range". The visibility values get down to few meters in all cases without any dampers, and closing the fan reduces the visibility down to about two meters. Making the building more air-tight increases the amount of soot in the neighbours and reduces the visibility. In the simulations with fan operating and damper only on the inlet side, smoke is not observed in the neighbours. If the inlet side is open, the operating fan makes the situation worse as the fan pressure head prevents smoke from escaping through the inlet branch.
+A more quantitative presentation of the same results is given in Fig. [#visibility] showing the minimum visibility over the entire fire duration in the different combinations. The red horizontal bars show the median values from all the neighbouring apartments, and the boxes indicate a "typical range". The visibility values get down to few meters in all cases without any dampers, and closing the fan reduces the visibility down to about two meters. Making the building more air-tight increases the amount of soot in the neighbors and reduces the visibility. In the simulations with fan operating and damper only on the inlet side, smoke is not observed in the neighbors. If the inlet side is open, the operating fan makes the situation worse as the fan pressure head prevents smoke from escaping through the inlet branch.
  
 ~ Figure { #Visibility; caption:"Minimum visibility in neighbouring apartments."}
 ![Visibility]
