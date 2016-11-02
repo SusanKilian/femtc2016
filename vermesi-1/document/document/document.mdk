@@ -11,8 +11,8 @@ Affiliation   : FM Global
 Email         : gaurav.agarwal@fmglobal.com
 
 Author        : Marcos Chaos
-Affiliation   : FM Global
-Email         : marcos.chaos@fmglobal.com
+Affiliation   : Lawrence Livermore National Laboratory
+Email         : chaos1@llnl.com
 
 Author        : Guillermo Rein
 Affiliation   : Imperial College London
@@ -62,18 +62,18 @@ The experiments used in this work were conducted in the FM Global Fire Propagati
 ~
 [samplesketch]: images/samplesketch.png "samplesketch" { width:70%; max-width:90% }
 
-The novelty of the experiments is in using transient irradiation on MDF sample. Parabolic irradiation curves that imitate both the growth and the decay are chosen to illustrate a case that challenges the assumptions of constant irradiation used in the majority of the literature. The validation of the heater controller is shown in Fig.2. 
+Unlike the majority of studies in literature, this work investigates samples exposed transient irradiation. Parabolic irradiation curves that imitate both the growth and the decay are chosen to illustrate a case that challenges the assumptions of constant irradiation used in the majority of the literature. The validation of the heater controller is shown in Fig.2. 
 ~ Figure { #fig-heatfluxcontroller; caption:"Heater controller validaton"}
 ![heatfluxcontroller]
 ~
 [heatfluxcontroller]: images/heatfluxcontroller.png "heatfluxcontroller" { width:60%; max-width:90% }
-A number of 7 parabolas are used, as shown in Fig. 3, with the addition of a constant irradiation scenario of 20 kW/m^2^  which was done to validate the setup and provide a link to literature. The two varying parameters of the parabolic curves are the time to peak and the peak irradiation. Four times to peak were used in the investigation, ranging from 160 s to 480 s and the peak irradiations are 30, 35 and 40 kW/m^2^. The details about the peak irradiation time to peak which characterize the parabolas are summarized in Table 1.
+A number of 7 parabolas are used, as shown in Fig. 3, with the addition of a constant irradiation scenario of 20 kW/m^2^  which was done to validate the setup and provide a link to literature. The two varying parameters of the parabolic curves are the time to peak and the peak irradiation. Four times to peak were used in the investigation, ranging from 160 s to 480 s and the peak irradiations are 30, 35 and 40 kW/m^2^. The details about the peak irradiation time to peak which characterize the parabolas are summarized in Table 1. Time to ignition was observed visually and it varies from 161 s in Scenario 4 to 408 in Scenario 0 (constant irradiation).
 ~ Figure { #fig-heatfluxes; caption:"Summary of the parabolic irradiation curves used in the experiments and described in Table 1"}
 ![heatfluxes2]
 ~
 [heatfluxes2]: images/heatfluxes2.png "heatfluxes2" { width:60%; max-width:90% }
 
-Time to ignition was observed visually 
+
 ~ TableFigure { #table-sample; caption: "Summary of the parabolic irradiation scenarios"; .wide }
 |                 |          |          |
 |-----------------|---------|---------|---------|
@@ -92,42 +92,45 @@ Time to ignition was observed visually
 |-----------------|---------|---------|---|
 ~
 # PYROLYSIS MODEL { #model }
-Original drawings and photos may be included in your paper as figures.
-Diagrams may be in color.
-~ Figure { #fig-domain2; caption:"The computation domain used in the Gpyro simulations: "}
-![domain3]
-~
-[domain3]: images/domain3.png "domain3" { width:30%; max-width:90% }
-
-
-Figures and tables should immediately follow first mention of them in the
-text and can be placed in one column, or in the case of wider figures,
-can cover two columns (but only at the top or bottom of the page). The
-caption should start with either the word “figure” spelled out or
-abbreviated, followed by the figure number (i.e., Figure 1 or Fig. 1).
-The figure caption should be followed by a single line of space before
-the text resumes.
-
-## Governing equations
+## Governing equations and boundary conditions
+The setup and sample were modelled using the open-source code Gpyro [ref]. The governing equations are listed as follows: condensed-phase mass conservation (Eq. 1), species conservation (Eq. 2) and the energy equation (Eq. 3). Thermal equilibrium between the condensed-phase and the gas phase is assumed. The shrinkage of the sample was taken into account. As shown in the literature [ref], in-depth radiation is important for wood for certain wavelengths, but not the ones of the FPA quartz tubes. Therefore the in-depth radiation was not taken into account. The reaction rate is expressed by the Arrhenius equation, Eq.4. 
 
 ~ Equation {mass}
 \frac{\partial\bar{\rho}}{\partial t}=-\dot{\omega}'''_{fg}
 ~
 ~ Equation {species}
-\frac{\partial(\bar{\rho}Y_i)}{\partial t}=-\dot{\omega}'''_{di}}
+\frac{\partial(\bar{\rho}Y_i)}{\partial t}=-\dot{\omega}'''_{di}
 ~
 ~ Equation {energy}
-\frac{\partial(\bar{\rho}\bar{h)}}{\partial t}=\frac{\partial}{\partial z}\left(\bar{k}\frac{\partial T}{\partial z}\right)+\sum\limits_{i=1}^K (-\dot{\omega}'''_{i})\Delta H_s-\frac{\partial \dot{q_r}^"}{\partial z}
+\frac{\partial(\bar{\rho}\bar{h)}}{\partial t}=\frac{\partial}{\partial z}\left(\bar{k}\frac{\partial T}{\partial z}\right)+\sum\limits_{i=1}^K (-\dot{\omega}'''_{i})\Delta H_s
 ~
 ~ Equation
--\frac{\partial \dot{q_r}^"}{\partial z}=\bar{\varepsilon}\dot{q}^"_e\bar{\kappa}e^{-\bar{\kappa}z}
-~
-## Chemical Kinetics
-~ Equation
-\dot{\omega}'''_i= \bar{\rho} Y_{A,k} A_k exp({-E_k/RT})
+\dot{\omega}'''_i= \bar{\rho} Y_{A,k} A_k exp({-E_k/RT})^n
 ~
 
-~ TableFigure { #table-sample; caption: "Kinetic constants used in the modelling, following Di Blasi's kinetic scheme"; .wide }
+where &rho; is the density [kg/m^3^], t is time [s], Y is mass fraction, &omega;''' is the reaction rate per unit volume (_fg_ stands for formation of gases, _di_ for destruction of species), k is the thermal conductivity [W/mK], T is temperature [&deg;C], z is the depth [m], &Delta;H is the heat of pyrolysis [kJ/kg], A is the pre-exponential factor (s^-1^), E is the activation energy [kJ/mol], n is the reaction order, R is the universal gas constant.
+~ Figure { #fig-domain2; caption:"The computation domain used in the Gpyro simulations: the irradiation is applied to the top of the MDF sample, the bottom boundary is considered adiabatic "}
+![domain3]
+~
+[domain3]: images/domain3.png "domain3" { width:30%; max-width:90% }
+The domain for the one-dimensional model of the cone experiments is shown in Fig. 4 and is made of a layer of MDF with a thickness of 30 mm and a layer of aluminium of 25 mm thickness. The ceramic insulation layer was not modelled, but it provides the adiabatic bottom boundary condition (z = L)(Eq. 5). The top surface (z = 0) is exposed to the heat flux (Eq. 6). Keeping a balance between accuracy and simulation time, the final values of the domain parameters are a cell size of 0.01 mm and a time step of 0.05 s [cite cnf].
+~ Equation
+(z=L) \qquad -\bar{k}\frac{\partial T(L)}{\partial z}=0
+~
+~ Equation
+(z=0) \qquad -\bar{k}\frac{\partial T(0)}{\partial z}=\bar{\varepsilon}\dot{q}^"_e-h_c(T_s-T_0)-\bar{\varepsilon}\sigma(T(0)^4-T^4_0)
+~
+where &epsilon; is the emissivity and q~_e_~ is the external irradiation.
+
+##Chemical kinetics
+The kinetics scheme and parameter values were proposed by Li, Huang et al., to which a drying step step was added. First, the sample undergoes the drying process, after which each of the four components of MDF (cellulose, hemicellulose, lignin and resin) decompose into char and volatiles. The values for the pre-exponential factor, activation energy, heat of pyrolysis and reaction order are summarized in Table 2.
+~ Figure { #fig-kinetics; caption: "The kinetics scheme used in the one-dimensional model; the abbreviation of the reaction step is written inparenthesis"}
+![kinetics]
+~
+[kinetics]: images/kinetics.png "kinetics" { width:30%; max-width:90% }
+~
+~
+~ TableFigure { #table-sample; caption: "Kinetic constants used in the modelling, following the kinetic scheme of Lie et al. [ref x and kai paper]"; .wide }
 |             | Kinetic constants                   ||||
 |            |---------|---------|----------|---------|
 |            | Log A   | E       | &Delta;H | n       |
@@ -142,7 +145,7 @@ the text resumes.
 |--------|---------|---------|----------|---------|
 ~
 ## Model Parameters
-Table [#table-sample] shows an example full width table figure.
+The  solid properties used in the simulations are listed in Table 3. The thermal conductivity and specific heat capacity of MDF and of char vary with temperature and are taken from Li et al [ref]. The density of char is taken from Li et al, while the density of MDF is measured prior to the experiment. Because shrinkage is taken into account, the density does not vary with temperature. The surface emissivity of MDF is taken from Boulet et al. No parameter fittings were used.
 
 ~ TableFigure { #table-sample; caption: "Modelling parameters for MDF"; .wide }
 |                                     | Temperature-dependent properties          ||||
@@ -160,17 +163,8 @@ Table [#table-sample] shows an example full width table figure.
 |-------------------------------------|---------|---------------|---------|----------|
 ~
 
-Equations
-
-Standard terminology should be used in equations. If possible, keep
-equations to one column. All equations should be numbered. A definition
-of $e$ is shown in Equation [#euler]:
-
-~ Equation { #euler }
-e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
-~
-
 # RESULTS { #results }
+For the constant irradiation scenario, the comparison between the experimental measurements and the model predictions are shown in Fig. 6.
 ~ Begin Figure { #fig-subfigs; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for constant irradiation (Scenario 0)" }
 ~ Begin SubFigureRow { vertical-align: bottom }
 ~ SubFigure { #fig-subfig1; caption:"Surface temperature" }
@@ -180,9 +174,8 @@ e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
 ![constanthf_mlr]
 ~
 ~ End SubFigureRow
-
-
 ~ End Figure
+
 
 [constanthf_temp]: images/constanthf_temp.png "constanthf_temp" { width:100%; max-width:90% } 
 
