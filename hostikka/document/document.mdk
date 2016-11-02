@@ -171,7 +171,7 @@ The ventilation ducts were modelled as combinations of two or three duct segment
 
 ## Validation results
 
-The experimental and simulated fire room pressures in FOA Series 1 are shown in Fig. [#foa_results]. The positive pressures during the fire growth stage are reproduced by the simulation model with good accuracy. The negative pressures after the fire suppression, in turn, are not captured as well. The same behaviour was observed in all three validation series. Figure [#aalto_results] shows the correponding comparisons for the heptane pool tests of the Aalto University's series. The simulations were performed using the bulk leakage method. Now the peak pressures are overpredicted by 21 % but the underpressure peaks are captured at least qualitatively. 
+The experimental and simulated fire room pressures in FOA Series 1 are shown in Fig. [#foa_results]. The positive pressures during the fire growth stage are reproduced by the simulation model with good accuracy. The negative pressures after the fire suppression, in turn, are not captured as well. The same behaviour was observed in all three validation series. Figure [#aalto_results] shows the correponding comparisons for the heptane pool tests of the Aalto University's series. The simulations were performed using the bulk leakage method. The peak pressures are overpredicted by 21 % but the underpressure peaks are captured at least qualitatively. It was noticed that the pressure predictions were affected by the method of leakage modelling. Using  the localized leakage method, the pressures were lower than with the bulk method.  
 
 ~ Figure {#FOA_results, caption: Measured and simulated gas pressures in FOA series 1.}
 
@@ -179,7 +179,7 @@ The experimental and simulated fire room pressures in FOA Series 1 are shown in 
 ~
 
 [FOA_results]: images/FOA_results.png "FOA_results" { width:auto; max-width:90% }
-~ Figure {#Aalto_results, caption: Measured and simulated gas pressures in heptane pool tests in Aalto series.}
+~ Figure {#Aalto_results, caption: Measured and simulated gas pressures in heptane pool tests in Aalto series. Simulations using Bulk leakage.}
 
 ![Test3_pressure]
 ![Test8_pressure]
@@ -191,244 +191,104 @@ The experimental and simulated fire room pressures in FOA Series 1 are shown in 
 [Test8_pressure]: images/Test8_pressure.png "Test8_pressure" { width:auto; max-width:48% }
 
 [Test5_pressure]: images/Test5_pressure.png "Test5_pressure" { width:auto; max-width:48% }
-A summary of the validation results is presented in Fig. for the peak gas temperature and peak gas pressure. Gas temperature comparisons were made for all the individual temperature measurements, not for the averaged layer temperatures as in the FDS Validation Guide. The temperatures are overpredicted by 11 \% in average. Overall, the temperature uncertainties are satisfactory, considering the uncertainties associated with the input  HRR curves. The peak overpressures are underpredicted by 7 \% in average. The model relative standard deviation is dominated by the combined experimental uncertainty. For the Aalto series, the bulk method overpredicted pressures by 21 %, but the localized leak method was found to produce 4 % underprediction. The differences are at least partially explained by the different pressure driving the leak flow, in these two methods.
+A summary of the validation results is presented in Fig. [#validation_summary] for the peak gas temperature and peak gas pressure. Gas temperature comparisons were made for all the individual temperature measurements, not for the averaged layer temperatures as in the FDS Validation Guide. The temperatures are overpredicted by 11 \% in average. Overall, the temperature uncertainties are satisfactory, considering the uncertainties associated with the input  HRR curves. The peak overpressures are underpredicted by 16 \% in average. The model relative standard deviation is dominated by the combined experimental uncertainty. For the Aalto series alone, the bulk method overpredicted pressures by 21 %, but the localized leak method was found to produce 4 % underprediction. The differences are at least partially explained by the different pressure driving the leak flow, in these two methods.
 
 ~ Figure {#validation_summary, caption: Summary of validation results.}
 
-![Temp_summary]
-![P_summary]
+![FDS_HGL_Temperature_Forced_Ventilation]
+
+![FDS_Compartment_Over_Pressure]
 ~
 
-[P_summary]: images/P_summary.png "P_summary" { width:auto; max-width:60% }
+[FDS_Compartment_Over_Pressure]: images/FDS_Compartment_Over_Pressure.png "FDS_Compartment_Over_Pressure" { width:auto; max-width:60% }
 
-[Temp_summary]: images/Temp_summary.png "Temp_summary" { width:auto; max-width:60% }
+[FDS_HGL_Temperature_Forced_Ventilation]: images/FDS_HGL_Temperature_Forced_Ventilation.png "FDS_HGL_Temperature_Forced_Ventilation" { width:auto; max-width:60% }
 
-
+$e = mc^2$
 # APARTMENT BUILDING CASE STUDY
 
 The influence of the envelope air-tightness on the fire-induced pressures and smoke spreading in the ventilation network was studied through the fire simulations in a hypothetical residential building. 
-The simulation geometry for the case study consists of a single floor of a multi storey apartment building. There are 11 apartments with 50 m$^2$ or 100 m$^2$ floor areas and a corridor. The model does not include a staircase connecting the domain to the other floors of the building, and the corridor pressure conditions are not studied here. The ceiling height is 2.5 meters. The room walls and ceiling are made of 15 cm thick concrete.  The fire is assumed to ignite in one of the smaller apartments. Within this apartment, the structures dividing the apartment into rooms are included, but the doors are assumed to be open.  Fig. \ref{fig_case_study} shows the geometry.  
+The simulation geometry for the case study consists of a single floor of a multi storey apartment building. There are 11 apartments with 50 m$^2$ or 100 m$^2$ floor areas and a corridor. The model does not include a staircase connecting the domain to the other floors of the building, and the corridor pressure conditions are not studied here. The ceiling height is 2.5 meters. The room walls and ceiling are made of 15 cm thick concrete.  The fire is assumed to ignite in one of the smaller apartments. Within this apartment, the structures dividing the apartment into rooms are included, but the doors are assumed to be open.  Fig. [#apartment] shows the geometry.  
 
-~ Figure {#apartment, caption: Apartment building geometry}
-
-![Apartment]
+~ Figure {#apartment, caption: "Apartment building geometry"}
+![Apartment] 
 ~
 
-[Apartment]: images/Apartment.png "Apartment" { width:auto; max-width:10% }
+[Apartment]: images/Apartment.png "Apartment" { width:auto; max-width:60% }
 
+Each room in the model has a designated mesh. The discretization is 10 cm for the fire room and 50 cm elsewhere, meaning they mainly serve as a volume reserve for pressure and gases. Each room is considered its own pressure zone with an individual solution for the background pressure. There is no heat transfer through the walls between the rooms and all leakages are to the ambient. The ventilation system consists of independent inlet and exhaust networks, both equipped with a fan with stalling pressure of $P_{max}$ = 550 Pa and a zero-pressure flow rate of $V_{max}$ = 650 l/s. The fan unit model parameters were tuned to produce 150 Pa pressure loss to the flow. Each network consists of a central duct ($D$=250 mm) and smaller ($D$=125 mm) ducts for each individual apartment. Two inlet and exhaust connections are used for the fire apartment, but only one for all the other apartments. Loss coefficients $K$ for the inlet and exhaust ducts are adjusted in non-fire conditions to achieve 40 l/s ventilation rate and slightly negative pressure for the apartment.
 
-# GENERAL INSTRUCTIONS { #sec-intro }
-You are encouraged to use the [Madoko.net Editor][editor] while using
-the [Madoko Reference Manual][reference-manual] to edit/commit your
-documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
-More information about this method of contribution will be covered below.
+In total, 34 simulations were performed, varying the damper configuration, envelope air-tightness level and the fire growth rate. The influence of the fire/smoke dampers installed in the ventilation ducts was studied by studying three different compartmentation damper configurations:
 
-[Apartment]: images/Apartment.png "Apartment" { width:auto; max-width:90% }
+* Damper=Off
+  : Both inlet and outlet remain open during the fire.
+* Damper=Inlet
+  : The inlet duct of the fire apartment is closed by a damper 10 s after the ignition.
+* Damper=Both
+  : Both inlet and outlet are closed by dampers 10 s from the ignition.
 
-Text styling, links, sub- and super-script, footnotes and other topics
-are covered in section [Syntax: Inline
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--inline-elements)
-of the manual.
+Additionally the effect of the dampers located at the inlet and outlet fans was investigated. 
 
-Headings, Figures and Tables, Lists, Code Blocks, Mathematics, etc. are
-covered in section [Syntax: Block
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--block-elements)
-of the manual.
+Three different levels of the building envelope air-tightness were investigated. These levels were defined using the air permeability values $q_{50}$, listed in Table [#TableLeak]. The class _Traditional_ represents an average of the required and reference value (for heat loss calculations) in the current Finnish building code (Part D3: Energy efficiency, 2012, Ministry of Environment). The _Modern_, in turn, corresponds to the measured air-tightness in the concrete element multistorey buildings [@Vinha2015] and the _Near-zero_ represents the current, technically achievable target level. 
 
-The target length for submitted and invited papers is about eight pages.
-This length includes all figures and tables. However, because the
-Proceedings will not be printed on paper, there is no maximum limit on
-the number of pages. You are free to exceed the target length of eight
-pages.
+Simulations were carried out using $t^2$ fire scenarios with peak heat release rate of 4 MW. 
 
-Please watch this short YouTube Video for a tutorial on how to use the system as intended.
-
-# MAIN HEADINGS LIKE THIS STYLE
-Main Headings are all upper case letters and underlined. In Madoko, a
-Single '#' symbol at the start of the line, followed by a space and then
-the heading text.
-
-## Subheadings Like This Style
-Subheadings within sections follow the same format as section titles, but
-with upper and lower case. In Madoko, a Double '#' symbol at the start of
-the line, followed by a space and then the heading text.
-
-### Subsubheadings like this style
-Subsubheadings have no underline, and only the first letter capitalized.
-In Madoko, a Triple '#' symbol at the start of the line, followed by a
-space and then the heading text.
-
-# FIGURES, TABLES, AND EQUATIONS
-Original drawings and photos may be included in your paper as figures.
-Diagrams may be in color.
-
-Figures and tables should immediately follow first mention of them in the
-text and can be placed in one column, or in the case of wider figures,
-can cover two columns (but only at the top or bottom of the page). The
-caption should start with either the word “figure” spelled out or
-abbreviated, followed by the figure number (i.e., Figure 1 or Fig. 1).
-The figure caption should be followed by a single line of space before
-the text resumes.
-
-## Figures
-Figure [#fig-smokeview] in Section [#sec-intro] shows an image from an
-older version of Smokeview. Note that you can drag&drop images into the
-editor pane to include them in the document, and similarly with bibtex
-files, latex style files, etc.
-
-~ Figure { #fig-smokeview; caption:"Illustration of placement of figure and caption. (use the `.wide` class for wide figure)."}
-![Ex1_0]
-~
-[Ex1_0]: images/Ex1_0.png "Ex1_0" { width:auto; max-width:90% }
-
-~ Note
-Images larger than about 1Mb in size will be rejected by the Madoko.net server.
+~ TableFigure { #TableLeak; caption: "Envelope specifications"; .wide }
+|--------------|---------------------------|----------------------|-----------|------------|----------|
+|Envelope type | $q_{50}$                  | $q_{50}$             | $V_{50}$  | $n_{50}$   | $A_{L}$  |
+|:~~~~~~~~~~~~~+:~~~~~~~~~~~~~~~~~~~~~~~~~:|:~~~~~~~~~~~~~~~~~~~~:|:~~~~~~~~~:|:~~~~~~~~~~~|:~~~~~~~~:|
+|              | (m$^{3}$m$^{-2}$h$^{-1}$) | (l m$^{-2}$s$^{-1}$) | (m$^3$/s) | (h$^{-1}$) | (m$^2$)  |
+|--------------|---------------------------|----------------------|-----------|------------|----------|
+| Traditional  | 3                         | 0.83                 | 0.146     | 4.2        | 0.02690  |
+| Modern       | 1.5                       | 0.42                 |0.073      | 2.1        | 0.01345  |
+| Near-zero    | 0.75                      | 0.21                 | 0.036     | 1.05       | 0.006725 |
+|--------------|---------------------------|----------------------|-----------|------------|----------|
 ~
 
-## Tables
-Table [#table-sample] shows an example full width table figure.
+The observed peak pressures are summarized in Fig. [#peak_pressures]. These results were corrected for the estimated model bias of 0.84, and the error bars indicate the 95 \% confidence limits.  The trends in the results are clear and consistent. All the three parameters - fire growth rate, damper configuration and air-tightness - are found to be important for the expected peak pressure. Interestingly, the sensitivity of the pressure to the parameter values seems to increase when moving towards a scenario with higher pressure. For instance, the damper configuration is not very important in traditional and normal buildings, but can become crucially important very air-tight buildings. The results of Fig. [#peak_pressures] were found to be independent of the fan operation (on or off) and the position of the fan unit's damper. This means that the leakages through the other apartments can compensate for the fan pressure differences and complete closing of the ventilation system. Of course, this means that smoke will spread to the other apartments through the network.
 
-~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
-|                | $c(t)$                               ||||
-|                |---------|---------|---------|-----------|
-|                | (A0)    | (A1)    | (A2)    | (A3)      |
-|                | ohne    | Log     | Polynom | Stückweise|
-|                |         |         |         | konstant  |
-|:---------------|:-------:|:-------:|:-------:|:---------:|
-| Log likelihood | -6.798  | -6.733  | -6.715  | -6.686    |
-| Pseudeo $R^{2}$| 0,048   | 0,057   | 0,059   | -         |
-| AIC            | 13.615  | 13.489  | 13.456  | 13.483    |
-| BIC            | 13.711  | 13.594  | 13.580  | 14.009    |
-| N              | 105.484 | 105.484 | 105.484 | 105.484   |
-|----------------|---------|---------|---------|-----------|
+~ Figure { #peak_pressures; caption:"Simulated peak pressures in the apartment fire."}
+  
+![Medium_corrected]
+![Fast_corrected]
 ~
 
-## Equations
-Standard terminology should be used in equations. If possible, keep
-equations to one column. All equations should be numbered. A definition
-of $e$ is shown in Equation [#euler]:
+[Fast_corrected]: images/Fast_corrected.png "Fast_corrected" { width:auto; max-width:80% }
 
-~ Equation { #euler }
-e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
+[Medium_corrected]: images/Medium_corrected.png "Medium_corrected" { width:auto; max-width:80% }
+
+Assuming that opening the inwards-opening door is not possible if the overpressure is more than 100 Pa, we can conclude that escaping should be possible from traditional buildings if the fire growth rate is medium or slower. For more air-tight buildings and faster fires, the door opening would be challenging. The times when the 100 Pa overpressures were reached were in the range 76-151 s for medium fires and 34-107 s for fast fires. The durations of the high pressure varied between 30 and 250 s.
+
+Challenges for the structural integrity can be expected when the fire development fast or faster. If we choose the failure criterion based on our own experimental observation (1500 Pa), the fast fires could pose a risk when the envelope is very airtight. This could be the situation in Near-Zero or high-rise buildings. 
+
+
+## Smoke spreading through the ventilation network
+
+Based on the above pressure results it seems that open ventilation ducts could be used as a potential path of pressure relief at least in the buildings built according to the current air-tightness expectations, and in very air-tight buildings with modifications. The possibility of smoke spread to the other apartments and the resulting loss of compartmentation becomes then an issue. Figure [#Smoke] visualizes the smoke concentration in the neighbouring apartments 170 s from the ignition. If no dampers are used, the smoke spreads to the neighbours regardless of the fan operation.  The third figure corresponds to a situation where the damper is used only on the inlet side and the exhaust ventilation fan is kept running. Interestingly, the smoke is not spreading to other apartments in this case. Obviously, the cases with both dampers operating can be expected to be safe in this respect. 
+
+~ Figure { #Smoke; caption:"Visualization of smoke density in neighbouring apartments."}
+  
+![Smoke]
 ~
 
-Or to use &logolatex; to align equations.
+[Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:95% }
 
-~ Equation { #eq-alignment; caption:"Alignment example" }
-\begin{aligned} 
- f(x)  &= a x^2+b x +c   &   g(x)  &= d x^3 \\
- f'(x) &= 2 a x +b       &   g'(x) &= 3 d x^2
-\end{aligned}
+A more quantitative presentation of the same results is given in Fig. [#visibility] showing the minimum visibility over the entire fire duration in the different combinations. The red horizontal bars show the median values from all the neighbouring apartments, and the boxes indicate a "typical range". The visibility values get down to few meters in all cases without any dampers, and closing the fan reduces the visibility down to about two meters. Making the building more air-tight increases the amount of soot in the neighbours and reduces the visibility. In the simulations with fan operating and damper only on the inlet side, smoke is not observed in the neighbours. If the inlet side is open, the operating fan makes the situation worse as the fan pressure head prevents smoke from escaping through the inlet branch.
+ 
+~ Figure { #Visibility; caption:"Minimum visibility in neighbouring apartments."}
+![Visibility]
 ~
 
-# FUN CONTENT EXAMPLES
-Let's program some JavaScript:
-``` javascript
-function hello() {
-  return "hello world!"
-}
-```
-Here is a footnote[^fn] reference.
-[^fn]: This is the content of the example footnote. 
-    You can continue a footnote by indenting content.
-    And notice the back link.
+[Visibility]: images/Visibility.png "Visibility" { width:auto; max-width:95% }
 
-# BIBLIOGRAPHY AND REFERENCES
-When references are used in the text, tie them to an alphabetical (by
-principal author) list of references to be included as the last item of
-your paper. The format commonly used in scientific literature follows:
+#CONCLUSIONS
 
-Smith, J. S., Bloggs, R. T. and Jones, E. R. (1974), "Magnetic Anomalies
-in Geothermal Systems", Journal of Fluid Mechanics, 254, 73-79
+We used experimental results (own and literature) to understand the pressure development in fires taking place within closed but mechanically ventilated compartments. We then used the experimental data to validate FDS modelling approach, including the modelling of HVAC systems and building envelope leakages. 
+In this context, mainly due to the high experimental uncertainties, the validation is focusing mainly to the modelling approach and procedure, not so much to the predictive capability of FDS. Nevertheless, using the validated modelling procedure, we investigated the influence of the damper configuration, envelope air-tightness and fire growth rate on the pressures and smoke spreading to neighbouring apartments in a mechanically ventilated building with many apartments.   
 
-Leslie Lamport, LaTeX: A Document Preparation System (2nd Edition), Addison-Wesley, 1994
+The numerical simulations of the apartment building fire scenarios showed that the peak overpressure is sensitive to the damper configuration, envelope air-tightness and fire growth rate, but practically independent on the fan operation. The pressure was found to increase with improving air-tightness (reduced leakage), increased use of fire or smoke dampers, and the increased rate of fire growth. The peak pressures were found to be sufficiently high to prevent escape through an inwards-opening door in modern, air-tight buildings. The durations of high pressure were found to be long enough to put the occupants in danger. The risk of structural damage was found to exist with fast fires. The risk of structural damage was limited to the very air-tight buildings with dampers installed in both inlet and exhaust ducts. 
 
-When using Madoko, edit the content of the .bib file in the document
-folder, and use the reference methods as shown in the [Bibliography and
-Citations
-Section](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-bib)
-of the Madoko Manual.
-
-A bibliography file consists of all your references in the BibTeX format, for example:
-
-    @BOOK{ Knuth:TeX,  
-        author   = "Knuth, Donald E.",  
-        title    = "The {\TeX} book",  
-        publisher= "Addison-Wesley",  
-        year     = 1984  
-    }
-
-Entries in the bibliography files can now be referenced using semi-colon
-separated references, for example:
-``` Markdown 
-Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
-```
-Results in: Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
-
-Please include full title of journal articles or other references,
-journal, volume, date, pages. There is a nice [table on
-Wikipedia](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX)
-that shows all of the different data fields for the BibTeX file.
-
-# PAPER DEADLINE
-Your paper, in final form, must be received by October 15th, 2016. The
-best way to edit and submit is to use the Madoko [editor] to edit your
-document in the 'authoring' branch of the GitHub [femtc2016] repository.
-If you choose to use some other document format and editing tool, PDF
-format is preferred, but ODT, DOC, or DOCX formats are acceptable. Please
-e-mail the files to [conference@thunderheadeng.com][emaillink].
-
-# PRESENTATION
-Each author must present his/her paper within the allotted time, allowing
-for some minutes of open discussion. The session chair is responsible for
-keeping authors within their time limit, in order to ensure that each
-author has enough time for their presentation. When preparing your
-presentation slides, make sure they are clear and large enough so that
-your audience can read them from as far as 80 feet away.
-
-All presentations will be made using the computer projector available in
-the conference room. We will not have overhead projectors or slide
-projectors in the meeting rooms.
-
-Your presentation, in final form, must be received by **October 15th,
-2016**. A final commit of the files to the GitHub repository is
-preferred. Once the final draft is complete and reviewed it will be
-merged into the master branch of the repository. If you decide to use
-some other tool for creating your presentation, PDF format is preferred,
-but ODP, PPT, or PPTX formats are acceptable. Please e-mail the files
-to [conference@thunderheadeng.com][emaillink].
-
-All presentations will be pre-loaded on the computers that are present.
-Please note that this approach will make it necessary for us to receive
-the presentation files prior to the conference. If you have a different
-software requirement, it should still be possible for you to attach your
-own computer to the projector if you bring it with you. This is not
-optimal, as it takes time and slows down the session.
-
-# CONFERENCE CONTENT DISTRIBUTION
-The papers and presentation materials will be made available online
-during and after the conference. In addition, the organizers are planning
-to may broadcast live presentations online during the event. The papers,
-presentations, and videos will be archived and made available on the web
-after the conference.
-
-Author(s) retain all rights to submitted material. The organizers are
-granted a non-exclusive right to copy and redistribute conference
-material submitted by the author(s).
+The simulations of the different damper configurations and fan operation modes showed that the smoke spreading to the neighbouring apartments can be avoided if only the inlet ventilation branch is closed with a damper and exhaust fan is kept at running. This mode of operation was found to be the only combination where the smoke spread can be prevented, simultaneously maintaining the pressure at acceptable level.  The situation can of course be improved by introducing additional technical means of pressure management. These should be among the future applications of the newly developed simulation capability. 
 
 [BIB]
 
-&pagebreak;
-
-# An appendix { @h1:"A" }
-"All the same, I should like it all plain and clear," said he
-obstinately, putting on his business manner (usually reserved for people
-who tried to borrow money off him), and doing his best to appear wise and
-prudent and professional and live up to Gandalf's recommendation. "Also I
-should like to know about risks, out-of-pocket expenses, time required
-and remuneration, and so forth" -- by which he meant: "What am I going to
-get out of it? and am I going to come back alive?"
-
-# Conclusion
-If you have any questions concerning your paper and/or the Conference,
-please email us at [conference@thunderheadeng.com][emaillink].
