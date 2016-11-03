@@ -1,113 +1,115 @@
 [INCLUDE=presentation]
-Title         : The Challenge of Maintaining FDS and CFAST
+Title         : The Challenge of Maintaining &br; FDS and CFAST
 Author        : Kevin McGrattan
 Affiliation   : National Institute of Standards and Technology
 Email         : kevin.mcgrattan@nist.gov
-Reveal Theme  : sky
+Reveal Theme  : simple
 Beamer Theme  : singapore
 
 [TITLE]
 
-
-~ slide
-![Survey]
-
-[Survey]: images/Survey_Snapshot.png "Fire Model Survey" { width:1000px; vertical-align:top }
-
+## Fire Model Survey
+~ Center
+![Survey]  
 Courtesy, Combustion Science and Engineering
 ~
 
+[Survey]: images/Survey_Snapshot.png "Fire Model Survey" { height:500px; vertical-align:top }
+
 
 ## CFAST Graphical User Interface
-
+~ Center
 ![CFAST_GUI]
+~
 
-[CFAST_GUI]: images/CFAST_Snapshot.png "CFAST GUI" { width:1000px; vertical-align:top }
+[CFAST_GUI]: images/CFAST_Snapshot.png "CFAST GUI" { height:500px; vertical-align:top }
 
 
-~ slide
-CFAST in Smokeview
-
+## CFAST in Smokeview
+~ Center
 ![Smokeview]
-
-[Smokeview]: images/Smokeview_Snapshot.png "Smokeview" { width:1000px; vertical-align:top }
 ~
 
-~ slide
-Radiation Measurements
+[Smokeview]: images/Smokeview_Snapshot.png "Smokeview" { width:auto; max-width:100%; vertical-align:top }
 
-![Fleury]
 
-[Fleury]: images/Fleury_Image.png "Fleury" { width:1000px; vertical-align:top }
-
-Rob Fleury and Mike Spearpoint, U of Canterbury, New Zealand
+## Radiation Measurements
+~ Center
+![Fleury]  
+Rob Fleury and Mike Spearpoint  
+U of Canterbury, New Zealand
 ~
 
-~ slide
-Smoke Movement in Stairwells
+[Fleury]: images/Fleury_Image.png "Fleury" { height:400px; vertical-align:top }
 
+
+## Smoke Movement in Stairwells
+~ Columns
+~~ Column { width:"50%" }
+~~~ Center
 ![NRCC]
+~~~
+~~
+~~ Column {align:left}
+Modeling:  
+Paul Tyson, U of Ulster
 
-[NRCC]: images/NRCC_Smoke_Tower.png "NRCC" { width:400px; vertical-align:top ; text-align:center }
-
-Modeling: Paul Tyson, U of Ulster
-
-Experiments: Cathy Wang, National Research Council, Canada
+Experiments:  
+Cathy Wang, National Research Council, Canada
+{ text-align=left }
+~~
 ~
 
+[NRCC]: images/NRCC_Smoke_Tower.png "NRCC" { height:500px; vertical-align:top }
 
-~ slide
-Ventilation Effects
-
-![PRISME]
-
-[PRISME]: images/PRISME_Image.png "PRISME" { width:800px; vertical-align:top ; text-align:center }
-
-Modeling: Jonathan Wahlqvist, Simo Hostikka, Topi Sikanen
-
+## Ventilation Effects
+~ Center
+![PRISME]  
+Modeling: Jonathan Wahlqvist, Simo Hostikka, Topi Sikane  
 Experiments: OECD PRISME Project
 ~
 
-~ slide
-Adiabatic Surface Temperature and Plate Thermometers
+[PRISME]: images/PRISME_Image.png "PRISME" { height:400px; }
 
-![SP_AST]
 
-[SP_AST]: images/SP_AST.png "SP_AST" { width:800px; vertical-align:top ; text-align:center }
-
-Modeling: J. Sjöström, U. Wickström, A. Byström
-
+## Adiabatic Surface Temperature &br; and Plate Thermometers
+~ Center
+![SP_AST]  
+Modeling: J. Sjöström, U. Wickström, A. Byström  
 Experiments: SP Sweden
 ~
 
-~ slide
-Spill Plumes
+[SP_AST]: images/SP_AST.png "SP_AST" { height:400px; vertical-align:top ; text-align:center }
 
-![Harrison]
 
-[Harrison]: images/Harrison_Spill_Plume.png "Harrison Spill Plume" { width:800px; vertical-align:top ; text-align:center }
-
-Roger Harris and Mike Spearpoint, U of Canterbury, New Zealand
+## Spill Plumes
+~ Center
+![Harrison]  
+Roger Harris and Mike Spearpoint  
+U of Canterbury, New Zealand
 ~
 
-~ slide
-Tunnel Fires
+[Harrison]: images/Harrison_Spill_Plume.png "Harrison Spill Plume" { height:400px; vertical-align:top; }
 
-![Arup]
 
-[Arup]: images/Arup_Tunnel.png "Arup Tunnel" { width:800px; vertical-align:top ; text-align:center }
-
+## Tunnel Fires
+~ Center
+![Arup]  
 Gabriele Vigne and Jimmy Jönsson, ArupFire
 ~
 
-~ slide
-FDS Validation Guide
+[Arup]: images/Arup_Tunnel.png "Arup Tunnel" { height:400px; vertical-align:top; text-align:center }
 
-![Validation]
 
+## FDS Validation Guide
+~ Columns
+~~ Column { width:"50%" }
+![table_15-1]
+~~
+~~ Column
 ![Scatterplot]
-
-[Validation]: images/FDS_Validation_Table.png "Validation Table" { width:600px; vertical-align:top ; text-align:center }
-
-[Scatterplot]: images/Scatterplot.png "Scatter plot" { width:600px; vertical-align:top ; text-align:center }
+~~
 ~
+
+[table_15-1]: images/table_15-1.png "table_15-1" { width:auto; max-width:100%; vertical-align:top }
+[Scatterplot]: images/Scatterplot.png "Scatter plot" { width:auto; max-width:100%; vertical-align:top }
