@@ -67,3 +67,47 @@ Modeling: Jonathan Wahlqvist, Simo Hostikka, Topi Sikanen
 
 Experiments: OECD PRISME Project
 ~
+
+~ slide
+Adiabatic Surface Temperature and Plate Thermometers
+
+![SP_AST]
+
+[SP_AST]: images/SP_AST.png "SP_AST" { width:800px; vertical-align:top ; text-align:center }
+
+Modeling: J. Sjöström, U. Wickström, A. Byström
+
+Experiments: SP Sweden
+~
+
+~ slide
+Spill Plumes
+
+![Harrison]
+
+[Harrison]: images/Harrison_Spill_Plume.png "Harrison Spill Plume" { width:800px; vertical-align:top ; text-align:center }
+
+Roger Harris and Mike Spearpoint, U of Canterbury, New Zealand
+~
+
+~ slide
+Tunnel Fires
+
+![Arup]
+
+[Arup]: images/Arup_Tunnel.png "Arup Tunnel" { width:800px; vertical-align:top ; text-align:center }
+
+Gabriele Vigne and Jimmy Jönsson, ArupFire
+~
+
+~ slide
+FDS Validation Guide
+
+![Validation]
+
+![Scatterplot]
+
+[Validation]: images/FDS_Validation_Table.png "Validation Table" { width:600px; vertical-align:top ; text-align:center }
+
+[Scatterplot]: images/Scatterplot.png "Scatter plot" { width:600px; vertical-align:top ; text-align:center }
+~
