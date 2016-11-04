@@ -3,19 +3,20 @@ Title         : THE EFFECTS OF VARYING STAIRWAY WALKING SPEEDS ON EVACUATION MOD
 Subtitle      : A SENSITIVITY ANALYSIS
 
 Author        : Majed Almejmaj
-Affiliation   : BuroHappold Engineering, Worcester Polytechnic Institute
-Email         : Majed.Almejmaj@burohappold.com
+Affiliation   : BuroHappold Engineering&br;Worcester Polytechnic Institute (WPI)
+Email         : Majed.Almejmaj&br;@burohappold.com
 
 Author        : Sophie Washington
 Affiliation   : BuroHappold Engineering
-Email         : Sophie.Washington@burohappold.com
+Email         : Sophie.Washington&br;@burohappold.com
 
 Author        : Jonathan Hall
 Affiliation   : BuroHappold Engineering
-Email         : Jonathan.Hall@burohappold.com
+Email         : Jonathan.Hall&br;@burohappold.com
 
 Bibliography  : references.bib
 Logo          : False
+
 Tex Header    :
   \def\refname{&name-references;}
 name-references : REFERENCES
@@ -23,351 +24,416 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-The use of evacuation models has increased in recent years due to architectural 
-complexity of projects and in many cases code requirements. With the wide range 
-of egress modeling software packages available however, users are often unfamiliar 
-with how sensitive these models are to the various input parameters, especially 
-when questioned by approving authorities. This paper examines the sensitivity 
-of varying walking speeds on stairways using  the results from the software 
-package ‘Legion Evac’ to provide engineers with the justification needed when 
-asked by the approving authority to lower occupants’ stairway walking speeds as 
-a safety precaution.
+The use of evacuation models has increased in recent years due to
+architectural complexity of projects and in many cases code requirements.
+With the wide range of egress modeling software packages available
+however, users are often unfamiliar with how sensitive these models are
+to the various input parameters, especially when questioned by approving
+authorities. This paper examines the sensitivity of varying walking
+speeds on stairways using the results from the software package 'Legion
+Evac' to provide engineers with the justification needed when asked by
+the approving authority to lower occupants’ stairway walking speeds as a
+safety precaution.
 ~
 
-[editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
-[reference-manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html "Madoko Reference Manual"
-[femtc2016]: https://github.com/thunderheadeng/femtc2016
-[emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
+# INTRODUCTION
+When conducting a performance based-design, engineers tend use the timed
+egress model, where the Available Safe Escape Time (ASET) is compared to
+the Required Safe Escape Time (RSET) [1, 2]. ASET is the time it takes
+until untenable conditions are reached in the space while RSET is the
+time it takes occupants to evacuate the space safely prior to reaching
+untenable conditions [2]. To determine the RSET, engineers rely on
+published data covering the time it took people to recognize / react to
+an emergency situation along with walking speeds over horizontal and
+vertical means of egress components [1, 2].
 
-# INTRODUCTION { #sec-intro }
-When conducting a performance based-design, engineers tend use the timed egress model, 
-where the Available Safe Escape Time (ASET) is compared to the Required Safe Escape Time 
-(RSET) [1, 2]. ASET is the time it takes until untenable conditions are reached in 
-the space while RSET is the time it takes occupants to evacuate the space safely prior 
-to reaching untenable conditions [2]. To determine the RSET, engineers rely on published 
-data covering the time it took people to recognize / react to an emergency situation 
-along with walking speeds over horizontal and vertical means of egress components [1, 2].
+Engineers have a number of tools that can be used to determine the RSET,
+such as computer evacuation models and the SFPE hydraulic model. While
+such tools vary in complexity, one of the common input parameters in all
+the tools is occupant walking speeds. This input data can be found in
+various fire protection engineering guidelines [1, 3] however, it is not
+clear when to use such data. While some computer evacuation models are
+preloaded with preset walking speed data, such data is only applicable
+for specific occupant profiles (e.g. commuter, tourists) that might not
+be applicable to other occupancies or even other cultures, especially
+that studies have shown that culture can have a significant effect on
+occupant walking speed [4]. This causes some approving authorities to
+question the results of evacuation models and in a few cases request the
+use of lower walking speeds to create a margin of safety.
 
-Engineers have a number of tools that can be used to determine the RSET, such as computer 
-evacuation models and the SFPE hydraulic model. While such tools vary in complexity, one 
-of the common input parameters in all  the tools is occupant walking speeds. This input 
-data can be found in various fire protection engineering guidelines [1, 3] however, it 
-is not clear when to use such data. While some computer evacuation models are preloaded 
-with preset walking speed data, such data is only applicable for specific occupant profiles 
-(e.g. commuter, tourists) that might not be applicable to other occupancies or even other 
-cultures, especially that studies have shown that culture can have a significant effect on
- occupant walking speed [4]. This causes some approving authorities to question the results 
- of evacuation models and in a few cases request the use of lower walking speeds to create a margin of safety. 
- 
-This paper presents the effects of lowering agent evacuation speeds over stairs on occupant 
-flow and total evacuation time in a high-rise building.
+This paper presents the effects of lowering agent evacuation speeds over
+stairs on occupant flow and total evacuation time in a high-rise
+building.
 
-# OVERVIEW OF MODELING SOFTWARE USED { #sec-intro }
+# OVERVIEW OF MODELING SOFTWARE USED 
+The modeling software used for this study is an agent-based model called
+“LEGION EVAC”, which has the ability to simulate people in either 2D [5]
+or 3D. The modeled space is divided into a two-dimensional / continuous
+space that allows simulated occupants (entities) to move freely and avoid
+modeled obstacles, walls and other entities [6]. Collision avoidance with
+other entities and obstacles is achieved through the “least effort”
+algorithm developed by Still [5], where entities determine the path with
+the least cost towards their target [7] based on distance, speed and
+comfort [8].
 
-The modeling software used for this study is an agent-based model called “LEGION EVAC”, 
-which has the ability to simulate people in either 2D [5] or 3D. The modeled space is 
-divided into a two-dimensional / continuous space that allows simulated occupants (entities)
- to move freely and avoid modeled obstacles, walls and other entities [6]. Collision avoidance
-  with other entities and obstacles is achieved through the “least effort” algorithm 
-  developed by Still [5], where entities determine the path with the least cost towards 
-  their target [7] based on distance, speed and comfort [8].
-  
-  
-# STAIR WALKING SPEED { #sec-intro }
+# STAIR WALKING SPEED 
+Walking speeds over stairs in evacuation models are determined using two
+main approaches; the first uses mathematical correlations derived from
+field observations, such as that illustrated in the SFPE hydraulic model,
+Fruin’s levels of service or BS 7974:2001 [3, 9, 10] where walking speeds
+are decreased based on the slop of the stair and crowd density. The other
+approach is by allowing the user to input such speeds from scientific
+publications [1, 2], which depends on the user’s familiarity with the
+published data.
 
-Walking speeds over stairs in evacuation models are determined using two main approaches; 
-the first uses mathematical correlations derived from field observations, such as that 
-illustrated in the SFPE hydraulic model, Fruin’s levels of service or BS 7974:2001 [3, 9, 10] 
-where walking speeds are decreased based on the slop of the stair and crowd density. 
-The other approach is by allowing the user to input such speeds from scientific 
-publications [1, 2], which depends on the user’s familiarity with the published data.   
+While some researchers have been highlighting the limited availability
+for additional human behavior data, including stair walking speeds,
+others have been questioning the validity of the current data due to
+anthropometric changes over the past few decades [11].
 
-While some researchers have been highlighting the limited availability for additional 
-human behavior data, including stair walking speeds, others have been questioning the 
-validity of the current data due to anthropometric changes over the past few decades [11].
+# STUDY GOAL
 
-# STUDY GOAL { #sec-intro }
+There are a number of published studies addressing walking speeds over
+stairs however, the majority of them are validating new and existing
+models [12, 13]. This study aims at addressing the sensitivity of the
+modeling software Legion Evac results to walking stair walking speeds in
+a high-rise building. It is hypnotized that the total evacuation time
+will increase along and that occupant flow over the stairways will
+decrease when using lower stair walking speeds.
 
-There are a number of published studies addressing walking speeds over stairs however, 
-the majority of them are validating new and existing models [12, 13]. This study aims at
-addressing the sensitivity of the modeling software Legion Evac results to walking stair
- walking speeds in a high-rise building. It is hypnotized that the total evacuation time 
- will increase along and that occupant flow over the stairways will decrease when using 
- lower stair walking speeds.
+The user has the option to choose the predefined entity profiles within
+the software (e.g. UK commuter, Asian commuter, UK tourist and Asian
+tourist), or input their own parameters, such as entities size, walking
+speed and pre-movement time. In both options, each entity is assigned its
+own unique parameters with various statistical distributions based on the
+available data.
 
-The user has the option to choose the predefined entity profiles within the software 
-(e.g. UK commuter, Asian commuter, UK tourist and Asian tourist), or input their own 
-parameters, such as entities size, walking speed and pre-movement time. In both options, 
-each entity is assigned its own unique parameters with various statistical distributions based on the available data. 
-Currently, the predefined profiles are not described in detailed within Legion Evac 
-user manual, which can cause some approving authorities to questions / request such 
-numbers to be provided when reviewing the results.
+Currently, the predefined profiles are not described in detailed within
+Legion Evac user manual, which can cause some approving authorities to
+questions / request such numbers to be provided when reviewing the
+results.
 
-# METHODOLOGY { #sec-intro }
-A user defined entity profile will be setup within Legion Evac that will cover 
-entity size, walking speed and pre-movement time. All variables will be obtained 
-from published literature and only stair walking speed will be adjusted to eliminate 
-the effect of other variables. The used stair walking speed will be decreased in increments 
-of 0.1 and ranging between 0.7 m/s and 0.4 m/s. This will result in 4 scenarios with two 
-runs conducted for each scenario to ensure that the total evacuation times are consistent 
-for each scenario. While the number of scenarios / runs do not allow us to determine the 
-statistical significance of the walking speeds on the model’s total evacuation time and 
-stairway flow, it will provide preliminary results that might enable engineers to make a 
-case when asked to user lower walking speeds and provide researchers with some results to 
-formulate future areas of research.
+# METHODOLOGY 
+A user defined entity profile will be setup within Legion Evac that will
+cover entity size, walking speed and pre-movement time. All variables
+will be obtained from published literature and only stair walking speed
+will be adjusted to eliminate the effect of other variables. The used
+stair walking speed will be decreased in increments of 0.1 and ranging
+between 0.7 m/s and 0.4 m/s. This will result in 4 scenarios with two
+runs conducted for each scenario to ensure that the total evacuation
+times are consistent for each scenario. While the number of scenarios /
+runs do not allow us to determine the statistical significance of the
+walking speeds on the model’s total evacuation time and stairway flow, it
+will provide preliminary results that might enable engineers to make a
+case when asked to user lower walking speeds and provide researchers with
+some results to formulate future areas of research.
 
-# BUILDING DESCRIPTION  { #sec-intro }
-The building used for this study is at 10 story high-rise, with the highest occupied level 
-at 38m.  The building’s main entrance is located on the south side at ground level with a 
-secondary exit located on the north side. All floors, with the exception of level 10 which 
-is accessed by one stairway (Stairway B), are accessed via two 1200 mm wide stairways as 
-illustrated in Figure 1. Also, all doors which are part of the means of egress have a clear 
-width of 900 mm. 
-To eliminate the affects from the underground garage level and mainly focus on the effect 
-of walking speeds, only the tower section is considered for this study, where each floor has an area of 922 sq.m.
+# BUILDING DESCRIPTION  
+The building used for this study is at 10 story high-rise, with the
+highest occupied level at 38m. The building’s main entrance is located on
+the south side at ground level with a secondary exit located on the north
+side. All floors, with the exception of level 10 which is accessed by one
+stairway (Stairway B), are accessed via two 1200 mm wide stairways as
+illustrated in Figure [#fig-sectionview]. Also, all doors which are part
+of the means of egress have a clear width of 900 mm.
 
+To eliminate the affects from the underground garage level and mainly
+focus on the effect of walking speeds, only the tower section is
+considered for this study, where each floor has an area of 922 sq.m.
+
+~ Figure {#fig-sectionview; caption:"Emergency Stairs Location for High-rise Section (Level 5)"}
 ![Madoko 1]
-[Madoko 1]: images/Madoko-1.png "Madoko 1" { width:auto; max-width:90% }
-~ Figure {; caption:"Emergency Stairs Location for High-rise Section (Level 5)"}
 ~
+[Madoko 1]: images/Madoko-1.png "Madoko 1" { width:auto; max-width:90% }
 
-# INPUT PARAMETERS  { #sec-intro }
+
+# INPUT PARAMETERS  
 
 ## Number of Occupants
-While each floor can be occupied by 99 occupants using an occupancy load factor of 9.3 sq.m. 
-per person as listed in NFPA 101, Table 7.3.1.2, only 72 occupants are placed on each floor, 
-except level 10 which has 31 occupants, to allow for some employee collaboration spaces in the 
-layout as illustrated in Figure 1. 
+While each floor can be occupied by 99 occupants using an occupancy load
+factor of 9.3 sq.m. per person as listed in NFPA 101, Table 7.3.1.2, only
+72 occupants are placed on each floor, except level 10 which has 31
+occupants, to allow for some employee collaboration spaces in the layout
+as illustrated in Figure [#fig-sectionview].
 
 ## Entity Body Size   
 
-For uniformity, the body size for all occupants is assumed to follow a normal distribution 
-as illustrated in Table 1 [14].
+For uniformity, the body size for all occupants is assumed to follow a
+normal distribution as illustrated in Table [#table-bodysize] \[14\].
 
-~ TableFigure { #table-sample; caption: " Entity Body Size"; .wide }
-
-|                |---------|---------|---------|
-|                |         |         |         |
-|  Percentile    |  5th    | 50th    | 95th    |
-|                |         |         |         |
-|:---------------|:-------:|:-------:|:-------:|
-| Shoulder Width (mm) | 420  | 465   | 510 |
-|----------------|---------|---------|---------|
+~ TableFigure{#table-bodysize; caption: "Entity Body Size"; .wide }
+|                     |-----|------|------|
+| Percentile          | 5th | 50th | 95th |
+|:--------------------|:---:|:----:|:----:|
+| Shoulder Width (mm) | 420 | 465  | 510  |
+|---------------------|-----|------|------|
 ~
 
 ## Entity Walking Speed
-The horizontal walking speed used in all the runs is 1.2 m/s, which is derived from the SFPE Engineering Guide on Human Behavior in Fire [1].
+The horizontal walking speed used in all the runs is 1.2 m/s, which is
+derived from the SFPE Engineering Guide on Human Behavior in Fire [1].
 
-The base stair descending speed used for this study is also derived from SFPE Engineering Guide on Human Behavior in Fire [1], which is 0.7 m/s. Due to the lack of published data on other descending stair speed with statistical distributions, the chosen speed for each scenario was applied to all entities. While this might not be a realistic approach as it eliminates some behaviours, such as overtaking slow entities, it does prevent such behaviours form distorting the results. The stair walking speeds used for each run are listed in Table 2.
+The base stair descending speed used for this study is also derived from
+SFPE Engineering Guide on Human Behavior in Fire [1], which is 0.7 m/s.
+Due to the lack of published data on other descending stair speed with
+statistical distributions, the chosen speed for each scenario was applied
+to all entities. While this might not be a realistic approach as it
+eliminates some behaviors, such as overtaking slow entities, it does
+prevent such behaviors form distorting the results. The stair walking
+speeds used for each run are listed in Table [#table-stairspeed].
 
-~ TableFigure { #table-sample; caption: "Scenario Stair Walking Speed"; .wide }
-
-|                |---------|---------|---------|-----------|
-|                |         |         |         |           |
-| Scenario   |  Descending Stair walking Speed (m/s)|
-|                |   |
-|:---------------|:-------:|
-| Scenario 1     | 0.4     |
-| Scenario 2     | 0.5     |
-| Scenario 3     | 0.6     | 
-| Scenario 4 (base) | 0.7     |
-|----------------|---------|
+~ TableFigure{ #table-stairspeed; caption: "Scenario Stair Walking Speed"; .wide }
+|                   |-------------------------------------|
+| Scenario          | Descending Stair walking Speed (m/s)|
+|:------------------|:-----------------------------------:|
+| Scenario 1        | 0.4                                 |
+| Scenario 2        | 0.5                                 |
+| Scenario 3        | 0.6                                 |
+| Scenario 4 (base) | 0.7                                 |
+|-------------------|-------------------------------------|
 ~
-
-
 
 ## Measuring Flow 
-In Legion Evac, the “Analysis Line” tool is used to measure information at a certain point. To measure the flow, analysis lines were placed on both stairways at levels 4, 8 at the first descending tread and on the last stairway tread on the ground level. This will measure flow throughout the simulation and illustrate any blockages at the top, middle and lower levels of the building. The presented flows are in entities / minute and are averaged over 12 second intervals to minimize simulation time.
+In Legion Evac, the “Analysis Line” tool is used to measure information
+at a certain point. To measure the flow, analysis lines were placed on
+both stairways at levels 4, 8 at the first descending tread and on the
+last stairway tread on the ground level. This will measure flow
+throughout the simulation and illustrate any blockages at the top, middle
+and lower levels of the building. The presented flows are in entities /
+minute and are averaged over 12 second intervals to minimize simulation
+time.
 
-# RESULTS  { #sec-intro }
+# RESULTS
 
 ## Scenario 1
-The total evacuation time when using a 0.4 m/s descending stairway walking speed is 13:55 minutes (average of two runs with 5 seconds difference).  
+The total evacuation time when using a 0.4 m/s descending stairway
+walking speed is 13:55 minutes (average of two runs with 5 seconds
+difference).
 
-The flow rates on the ground floor did not indicate any blockage occurring at that level as  Figure 2 illustrates a consistent flow for both stairways A and B that averaged around 24 entities / minute.
+The flow rates on the ground floor did not indicate any blockage
+occurring at that level as Figure [#fig-scenario1ground] illustrates a
+consistent flow for both stairways A and B that averaged around 24
+entities / minute.
 
-
+~ Figure {#fig-scenario1ground; caption:"Scenario 1 Ground Floor Stairway A&B Flow Rates"}
 ![Scenario 1 Ground]
+~
 [Scenario 1 Ground]: images/Scenario-1-Ground.PNG "Scenario 1 Ground" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 1 Ground Floor Stairway A&B Flow Rates"}
-~
 
-The flow rates on level 4 seem to have stopped for short periods and lasted for 2:02 minutes of the evacuation time. This would indicate that there was some blockage in the stairway, which can be attributed to entities entering into the stairways at lower levels. 
+The flow rates on level 4 seem to have stopped for short periods and
+lasted for 2:02 minutes of the evacuation time. This would indicate that
+there was some blockage in the stairway, which can be attributed to
+entities entering into the stairways at lower levels.
 
-
+~ Figure {#fig-scenario1fourth; caption:"Scenario 1 Fourth Floor Stairways A&B Flow Rates"}
 ![Scenario 1 4th]
+~
 [Scenario 1 4th]: images/Scenario-1-4th.PNG "Scenario 1 4th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 1 Fourth Floor Stairways A&B Flow Rates"}
-~
 
-Similar to level 4, the flow rates for stairways A and B on level 8 illustrated in Figure 4 indicate that there was some congestion in the stairways from caused by merging flow from below levels. This prevented occupant movement for approximately 5:20 minutes.
+Similar to level 4, the flow rates for stairways A and B on level 8
+illustrated in Figure [#fig-scenario1eighth] indicate that there was some
+congestion in the stairways from caused by merging flow from below
+levels. This prevented occupant movement for approximately 5:20 minutes.
 
-
+~ Figure {#fig-scenario1eighth; caption:"Scenario 1 Eighth Floor Stairways A&B Flow Rates"}
 ![Scenario 1 8th]
-[Scenario 1 8th]: images/Scenario-1-8th.PNG "Scenario 1 8th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 1 Eighth Floor Stairways A&B Flow Rates"}
 ~
+[Scenario 1 8th]: images/Scenario-1-8th.PNG "Scenario 1 8th" { width:auto; max-width:90% }
 
 ## Scenario 2
+The total evacuation time when using a 0.5 m/s walking speed when
+entities are descending a stairway was 11:43 minutes (average of two runs
+with 8 seconds difference).
 
-The total evacuation time when using a 0.5 m/s walking speed when entities are descending a stairway 
-was 11:43 minutes (average of two runs with 8 seconds difference).
+The flow rates on the ground floor did not indicate any blockage
+occurring at that level as Figure [#fig-scenario2ground] illustrates a
+consistent flow for both stairways A and B, with an average flow of 29
+entities / minute.
 
-
-The flow rates on the ground floor did not indicate any blockage occurring at that level as Figure 5
-illustrates a consistent flow for both stairways A and B, with an average flow of 29 entities / minute. 
-
-
-
+~ Figure {#fig-scenario2ground; caption:"Scenario 2 Ground Floor Stairway A&B Flow Rate"}
 ![Scenario 2 ground]
+~
 [Scenario 2 ground]: images/Scenario-2-ground.PNG "Scenario 2 ground" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 2 Ground Floor Stairway A&B Flow Rate"}
-~
 
-Level 4 flow rates shown in Figure 6 illustrate flow stoppage, similar to scenario 1. However, this only lasted for 1:35 minutes.
+Level 4 flow rates shown in Figure 6 illustrate flow stoppage, similar to
+scenario 1. However, this only lasted for 1:35 minutes.
 
-
-
+~ Figure {#fig-scenario2fourth; caption:"Scenario 2 Fourth Floor Stairways A&B Flow Rates"}
 ![Scenario 2 4th]
+~
 [Scenario 2 4th]: images/Scenario-2-4th.PNG "Scenario 2 4th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 2 Fourth Floor Stairways A&B Flow Rates"}
-~
 
+Similar to scenario 1, entities were unable to enter the stairways on
+level 8 for a longer period than level 4; however, this only lasted for
+4:32 minutes. There is also an initial spike in the flow rate at time 42
+seconds as entities move towards the exits, this is shortly followed by a
+sharp decline in stairway flow due to congestion from the floors below.
 
-
-Similar to scenario 1, entities were unable to enter the stairways on level 8 for a longer period than level 4; 
-however, this only lasted for 4:32 minutes. There is also an initial spike in the flow rate at time 42 seconds 
-as entities move towards the exits, this is shortly followed by a sharp decline in stairway flow due to congestion from the floors below.
-
-
+~ Figure {#fig-scenario2eighth; caption:"Scenario 2 Eighth Floor Stairways A&B Flow Rates"}
 ![Scenario 2 8th]
-[Scenario 2 8th]: images/Scenario-2-8th.PNG "Scenario 2 8th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 2 Eighth Floor Stairways A&B Flow Rates"}
 ~
-
+[Scenario 2 8th]: images/Scenario-2-8th.PNG "Scenario 2 8th" { width:auto; max-width:90% }
 
 ## Scenario 3
-The total evacuation time when using a 0.6 m/s walking speed when entities are descending a stairway 10:08 minutes (average of two runs with 3 seconds difference.  
+The total evacuation time when using a 0.6 m/s walking speed when
+entities are descending a stairway 10:08 minutes (average of two runs
+with 3 seconds difference.
 
-The flow rates on the ground floor for scenario 3 did not indicate any blockage occurring at that level as Figure 8 illustrates a consistent flow for both stairways A and B that averaged around 33 entities / minute.
+The flow rates on the ground floor for scenario 3 did not indicate any
+blockage occurring at that level as Figure [#fig-scenario3ground]
+illustrates a consistent flow for both stairways A and B that averaged
+around 33 entities / minute.
 
-
+~ Figure {#fig-scenario3ground; caption:"Scenario 3 Ground Floor Stairway A&B Flow Rate"}
 ![Scenario 3 Ground]
+~
 [Scenario 3 Ground]: images/Scenario-3-Ground.PNG "Scenario 3 Ground" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 3 Ground Floor Stairway A&B Flow Rate"}
-~
 
-Level 4 flow rates shown in Figure 6 illustrate flow stoppage, similar to previous scenarios; however, this only lasted for 1:25 minutes.
+Level 4 flow rates shown in Figure [#fig-scenario3fourth] illustrate flow
+stoppage, similar to previous scenarios; however, this only lasted for
+1:25 minutes.
 
+~ Figure {#fig-scenario3fourth; caption:"Scenario 3 Fourth Floor Stairways A&B Flow Rates"}
 ![Scenario 3  4th]
+~
 [Scenario 3  4th]: images/Scenario-3-4th.PNG "Scenario 3  4th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 3 Fourth Floor Stairways A&B Flow Rates"}
-~
 
-Similar to level 4, the flow rates for stairways A and B on level 8 illustrated in Figure 10 indicate that there was congestion in the stairways from the below levels that prevented occupant from moving for approximately 3:09 minutes. 
+Similar to level 4, the flow rates for stairways A and B on level 8
+illustrated in Figure [#fig-scenario3eighth] indicate that there was
+congestion in the stairways from the below levels that prevented occupant
+from moving for approximately 3:09 minutes.
 
+~ Figure {#fig-scenario3eighth; caption:"Scenario 3 Eighth Floor Stairways A&B Flow Rates"}
 ![Scenario 3 8th]
-[Scenario 3 8th]: images/Scenario-3-8th.PNG "Scenario 3 8th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 3 Fourth Floor Stairways A&B Flow Rates"}
 ~
-
+[Scenario 3 8th]: images/Scenario-3-8th.PNG "Scenario 3 8th" { width:auto; max-width:90% }
 
 
 ## Scenario 4
-The total evacuation time when using a 0.7 m/s walking speed when entities are descending a stairway 9:04 minutes (average of two runs with 10 seconds difference).  
+The total evacuation time when using a 0.7 m/s walking speed when
+entities are descending a stairway 9:04 minutes (average of two runs with
+10 seconds difference).
 
-As seen in previous scenarios, the flow rates on the ground floor did not indicate any blockage occurring at that level as illustrated in Figure 11 (average flow rate of 37 entity / minute).
+As seen in previous scenarios, the flow rates on the ground floor did not
+indicate any blockage occurring at that level as illustrated in
+Figure [#fig-scenario4ground] (average flow rate of 37 entity / minute).
 
+~ Figure {#fig-scenario4ground; caption:"Scenario 4 Ground Floor Stairway A&B Flow Rate"}
 ![Scenario 4 ground]
+~
 [Scenario 4 ground]: images/Scenario-4-ground.PNG "Scenario 4 ground" { width:auto; max-width:90% }
 
+Level 4 flow rates shown in Figure [#fig-scenario4fourth] illustrate flow
+stoppage, similar to previous scenarios. However, this only lasted
+between 1:01 minutes of the evacuation time.
 
-~ Figure {; caption:"Scenario 4 Ground Floor Stairway A&B Flow Rate"}
-~
-Level 4 flow rates shown in Figure 12 illustrate flow stoppage, similar to previous scenarios. However, this only lasted between 1:01 minutes of the evacuation time.
-
-
+~ Figure {#fig-scenario4fourth; caption:"Scenario 4 Fourth Floor Stairways A&B Flow Rates"}
 ![Scenario 4 4th]
+~
 [Scenario 4 4th]: images/Scenario-4-4th.PNG "Scenario 4 4th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 4 Fourth Floor Stairways A&B Flow Rates"}
-~
 
-Similar to level 4, the flow rates for stairways A and B on level 8 illustrated in Figure 13 show a stoppage time of 3:01 minutes, which would indicate that there was some congestion in the stairways.
+Similar to level 4, the flow rates for stairways A and B on level 8
+illustrated in Figure [#fig-scenario4eighth] show a stoppage time of 3:01 minutes, which
+would indicate that there was some congestion in the stairways.
 
-
+~ Figure {#fig-scenario4eighth; caption:"Scenario 4 Eighth Floor Stairways A&B Flow Rates"}
 ![Scenario 4 8th]
+~
 [Scenario 4 8th]: images/Scenario-4-8th.PNG "Scenario 4 8th" { width:auto; max-width:90% }
-~ Figure {; caption:"Scenario 3 Eighth Floor Stairways A&B Flow Rates"}
+
+The results indicate that as stair walking speed decrease, so will the
+total evacuation time generated by Legion Evac in a high-rise building.
+For example, lowering the stairway walking speed by 42.86 percent can
+increase the total evacuation time by up to 53.49 percent.
+Table [#table-evactime] compares the decrease in stair walking speeds for
+each scenario with the increase in total evacuation time.
+
+~ TableFigure{ #table-evactime; caption: "Scenario Total Evacuation Time and Walking Speed Comparison "; .wide }
+|                  |------------------|----------------------------------|-----------------------------|
+|                  | Total Evacuation | Percent Speed Decrease from Base | Percentage to Base Scenario |
+| Scenario         | Time (mm:ss)     | (%)                              | (%)                         |
+|:-----------------|:----------------:|:--------------------------------:|:---------------------------:|
+| Scenario 1       | 13:55            | 47.86                            | 53.49                       |
+| Scenario 2       | 11:43            | 29.57                            | 29.23                       |
+| Scenario 3       | 10:08            | 14.29                            | 11.76                       |
+| Scenario 4 (Base)| 09:04            | 10.53                            | -                           |
+|------------------|------------------|----------------------------------|-----------------------------|
+~ 
+
+Decreasing stair walking speed affected stairway flow at the ground
+level, thus affecting the upper floors in a high-rise building. In
+extreme cases, the flow decreased by 35.14 percent when the stair walking
+speed was decreased by 42.86 percent. A detailed comparison for stair
+flows at the ground level are shown in Table [#table-groundlevelflow].
+
+~ TableFigure {#table-groundlevelflow; caption: "Ground Level Average Flow Comparison"; .wide }
+|                  |--------------------------|----------------------------------------|
+|                  |Ground Level Average Flow | Percentage Comparison to Base Scenario |
+| Scenario         | (Entity / minute)        | (%)                                    |
+|:-----------------|:------------------------:|:--------------------------------------:|
+| Scenario 1       | 24                       | -35.14                                 |
+| Scenario 2       | 29                       | -21.62                                 |
+| Scenario 3       | 33                       | -10.81                                 |
+| Scenario 4 (Base)| 37                       | -                                      |
+|------------------|--------------------------|----------------------------------------|
 ~
 
-The results indicate that as stair walking speed decrease, so will the total evacuation time generated by Legion Evac in a high-rise building. For example, lowering the stairway walking speed by 42.86 percent can increase the total evacuation time by up to 53.49 percent.  Table 3 compares the decrease in stair walking speeds for each scenario with the increase in total evacuation time.
+When examining the results of the model, it was obvious that there was
+some congestion in the stairways due to the number of occupants accessing
+them. This has resulted in flow stoppage on levels 4 and 8, which
+increased significantly as the stair walking speed was decreased. The
+observed stoppage times for both levels 4 and 8 are listed in
+Table [#table-level4blockage] and Table [#table-level8blockage. In
+addition, the stoppage time seems to increase on higher levels, which is
+probably due to the increase in merging flow from the floors below.
 
-~ TableFigure { #table-sample; caption: "Scenario Total Evacuation Time and Walking Speed Comparison "; .wide }
-
-|                |-------------------|------------|------------|-----------|
-|   Scenario     | Total Evacuation  | Percentage of Speed     |Percentage to Base |
-|                |  Time (mm:ss)     | Decrease from Base (%)  | Scenario (%)      |
-|                |                   |                         |                   |
-|:---------------|:-----------------:|:-----------------------:|:-----------------:|
-| Scenario 1       | 13:55           | 47.86                   | 53.49             |
-| Scenario 2       | 11:43           | 29.57                   | 29.23             |
-| Scenario 3       | 10:08           | 14.29                   | 11.76             |
-| Scenario 4 (Base)| 09:04           | 10.53                   | -                 |
-|----------------|-------------------|-------------------------|-------------------|
-~ 
-
-Decreasing stair walking speed affected stairway flow at the ground level, thus affecting the upper floors in a high-rise building. In extreme cases, the flow decreased  by 35.14 percent when the stair walking speed was decreased by 42.86 percent. A detailed comparison for stair flows at the ground level are shown in Table 4. 
-
-~ TableFigure { #table-sample; caption: ": Ground Level Average Flow Comparison"; .wide }
-
-|                |----------------------|------------|------------|
-| Scenario       |Ground Level Average  | Percentage Comparison   |
-|                | Flow(Entity / minute)| to Base Scenario   (%)  |
-|                |                      |                         |
-|:---------------|:--------------------:|:-----------------------:|
-| Scenario 1       | 24                 | -35.14                  |
-| Scenario 2       | 29                 | -21.62                  |
-| Scenario 3       | 33                 | -10.81                  |
-| Scenario 4 (Base)| 37                 | -                       |
-|----------------|----------------------|-------------------------|
+~ TableFigure{#table-level4blockage; caption: "Level 4 Blockage Time Comparison"; .wide }
+|                  |-----------------|------------------------|
+| Scenario         |Level 4 Blockage | Percentage Comparison  |
+|                  |Time (s)         | to Base Scenario   (%) |
+|:-----------------|:---------------:|:----------------------:|
+| Scenario 1       | 122             | 100.00                 |
+| Scenario 2       | 95              | 55.74                  |
+| Scenario 3       | 85              | 39.34                  |
+| Scenario 4 (Base)| 61              | -                      |
+|------------------|-----------------|------------------------|
 ~
-When examining the results of the model, it was obvious that there was some congestion in the stairways due to the number of occupants accessing them. This has resulted in flow stoppage on levels 4 and 8, which increased significantly as the stair walking speed was decreased. The observed stoppage times for both levels 4 and 8 are listed in Table 5 and Table 6. In addition, the stoppage time seems to increase on higher levels, which is probably due to the increase in merging flow from the floors below.
-
-~ TableFigure { #table-sample; caption: ": Level 4 Blockage Time Comparison"; .wide }
-
-|                |----------------------|------------|------------|
-| Scenario       |Level 4 Blockage      | Percentage Comparison   |
-|                |Time (s)              | to Base Scenario   (%)  |
-|                |                      |                         |
-|:---------------|:--------------------:|:-----------------------:|
-| Scenario 1       | 122                | 100.00                  |
-| Scenario 2       | 95                 | 55.74                   |
-| Scenario 3       | 85                 | 39.34                   |
-| Scenario 4 (Base)| 61                 | -                       |
-|----------------|----------------------|-------------------------|
-~ 
-~ TableFigure { #table-sample; caption: ": Level 8 Blockage Time Comparison"; .wide }
-
-|                |----------------------|------------|------------|
-| Scenario       |Level 8 Blockage      | Percentage Comparison   |
-|                |Time (s)              | to Base Scenario   (%)  |
-|                |                      |                         |
-|:---------------|:--------------------:|:-----------------------:|
-| Scenario 1       | 320                | 76.80                   |
-| Scenario 2       | 272                | 50.28                   |
-| Scenario 3       | 189                | 4.42                    |
-| Scenario 4 (Base)| 181                | -                       |
-|----------------|----------------------|-------------------------|
+ 
+~ TableFigure {#table-level8blockage; caption: "Level 8 Blockage Time Comparison"; .wide }
+|                  |-----------------|------------------------|
+| Scenario         |Level 8 Blockage | Percentage Comparison  |
+|                  |Time (s)         | to Base Scenario   (%) |
+|:-----------------|:---------------:|:----------------------:|
+| Scenario 1       | 320             | 76.80                  |
+| Scenario 2       | 272             | 50.28                  |
+| Scenario 3       | 189             | 4.42                   |
+| Scenario 4 (Base)| 181             | -                      |
+|------------------|-----------------|------------------------|
 ~ 
 
-# FUTURE WORK  { #sec-intro }
-This is part on an ongoing study that aims at conducting a more detailed sensitivity analysis for Legion Evac and other evacuation models and comparing the results to assist engineers and researchers in choosing the most appropriate evacuation tool for the intended application. Future publications will examine other software packages, such as Pathfinder and FDS + Evac. 
+# FUTURE WORK  
+This is part on an ongoing study that aims at conducting a more detailed
+sensitivity analysis for Legion Evac and other evacuation models and
+comparing the results to assist engineers and researchers in choosing the
+most appropriate evacuation tool for the intended application. Future
+publications will examine other software packages, such as Pathfinder and
+FDS + Evac.
 
-# CONCLUSION  { #sec-intro }
- The increase use of evacuation models has brought a number of modeling software packages into the market, which vary in capabilities, input variables and results. Without understanding the effects that the input variables have on the results of a model, engineers  might be forced by the approving authorities to use lower values thinking that this would provide a safer design. The results of this study indicate that varying the walking speeds over stairs for entities in the software package Legion Evac can greatly affect the total evacuation time while increasing occupant stoppage time due to congested stairways. This indicates that a more detailed sensitivity analysis should be conducted to benefit engineers and software developers. It also illustrates the need for additional people movement data that can greatly benefit engineers and researchers.
- 
- 
+# CONCLUSION
+The increase use of evacuation models has brought a number of modeling
+software packages into the market, which vary in capabilities, input
+variables and results. Without understanding the effects that the input
+variables have on the results of a model, engineers might be forced by
+the approving authorities to use lower values thinking that this would
+provide a safer design. The results of this study indicate that varying
+the walking speeds over stairs for entities in the software package
+Legion Evac can greatly affect the total evacuation time while increasing
+occupant stoppage time due to congested stairways. This indicates that a
+more detailed sensitivity analysis should be conducted to benefit
+engineers and software developers. It also illustrates the need for
+additional people movement data that can greatly benefit engineers and
+researchers.
 
 [BIB]
 
