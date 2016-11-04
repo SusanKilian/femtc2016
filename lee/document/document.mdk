@@ -1,5 +1,5 @@
 [INCLUDE=style/lncs]
-Title         : A METHOD OF SMOKE DISPERSION MODELING OF EXHAUSTED TUNNEL FIRE SMOKE IN URBAN AREAS
+Title         : A METHOD OF SMOKE DISPERSION MODELLING OF EXHAUSTED TUNNEL FIRE SMOKE IN URBAN AREAS
 
 Author        : Brian Lee
 Affiliation   : SNC Lavalin
@@ -104,17 +104,13 @@ the smoke ppm.
 Table [#table1] .
 
 ~ TableFigure { #table1; caption: "Need to Correct"; .wide }
-
-
 | PROPERTY                             | EQUATION              |  VALUES |
 |--------------------------------------|-----------------------|--------------|
-| Fuel Burning Rate                    | m_fuel                |        |
-| Smoke Production Rate                |  f(x),&= a x^2+b x +c |        |
+| Fuel Burning Rate                    | $m_{fuel}$                |        |
+| Smoke Production Rate                |  $f(x)= a x^2+b x +c$ |        |
 | Rate of Soot Production              |                       |        |
 | Rate of CO Production                |                       |        |
 | Equivalent of Mass Fraction of Smoke |                       |        |
-
-
 ~
 
 
@@ -156,7 +152,7 @@ measured from Airport measurement tools into wind profiles suitable for urban an
 ~
 
 ~ Equation
-U_h=U_{met}{(\delta_{met}/H_{met})^(a-met)}{H/\delta)^a}
+U_H=U_{met}\left(\frac{\delta_{met}}{H_{met}}\right)^{a_{met}}\left(\frac{H}{\delta}\right)^a
 ~
 
 U_Met = airport wind speed (m/s)
@@ -181,11 +177,11 @@ For simplicity, the SDA runs will be aligned with major streets, taking advantag
  running North, South, East, West. Additional wind directions could be simulated, however, due to the rectilinear meshing elements 
  of FDS, full rotation of models would be required to run different wind directions. The total run time should consist of the wind 
  fully leaving the domain, as once the flow stabilizes, the smoke spread could be assessed.
- 
-There is always much discussion over the turbulence model to be selected. FDS utilizes Large Eddy Simulation (LES) with the default 
-turbulent viscosity as Deardorff, although different turbulent models have been used with varying degrees of success. RANS and LES 
+
+There is always much discussion over the turbulence models and their suitability for any given CFD simulation. FDS utilizes Large Eddy Simulation (LES)
+with the default turbulent viscosity as Deardorff, although different turbulent models have been used with varying degrees of success. RANS and LES 
 have been the subject of several previous studies, with LES showing some good agreement with validation testing in simply street canyon
- models. (Tominaga 2010). 
+models. (Tominaga 2010). 
 
 
 
@@ -193,12 +189,12 @@ have been the subject of several previous studies, with LES showing some good ag
 
 Meshing around station areas and smoke vents utilize a mesh cell size of 0.4m, and for sky regions, are up to 1.6m. Computational limits 
 dictate the amount of mesh elements that can be solved in a reasonable time. If more powerful computing resources are available,
- decreases in mesh elements sizing could be accommodated. Wind Domain parameters are important to consider in order to represent the 
- flow through the domain in a representative manner. Relative to the tallest building the domain, the size of the ceiling domain 
- should be carefully considered.  The domain sides running parallel to the wind flow direction is preferred to be modeled as mirror 
- vent, to minimize any momentum dissipation out of the domain. With the top of the sky domain ceiling modeled as a free-slip boundary
- condition, this will allow the wind profile to be preserved and correctly represented at domain ceiling.
- 
+decreases in mesh elements sizing could be accommodated. Wind Domain parameters are important to consider in order to represent the 
+flow through the domain in a representative manner. Relative to the tallest building the domain, the size of the ceiling domain 
+should be carefully considered.  The domain sides running parallel to the wind flow direction is preferred to be modeled as mirror 
+vent, to minimize any momentum dissipation out of the domain. With the top of the sky domain ceiling modeled as a free-slip boundary
+condition, this will allow the wind profile to be preserved and correctly represented at domain ceiling.
+
 Performing a sensitivity analysis for the building to determine minimum domain height can lead to a better selection for the minimum 
 domain ceiling height.  In Figure [#image5] below, a minimum domain height of 100m was selected after some sensitivity analyses. 
 
@@ -227,7 +223,7 @@ atmosphere. While the overall station intake airflow could be determined through
 
 [image6]: images/image6.JPG "image6" { width:auto; max-width:90% }
 
-~ Figure { #image6; caption: "Typical Station Laylouts and applying airflows at entrances " }
+~ Figure { #image6; caption: "Typical Station Layouts and applying airflows at entrances " }
 ~
 
 
@@ -267,7 +263,7 @@ Finally, placing a 2.0m visibility slice above-grade can allow for contamination
 
 For situations where criteria is exceeded beyond the recommendations of NFPA 130 and ASHRAE, mitigation measures can be recommended, 
 such as relocated the smoke discharge vents to a higher elevation, or ducting the vents to a different location to be discharged. 
-For example, for analyses that showing station entrances engulfed in smoke, a redesign of the smoke discharge vents would be required.
+For example, for analyses that showing station entrances engulfed in smoke, a repositioning of the smoke discharge vents would be required.
 SDAs can be very helpful to determine the design recommendations needed for stations to achieve the acceptance criteria. 
 
 
@@ -283,9 +279,12 @@ and TVS systems are installed in congested areas with nearby buildings and stree
  size wind validation of atmospheric flows is required to further these studies to the next level.
 
 
-# ACKNOWLEDGEMENTS
+# ACKNOWLEDGMENTS
 The author would like to thank Thunderhead Engineering for organizing FEMTC 2016 & SNC-Lavalin for the support and funding which
 enabled this material to be presented.
+
+
+
 
 
 [BIB]
