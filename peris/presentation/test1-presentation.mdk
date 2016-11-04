@@ -28,28 +28,41 @@ Universidad Politécnica de Valencia
 
 # INTRODUCTION
 
-## Bridge fires
+# Bridge fires {data-background-image:images/Presentation1.jpg; color:white}
+![Presentation1]
+
+![Presentation1b]
+{.fragment}
+
+[Presentation1b]: images/Presentation1b.png "Presentation1b" { width:auto; max-width:90% }
+
+[Presentation1]: images/Presentation1.jpg "Presentation1" { display:none}
 
 
-# Mac Arthur Maze Collapse, USA, 2007 { data-background-image:images/MacArthurMazeCollapse.jpg }
+# MacArthur Maze Collapse, USA, 2007
+~Begin Columns
+~~ Column {width 50%}
+![collapse]
+~~
+~~ Column {width 50%}
+![Presentacion2]
+~~
+~ End Columns
 ~ Center
-~~ Framed {background-color:#404040; width:75%; padding:1em}
+~~ Framed {background-color:#404040; width:75%; padding:1em;  vertical-align=bottom; .fragment}
 22 min until collapse  
 1 month closed  
 Repair Cost: 9 million USD  
 Indirect Cost: 180 million USD (6M USD/day)
-
-![collapse]
-
-[collapse]: images/MacArthurMazeCollapse.jpg "Mac Arthur Maze Collapse Photo" { display:none }
 ~~
 ~
 
+[collapse]: images/MacArthurMazeCollapse.jpg "Mac Arthur Maze Collapse Photo" { width:auto; max-width:90%}
+[Presentacion2]: images/Presentacion2.jpg "Presentacion2" { width:auto; max-width:90%}
 
-# INTRODUCTION
 
-## Bridge Fires
 
+# 9 mile, Detroit, USA, 2009
 ~ Begin Columns
 ~~ Column { width:50% }
 ![bridge1]  
@@ -64,15 +77,28 @@ Detroit, USA - July 15th, 2009
 [bridge1]: images/BridgeFire1.png "Bridge Fire Photo 1" { width:100%; vertical-align:top }
 [bridge2]: images/BridgeFire2.png "Bridge Fire Photo 2" { width:100%; vertical-align:top }
 
-## Building Codes
+## Standards
+~ Center
+Eurocode 1: Actions on Structures
 
 ![code1]
-
 ![code2]
+~
 
-[code1]: images/code1.png "Eurocode 1" { width:50%; vertical-align:top }
-[code2]: images/code2.png "Eurocode 2" { width:90%; vertical-align:top; float:right }
 
+[code1]: images/code1.png "Eurocode 1" { width:45%; vertical-align:top}
+[code2]: images/code2.png "Eurocode 2" { width:70%; vertical-align:top}
+
+## Standards
+~ Center
+NFPA 502: Road Tunnels, Bridges and Other Limited Access Highway
+![Presentation2b]
+![Presentation2a]
+~
+
+[Presentation2b]: images/Presentation2b.png "Presentation2b" { width:60%}
+
+[Presentation2a]: images/Presentation2a.png "Presentation2a" { width:60%}
 
 # OBJECTIVE
 
@@ -157,13 +183,17 @@ Two Fire Scenario Parameters
 
 
 ## Geometric Parameters
-Vertical Clearance (6 and 9 meters)
+
 
 ~ Center
 ![geometric1]
+Vertical Clearance (6 and 9 meters)
 ~
 
 [geometric1]: images/geometric1.jpg "geometric1" { width:auto; max-width:100% }
+
+
+
 
 ## Geometric Parameters
 Span (16 and 24 meters)
@@ -172,8 +202,8 @@ Span (16 and 24 meters)
 ![geometric2]
 ~
 
-
 [geometric2]: images/geometric2.jpg "geometric2" { width:auto; max-width:100% }
+
 
 ## Geometric Parameters
 Width (13 and 23.4 meters)
@@ -182,8 +212,8 @@ Width (13 and 23.4 meters)
 ![geometric3]
 ~
 
-
 [geometric3]: images/geometric3.jpg "geometric3" { width:auto; max-width:100% }
+
 
 ## Geometric Parameters
 Bridge Substructure (Piers or Abutments)
@@ -192,8 +222,8 @@ Bridge Substructure (Piers or Abutments)
 ![geometric4]
 ~
 
-
 [geometric4]: images/geometric4.jpg "geometric4" { width:auto; max-width:100% }
+
 
 ## Geometric Parameters
 Bridge Substructure (Piers or Abutments)
@@ -235,7 +265,7 @@ http://latimesblogs.latimes.com
 ~ Column
 ~~ Center
 **Heat Release Rate**  
-(Gasoline or Diesel)
+(Type of Fuel)
 ~~
 ~
 ~ End Columns
@@ -250,7 +280,7 @@ http://latimesblogs.latimes.com
 
 ~ TableFigure {caption:"Table of Scenario Parameters"}
 |-----------|---------------|------|-----------------------|------------------|--------|
-| VErtical  | Substructure  |      | Heat                  |                  |        |
+| Vertical  | Substructure  |      | Heat                  |                  |        |
 | Clearance | Bridge        | Span | Release               | Position         | Width  |
 |           | Configuration |      | Rate                  |                  |        |
 +:---------:+:-------------:+:----:+:---------------------:+:----------------:+:------:+
@@ -258,7 +288,7 @@ http://latimesblogs.latimes.com
 |-----------|---------------|------|-----------------------|------------------|--------|
 | 9 m       | Abutment      | 24 m | 2400 kW/m2 (gasoline) | Abutment or Pier | 23.4 m |
 |-----------|---------------|------|-----------------------|------------------|--------|
-{ .parameterstable; font-size:large; cell-padding:0.5em; color:black; th-background-color:rgb(191,191,191); td-background-color:rgb(191,191,191)}
+{ .parameterstable; font-size:large; cell-padding:0.3em; color:black; th-background-color:rgb(191,191,191); td-background-color:rgb(191,191,191)}
 ~
 
 ~ Columns
@@ -291,7 +321,7 @@ experiments technique
 ~~ Column { width:"70%"; vertical-align=top }
 ![table1]
 ~~
-~~ Column { vertical-align=top }
+~~ Column { vertical-align=middle }
 Temperatures?
 ~~
 ~
@@ -299,24 +329,23 @@ Temperatures?
 [table1]: images/table1.png "table1" { width:auto; max-width:90% }
 
 ## CFD Simulations
-Fire Model using CFD (FDS)
 
 ~ Center
+Fire Model using FDS
 ![title1]
 ~
 
 ## CFD Simulations
 
 ~ Columns
-~~ Column { width:"70%"; vertical-align=top }
-![method1]
+~~ Column { width:"48.5%"; vertical-align=top }
+![method2]
 ~~
 ~~ Column { vertical-align=top }
-![method2]
-
-Alós Moya et Al. “Analysis of a Bridge Failure due to fire using Computational Fluid Dynamics and Finite Element  Models.” Engineering Structures, 68, pp 96-110, 2014.
+![method1]
 ~~
 ~
+Alós Moya et Al. “Analysis of a Bridge Failure due to fire using Computational Fluid Dynamics and Finite Element  Models.” Engineering Structures, 68, pp 96-110, 2014.
 
 [method1]: images/method1.jpg "method1" { width:auto; max-width:90% }
 [method2]: images/method2.jpg "method2" { width:auto; max-width:90% }
@@ -374,21 +403,196 @@ Adiabatic Temperatures
 [method4]: images/method4.jpg "method4" { width:auto; max-width:100% }
 
 ## CFD Simulations
-
 ~ Center
+Adiabatic temperatures along the most exposed girder
+~
+
+~ Columns
+~~ Column {width:"57%"}
 ![method5]
+~~
+~~ Column
+![method6]
+~~
 ~
 
-[method5]: images/method5.jpg "method5" { width:auto; max-width:90% }
+[method5]: images/method5.jpg "method5" { width:auto; max-width:90%;vertical-align=top }
+[method6]: images/method6.jpg "method6" { width:auto; max-width:90%;vertical-align=top }
+
+## ANOVA ANALYSIS
+~ Center
+Maximum Adiabatic Temperatures
+![Imagen1]  
+What parameters are responsible for these values?  
+![Imagen1b]  
+ANOVA  
+(Analysis of Variance)
+~
+[Imagen1]: images/Imagen1.png "Imagen1" { width:"80%"}
+
+[Imagen1b]: images/Imagen1b.png "Imagen1b" { width:"57px";height:"64px"}
 
 
-## CFD Simulations
+
+## ANOVA ANALYSIS
+Bottom Flange Temperatures
+~ Columns
+~~ Column {width:"50%"}
+![Imagen2]
+~~
+~~ Column {vertical-align:top}
+![Imagen3]
+![Imagen4]
+~~
+~
+
+[Imagen2]: images/Imagen2.png "Imagen2" { width:auto; max-width:100%;vertical-align:top }
+[Imagen3]: images/Imagen3.png "Imagen3" { width:"91%";vertical-align:top }
+[Imagen4]: images/Imagen4.png "Imagen4" { width:auto; max-width:90%;vertical-align:top }
+
+## ANOVA ANALYSIS
+Web Temperatures
+
+~ Columns
+~~ Column {width:"50%"}
+![Imagen5]
+~~
+~~ Column {vertical-align:top}
+![Imagen6]
+![Imagen7]
+~~
+~
+
+[Imagen7]: images/Imagen7.png "Imagen7" { width:"115%"; vertical-align:top}
+[Imagen6]: images/Imagen6.png "Imagen6" { width:"95%"; vertical-align=top}
+[Imagen5]: images/Imagen5.png "Imagen5" { width:"77%"; vertical-align=top}
+
+## ANOVA ANALYSIS
 
 ~ Center
-![method6]
+Web Temperatures
+![Imagen89]
+~
+[Imagen89]: images/Imagen89.png "Imagen89" { width:auto; max-width:100% }
+~ Center
+Smoke Accumulation
 ~
 
-[method6]: images/method6.jpg "method6" { width:auto; max-width:90% }
+## ANOVA ANALYSIS
+Interactions (synergies)
+~ Center
+clearance - position - bridge substructure
+![Imagen10]  
+Coandâ Effect
+~
+
+[Imagen10]: images/Imagen10.png "Imagen10" { width:auto; max-width:90% }
+
+# STRUCTURAL ANALYSIS
+
+## STRUCTURAL ANALYSIS
+~ Center
+![Imagen 11]
+~
+
+[Imagen 11]: images/Imagen-11.png "Imagen 11" { width:"106%"}
+
+
+## CASE STUDY
+~ Center
+![Imagen12]
+~
+* 21 meters span
+* 5 girders
+* 2 fire scenarios
+
+[Imagen12]: images/Imagen12.png "Imagen12" { width:"100%"}
+
+## BOUNDARIES
+~ Center
+![Imagen13]
+~
+
+[Imagen13]: images/Imagen13.png "Imagen13" { width:"106%"}
+
+
+## RESULTS AND CONCLUSIONS
+Bridges fail by yielding of the steel girder when steel reaches its ultimate strain
+~ Center
+![Imagen15]
+Different times and modes of failure
+  
+~
+[Imagen15]: images/Imagen15.png "Imagen15" { width:auto; max-width:90% }
+
+## CONCLUSIONS AND FUTURE WORK
+1. Vertical Clearance, fuel and fire position influence flange temperatures
+2. Web temperatures are also influenced by the bridge substructure configuration
+3. Interactions have to be taken into account (Coandâ Effect)
+4. Position of the fire load also influence the structural behavior
+
+~ Center {color:red}
+THESE PARAMETERS SHOULD BE CONSIDERED IN PROPOSALS OF FIRE CURVES SPECIFIC FOR BRIDGES
+![Imagen16]
+~
+
+
+[Imagen16]: images/Imagen16.png "Imagen16" { width:auto; max-width:100% }
+
+## EUROESTUDIOS
+
+~ Columns
+~~ Column{width:30%}
+![Imagen 17]
+
+[Imagen 17]: images/Imagen-17.png "Imagen 17" { width:auto; max-width:90% }
+
+~~
+~~ Column {vertical-align:top}
+* Madrid (Spain)
+* Part of TPF Group
+* Civil Engineering and Building Development Consulting Company
+* Strong Focus on New Technologies - BIM and Computer Simulations
+~~
+~
+~ Columns
+~~ Column{width:65%}
+![Imagen18]
+
+[Imagen18]: images/Imagen18.png "Imagen18" { width:auto; max-width:100% }
+
+~~
+~~ Column {vertical-align:top}
+~~~Center
+![Prueba1]
+![Prueba2]
+
+[Prueba2]: images/Prueba2.png "Prueba2" { width:"72%"}
+[Prueba1]: images/Prueba1.png "Prueba1" { width:"72%"}
+~~~
+
+~~
+~
+
 
 
 ## Thanks for looking :-)
+
+# STUDY OF PARAMETERS THAT INFLUENCE I-GIRDER BRIDGE BEHAVIOR DURING FIRE EVENTS
+
+~ Begin Columns
+~~ Column { width:50% }
+![title1]
+~~
+~~ Column
+![title2]
+~~
+~ End Columns
+
+G. Peris-Sayol, I. Payá-Zaforteza  
+Euroestudios S.L  
+Universidad Politécnica de Valencia
+
+[title1]: images/title1.png "title1" { width:auto; max-width:90%; vertical-align:top }
+[title2]: images/title2.png "title2" { width:auto; max-width:90%; vertical-align:top }
+
