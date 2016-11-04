@@ -5,16 +5,17 @@ Affiliation   : National Institute of Standards and Technology
 Email         : kevin.mcgrattan@nist.gov
 Reveal Theme  : simple
 Beamer Theme  : singapore
+Embed         : 1024
 
 [TITLE]
 
 ## Fire Model Survey
 ~ Center
-![Survey]  
-Courtesy, Combustion Science and Engineering
+Courtesy, Combustion Science and Engineering  
+![Survey]
 ~
 
-[Survey]: images/Survey_Snapshot.png "Fire Model Survey" { height:500px; vertical-align:top }
+[Survey]: images/Survey_Snapshot.png "Fire Model Survey" { max-width: 100%; height:500px; width:auto; }
 
 
 ## CFAST Graphical User Interface
@@ -22,7 +23,8 @@ Courtesy, Combustion Science and Engineering
 ![CFAST_GUI]
 ~
 
-[CFAST_GUI]: images/CFAST_Snapshot.png "CFAST GUI" { height:500px; vertical-align:top }
+
+[CFAST_GUI]: images/CFAST_Snapshot.png "CFAST GUI" { max-width: 100%; height:600px; width:auto; }
 
 
 ## CFAST in Smokeview
