@@ -1,0 +1,256 @@
+[INCLUDE=presentation]
+Title         : PERFORMANCE OF OPTIMIZATION ALGORITHMS
+Sub Title     : FOR DERIVING MATERIAL DATA FROM BENCH SCALE TESTS
+Author        : Patrick Lauer
+Affiliation   : University of Wuppertal
+Email         : lauer@uni-wuppertal.de
+Reveal Theme  : simple
+Beamer Theme  : singapore
+Toc Depth     : 1
+
+[TITLE]
+
+# Content
+
+[TOC]
+
+# Introduction
+
+* Aim: Find good performing optimization algorithm for material parameter estimation to simulate pyrolysis
+
+* Way: Compare best known algorithm for material parameter estimation with two not yet evaluated algorithms utilizing synthetic data and bench scale tests
+
+# Method (Flow Chart)
+![proc]
+[proc]: images/method.svg "A Monarch butterfly" {width:100%; margin-left: auto; margin-right: auto ; vertical-align:middle}
+
+# Method
+![gif]
+[gif]: images/dia_ani.gif "A Monarch butterfly" {width:100%; margin-left: auto; margin-right: auto ; vertical-align:middle }
+
+~Begin Vertical
+# Bench Scale Tests
+
+- Thermogravimetric Analysis (TGA)
+- Mass Loss Cone Calorimeter (MLC)
+
+## TGA
+
+![tga]
+[tga]: images/TGA_.png "A Monarch butterfly" {margin-left: auto; margin-right: auto ; vertical-align:middle }
+
+- Sample size: few mg
+- Defined heating rate
+- Defined atmosphere
+- Capturing mass loss and mass loss rate
+
+## MLC
+
+- Sample size: g...kg
+- Defined heat flux
+- Capturing mass loss and mass loss rate
+
+## MLC Video
+
+<iframe width="1000" height="562" src="https://www.youtube.com/embed/SqpKMFGzytQ" frameborder="0" allowfullscreen></iframe>
+
+~End Vertical
+# Setups
+
+- TGA model
+  - Synthetic data
+  - TGA experiment with PU
+  
+- MLC model
+  - Material: PMMA
+  - Isolating and conducting background layer
+  - Two experiments:   
+    - Single heat flux (50 kW/m^2^)
+    - Five heat fluxes parallel (20...75 kW/m^2^)
+
+# Optimization Process
+
+![opt]
+[opt]: images/optimization.svg {width:100%; margin-left: auto; margin-right: auto; vertical-align:middle }
+
+~Begin Vertical
+# Algorithms
+
+- Shuffled Complex Evolution (SCE)
+- Artificial Bee Colony (ABC)
+- Fitness Scaled Artificial Bee Colony (FSCABC)
+
+## SCE
+
+- Introduced for hydrologic model calibration 
+- Evolutionary algorithm
+- State of the technology for material parameter estimation
+- Divides a population into complexes
+- Two phases after initialization:
+  1. Local search per complex
+  2. Global evolution between complexes
+
+## ABC I
+
+- Swarm intelligence optimization algorithm
+- Mimics foraging behavior of a honey bee swarm
+- Combines local, global and random search
+- Outperformes standard benchmark tests for optimization algorithms
+
+~Begin Columns
+~Column {width: 40 %; vertical-align:top}
+- Quite simple
+- Three phases after initialization:
+  - Employed bee phase
+  - Onlooker bee phase
+  - Scout bee phase
+~
+~Column {width: 60%; vertical-align:top}
+![bee]
+[bee]: images/bee.jpg "A Monarch butterfly"
+~
+~End Columns
+
+## ABC II
+
+- Initialization
+  - Find random food source for half oft the bees
+- Employed bees
+  - Find food source in neighborhood of each bees known food source
+
+## ABC III
+
+- Onlooker bee phase
+  - Find food source based on food sources of all employed bees.
+  - Assignment probability is based on quality of employed bees food source
+- Scout bee phase
+  - New random food source if no improvement
+
+## FSCABC I
+- Modified version of ABC
+- Introduced for path planning of unmanned combat air vehicles
+- Outperformed ABC in this application
+- Changes two parts:
+  - Fitness function for assigning in onlooker bee phase
+  - Random number generator in scout bee phase
+
+## FSCABC II
+
+- Fitness function is replaced by a fitness power scaling function
+  - Sorted ascending by rank 
+  - Best solution is weighted to the power of k
+- RNG replaced with a chaotic random number generator
+  - Pseudorandom
+  - Travels ergodically over \[0,1]\
+![chaos]
+[chaos]: images/chaos.svg "A Monarch butterfly"
+
+~End Vertical
+
+~Begin Vertical
+# Results
+
+- Synthetic data
+- TGA
+- MLC~50~
+- MLC~all~
+
+## Synthetic Data I
+
+- TGA setup
+- Two reactions
+- Input parameters
+  - Density            
+  - Conductivity
+  - Specific Heat
+  - Reference Temperature   
+  - Reference Rate
+- Target: normalized mass loss
+
+## Synthetic Data II
+
+![syn_01]
+[syn_01]: images/synthetic.[svg,pdf] "syn_01" { width:100%;}         
+
+## Synthetic Data III
+
+![syn_02]
+[syn_02]: images/bestfit_syntheticdata.[svg,pdf] "syn_01" { width:100%;}
+
+## TGA I
+
+- TGA setup
+- Material: PU
+- Three reactions
+- Input parameters
+  - Reference temperature   
+  - Pyrolysis range
+- Target: normalized mass loss
+
+## TGA II
+
+![tga_01]
+[tga_01]: images/tga.[svg,pdf] "tga_01" { width:100%;}
+
+## TGA III
+
+![tga_02]
+[tga_02]: images/bestfit_tga.[svg,pdf] "tga_02" { width:100%;}
+
+## MLC~50~ I
+
+- MLC setup
+  - Heat flux: 50 kW/m^2^
+- Material: PMMA
+- Input parameters
+  - Density            
+  - Conductivity
+  - Specific Heat
+  - Reference Temperature   
+  - Pyrolysis range
+- Target: normalized mass loss
+
+## MLC~50~ II
+
+![mlc50_01]
+[mlc50_01]: images/mlc2_runde2.[svg,pdf] "mlc50_01" { width:100%;}
+
+## MLC~50~ III
+
+![mlc50_02]
+[mlc50_02]: images/bestfit_mlc50data.[svg,pdf] "mlc50_0" { width:100%;}
+
+## MLC~all~ I
+
+- MLC setup
+  - Heat flux: 20, 30, 40, 50, 75 kW/m^2^
+- Material: PMMA
+- Input parameters
+  - Density            
+  - Conductivity
+  - Specific Heat
+  - Reference Temperature   
+  - Pyrolysis range
+- Target: normalized mass loss
+
+## MLC~all~ II
+
+![mlcall_01]
+[mlcall_01]: images/mlc.[svg,pdf] "mlcall_01" { width:100%;}
+
+~ End Vertical
+
+~ Begin Vertical
+
+# Conclusion {#vertical}
+
+- Comparsion of three algorithms with synthetic and bench scale data
+- All three generate similar accurate solutions
+- SCE most efficient, but FSCABC often not significant inferior
+- Future tasks:
+  - Tune FSCABC parameters
+  - Apply on other models
+
+
+~ End Vertical
+
