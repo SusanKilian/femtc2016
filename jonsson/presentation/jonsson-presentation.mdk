@@ -20,11 +20,13 @@ The increased use of performance-based design to develop fire safety solutions r
 * Evacuation paths particularly complicated 
 * Architectural layout might impose restrictions 
 
-# The Perfomance based design process
+# Perfomance Based Design Process
+~ Center
+![PBD Chart]
 
 The role of Advanced Modelling into the PBD process
+~
 
-![PBD Chart]
 
 [PBD Chart]: images/PBD-Chart.jpg "PBD Chart" { width:auto; max-width:70% }
 
@@ -32,12 +34,13 @@ The role of Advanced Modelling into the PBD process
 
 Once the evaluation phase is reached in the performance base design process, it is time to get into the modelling exercise
 
+~ Center
 ![Modelling_flowchart]
+~
 
 [Modelling_flowchart]: images/Modelling_flowchart.png "Modelling_flowchart" { width:auto; max-width:70% }
 
 # Case studies
-
 This section shows some example of complex projects where advanced modelling was an essential part of the design process
 
 * Large Airport
@@ -45,37 +48,46 @@ This section shows some example of complex projects where advanced modelling was
 * Hight Rise Apartment Hotel
 * Logistics Centre
 
-# Airport
+# Case 1 - Airport
 * The first example is the largest and busiest airport in Spain
 * The overall objective of the project was to evaluate the current fire safety level for all existing terminals
 * Both advanced evacuation analysis and Fire and Smoke modelling were performed
 
+~ Center
 ![Barajas1]
+~
+
 [Barajas1]: images/Barajas1.png "Barajas1" { width:auto; max-width:90% }
 
-
-## Evacuation analysis
-* The first example is the largest and busiest airport in Spain
-* The overall objective of the project was to evaluate the current fire safety level for all existing terminals
-* Both advanced evacuation analysis and Fire and Smoke modelling were performed
-
-## Evacuation analysis
+## Case 1 - Evacuation - Review
 * The first step in the analysis was to evaluate the existing configuration
 * The analysis shows a few large bottleneck using the current evacuation strategy for this level
 
+~ Center
 ![Barajas4]
+~
+
 [Barajas4]: images/Barajas4.png "Barajas4" { width:auto; max-width:90% }
 
-## Evacuation analysis
-By the increment of two corridors width together with the redirection of the part of the occupants toward the bridges instead of into a long corridors that was currently in use, the overall evacuation time was reduce by means of 30%.
+## Case 1 - Evacuation - Improvement
+By the increment of two corridors width together with the redirection of
+the part of the occupants toward the bridges instead of into a long
+corridors that was currently in use, the overall evacuation time was
+reduce by means of 30%.
 
+~ Center
 ![Barajas_6]
+~
+
 [Barajas_6]: images/Barajas_6.jpg "Barajas_6" { width:auto; max-width:90% }
 
-## Evacuation analysis
+## Case 1 - Evacuation - Results
+~ Center
 Results of current and proposed configuration
 
 ![Barajas_5]
+~
+
 [Barajas_5]: images/Barajas_5.jpg "Barajas_5" { width:auto; max-width:90% }
 
 ## Fire and Smoke analysis
@@ -83,54 +95,106 @@ Results of current and proposed configuration
 * The whole terminal has been modelled
 * FDS v.6.2.0, 30 different meshes assigned to 30 MPI processes
 
-![Barajas1]
-![Barajas2]
+|:~~{width:600px}~~:|
+| ![Barajas1]       |
+| ![Barajas2]       |
+
+[Barajas2]: images/Barajas2.png "Barajas2" { width:auto; max-width:90% }
 
 ## Fire and Smoke analysis
-The overall results of the fire and smoke modelling shown that, despite the great volume of the terminal area, smoke had enough buoyancy to raise and fill the smoke reservoirs guaranteeing smoke layer stratification even with reasonably small fires with large spills (resulting in more and colder smoke). 
-![Barajas3]
+The overall results of the fire and smoke modelling shown that, despite
+the great volume of the terminal area, smoke had enough buoyancy to raise
+and fill the smoke reservoirs guaranteeing smoke layer stratification
+even with reasonably small fires with large spills (resulting in more and
+colder smoke). 
 
-# Interchange Station
+~ Center
+![Barajas3]
+~
+
+[Barajas3]: images/Barajas3.png "Barajas3" { width:auto; max-width:90% }
+
+# Case 2 - Interchange Station
+
 * The second example is the largest interchange station in Turin, Italy
-* The objective of the study was to evaluate the fire safety level for the station, and this to be performed for the whole building
+* The objective of the study was to evaluate the fire safety level for
+  the station, and this to be performed for the whole building
 * This was done by using the well-established ASET vs RSET methodology
 
+## Case 2 - Overview
+~ Center
 ![TPS]
+~
+
 [TPS]: images/TPS.jpg "TPS" { width:auto; max-width:90% }
 
-## Evacuation analysis
-Pathfinder was used to determine the overall evacuation time of the station both due to legislative requirements and to evaluate those areas where the smoke was rapidly descending and affecting the evacuation routes
+## Case 2 - Evacuation - Tools
+Pathfinder was used to determine the overall evacuation time of the
+station both due to legislative requirements and to evaluate those areas
+where the smoke was rapidly descending and affecting the evacuation
+routes.
 
+~ Center
 ![Porta Susa_Evac]
+~
 
 [Porta Susa_Evac]: images/Porta-Susa_Evac.png "Porta Susa_Evac" { width:auto; max-width:90% }
 
+
 ## Evacuation analysis
 
+~ Center
 ![Porta Susa_Evac3]
+~
+
 [Porta Susa_Evac3]: images/Porta-Susa_Evac3.png "Porta Susa_Evac3" { width:auto; max-width:90% }
 
 ## Fire and Smoke analysis
-The CFD model was processed with FDS v.6.0.0, the domain was split into 15 different meshes assigned to 15 MPI processes, with a resolution varying from 0.15 m in the fire region up to 0.30 m in the regions far from the fire
+The CFD model was processed with FDS v.6.0.0, the domain was split into
+15 different meshes assigned to 15 MPI processes, with a resolution
+varying from 0.15 m in the fire region up to 0.30 m in the regions far
+from the fire.
 
+~ Center
 [Porta Susa_1]
+~
+
 [Porta Susa_1]: images/Porta-Susa_1.png "Porta Susa_1" { width:auto; max-width:90% }
 
 ## Fire and Smoke analysis
 Effectiveness of the smoke ventilation shaft between station and platforms
+
+~ Center
 ![Porta Susa_2]
+~
+[Porta Susa_1]: images/Porta-Susa_2.png "Porta Susa_2" { width:auto; max-width:90% }
 
 # High Rise Apartment Hotel
-* The third example is a heritage protected multiuse building in the centre of Madrid, Spain
-* Part of the building was to be transformed into an apartment hotel, the refurbishment was heavily limited due to the heritage status of the building
 
+~ Columns
+~~ Column { width:"40%"; vertical-align:top; }
+~~~ Center
 ![GranVia_Pic]
+~~~
+~~
+~~ Column
+* The third example is a heritage protected multiuse building in the
+  centre of Madrid, Spain
+* Part of the building was to be transformed into an apartment hotel, the
+  refurbishment was heavily limited due to the heritage status of the
+  building
+~~
+~
+
 [GranVia_Pic]: images/GranVia_Pic.png "GranVia_Pic" { width:auto; max-width:90%}
 
 ## Evacuation Analysis
-The final solution was based on the concept of introducing a protected corridor connecting the two stairs
+The final solution was based on the concept of introducing a protected
+corridor connecting the two stairs
 
 ![GranVia_1]
+
+[GranVia1]: images/GranVia1.png "GranVia1" { width:auto; max-width:90% }
 
 ## Evacuation Analysis
 
