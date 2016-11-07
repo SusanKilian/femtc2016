@@ -470,10 +470,15 @@ Web Temperatures
 ## ANOVA ANALYSIS
 
 ~ Center
-Web Temperatures
-![Imagen89]
+Web Temperatures  
+![1 vano]  
+![3 vanos]
 ~
-[Imagen89]: images/Imagen89.png "Imagen89" { width:auto; max-width:100% }
+
+[3 vanos]: images/3-vanos.gif "3 vanos" { width:"52%"}
+
+[1 vano]: images/1-vano.gif "1 vano" { width:"45%"}
+
 ~ Center
 Smoke Accumulation
 ~
@@ -532,7 +537,7 @@ Different times and modes of failure
 4. Position of the fire load also influence the structural behavior
 
 ~ Center {color:red}
-THESE PARAMETERS SHOULD BE CONSIDERED IN PROPOSALS OF FIRE CURVES SPECIFIC FOR BRIDGES
+THESE CONCLUSIONS SHOULD BE CONSIDERED IN PROPOSALS OF FIRE CURVES SPECIFIC FOR BRIDGES
 ![Imagen16]
 ~
 
