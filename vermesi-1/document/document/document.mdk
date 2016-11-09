@@ -164,7 +164,7 @@ The  solid properties used in the simulations are listed in Table 3. The thermal
 ~
 
 # RESULTS { #results }
-For the constant irradiation scenario, the comparison between the experimental measurements and the model predictions are shown in Fig. 6.
+For the constant irradiation scenario, the comparison between the experimental measurements and the model predictions are shown in Fig. 6. The surface temperature prior to ignition is predicted excellently by the model. The model slightly underpredicts the mass loss rate in the initial phase, but goes on to predict well prior to ignition. 
 ~ Begin Figure { #fig-subfigs; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for constant irradiation (Scenario 0)" }
 ~ Begin SubFigureRow { vertical-align: bottom }
 ~ SubFigure { #fig-subfig1; caption:"Surface temperature" }
@@ -182,6 +182,7 @@ For the constant irradiation scenario, the comparison between the experimental m
 
 [constanthf_mlr]: images/constanthf_mlr.png "constanthf_mlr" { width:100%; max-width:90% }
 
+Considering the good predictions in the constant irradiation model, it is interesting to see how the transient irradition scenario behaves. Fig. 7 shows the model predictions in the transient irradiation scenario with time to peak of 320 s and peak irradiation of 30 kW/m^2^. Like in the constant irradiation scenario, the surface temperature prediction is very good, with the mass loss rate being underpredicted by the model. Considering that this model has no fittings, only measured values from literature sources, its performance is very good. Also, the accuracy of mass loss rate measurements in the FPA is better when the readings are very frequent (ref Khan, de ris), so potential errors induced experimentally might also contribute to the small discrepancy between predictions and measurements.
 ~ Begin Figure { #fig-subfigs; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for the transient irradiation (Scenario 1)" }
 ~ Begin SubFigureRow { vertical-align: bottom }
 ~ SubFigure { #fig-subfig1; caption:"Surface temperature" }
@@ -201,30 +202,29 @@ For the constant irradiation scenario, the comparison between the experimental m
 [transienthf_mlr]: images/transienthf_mlr.png "constanthf_mlr" { width:80%; max-width:90% }
 
 
-Let's program some JavaScript:
-``` javascript
-function hello() {
-  return "hello world!"
-}
-```
-Here is a footnote[^fn] reference.
-[^fn]: This is the content of the example footnote. 
-    You can continue a footnote by indenting content.
-    And notice the back link.
-
 # DISCUSSION { #discussion }
+An analysis was done to assess the influence of two complexity parameters, namely using temperature dependent properties and adding the drying step in the kinetic scheme respectively. Scenario 1 for transient irradiation was used in this investigation. 
 
+The influence of using properties (k and c~p~) that change with time is presented in Fig. 8. Using constant k and c~p~ results in an overprediction of the surface temperature before ignition by a maximum of 60 &deg;C (18 %), which is a notable difference. For mass loss rate, the largest difference between the two cases is just 0.16 g, which shows that mass loss rate is not significantly influenced by the use of temperature dependent k and c~p~. Therefore, the use of temperature dependent properties improves the predictions of surface temperatures slightly, but does not play a role in mass loss rate predictions. 
 ~ Figure { #fig-domain; caption:"The influence of using temperature dependent properties: surface temperature and mass loss rate variation"}
 ![propertiesinfluence]
 ~
 [propertiesinfluence]: images/propertiesinfluence.png "domain" { width:60%; max-width:90% }
 
+The second parameter that was analyzed is the role of the drying step. As shown in Fig. 9, adding the drying step is much more influential than using temperature dependent properties. For surface temperature, the largest difference of 113 &deg;C occurs around 130 s and represents around 78 % more than the predicted value which uses the drying step. For mass loss rate, the difference is much higher. The slope of the curve starts later in the case without drying and increases at a much faster rate, showing a completely different behavior. 
 ~ Figure { #fig-domain; caption:"The influence of using a drying step in the kinetics scheme: surface temperature and mass loss rate variation"}
 ![dryinginfluence]
 ~
 [dryinginfluence]: images/dryinginfluence.png "domain" { width:60%; max-width:90% }
 
 # CONCLUSION { #conclusion }
+A set of experiments investigating the behavior of MDF, an EWP commonly used in the built environment, prior to ignition was performed in the FPA. The samples were subjected to constant irradiation, which is the most used scenario in literature, to validate the setup and then to transient irradiation in the form of parabolic curves that simulate both the growth and the decay of the fire. Transient irradiation is a more general case of which the usually assumed constant irradiation is a particular case. 
+
+These experiments served as validation for a computational model. This one-dimensional model was then set up using thermo-chemical parameters taken from literature or measured experimentally. For both constant and transient irradiation, the model predictions show good agreement for surface temperature mass loss rate. 
+
+The model is used to investigate the influence of temperature-dependent k and c~p~, as well as adding a drying set to the kinetic scheme. The former causes an overprediction in surface temperature (18 %), but a negligible change in mass loss rate. The drying step, however, has a major influence both on surface temperature, where it overpredicts the surface temperature by 78% and significantly changes the behavior of the mass loss rate curve.
+
+ 
 # BIBLIOGRAPHY AND REFERENCES
 When references are used in the text, tie them to an alphabetical (by
 principal author) list of references to be included as the last item of
