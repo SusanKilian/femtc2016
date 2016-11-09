@@ -50,16 +50,17 @@ Light rail transit (LRT) continues to be a major player for
 transportation for many people around the world. Fire life safety and
 standards give station designers the requirements to follow during
 emergency evacuation procedures. Tenability criteria as outlined in code
-specifications, such as Standard for Fixed Guide way Transit and
+specifications, such as Standard for Fixed Guideway Transit and
 Passenger Rail Systems (NFPA 130, 2014), allow for engineers to provide
-guidelines for tenability criteria during emergency evacuation scenarios.
+solutions to adhering to tenability criteria during emergency evacuation scenarios.
 
 Tunnel Ventilation Systems (TVS) are used to extract smoke from
-underground transit systems. For modern underground rail transit systems,
-they are utilized for pulling fresh air in, but more importantly, for
-emergency scenarios, TVS systems provide tenable conditions for escaping
-passengers from tunnel fire emergency situations. Typical TVS schematic
-is shown in Figure [#image1]
+underground transit systems during emergency scenarios. For modern
+underground rail transit systems, they are utilized for pulling fresh air
+in during different operating modes, but more importantly, for emergency
+scenarios, TVS systems provide tenable conditions for escaping passengers
+from tunnel fire emergency situations. A typical TVS schematic is shown in
+Figure [#image1], with a fan and silencer assembly.
 
 
 
@@ -70,23 +71,23 @@ is shown in Figure [#image1]
 ~
 
 
-While underground station smoke computation fluid dynamics (CFD) has been
-investigated in station designs extensively, recently interest has been
-given into evaluating the effects of the extracted smoke from the TVS
-systems, after the smoke has been evacuated onto grade level. Smoke
-discharged from ventilation shafts need to be evaluated so that LRT
-station entrances air intake during a station emergency are not drawing
-in the evacuated smoke from the TVS system, creating a short-circuit of
-smoke back into the egress routes, affecting the passengers the TVS
-system was intended to protect. In addition, the smoke discharged from
-the tunnel ventilation shafts should not adversely affect nearby adjacent
-buildings and structures. Wind-induced flows of smoke may be harmful to
-nearby building occupants or pedestrians. Typically, the buoyancy of
-smoke and the turbulence of wind effects will cause mixing of the smoke
-with outdoor air and will reduce the concentration of smoke. The level of
-dilutions will be affected by the wind speed and the complexity of the
-building surroundings, exhaust velocity and location, and many other
-parameters.
+While underground station fire analysis using computation fluid dynamics
+(CFD) has been investigated in extensively, recent
+interest has been given into evaluating the effects of the extracted
+smoke from the TVS systems, after the smoke has been evacuated to grade
+level. Smoke discharged from ventilation shafts need to be evaluated so
+that LRT station entrances air intakes during a station emergency are not
+drawing in the evacuated smoke from the TVS system, creating a
+short-circuit of smoke back into the egress routes, affecting the
+passengers the TVS system was intended to protect. In addition, the smoke
+discharged from the tunnel ventilation shafts should not adversely affect
+nearby adjacent buildings and structures. Wind-induced flows of smoke may
+be harmful to nearby building occupants or pedestrians. Typically, the
+buoyancy of smoke and the turbulence of wind effects will cause mixing of
+the smoke with outdoor air and will reduce the concentration of smoke.
+The level of dilutions will be affected by the wind speed and the
+complexity of the building surroundings, exhaust velocity and location,
+and many other parameters.
 
 This paper outlines a method using Fire Dynamics Simulator (FDS) software
 to perform a Smoke Dispersion Analysis (SDA) in an urban area, where the
@@ -99,10 +100,11 @@ underground LRT system.
 
 Typical underground station fire analyses will analyze a train burning
 within the station, with the incident smoke being exhausted by the TVS
-system to grade-level. The physical model of this study utilizes urban
-city building data, correlated with Google Maps to construct a model of
-the scope as outlined in Figure [#image2] . This model size is in line
-with realistic computational limits for meshing.
+system to grade-level. An SDA is a follow up analysis of smoke, now at
+street level. A physical model of this study utilizes urban city
+building data, correlated with Google Maps to construct a model of the
+scope as outlined in Figure [#image2] . This model size is in line with
+realistic computational limits for meshing.
 
 
 
@@ -116,41 +118,84 @@ with realistic computational limits for meshing.
 
 SDA simulations were carried out using FDS version 6. The modeled
 geometry of the urban areas was then combined with the model geometry of
-the underground LRT station, with Station entrances, also known as
-headhouses. In addition, the smoke ventilation locations are also added
-into the model. Typically smoke ventilation grills are located at-grade,
-or integrated into the design of the station headhouse. Often it is not
-feasible to locate the smoke vents well away from Station entrances; thus
-an SDA should be performed to witness the behavior of smoke in an
-emergency station scenario. Since often in urban areas, smoke ventilation
-grills located on the sidewalk where the ejection of smoke combined with
-a wind means smoke is not normally dissipated away easily, as smoke
-stacks or relocated the smoke high above may not be feasible design
-options.
+the underground LRT station, with Station entrances. In addition, the
+smoke ventilation locations are also added into the model. Typically
+smoke ventilation grills are located at-grade, or integrated into the
+design of the station entrances. Often it is not feasible to locate the
+smoke vents well away from Station entrances; thus an SDA should be
+performed to witness the behavior of smoke in an emergency station
+scenario. Since often in urban areas, smoke ventilation grills located on
+the sidewalk where the ejection of smoke combined with a wind means smoke
+is not normally dissipated away easily, as smoke stacks or relocating the
+vents high above may not be feasible design options.
 
 
 # CONCENTRATION OF PHYSICAL SMOKE AND DISCHARGE TEMPERATURE
 
 In order to cover the most onerous scenario, SDA models will employ the
 assumption that all of the smoke generated from a single car train fire
-will be extracted by a pair of TVS fans at one of the station, and is
+will be extracted by a pair of TVS fans at one end of the station, and is
 split equally within the two adjacent vent shafts.
 
-The following table outlines the fuel burning rate of a train fire
-assuming a burn rate of 1.0 kg/s , leading to the production of the smoke
-ppm.
+The following section outlines the equations of fuel burning rate of a
+train fire, leading to the production of the smoke ppm.
 
-Table [#table1] .
+## Equations
 
-~ TableFigure { #table1; caption: "Need to Correct"; .wide }
-| PROPERTY                             | EQUATION              |  VALUES |
-|--------------------------------------|-----------------------|--------------|
-| Fuel Burning Rate                    | $m_{fuel}$                |        |
-| Smoke Production Rate                |  $f(x)= a x^2+b x +c$ |        |
-| Rate of Soot Production              |                       |        |
-| Rate of CO Production                |                       |        |
-| Equivalent of Mass Fraction of Smoke |                       |        |
+To calculate the fuel burning rate for the train leading to smoke
+production, incorporating the real-world conditions of burning
+efficiency, the following equations are used:
+
+Fuel Burning Rate:
+~ Equation
+\dot{m}_{fuel} = \frac{\dot{Q}_{max}}{\Delta{H_c} \cdot \chi}
 ~
+
+Where:
+
+$\dot{m}_{fuel}$ = Mass loss for train burn<br>
+$\dot{Q}_{max}$ = Peak Burning Rate<br>
+$\Delta{H_c}$ = Specific Heat of Combustion<br>
+$\chi$ = Burning Efficiency (approximately ~0.75 for trains)
+
+
+For a given Air/Fuel ratio, the Smoke Production Rate, essentially
+resultant mass from the smoke generation is defined as:
+
+<br>
+~ Equation
+\dot{m}_{smoke} = \dot{m}_{fuel} \cdot (1 + AFR)
+~
+<br>
+
+
+
+Rate of Soot Production is then defined:
+<br>
+~ Equation
+\dot{m}_{soot} = \dot{m}_{fuel} \cdot (Y_s)
+~
+<br>
+Where $Y_s$ = species yield, in this case, Soot.
+
+
+Rate of CO Production is then defined as:
+<br>
+~ Equation
+\dot{m}_{co} = \dot{m}_{fuel} \cdot (Y_{CO})
+~
+<br>
+Where $Y_{CO}$ = species yield, in this case, Carbon Monoxide.
+
+
+
+Equivalent of Mass Fraction of Smoke
+<br>
+~ Equation
+C_{smoke} =  \frac{C_{Soot}}{Y_s} ( 1 + AFR )
+~
+<br>
+
 
 
 
@@ -165,28 +210,28 @@ conjunction with the warmest ambient temperature of region, according to
 temperature data. Selecting the underground station with the tallest
 smoke discharge shafts would yield the most conservative smoke discharge
 temperature, thus, individual FDS runs were performed for various TVS fan
-discharge heights with concrete TVS discharge shafts, as shown in
-Figure [#image3a]
+discharge heights with concrete TVS discharge shafts, with an example shown in
+Figure [#image3]
 
 
 
+[image3]: images/image_3.jpg "image3" { width:auto; max-width:70% }
 
-[image3a]: images/image3a.JPG "Image3a" { width:auto; max-width:90% }
 
-~ Figure { #image3a; caption: "Calculation of Smoke Discharge Temperatures relative to shaft height" }
-![image3a]
+~ Figure { #image3; caption: "Calculation of Smoke Discharge Temperatures relative to shaft height" }
+![image3]
 ~
 
 #WIND PARAMETERS
 To seek guidance for wind parameters, NFPA Standard 92 references a
-selection of 1% wind probability to be used in Smoke system design. A 1%
+selection of 1% wind probability to be used in smoke system design. A 1%
 Wind results to 88 hours in a calendar year, which correlates to the most
 onerous scenario. The wind profile can be determined from climate data
 for major cities. For example, the wind profile for the city of Toronto,
 Canada, can be found in Figure [#image4] below. ASHRAE Fundamentals
 Handbook in Chapter 24 describes a method to convert wind speeds measured
 from Airport measurement tools into wind profiles suitable for urban and
-suburban areas that are of interest in the SDA.
+suburban areas, which then can be used for the the ares of interest in the SDA.
 
 
 
@@ -205,19 +250,19 @@ U_H=U_{met}\left(\frac{\delta_{met}}{H_{met}}\right)^{a_{met}}\left(\frac{H}{\de
 
 where:
 
-U~met~ = airport wind speed (m/s)
+$U_{met}$ = airport wind speed (m/s)
 
-δ~met~ = boundary layer thickness at the measurement from the airport [typically 275m (900 ft)]
+$\delta_{met}$ = boundary layer thickness at the measurement from the airport [typically 275m (900 ft)]
 
-a~met~ = boundary Layer Power Law Exponent (Typically 0.14)
+$a_{met}$ = boundary Layer Power Law Exponent (Typically 0.14)
 
-H~met~ = anemometer height [typically 10m (33ft)]
+$H_{met}$ = anemometer height [typically 10m (33ft)]
 
-H = building height (m)
+$H$ = building height (m)
 
-a = boundary layer power law exponent at the site (typically suburban = 0.22, urban = 0.33)
+$a$ = boundary layer power law exponent at the site (typically suburban = 0.22, urban = 0.33)
 
-δ = boundary layer thickness at site [typically 365m (1200ft) suburban, 460m (1500ft) urban].
+$\delta$ = boundary layer thickness at site [typically 365m (1200ft) suburban, 460m (1500ft) urban].
 
 
 
@@ -233,11 +278,11 @@ For simplicity, the SDA runs will be aligned with major streets, taking
 
 There is always much discussion over the turbulence models and their
 suitability for any given CFD simulation. FDS utilizes Large Eddy
-Simulation (LES) with the default turbulent viscosity as Deardorff,
+Simulation (LES) with the default turbulent viscosity using the Deardorff model,
 although different turbulent models have been used with varying degrees
 of success. RANS and LES have been the subject of several previous
 studies, with LES showing some good agreement with validation testing in
-simply street canyon models. (Tominaga 2010).
+simple street canyon models. (Tominaga 2010).
 
 
 
@@ -253,7 +298,7 @@ in a representative manner. Relative to the tallest building the domain,
 the size of the ceiling domain should be carefully considered. The domain
 sides running parallel to the wind flow direction is preferred to be
 modeled as mirror vent, to minimize any momentum dissipation out of the
-domain. With the top of the sky domain ceiling modeled as a free-slip
+domain. With the top of the sky domain ceiling modelled as a free-slip
 boundary condition, this will allow the wind profile to be preserved and
 correctly represented at domain ceiling.
 
@@ -280,57 +325,53 @@ being larger to allow for flow re-development behind the wake region.
 
 Boundary layer effects related to radiative heating, soil moisture
 content, evaporation and energy balance are not yet considered in the
-smoke dispersion analysis as these variables can be difficult to obtain
+smoke dispersion analysis as these variables can be difficult to determine
 in urban areas.
 
 
 #AIR INTAKES FROM STATION ENTRANCES AND ADJACENT BUILDINGS
 
-During a station emergency and when the TVS systems are active, makeup
-air is pulled into the station headhouse from the outside atmosphere.
-While the overall station intake airflow could be determined through
-other well-developed software such as Subway Environmental Software
-(SES), data gathered from existing underground station runs using FDS can
-also be utilized. From the collected data, airflows for the doors and air
-intake louvers is applied setup for the SDA analysis, with locations
-identified in Figure [#image6]
+During a station emergency when the TVS systems are active, makeup air is
+pulled into the station entrances from the outside atmosphere. While the
+overall station intake airflow could be determined through other
+well-developed software such as Subway Environmental Software (SES), data
+gathered from previous underground station runs using FDS can also be
+utilized. From the collected data, airflows for the doors and air intake
+louvers is applied setup for the SDA analysis, with examples locations
+identified in Figure [#image6]. The flows through doors and station air
+intake louvers are applied along with the measurement devices in the
+software. These measurement devices will then used to determine
+contamination levels of the areas of interest.
 
 
 
 
-[image6]: images/image6.JPG "image6" { width:auto; max-width:90% }
+[image6]: images/image6.JPG "image6" { width:auto; max-width:80% }
 
 ~ Figure { #image6; caption: "Typical Station Layouts and applying airflows at entrances " }
 ![image6]
 ~
 
 
- If hardware capability exists, then both the underground and above
- ground could be combined, although the resulting domain size and mesh
- size would require significant computing resources. However, due to the
+ If computer hardware capability allows, then both the underground and above
+ ground runs could be combined, although the resulting domain size and mesh
+ size would require significant computing resources. Due to the
  very large nature of this type of analyses (could be over 40 million
  mesh elements), breaking up the analysis in a separate underground and
  above ground version is recommended.
 
 
-
-
 For a typical SDA analysis, smoke concentrations and CO concentrations
-are of interest, as they align with NFPA 130, Appendix B for visibility
-requirements, and ASHRAE 62.1 for Carbon Monoxide limits of 35ppm
-acceptable over a period of 1 hour. Thus, in SDA analyses, appropriate
-Carbon Monoxide and Soot measurement devices are required to monitor
-these levels as any re-entrained smoke from the winds from an appropriate
-direction can cause the smoke to migrate to the entrances of the station.
+are of interest, as they align with NFPA 130 visibility requirements, and
+ASHRAE 62.1 requirements of Carbon Monoxide limits. Thus, in SDA
+analyses, appropriate Carbon Monoxide and Soot measurement devices are
+required to monitor these levels as any re-entrained smoke from the winds
+from an appropriate direction can cause the smoke to migrate to the
+entrances of the station.
 
 #RESULTS ANALYSIS AND MITIGATION MEASURES
 For analyses of the acceptability of a particular station design for
-above ground SDA analyses, a variety of tools can be used. Measuring PPM
-of smoke or CO intake at the station entrances is one way to analyze the
-effect of the discharged smoke onto a station entrance, as shown in
-in [#image7] Using Iso-surfaces is also another powerful way to visualize
-the migration of zones of CO that are exceedance of the criteria.
-
+above ground SDA analyses, a variety of tools can be used. 
 
 
 
@@ -340,6 +381,11 @@ the migration of zones of CO that are exceedance of the criteria.
 ![image7]
 ~
 
+Measuring PPM
+of smoke or CO intake at the station entrances is one way to analyze the
+effect of the discharged smoke onto a station entrance, as shown in
+in [#image7] Using Iso-surfaces is also another powerful way to visualize
+the migration of zones of CO that are exceedance of the determined criteria.
 
 
 [image8]: images/image8.JPG "image8" { width:auto; max-width:90% }
@@ -350,34 +396,35 @@ the migration of zones of CO that are exceedance of the criteria.
 
 Finally, placing a 2.0m visibility slice above-grade can allow for
 contamination information for evacuating passengers and evaluating their visibility
-at head height.
+at head level.
 
 For situations where criteria is exceeded beyond the recommendations of
 NFPA 130 and ASHRAE, mitigation measures can be recommended, such as
 relocated the smoke discharge vents to a higher elevation, or ducting the
 vents to a different location to be discharged. For example, for analyses
 that showing station entrances engulfed in smoke, a repositioning of the
-smoke discharge vents would be required. SDAs can be very helpful to
-determine the design recommendations needed for stations to achieve the
-acceptance criteria.
+smoke discharge vents would be required, or if a particular air intake
+louver is affected, the affected damper could be closed during an emergency.
+SDAs can be very helpful to determine the design recommendations needed
+for station designs to achieve the acceptance criteria.
 
 
 
 #CONCLUSIONS AND FUTURE WORK
 Modelling of smoke dispersion analyses continues to be an area of
-interest as urban areas become denser, and TVS systems are installed in
-congested areas with nearby buildings and street level grating. Due to
-the difficulty in validating large scale wind flows in FDS, as well as
-limited computing resources restricting domain size, more work is
-required in looking at the best practices in doing scale outdoor wind
-modeling within FDS along with model optimization. The vast number of
-variables that can affect smoke dispersion may be difficult to completely
-encompass.For future work, large foliage such as trees using Lagrangian
-particles with a drag coefficient could be added and effects from
-pedestrians and vehicles. SDAs can be helpful to be used as generic
-design tool to ensure smoke discharge vents are optimized in terms of
-placement. Further research alongside full size wind validation of
-atmospheric flows is required to further these studies to the next level.
+interest as the LRT transit areas usully serve highly populated urban
+areas congested with buildings. Due to the difficulty in validating large
+scale wind flows in FDS, as well as limited computing resources
+restricting domain size, more work is required in looking at the best
+practices in doing scale outdoor wind modelling within FDS along with
+model optimization. The vast number of variables that can affect smoke
+dispersion may be difficult to completely encompass. For future work,
+large foliage such as trees using Lagrangian particles with a drag
+coefficient could be added together with effects from pedestrians and vehicles.
+SDAs can be helpful to be used as generic design tool to ensure smoke
+discharge vents are optimized in terms of placement. Further research
+alongside full size wind validation of atmospheric flows is required to
+further these studies to the next level.
 
 
 # ACKNOWLEDGMENTS
