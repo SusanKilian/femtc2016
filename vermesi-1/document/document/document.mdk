@@ -18,7 +18,7 @@ Author        : Guillermo Rein
 Affiliation   : Imperial College London
 Email         : g.rein@imperial.ac.uk
 
-Bibliography  : references.bib
+Bibliography  : pyrolysis_mdf.bib
 Logo          : False
 Tex Header    :
   \def\refname{&name-references;}
@@ -48,14 +48,14 @@ in an FPA (Fire Propagation Apparatus).
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
 # INTRODUCTION { #sec-intro }
-Medium density fiberboard (MDF) is an engineered wood product (EWP) that is widely used in the built environment. It is manufactured by binding wood fibers with wax or resin under high temperature and pressure conditions [ref]. Due to this, its thermal properties and fire behavior are different than the properties and behavior of natural wood. Fire is a major risk for wood products, and that is no different for EWP, therefore it is essential to have a solid understanding of how EWP in general and MDF in particular behaves when subjected to a fire. There are many studies in the literature that deal with the pyrolysis and ignition of wood but only a handful that look at the ignition of MDF. The recent experimental work of Li et al. [ref Kai] looked to measure various properties of virgin MDF and its produced residues (char) when subjected to fire, such as heat of pyrolysis [ref], density [ref], thermal conductivity and specific heat [ref]. Huang et al. [X proci] studied computationally the influence of transient flame and physicochemical properties on the burning behavior of MDF.
+Medium density fiberboard (MDF) is an engineered wood product (EWP) that is widely used in the built environment. It is manufactured by binding wood fibers with wax or resin under high temperature and pressure conditions [@mdfbook]. Due to this, its thermal properties and fire behavior are different than the properties and behavior of natural wood. Fire is a major risk for wood products, and that is no different for EWP, therefore it is essential to have a solid understanding of how EWP in general and MDF in particular behaves when subjected to a fire. There are many studies in the literature that deal with the pyrolysis and ignition of wood but only a handful that look at the ignition of MDF. The recent experimental work of Li et al. looked to measure various properties of virgin MDF and its produced residues (char) when subjected to fire, such as heat of pyrolysis [@kaiheat], density  thermal conductivity and specific heat [@kaiprop]. Huang et al. [@xproci] studied computationally the influence of transient flame and physicochemical properties on the burning behavior of MDF.
 
-One of the simplifications used in the majority of studies in the literature is the assumption of a constant irradiation from the heat source. While this is convenient due to its simplicity, this case is singular and does not reflect more possible fire scenarios. Transient irradiation is a more comprehensive case, thus analyzing dynamic heat transfer effects and how they impact solid-phase ignition criteria is a relevant topic. There are are studies [ref, cnf paper] that have used transient heating scenarios for piloted ignition of different materials such as polymers and wood. However, as the studies mentioned before use constant heating scenarios, only one other work in literature looks at piloted ignition under transient irradiation for MDF [gaurav interflam]. Agarwal et al. [ref] use transient irradiation in the form of linearly varying irradiation to validate the optimized thermal properties of MDF obtained through inverse modelling of constant irradiation scenarios. 
+One of the simplifications used in the majority of studies in the literature is the assumption of a constant irradiation from the heat source. While this is convenient due to its simplicity, this case is singular and does not reflect more possible fire scenarios. Transient irradiation is a more comprehensive case, thus analyzing dynamic heat transfer effects and how they impact solid-phase ignition criteria is a relevant topic. There are are studies [@cnfpaper] that have used transient heating scenarios for piloted ignition of different materials such as polymers and wood. However, as the studies mentioned before use constant heating scenarios, only one other work in literature looks at piloted ignition under transient irradiation for MDF [@gauravinterflam]. Agarwal et al. [@gauravinterflam] use transient irradiation in the form of linearly varying irradiation to validate the optimized thermal properties of MDF obtained through inverse modelling of constant irradiation scenarios. 
 
 
 
 # IGNITION EXPERIMENTS { #experiments }
-The experiments used in this work were conducted in the FM Global Fire Propagation Apparatus (FPA). The MDF sample of a thickness of 30 mm was placed onto an aluminium plate of 25 mm thickness, used for a better defined bottom boundary condition [ref], and then covered in 5 layers on the bottom and 3 layers on the side of Cotronics insulation that minimize the heat losses to the environment. The surface temperature was read using an infrared pryometer and the mass loss was recorded using the load cell. A wireless thermocouple was inserted in the aluminium plate to measure the in-depth temperature. The ethylene-air pilot was placed 10 mm above the sample surface and 10 mm away from the perimeter of the specimen. A sketch of the prepared sample is shown in Fig.1. 
+The experiments used in this work were conducted in the FM Global Fire Propagation Apparatus (FPA). The MDF sample of a thickness of 30 mm was placed onto an aluminium plate of 25 mm thickness, used for a better defined bottom boundary condition, and then covered in 5 layers on the bottom and 3 layers on the side of Cotronics insulation that minimize the heat losses to the environment. The surface temperature was read using an infrared pryometer and the mass loss was recorded using the load cell. A wireless thermocouple was inserted in the aluminium plate to measure the in-depth temperature. The ethylene-air pilot was placed 10 mm above the sample surface and 10 mm away from the perimeter of the specimen. A sketch of the prepared sample is shown in Fig.1. 
 
 ~ Figure { #fig-samplesketch; caption:"Sketch of the MDF sample placed in the FPA  for the constant and transient irradiation experiments"}
 ![samplesketch]
@@ -93,7 +93,7 @@ A number of 7 parabolas are used, as shown in Fig. 3, with the addition of a con
 ~
 # PYROLYSIS MODEL { #model }
 ## Governing equations and boundary conditions
-The setup and sample were modelled using the open-source code Gpyro [ref]. The governing equations are listed as follows: condensed-phase mass conservation (Eq. 1), species conservation (Eq. 2) and the energy equation (Eq. 3). Thermal equilibrium between the condensed-phase and the gas phase is assumed. The shrinkage of the sample was taken into account. As shown in the literature [ref], in-depth radiation is important for wood for certain wavelengths, but not the ones of the FPA quartz tubes. Therefore the in-depth radiation was not taken into account. The reaction rate is expressed by the Arrhenius equation, Eq.4. 
+The setup and sample were modelled using the open-source code Gpyro [@gpyro]. The governing equations are listed as follows: condensed-phase mass conservation (Eq. 1), species conservation (Eq. 2) and the energy equation (Eq. 3). Thermal equilibrium between the condensed-phase and the gas phase is assumed. The shrinkage of the sample was taken into account. As shown in the literature [@spectral_chaos, in-depth radiation is important for wood for certain wavelengths, but not the ones of the FPA quartz tubes. Therefore the in-depth radiation was not taken into account. The reaction rate is expressed by the Arrhenius equation, Eq.4. 
 
 ~ Equation {mass}
 \frac{\partial\bar{\rho}}{\partial t}=-\dot{\omega}'''_{fg}
@@ -113,7 +113,7 @@ where &rho; is the density [kg/m^3^], t is time [s], Y is mass fraction, &omega;
 ![domain3]
 ~
 [domain3]: images/domain3.png "domain3" { width:30%; max-width:90% }
-The domain for the one-dimensional model of the cone experiments is shown in Fig. 4 and is made of a layer of MDF with a thickness of 30 mm and a layer of aluminium of 25 mm thickness. The ceramic insulation layer was not modelled, but it provides the adiabatic bottom boundary condition (z = L)(Eq. 5). The top surface (z = 0) is exposed to the heat flux (Eq. 6). Keeping a balance between accuracy and simulation time, the final values of the domain parameters are a cell size of 0.01 mm and a time step of 0.05 s [cite cnf].
+The domain for the one-dimensional model of the cone experiments is shown in Fig. 4 and is made of a layer of MDF with a thickness of 30 mm and a layer of aluminium of 25 mm thickness. The ceramic insulation layer was not modelled, but it provides the adiabatic bottom boundary condition (z = L)(Eq. 5). The top surface (z = 0) is exposed to the heat flux (Eq. 6). Keeping a balance between accuracy and simulation time, the final values of the domain parameters are a cell size of 0.01 mm and a time step of 0.05 s [@cnfpaper].
 ~ Equation
 (z=L) \qquad -\bar{k}\frac{\partial T(L)}{\partial z}=0
 ~
@@ -123,7 +123,7 @@ The domain for the one-dimensional model of the cone experiments is shown in Fig
 where &epsilon; is the emissivity and q~_e_~ is the external irradiation.
 
 ##Chemical kinetics
-The kinetics scheme and parameter values were proposed by Li, Huang et al., to which a drying step step was added. First, the sample undergoes the drying process, after which each of the four components of MDF (cellulose, hemicellulose, lignin and resin) decompose into char and volatiles. The values for the pre-exponential factor, activation energy, heat of pyrolysis and reaction order are summarized in Table 2.
+The kinetics scheme and parameter values were proposed by Li, Huang et al., [@kaix] to which a drying step step was added. First, the sample undergoes the drying process, after which each of the four components of MDF (cellulose, hemicellulose, lignin and resin) decompose into char and volatiles. The values for the pre-exponential factor, activation energy, heat of pyrolysis and reaction order are summarized in Table 2.
 ~ Figure { #fig-kinetics; caption: "The kinetics scheme used in the one-dimensional model; the abbreviation of the reaction step is written inparenthesis"}
 ![kinetics]
 ~
@@ -131,18 +131,19 @@ The kinetics scheme and parameter values were proposed by Li, Huang et al., to w
 ~
 ~
 ~ TableFigure { #table-sample; caption: "Kinetic constants used in the modelling, following the kinetic scheme of Lie et al. [ref x and kai paper]"; .wide }
-|             | Kinetic constants                   ||||
-|            |---------|---------|----------|---------|
-|            | Log A   | E       | &Delta;H | n       |
-|:-----------|:-------:|:-------:|:--------:|:-------:|
-| Drying | 8.12 | 67.8  | 270   | 2.37  |
-| hc     | 12.9   | 165  | 256    | 2.4      |
-| cc     | 13.6| 189  | 256  | 0.84  |
-| lc     | 16.3  | 238 | 256   | 10.4 |
-| rc     | 13.6| 149 | 256  | 4.7 |
-| Units  |  log (1/s)       | kJ/mol        |   kJ/kg       |     -    |
-|Reference    |  Huang        |   Huang      |   Li       |   Huang      |
-|--------|---------|---------|----------|---------|
+|          | Kinetic constants                     ||||
+|          |-----------|---------|----------|---------|
+|          | Log A     | E       | &Delta;H | n       |
+|:---------|:---------:|:-------:|:--------:|:-------:|
+| Drying   | 8.12      | 67.8    | 270      | 2.37    |
+| hc       | 12.9      | 165     | 256      | 2.4     |
+| cc       | 13.6      | 189     | 256      | 0.84    |
+| lc       | 16.3      | 238     | 256      | 10.4    |
+| rc       | 13.6      | 149     | 256      | 4.7     |
+| Units    | log (1/s) | kJ/mol  | kJ/kg    | -       |
+|Reference | [@kaix]   | [@kaix] | [@kaiheat]  | [@kaix] |
+|          |           |         |          |         |
+|----------|-----------|---------|----------|---------|
 ~
 ## Model Parameters
 The  solid properties used in the simulations are listed in Table 3. The thermal conductivity and specific heat capacity of MDF and of char vary with temperature and are taken from Li et al [ref]. The density of char is taken from Li et al, while the density of MDF is measured prior to the experiment. Because shrinkage is taken into account, the density does not vary with temperature. The surface emissivity of MDF is taken from Boulet et al. No parameter fittings were used.
@@ -153,13 +154,13 @@ The  solid properties used in the simulations are listed in Table 3. The thermal
 |                                     | Value   |Exponent Value | Units   | Reference|
 |                                     |         |               |         |          |
 |:------------------------------------|:-------:|:-------------:|:-------:|:--------:|
-| Thermal conductivity k              | 0.12 | 0.49        | W/mK | Li et al  |
+| Thermal conductivity k              | 0.12 | 0.49        | W/mK | [@kaiprop]  |
 | Density &rho;                       | 605   | -         | kg/m^3^  | measurement       |
-| Specific heat capacity c~p~         | 1489 | 0.85       | J/kgK  | Li et al  |
-| Surface emissivity of MDF &epsilon; | 0.8  | -      | -  | Boulet et al  |
-| Thermal conductivity of char k~char~|0.09       |3.90            |W/mK      |Li et al        |
-| Density of char &rho;~char~         | 330 | -      | kg/m^3^| Li et al  |
-| Specific heat capacity of char c~p,char~|   600| 1.15            |     J/kgK  |     Li et al   |       
+| Specific heat capacity c~p~         | 1489 | 0.85       | J/kgK  | [@kaiprop] |
+| Surface emissivity of MDF &epsilon; | 0.8  | -      | -  | [@boulet]  |
+| Thermal conductivity of char k~char~|0.09       |3.90            |W/mK      |[@kaiprop]        |
+| Density of char &rho;~char~         | 330 | -      | kg/m^3^| [@kaiprop]  |
+| Specific heat capacity of char c~p,char~|   600| 1.15            |     J/kgK  |     [@kaiprop]   |       
 |-------------------------------------|---------|---------------|---------|----------|
 ~
 
@@ -182,7 +183,7 @@ For the constant irradiation scenario, the comparison between the experimental m
 
 [constanthf_mlr]: images/constanthf_mlr.png "constanthf_mlr" { width:100%; max-width:90% }
 
-Considering the good predictions in the constant irradiation model, it is interesting to see how the transient irradition scenario behaves. Fig. 7 shows the model predictions in the transient irradiation scenario with time to peak of 320 s and peak irradiation of 30 kW/m^2^. Like in the constant irradiation scenario, the surface temperature prediction is very good, with the mass loss rate being underpredicted by the model. Considering that this model has no fittings, only measured values from literature sources, its performance is very good. Also, the accuracy of mass loss rate measurements in the FPA is better when the readings are very frequent (ref Khan, de ris), so potential errors induced experimentally might also contribute to the small discrepancy between predictions and measurements.
+Considering the good predictions in the constant irradiation model, it is interesting to see how the transient irradition scenario behaves. Fig. 7 shows the model predictions in the transient irradiation scenario with time to peak of 320 s and peak irradiation of 30 kW/m^2^. Like in the constant irradiation scenario, the surface temperature prediction is very good, with the mass loss rate being underpredicted by the model. Considering that this model has no fittings, only measured values from literature sources, its performance is very good. Also, the accuracy of mass loss rate measurements in the FPA is better when the readings are very frequent (@mlr_khan), so potential errors induced experimentally might also contribute to the small discrepancy between predictions and measurements.
 ~ Begin Figure { #fig-subfigs; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for the transient irradiation (Scenario 1)" }
 ~ Begin SubFigureRow { vertical-align: bottom }
 ~ SubFigure { #fig-subfig1; caption:"Surface temperature" }
@@ -225,42 +226,6 @@ These experiments served as validation for a computational model. This one-dimen
 The model is used to investigate the influence of temperature-dependent k and c~p~, as well as adding a drying set to the kinetic scheme. The former causes an overprediction in surface temperature (18 %), but a negligible change in mass loss rate. The drying step, however, has a major influence both on surface temperature, where it overpredicts the surface temperature by 78% and significantly changes the behavior of the mass loss rate curve.
 
  
-# BIBLIOGRAPHY AND REFERENCES
-When references are used in the text, tie them to an alphabetical (by
-principal author) list of references to be included as the last item of
-your paper. The format commonly used in scientific literature follows:
-
-Smith, J. S., Bloggs, R. T. and Jones, E. R. (1974), "Magnetic Anomalies
-in Geothermal Systems", Journal of Fluid Mechanics, 254, 73-79
-
-Leslie Lamport, LaTeX: A Document Preparation System (2nd Edition), Addison-Wesley, 1994
-
-When using Madoko, edit the content of the .bib file in the document
-folder, and use the reference methods as shown in the [Bibliography and
-Citations
-Section](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-bib)
-of the Madoko Manual.
-
-A bibliography file consists of all your references in the BibTeX format, for example:
-
-    @BOOK{ Knuth:TeX,  
-        author   = "Knuth, Donald E.",  
-        title    = "The {\TeX} book",  
-        publisher= "Addison-Wesley",  
-        year     = 1984  
-    }
-
-Entries in the bibliography files can now be referenced using semi-colon
-separated references, for example:
-``` Markdown 
-Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
-```
-Results in: Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
-
-Please include full title of journal articles or other references,
-journal, volume, date, pages. There is a nice [table on
-Wikipedia](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX)
-that shows all of the different data fields for the BibTeX file.
 
 
 
@@ -268,15 +233,3 @@ that shows all of the different data fields for the BibTeX file.
 
 &pagebreak;
 
-# An appendix { @h1:"A" }
-"All the same, I should like it all plain and clear," said he
-obstinately, putting on his business manner (usually reserved for people
-who tried to borrow money off him), and doing his best to appear wise and
-prudent and professional and live up to Gandalf's recommendation. "Also I
-should like to know about risks, out-of-pocket expenses, time required
-and remuneration, and so forth" -- by which he meant: "What am I going to
-get out of it? and am I going to come back alive?"
-
-# Conclusion
-If you have any questions concerning your paper and/or the Conference,
-please email us at [conference@thunderheadeng.com][emaillink].
