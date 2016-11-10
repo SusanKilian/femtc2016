@@ -87,7 +87,7 @@ of a random variable which distribution is normal.
 In the following chapters the variable considered will be the RSET.
 60&nbsp;samples are randomly drawn.
 
-A confidence interval I~p~ for each quantile &alpha; from the sample of size
+A confidence interval I~p~ is calculated for each quantile &alpha; from the sample of size
 n = 60 by choosing a level of confidence p equal to 90%. The confidence interval
 is the interval which includes the real value of the estimated quantiles with a 90% probability.
 This confidence interval is calculated as follows:
