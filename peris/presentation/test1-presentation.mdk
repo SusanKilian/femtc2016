@@ -26,15 +26,14 @@ Universidad Politécnica de Valencia
 [title1]: images/title1.png "title1" { width:auto; max-width:90%; vertical-align:top }
 [title2]: images/title2.png "title2" { width:auto; max-width:90%; vertical-align:top }
 
-# INTRODUCTION
-
 # Bridge fires {data-background-image:images/Presentation1.jpg; color:white}
 ![Presentation1]
 
-![Presentation1b]
+![Presentacion_1]
 {.fragment}
 
-[Presentation1b]: images/Presentation1b.png "Presentation1b" { width:auto; max-width:90% }
+
+[Presentacion_1]: images/Presentacion_1.png "Presentacion_1" { width:auto; max-width:90% }
 
 [Presentation1]: images/Presentation1.jpg "Presentation1" { display:none}
 
@@ -49,7 +48,7 @@ Universidad Politécnica de Valencia
 ~~
 ~ End Columns
 ~ Center
-~~ Framed {background-color:#404040; width:75%; padding:1em;  vertical-align=bottom; .fragment}
+~~ Framed {background-color:#404040; width:75%; padding:1em;  vertical-align=bottom}
 22 min until collapse  
 1 month closed  
 Repair Cost: 9 million USD  
@@ -92,8 +91,9 @@ Eurocode 1: Actions on Structures
 ## Standards
 ~ Center
 NFPA 502: Road Tunnels, Bridges and Other Limited Access Highway
-![Presentation2b]
+
 ![Presentation2a]
+![Presentation2b]
 ~
 
 [Presentation2b]: images/Presentation2b.png "Presentation2b" { width:60%}
@@ -107,6 +107,14 @@ NFPA 502: Road Tunnels, Bridges and Other Limited Access Highway
 ![objective1]
 
 [objective1]: images/objective1.jpg "objective1" { width:auto; max-width:100% }
+
+## Tanker truck
+~ Center
+![Presentacion 12]
+~
+
+[Presentacion 12]: images/Presentacion-12.jpg "Presentacion 12" { width:"110%"}
+
 
 ## I-Girder Bridges
 ~ Center
@@ -143,22 +151,6 @@ Peris-Sayol et al. 2016, Garlock et al., 2012
 
 [objective3]: images/objective3.jpg "objective3" { width:auto; max-width:90% }
 
-## Very vulnerable structural system
-
-~ Center
-![objective4]
-~
-
-~ Begin Columns
-~~ Column { width:50% }
-Montebello Bridge Fire
-~~
-~~ Column
-http://latimesblogs.latimes.com
-~~
-~ End Columns
-
-[objective4]: images/objective4.jpg "objective4" { width:auto; max-width:90% }
 
 ## Importance of several parameters on the maximum gas temperatures
 
@@ -236,24 +228,6 @@ Bridge Substructure (Piers or Abutments)
 [geometric5]: images/geometric5.jpg "geometric5" { width:auto; max-width:100% }
 
 ## Fire Scenario Parameters
-Tanker Truck Accident
-
-~ Center
-![firescenario1]
-~
-
-~ Begin Columns
-~ Column { width:50% }
-Montebello Bridge Fire
-~
-~ Column
-http://latimesblogs.latimes.com
-~
-~ End Columns
-
-[firescenario1]: images/firescenario1.jpg "firescenario1" { width:auto; max-width:90% }
-
-## Fire Scenario Parameters
 
 ~ Begin Columns
 ~ Column { width:50% }
@@ -312,8 +286,6 @@ experiments technique
 ~
 
 [arrows]: images/arrows.png "arrows" { width:"125px"; height:"181px" }
-
-# METHODOLOGY
 
 ## Design of Experiments
 
@@ -376,7 +348,7 @@ Mesh: 0.20 x 0.20 x 0.20 m.
 
 Fire Load:
 
-* Tanker truck: 30 m2 (12 x 2.5 m)
+* Tanker truck: 30 m2 (12 x 2.5 m) at one meter above road level.
 * HRR is a parameter
 * CO yield and Soot Yield according to SFPE Handbook
 * CO yield = 0.019 g/g
@@ -394,6 +366,7 @@ Adiabatic Temperatures
 
 * Sensors every 20 cm 
 * 3 sensors per section
+* Most exposed girder
 ~~
 ~~ Column { vertical-align=top }
 ![method4]
@@ -445,7 +418,9 @@ Bottom Flange Temperatures
 ![Imagen4]
 ~~
 ~
-
+~ Center
+p-values below 0.05 indicate significance influence
+~
 [Imagen2]: images/Imagen2.png "Imagen2" { width:auto; max-width:100%;vertical-align:top }
 [Imagen3]: images/Imagen3.png "Imagen3" { width:"91%";vertical-align:top }
 [Imagen4]: images/Imagen4.png "Imagen4" { width:auto; max-width:90%;vertical-align:top }
@@ -462,7 +437,9 @@ Web Temperatures
 ![Imagen7]
 ~~
 ~
-
+~ Center
+p-values below 0.05 indicate significance influence
+~
 [Imagen7]: images/Imagen7.png "Imagen7" { width:"115%"; vertical-align:top}
 [Imagen6]: images/Imagen6.png "Imagen6" { width:"95%"; vertical-align=top}
 [Imagen5]: images/Imagen5.png "Imagen5" { width:"77%"; vertical-align=top}
@@ -531,13 +508,15 @@ Different times and modes of failure
 [Imagen15]: images/Imagen15.png "Imagen15" { width:auto; max-width:90% }
 
 ## CONCLUSIONS AND FUTURE WORK
-1. Vertical Clearance, fuel and fire position influence flange temperatures
+1. Vertical Clearance, HRR and fire position have an influence in flange temperatures
 2. Web temperatures are also influenced by the bridge substructure configuration
 3. Interactions have to be taken into account (Coandâ Effect)
 4. Position of the fire load also influence the structural behavior
+  
+
 
 ~ Center {color:red}
-THESE CONCLUSIONS SHOULD BE CONSIDERED IN PROPOSALS OF FIRE CURVES SPECIFIC FOR BRIDGES
+THESE CONCLUSIONS SHOULD BE CONSIDERED IN FUTURE PROPOSALS OF FIRE CURVES SPECIFIC FOR BRIDGES
 ![Imagen16]
 ~
 
@@ -547,10 +526,11 @@ THESE CONCLUSIONS SHOULD BE CONSIDERED IN PROPOSALS OF FIRE CURVES SPECIFIC FOR 
 ## EUROESTUDIOS
 
 ~ Columns
-~~ Column{width:30%}
-![Imagen 17]
+~~ Column{width:60%}
 
-[Imagen 17]: images/Imagen-17.png "Imagen 17" { width:auto; max-width:90% }
+![Logo+Mapa]
+
+[Logo+Mapa]: images/Logo+Mapa.png "Logo+Mapa" { width:auto; max-width:97% }
 
 ~~
 ~~ Column {vertical-align:top}
@@ -561,21 +541,15 @@ THESE CONCLUSIONS SHOULD BE CONSIDERED IN PROPOSALS OF FIRE CURVES SPECIFIC FOR 
 ~~
 ~
 ~ Columns
-~~ Column{width:65%}
-![Imagen18]
-
-[Imagen18]: images/Imagen18.png "Imagen18" { width:auto; max-width:100% }
-
+~~ Column{width:50%}
+![Evac_enf]
+[Evac_enf]: images/Evac_enf.gif "Evac_enf" {width:"480px"}
 ~~
 ~~ Column {vertical-align:top}
 ~~~Center
-![Prueba1]
-![Prueba2]
-
-[Prueba2]: images/Prueba2.png "Prueba2" { width:"72%"}
-[Prueba1]: images/Prueba1.png "Prueba1" { width:"72%"}
+![smoke_enf]
+[smoke_enf]: images/smoke_enf.gif "smoke_enf" {width:"130%"}
 ~~~
-
 ~~
 ~
 
