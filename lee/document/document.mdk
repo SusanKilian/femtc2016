@@ -1,10 +1,17 @@
 [INCLUDE=style/lncs]
 Title         : A METHOD OF SMOKE DISPERSION MODELLING OF EXHAUSTED TUNNEL FIRE SMOKE IN URBAN AREAS
 
-Author        : Brian Lee, Tunnel Ventilation Engineer
+Author        : Brian Lee
 Affiliation   : SNC Lavalin
 Email         : [brian.lee@snclavalin.com][emaillink]
 
+Author        : Melissa Duckham
+Affiliation   : SNC Lavalin
+Email         : [melissa.lee@snclavalin.com][emaillink]
+
+Author        : John Van
+Affiliation   : SNC Lavalin
+Email         : [john.van@snclavalin.com][emaillink]
 
 Bibliography  : references.bib
 Logo          : False
@@ -59,14 +66,18 @@ underground transit systems during emergency scenarios. For modern
 underground rail transit systems, they are utilized for pulling fresh air
 in during different operating modes, but more importantly, for emergency
 scenarios, TVS systems provide tenable conditions for escaping passengers
-from tunnel fire emergency situations. A typical TVS schematic is shown in
-Figure [#image1], with a fan and silencer assembly.
+from tunnel fire emergency situations. A typical TVS cross section for an
+underground station is shown in Figure [#image1], with a fan and silencer
+assembly.
 
 
 
-[Image1]: images/Image1.JPG "Image1" { width:auto; max-width:90% }
 
-~ Figure { #image1; caption: "TVS Schematic and example TVS Fan Room" }
+
+
+[image1]: images/image1.jpg "image1" { width:auto; max-width:90% }
+
+~ Figure { #image1; caption: "Typical Underground Station Cross Section and typical TVS Fan Room" }
 ![Image1]
 ~
 
@@ -189,7 +200,7 @@ Where $Y_{CO}$ = species yield, in this case, Carbon Monoxide.
 
 
 
-Equivalent of Mass Fraction of Smoke
+Concentration of combusion products, leading to the concentration of smoke is derived by:
 <br>
 ~ Equation
 C_{smoke} =  \frac{C_{Soot}}{Y_s} ( 1 + AFR )
@@ -215,10 +226,8 @@ Figure [#image3]
 
 
 
-[image3]: images/image_3.jpg "image3" { width:auto; max-width:70% }
-
-
-~ Figure { #image3; caption: "Calculation of Smoke Discharge Temperatures relative to shaft height" }
+[image3]: images/image_3.jpg "image3" { width:auto; max-width:40% }
+~ Figure { #image3; caption: "Modelling of Smoke Discharge Temperatures relative to shaft height" }
 ![image3]
 ~
 
@@ -348,7 +357,7 @@ contamination levels of the areas of interest.
 
 [image6]: images/image6.JPG "image6" { width:auto; max-width:80% }
 
-~ Figure { #image6; caption: "Typical Station Layouts and applying airflows at entrances " }
+~ Figure { #image6; caption: "Typical Station Layout and applying airflows at entrances " }
 ![image6]
 ~
 
@@ -412,15 +421,13 @@ for station designs to achieve the acceptance criteria.
 
 #CONCLUSIONS AND FUTURE WORK
 Modelling of smoke dispersion analyses continues to be an area of
-interest as the LRT transit areas usully serve highly populated urban
+interest as the LRT transit areas usually serve highly populated urban
 areas congested with buildings. Due to the difficulty in validating large
 scale wind flows in FDS, as well as limited computing resources
 restricting domain size, more work is required in looking at the best
 practices in doing scale outdoor wind modelling within FDS along with
 model optimization. The vast number of variables that can affect smoke
-dispersion may be difficult to completely encompass. For future work,
-large foliage such as trees using Lagrangian particles with a drag
-coefficient could be added together with effects from pedestrians and vehicles.
+dispersion may be difficult to completely encompass. 
 SDAs can be helpful to be used as generic design tool to ensure smoke
 discharge vents are optimized in terms of placement. Further research
 alongside full size wind validation of atmospheric flows is required to
@@ -428,7 +435,7 @@ further these studies to the next level.
 
 
 # ACKNOWLEDGMENTS
-The author would like to thank Thunderhead Engineering for organizing
+The authors would like to thank Thunderhead Engineering for organizing
 FEMTC 2016 & SNC-Lavalin for the support and funding which enabled this
 material to be presented.
 
