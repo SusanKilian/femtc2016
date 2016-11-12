@@ -83,7 +83,7 @@ assembly.
 
 
 While underground station fire analysis using computation fluid dynamics
-(CFD) has been investigated in extensively, recent
+(CFD) has been investigated extensively, recent
 interest has been given into evaluating the effects of the extracted
 smoke from the TVS systems, after the smoke has been evacuated to grade
 level. Smoke discharged from ventilation shafts need to be evaluated so
@@ -240,7 +240,7 @@ for major cities. For example, the wind profile for the city of Toronto,
 Canada, can be found in Figure [#image4] below. ASHRAE Fundamentals
 Handbook in Chapter 24 describes a method to convert wind speeds measured
 from Airport measurement tools into wind profiles suitable for urban and
-suburban areas, which then can be used for the the ares of interest in the SDA.
+suburban areas, which then can be used for the the area of interest in the SDA.
 
 
 
@@ -288,7 +288,7 @@ For simplicity, the SDA runs will be aligned with major streets, taking
 There is always much discussion over the turbulence models and their
 suitability for any given CFD simulation. FDS utilizes Large Eddy
 Simulation (LES) with the default turbulent viscosity using the Deardorff model,
-although different turbulent models have been used with varying degrees
+although different turbulence models have been used with varying degrees
 of success. RANS and LES have been the subject of several previous
 studies, with LES showing some good agreement with validation testing in
 simple street canyon models. (Tominaga 2010).
@@ -302,7 +302,7 @@ Meshing around station areas and smoke vents utilize a mesh cell size of
 the amount of mesh elements that can be solved in a reasonable time. If
 more powerful computing resources are available, decreases in mesh
 elements sizing could be accommodated. Wind domain parameters are
-important to consider in order to represent the flow through the domain
+important to consider in order to characterize the flow through the domain
 in a representative manner. Relative to the tallest building the domain,
 the size of the ceiling domain should be carefully considered. The domain
 sides running parallel to the wind flow direction is preferred to be
@@ -346,7 +346,7 @@ overall station intake airflow could be determined through other
 well-developed software such as Subway Environmental Software (SES), data
 gathered from previous underground station runs using FDS can also be
 utilized. From the collected data, airflows for the doors and air intake
-louvers is applied setup for the SDA analysis, with examples locations
+louvers is applied to the setup for the SDA analysis, with examples locations
 identified in Figure [#image6]. The flows through doors and station air
 intake louvers are applied along with the measurement devices in the
 software. These measurement devices will then used to determine
@@ -374,8 +374,8 @@ For a typical SDA analysis, smoke concentrations and CO concentrations
 are of interest, as they align with NFPA 130 visibility requirements, and
 ASHRAE 62.1 requirements of Carbon Monoxide limits. Thus, in SDA
 analyses, appropriate Carbon Monoxide and Soot measurement devices are
-required to monitor these levels as any re-entrained smoke from the winds
-from an appropriate direction can cause the smoke to migrate to the
+required to monitor these levels, as any re-entrained smoke from the winds
+from an particular direction can cause the smoke to migrate to the
 entrances of the station.
 
 #RESULTS ANALYSIS AND MITIGATION MEASURES
@@ -390,16 +390,18 @@ above ground SDA analyses, a variety of tools can be used.
 ![image7]
 ~
 
-Measuring PPM
-of smoke or CO intake at the station entrances is one way to analyze the
-effect of the discharged smoke onto a station entrance, as shown in
-in [#image7] Using Iso-surfaces is also another powerful way to visualize
-the migration of zones of CO that are exceedance of the determined criteria.
+Measuring PPM of smoke or CO intake at the station entrances is one way
+to analyze the effect of the discharged smoke onto a station entrance, as
+shown in in Figure [#image7]. Using iso-surfaces is also another powerful
+way to visualize the migration of zones of CO that are exceedance of the
+determined criteria. The limit of CO can be set as strict as required,
+and exceedance areas can be visualized clearly through these iso-surfaces
+such as in Figure [#image8].
 
 
 [image8]: images/image8.JPG "image8" { width:auto; max-width:90% }
 
-~ Figure { #image7; caption: "Visualizing Carbon Monoxide exceedance regions with IsoSurfaces " }
+~ Figure { #image8; caption: "Visualizing Carbon Monoxide exceedance regions with IsoSurfaces " }
 ![image8]
 ~
 
@@ -411,7 +413,7 @@ For situations where criteria is exceeded beyond the recommendations of
 NFPA 130 and ASHRAE, mitigation measures can be recommended, such as
 relocated the smoke discharge vents to a higher elevation, or ducting the
 vents to a different location to be discharged. For example, for analyses
-that showing station entrances engulfed in smoke, a repositioning of the
+that show station entrances engulfed in smoke, a repositioning of the
 smoke discharge vents would be required, or if a particular air intake
 louver is affected, the affected damper could be closed during an emergency.
 SDAs can be very helpful to determine the design recommendations needed
@@ -425,7 +427,7 @@ interest as the LRT transit areas usually serve highly populated urban
 areas congested with buildings. Due to the difficulty in validating large
 scale wind flows in FDS, as well as limited computing resources
 restricting domain size, more work is required in looking at the best
-practices in doing scale outdoor wind modelling within FDS along with
+practices in doing large-scale outdoor wind modelling within FDS along with
 model optimization. The vast number of variables that can affect smoke
 dispersion may be difficult to completely encompass. 
 SDAs can be helpful to be used as generic design tool to ensure smoke
