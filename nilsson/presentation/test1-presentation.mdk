@@ -155,8 +155,9 @@ $T_{PT} \sim T_{AST}$
   compared to FDS 5.5.3
 * To obtain credible results particularly close to the fire, a mesh
   resolution $D^{*}/\delta x$ of at least 30 is needed.
-* Plenty of choices in FDS regarding heat fluxes means it's
-  crucial to compare the same form of output data
+* Plenty of heat flux outputs in FDS but at the same time inadequate
+  descriptions of what these expressions actually calculate makes it confusing 
+  for the ordinary FDS-user
 * $T_{AST}$ can be used as an alternative means of expressing the thermal
   exposure to a surface in FDS
 ~
