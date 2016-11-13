@@ -110,13 +110,13 @@ $T_{PT} \sim T_{AST}$
 ![Figure11]
 [Figure11]: images/Figure11.png "Figure11" { width:auto; max-width:100% }
 
-## Grid sensitivity, $\dot{q}^{\prime\prime}_{IRHF}$
-![Figure12]
-[Figure12]: images/Figure12.png "Figure12" { width:auto; max-width:100% }
-
 ## Facade damage
 ![facadedamage]
 [facadedamage]: images/facadedamage.PNG "facadedamage" { width:auto; max-width:100% }
+
+## Grid sensitivity, $\dot{q}^{\prime\prime}_{IRHF}$
+![Figure12]
+[Figure12]: images/Figure12.png "Figure12" { width:auto; max-width:100% }
 
 ## Other parameters studied
 
