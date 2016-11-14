@@ -5,6 +5,9 @@ Affiliation   : JVVA Fire & Risk
 Email         : gabriele.vigne@jvvafire.com
 Reveal Theme  : simple
 Beamer Theme  : singapore
+TOC Depth     : 1
+JS Footer:
+    revealConfig.transition = "fade";
 
 [TITLE]
 
@@ -20,18 +23,16 @@ The increased use of performance-based design to develop fire safety solutions r
 * Evacuation paths particularly complicated 
 * Architectural layout might impose restrictions 
 
-# Perfomance Based Design Process
+## Perfomance Based Design Process
 ~ Center
+The role of Advanced Modelling into the PBD process  
 ![PBD Chart]
-
-The role of Advanced Modelling into the PBD process
 ~
-
 
 [PBD Chart]: images/PBD-Chart.jpg "PBD Chart" { width:auto; max-width:70% }
 
-# Fire Model Selection Flow Chart
 
+## Fire Model Selection Flow Chart
 Once the evaluation phase is reached in the performance base design process, it is time to get into the modelling exercise
 
 ~ Center
@@ -114,7 +115,7 @@ colder smoke).
 
 [Barajas3]: images/Barajas3.png "Barajas3" { width:auto; max-width:90% }
 
-# Case 2 - Interchange Station
+## Case 2 - Interchange Station
 
 * The second example is the largest interchange station in Turin, Italy
 * The objective of the study was to evaluate the fire safety level for
@@ -156,7 +157,7 @@ varying from 0.15 m in the fire region up to 0.30 m in the regions far
 from the fire.
 
 ~ Center
-[Porta Susa_1]
+![Porta Susa_1]
 ~
 
 [Porta Susa_1]: images/Porta-Susa_1.png "Porta Susa_1" { width:auto; max-width:90% }
@@ -167,7 +168,7 @@ Effectiveness of the smoke ventilation shaft between station and platforms
 ~ Center
 ![Porta Susa_2]
 ~
-[Porta Susa_1]: images/Porta-Susa_2.png "Porta Susa_2" { width:auto; max-width:90% }
+[Porta Susa_2]: images/Porta-Susa_2.png "Porta Susa_2" { width:auto; max-width:90% }
 
 # High Rise Apartment Hotel
 
@@ -192,9 +193,12 @@ Effectiveness of the smoke ventilation shaft between station and platforms
 The final solution was based on the concept of introducing a protected
 corridor connecting the two stairs
 
-![GranVia_1]
+~ Center
+![GranVia1]
+~
 
-[GranVia1]: images/GranVia1.png "GranVia1" { width:auto; max-width:90% }
+
+[GranVia1]: images/GranVia_1.png "GranVia1" { width:auto; max-width:90% }
 
 ## Evacuation Analysis
 
@@ -216,11 +220,18 @@ corridor connecting the two stairs
 
 # Comparative analysis (prescriptive vs proposed)
 
+~ Columns
+~~ Column { width:"40%" }
 ![Amazon1]
-[Amazon1]: images/Amazon1.png "Amazon1" { width:auto; max-width:90% }
-
+~~
+~~ Column
 ![Amazon3]
+~~
+~
+
+[Amazon1]: images/Amazon1.png "Amazon1" { width:auto; max-width:90% }
 [Amazon3]: images/Amazon3.png "Amazon3" { width:auto; max-width:90% }
+
 
 # Results (prescriptive vs proposed)
 

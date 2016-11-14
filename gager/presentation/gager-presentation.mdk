@@ -8,7 +8,7 @@ Beamer Theme  : singapore
 
 [TITLE]
 
-# INTRODUCTION
+## INTRODUCTION
 
 * **Active Smoke Control Systems**
   - Smoke Containment 
@@ -16,64 +16,58 @@ Beamer Theme  : singapore
 * **Analysis of Smoke Management Systems**
   - Algebraic Equations versus CFD
 
-~ Begin Columns
-~ Column { width:50% }
-
+~ Columns
+~~ Column { width:50% }
+~~~ Center
 ![SFPE 29.1]
+~~~
+~~
+~~ Column
+~~~ Center
+![FDS Slice File]
+~~~
+~~
+~
 
 [SFPE 29.1]: images/SFPE-29.1.png "SFPE 29.1" { width:auto; max-width:90%; page-align=right}
-~
-~ Column
-
-
-![FDS Slice File]
-
 [FDS Slice File]: images/FDS-Slice-File.JPG "FDS Slice File" { width:auto; max-width:90% }
 
+## SMOKE CONTROL
 
-~
-~ End Columns
-
-
-
-#SMOKE CONTROL
-
-~ Begin Columns
-~ Column { width:40% }
-[Research into smoke control began after the 1881 Ring Theater Fire in Vienna]{ text-align=center }
-
+~ Columns
+~~ Column { width:40% }
+~~~ Center
+Smoke control research after the 1881 Ring Theater Fire in Vienna  
 ![History of SC 1]
+~~~
+~~
+~~ Column
+~~~ Center
+First successful use of smoke control in 1911 during the Empire Palace Theater Fire in Edinburg  
+![History of SC 2]
+~~~
+~~
+~
 
 [History of SC 1]: images/History-of-SC-1.jpg "History of SC 1" { width:300px; max-width:90%}
-~
-~ Column
-[First successful use of smoke control in 1911 during the Empire Palace Theater Fire in Edinburg]{ text-align=center }
-
-![History of SC 2]
-
 [History of SC 2]: images/History-of-SC-2.png "History of SC 2" { width:auto; max-width:90% }
 
-~
-~ End Columns
+
 #Tenability Guides
 
-
-
-~  { #fig-myfigure; caption:"My caption."; float:right; width:50%; margin-left:1em}
-
+~ Columns
+~~ Column
+![Books]{vertical-align:top;}
+~~
+~~ Column
 * Visibility
 * Temperature
 * Toxicity
- 
-
-
+{vertical-align:top;}
+~~
 ~
 
-
-![Books]
-
 [Books]: images/Books.png "Books" { width:400px }
-
 
 
 #VISIBILITY 
@@ -83,79 +77,70 @@ Beamer Theme  : singapore
 
 * The threshold of fire smoke density and visibility limits for safe evacuation has been examined by multiple institutions.
 
-~center
-
-
+~ Center
 ![Familiarity]
-
+~
 [Familiarity]: images/Familiarity.JPG "Familiarity" { width:auto; max-width:90% }
 
 
-~
 ##VISIBILITY - SIZE OF ENCLOSURE
 
-~Center
-
-
+~ Center
+![Enclosure Size]
 ![Traveldistance6]
+~
 
 [Traveldistance6]: images/Traveldistance6.png "Traveldistance6" { width:auto; max-width:40%; transform:rotate(270deg) }
-
-
-![Enclosure Size]
-
 [Enclosure Size]: images/Enclosure-Size.JPG "Enclosure Size" { width:auto; max-width:90% }
 
-
-
-~
 
 ##VISIBILITY - CALCULATIONS
 ~ Columns
 ~~ Column { width:"50%" }
-[Reflecting Sign Proportionality Constant = 3
-]{ text-align=center }
+~~~ Center
+Reflecting Sign Proportionality Constant = 3  
 ![Exit Sign - Reflecting]
-
-[Exit Sign - Reflecting]: images/Exit-Sign---Reflecting.png "Exit Sign - Reflecting" { width:auto; max-width:90% }
-
+~~~
 ~~
 ~~ Column
-[Illuminating Sign Proportionality Constant = 8
-]{ text-align=center }
+~~~ Center
+Illuminating Sign Proportionality Constant = 8  
 ![Exit Sign - Illuminated]
-
-[Exit Sign - Illuminated]: images/Exit-Sign---Illuminated.png "Exit Sign - Illuminated" { width:auto; max-width:90% }
-
+~~~
 ~~
 ~
 
-~ Equation { #euler }
+[Exit Sign - Reflecting]: images/Exit-Sign---Reflecting.png "Exit Sign - Reflecting" { width:auto; max-width:90% }
+[Exit Sign - Illuminated]: images/Exit-Sign---Illuminated.png "Exit Sign - Illuminated" { width:auto; max-width:90% }
+
+~ Columns
+~~ Column { width:"25%"; vertical-align:top; }
+~~~ Equation { #euler }
 S = \frac{K}{e} 
-~
-
+~~~
+~~
+~~ Column {vertical-align:top;}
 Where:
-
-~ Equation { #eq-alignment}
-\begin{aligned} 
- S &= visibility~(m) \\
+~~~ Equation { #eq-alignment}
+\begin{aligned}
+S &= visibility~(m) \\
 K &= proportionality~constant\\
 e &= extinction~coefficient~(m^{-1})
 \end{aligned}
+~~~
+~~
 ~
+
 
 ##VISIBILITY - NFPA 130 
 
 Smoke obscuration levels should be maintained below the point at which a sign internally illuminated is discernible at 30 meters and doors and walls are discernible at 10 meters.
 
-~center
-
+~Center
 ![Smoke]
+~
 
 [Smoke]: images/Smoke.png "Smoke" { width:auto; max-width:90% }
-
-
-~
 
 
 #TEMPERATURE
@@ -179,21 +164,16 @@ T &= temperature~(°C)
 \end{aligned}
 ~
 
+
 ##Temperature - Hyperthermia
 
-~ center
-
-Hyperthermia involves prolonged exposure to heated environments at temperatures to low to cause burns
-
-  
-  ![Tolerance Time for Exposure to Convected Heat no heading]
-
-[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90% }
-  
-  
-  
- 
+~ Center
+Hyperthermia involves prolonged exposure to heated environments at temperatures to low to cause burns  
+![Tolerance Time for Exposure to Convected Heat no heading]
 ~
+[Tolerance Time for Exposure to Convected Heat no heading]: images/Tolerance-Time-for-Exposure-to-Convected-Heat-no-heading.png "Tolerance Time for Exposure to Convected Heat no heading" { width:auto; max-width:90% }
+
+
 ##Temperature - NFPA 130
 
 ~Center
@@ -212,7 +192,6 @@ Maximum Temperature Exposure Times Table B.2.1.1
 * Wide range of effects on occupants
   - Asphyxiants, sensory/ respiratory irritants, toxic
 
-
 ~ Center
 ![Smoke history]
 
@@ -221,12 +200,12 @@ Maximum Temperature Exposure Times Table B.2.1.1
 
 ##TOXICITY - CO AND HCN
 
-~columns 
-~~column { width:"50%" }
+~ Columns 
+~~ Column { width:"50%"; vertical-align:top; }
 ![Toxicity]
  [Toxicity]: images/Toxicity.JPG "Toxicity" { width:auto; max-width:90% }
 ~~
-~~column
+~~ Column
 * CO exposure accounts for the majority of fire fatalities
 * Fractional Effective Dose (FED) is used to address exposure to effluents as a function of time 
 ~~
@@ -256,32 +235,22 @@ Maximum Temperature Exposure Times Table B.2.1.1
 ~
 
 ##TOXICITY - NFPA 130
-~columns 
-~~column { width:"50%" }
-
-
-
+~ Columns 
+~~ Column { width:"50%"; vertical-align:top; }
 ![NFPA 130 Toxicity]
-
-[NFPA 130 Toxicity]: images/NFPA-130-Toxicity.JPG "NFPA 130 Toxicity" { width:auto; max-width:90% }
-
-
-
-
-
-
-
 ~~
 ~~Column
-
 * AEGL 2: General population including susceptible individuals
 * 0.3: More sensitive populations
 * 0.5: Healthy Adult Population
 ~~
 ~
 
+[NFPA 130 Toxicity]: images/NFPA-130-Toxicity.JPG "NFPA 130 Toxicity" { width:auto; max-width:90% }
+
+
 #PRISONS
-~center
+~ Center
 **2009 IBC requires specific prison spaces to be provided with a tenable environment for exiting during a fire.**
 ~
 * Different characteristics compared to atrium and other buildings were smoke control is typically provided. 
@@ -290,7 +259,7 @@ Maximum Temperature Exposure Times Table B.2.1.1
 * Occupants who are familiar with the space but free egress is not the first goal or possible for most.
 
 ##PRISON LAYOUTS - LARGE CELL BLOCK
-~CENTER
+~ Center
 ![TROUSDALE]
 
 [TROUSDALE]: images/TROUSDALE.png "TROUSDALE" { width:auto; max-width:90% }
@@ -434,9 +403,3 @@ Maximum Temperature Exposure Times Table B.2.1.1
 
 
 #Questions?
-
-
-
-[slide]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.html
-[slide-mdk]: https://www.madoko.net/editor.html?#url=http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/slidedemo.mdk&options={"delayedUpdate":"true"}
-[slide-pdf]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.pdf
