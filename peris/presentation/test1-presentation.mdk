@@ -23,8 +23,8 @@ G. Peris-Sayol, I. Payá-Zaforteza
 Euroestudios S.L  
 Universidad Politécnica de Valencia
 
-[title1]: images/title1.png "title1" { width:"90%"; vertical-align:top }
-[title2]: images/title2.png "title2" { width:"90%"; vertical-align:top }
+[title1]: images/title1.png "title1" { width:"100%"; vertical-align:top }
+[title2]: images/title2.png "title2" { width:"100%"; vertical-align:top }
 
 # Bridge fires {data-background-image:images/Presentation1.jpg; color:white}
 ![Presentation1]
@@ -310,10 +310,10 @@ Fire Model using FDS
 ## CFD Simulations
 
 ~ Columns
-~~ Column { width:"49%"; vertical-align=top }
+~~ Column { width:"48.5%"; vertical-align=top }
 ![method2]
 ~~
-~~ Column { vertical-align=top }
+~~ Column { width:"51.5%"; vertical-align=top }
 ![method1]
 ~~
 ~
