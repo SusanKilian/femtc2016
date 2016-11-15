@@ -510,10 +510,7 @@ temperatures retrieved from the thermocouples and the $T_{AST}$.
 The overall difference between the coarse grid size and the other grid
 sizes are also large in regards to $\dot{q}^{\prime\prime}_{IRHF}$ as
 seen in Figure [#figure12], [@NilssonM]. The 20 cm grid consequently
-underestimates the radiation outputs on all positions. At position four,
-five and six, negative $\dot{q}^{\prime\prime}_{IRHF}$ are shown for the
-20 cm simulation. The latter since larger convective heat fluxes were
-calculated in FDS compared to the radiative heat fluxes. The 10 cm grid
+underestimates the radiation outputs on all positions. The 10 cm grid
 show promising results higher up but demonstrates only a small increase
 in heat flux close to the fire source at position 1 compared with the 20
 cm grid. For the 5 cm grid, $\dot{q}^{\prime\prime}_{IRHF}$-values twice
@@ -524,9 +521,9 @@ underestimate the computed $\dot{q}^{\prime\prime}_{IRHF}$ with some 15
 transient phase for position 1.
 
 ~ Figure { #Figure12; caption:"Grid sensitivity, comparisons of calculated incident radiative heat fluxes and those computed by FDS. Left - The three positions closest to the opening. Right - The three positions further up along the facade."}
-![Figure12]
+![Figure12ny]
 ~
-[Figure12]: images/Figure12.png "Figure12" { width:auto; max-width:100% }
+[Figure12ny]: images/Figure12ny.png "Figure12ny" { width:auto; max-width:103% }
 
 ## Influence of mesh alignments
 The effect of dividing the computational domain into differently aligned
