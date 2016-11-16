@@ -6,16 +6,15 @@ Email         : gabriele.vigne@jvvafire.com
 Reveal Theme  : simple
 Beamer Theme  : singapore
 TOC Depth     : 1
+Embed         : 2048
+
 JS Footer:
     revealConfig.transition = "fade";
 
+
 [TITLE]
 
-# Content
-
-[TOC]
-
-# Introduction
+## Introduction
 
 The increased use of performance-based design to develop fire safety solutions requires, for complex buildings, the use of advanced tools
 
@@ -41,7 +40,7 @@ Once the evaluation phase is reached in the performance base design process, it 
 
 [Modelling_flowchart]: images/Modelling_flowchart.png "Modelling_flowchart" { width:auto; max-width:70% }
 
-# Case studies
+## Case studies
 This section shows some example of complex projects where advanced modelling was an essential part of the design process
 
 * Large Airport
@@ -91,7 +90,7 @@ Results of current and proposed configuration
 
 [Barajas_5]: images/Barajas_5.jpg "Barajas_5" { width:auto; max-width:90% }
 
-## Fire and Smoke analysis
+## Case 1 - Fire and Smoke Analysis
 
 * The whole terminal has been modelled
 * FDS v.6.2.0, 30 different meshes assigned to 30 MPI processes
@@ -102,7 +101,7 @@ Results of current and proposed configuration
 
 [Barajas2]: images/Barajas2.png "Barajas2" { width:auto; max-width:90% }
 
-## Fire and Smoke analysis
+## Case 1 - Fire and Smoke Analysis
 The overall results of the fire and smoke modelling shown that, despite
 the great volume of the terminal area, smoke had enough buoyancy to raise
 and fill the smoke reservoirs guaranteeing smoke layer stratification
@@ -142,7 +141,7 @@ routes.
 [Porta Susa_Evac]: images/Porta-Susa_Evac.png "Porta Susa_Evac" { width:auto; max-width:90% }
 
 
-## Evacuation analysis
+## Case 2 - Evacuation Analysis
 
 ~ Center
 ![Porta Susa_Evac3]
@@ -150,7 +149,7 @@ routes.
 
 [Porta Susa_Evac3]: images/Porta-Susa_Evac3.png "Porta Susa_Evac3" { width:auto; max-width:90% }
 
-## Fire and Smoke analysis
+## Case 2 - Fire and Smoke Analysis
 The CFD model was processed with FDS v.6.0.0, the domain was split into
 15 different meshes assigned to 15 MPI processes, with a resolution
 varying from 0.15 m in the fire region up to 0.30 m in the regions far
@@ -162,7 +161,7 @@ from the fire.
 
 [Porta Susa_1]: images/Porta-Susa_1.png "Porta Susa_1" { width:auto; max-width:90% }
 
-## Fire and Smoke analysis
+## Case 2 - Fire and Smoke analysis
 Effectiveness of the smoke ventilation shaft between station and platforms
 
 ~ Center
@@ -170,7 +169,7 @@ Effectiveness of the smoke ventilation shaft between station and platforms
 ~
 [Porta Susa_2]: images/Porta-Susa_2.png "Porta Susa_2" { width:auto; max-width:90% }
 
-# High Rise Apartment Hotel
+## Case 3 - High Rise Apartment Hotel
 
 ~ Columns
 ~~ Column { width:"40%"; vertical-align:top; }
@@ -189,7 +188,7 @@ Effectiveness of the smoke ventilation shaft between station and platforms
 
 [GranVia_Pic]: images/GranVia_Pic.png "GranVia_Pic" { width:auto; max-width:90%}
 
-## Evacuation Analysis
+## Case 3 - Evacuation Analysis
 The final solution was based on the concept of introducing a protected
 corridor connecting the two stairs
 
@@ -200,28 +199,29 @@ corridor connecting the two stairs
 
 [GranVia1]: images/GranVia_1.png "GranVia1" { width:auto; max-width:90% }
 
-## Evacuation Analysis
+## Case 3 - Evacuation Analysis
 
+~ Center
 ![GranVia2]
+~
 
 [GranVia2]: images/GranVia2.png "GranVia2" { width:auto; max-width:90% }
 
-# Logistics Centre
+## Case 4 - Logistics Centre
 * The last example is a large logistics centre
 * The objective of the study was to develop an alternative floor slab design, compared to the code requirement, so that the operation of the centre was not compromised
 
 ![Amazon_Pic]
 [Amazon_Pic]: images/Amazon_Pic.jpg "Amazon_Pic" { width:auto; max-width:90% }
 
-# Logistics Centre
+## Logistics Centre
 * The national fire safety industrial code, specifically requirements regarding smoke movement, requires that intermediate floors have an opening area of at least 50% of the floor slab in the circulation areas, this is to permit smoke movement upwards
-
 * The operation of the centre, the use of trolleys, needed a significantly less percentage of the floor to be open (steel mesh) due to operations procedures
 
-# Comparative analysis (prescriptive vs proposed)
+## Comparative analysis (prescriptive vs proposed)
 
 ~ Columns
-~~ Column { width:"40%" }
+~~ Column {width:40%}
 ![Amazon1]
 ~~
 ~~ Column
@@ -233,12 +233,15 @@ corridor connecting the two stairs
 [Amazon3]: images/Amazon3.png "Amazon3" { width:auto; max-width:90% }
 
 
-# Results (prescriptive vs proposed)
+## Results (prescriptive vs proposed)
 
+~ Center
 ![Amazon4]
+~
+
 [Amazon4]: images/Amazon4.png "Amazon4" { width:auto; max-width:60% }
 
-# Conclusions
+## Conclusions
 
 * The role of modelling in PBD projects is clearly gaining more and more importance
 * Both models used and shown in this paper, Pathfinder and FDS, has substantially evolved during the years
@@ -247,12 +250,12 @@ All that being said, engineers must be aware that buildings might have been desi
 
 Are those buildings unsafe? 
 
-# Conclusions
+## Conclusions
 
 * Such buildings are (or at least should be) as safe as modern buildings built nowadays and this is because of the engineering judgement undertaken in the analysis
 * Without the Engineering Judgement, the results obtained by advanced models might be totally useless; and this is not because of the models themselves but because of the inaccurate approach to them.
 
-# Driving a car
+## Driving a car
 * It requires the driver to skillfully deal with the steering wheel, use the brake, the clutch the gear and the accelerator
 * And what about cars circulating in the opposite direction, curves, slopes, velocity limits, signs to be read in real time, rear mirrors to be used simultaneously when looking at the road in front of you?
 * Knowing how to deal with the controls is not enough to survive in a busy street

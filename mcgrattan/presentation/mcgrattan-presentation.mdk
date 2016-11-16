@@ -5,7 +5,11 @@ Affiliation   : National Institute of Standards and Technology
 Email         : kevin.mcgrattan@nist.gov
 Reveal Theme  : simple
 Beamer Theme  : singapore
-Embed         : 1024
+Embed         : 2048
+
+JS Footer:
+    revealConfig.transition = "fade";
+
 
 [TITLE]
 
