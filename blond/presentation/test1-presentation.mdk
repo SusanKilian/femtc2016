@@ -110,7 +110,7 @@ Embed         : 2048
  - {.fragment}Temperature
  - {.fragment}Origin surface
 
-# The initial species (1/2)
+## The initial species (1/2)
 
 * The combustion takes place under stoichiometric conditions
 * Well known which the combustion products are
@@ -135,7 +135,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 ~ 
 
 
-# The initial species (2/2)
+## The initial species (2/2)
 
 * We calculate the necessary mass flow rate for a desired HRR with the fuel heat of combustion 
 * Example for 500 kW
@@ -223,7 +223,7 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 ~ End Vertical
 
-# Let's begin with the plume in FDS
+## Let's begin with the plume in FDS
 
 * Using the described initial inputs, Izar was modeled in FDS
 * A grid was programmed to measure the temperature
@@ -238,12 +238,12 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 
 [FDS grid]: images/FDS-grid.JPG "FDS grid" { width:auto; max-width:90% }
 
-# Input values in FDS...
+## Input values in FDS...
 
 * The gas burner is rectangle 130 cm (200 cells) x 19.5 cm (3 cells)
 * The amount of combustion products is in kg/m^2^&sdot;s 
 * The boundaries are open --> "free plume"
-
+s
 ~ Center
 ![input pyrosim]
 
