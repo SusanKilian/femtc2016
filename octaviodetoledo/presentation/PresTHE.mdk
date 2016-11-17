@@ -6,8 +6,11 @@ Affiliation   : Geocontrol
 Email         : danieltoledo@geocontrol.es / rsanchez@geocontrol.es
 Reveal Theme  : beige
 Beamer Theme  : singapore
-Toc Depth     : 1
+Toc Depth     : 2
 Embed         : 2048
+
+JS Footer:
+    revealConfig.transition = "fade";
 
 [TITLE]
 
