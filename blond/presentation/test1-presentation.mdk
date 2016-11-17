@@ -88,6 +88,7 @@ Embed         : 2048
 
 * We do the test in rooms in use or just before commissioning
 * The room limiting factor must be considered (sprinklers, lights, protected ceilings)
+{.fragmented}
 
 ## Calculate the plume temperatures originated by Izar
 * The temperature is one of the main factors to design the smoke tests
@@ -243,20 +244,19 @@ C~3~H~8~ + 5 O~2~ + 5&sdot;3.76 N~2~ = 3 CO~2~ + 4 H~2~O + 5&sdot;3.76 N~2~
 * The gas burner is rectangle 130 cm (200 cells) x 19.5 cm (3 cells)
 * The amount of combustion products is in kg/m^2^&sdot;s 
 * The boundaries are open --> "free plume"
-s
+
 ~ Center
 ![input pyrosim]
 
-[input pyrosim]: images/input-pyrosim.JPG "input pyrosim" { width:auto; max-width:90% }
-
+[input pyrosim]: images/input-pyrosim.JPG "input pyrosim" { width:auto; max-width:70% }
 ~
 
-# ... and it looks like that
+## ... and it looks like that
 
 ~ Center
 ![imagen 800 kw]
 
-[imagen 800 kw]: images/imagen-800-kw.JPG "imagen 800 kw" { width:auto; max-width:90% }
+[imagen 800 kw]: images/imagen-800-kw.JPG "imagen 800 kw" { width:auto; max-width:65% }
 ~
 
 ~begin Vertical
@@ -299,7 +299,7 @@ s
 
 ![Temperatures plume_1200]
 
-[Temperatures plume_1200]: images/Temperatures-plume_1200.jpg "Temperatures plume_1200" { width:auto; max-width:80% }
+[Temperatures plume_1200]: images/Temperatures-plume_1200.jpg "Temperatures plume_1200" { width:auto; max-width:75% }
 
 ~
 
@@ -309,7 +309,7 @@ s
 
 ![temperatures_plume_400 kw]
 
-[temperatures_plume_400 kw]: images/temperatures_plume_400-kw.jpg "temperatures_plume_400 kw" { width:auto; max-width:80% }
+[temperatures_plume_400 kw]: images/temperatures_plume_400-kw.jpg "temperatures_plume_400 kw" { width:auto; max-width:75% }
 ~
 
 ## ... or just working at 100 kW
@@ -318,7 +318,7 @@ s
 
 ![temperatures_plume_100 kw]
 
-[temperatures_plume_100 kw]: images/temperatures_plume_100-kw.jpg "temperatures_plume_100 kw" { width:auto; max-width:80% }
+[temperatures_plume_100 kw]: images/temperatures_plume_100-kw.jpg "temperatures_plume_100 kw" { width:auto; max-width:75% }
 
 ~
 ~ End Vertical
@@ -355,7 +355,7 @@ s
 
 [Manegg measure sensor ]: images/Manegg-measure-sensor-.jpg "Manegg measure sensor " { width:auto; max-width:70% }
 
-# We modeled the full scale test with our FDS model...
+## We modeled the full scale test with our FDS model...
 
 ~ Center
 
@@ -364,13 +364,13 @@ s
 
 [bild_smokeview_manegg]: images/bild_smokeview_manegg.jpg "bild_smokeview_manegg" { width:auto; max-width:90% }
 
-# ... and these are the results
+## ... and these are the results
 
 ~ Center
 
 ![alle sensor Manegg]
 
-[alle sensor Manegg]: images/alle-sensor-Manegg.jpg "alle sensor Manegg" { width:auto; max-width:70% }
+[alle sensor Manegg]: images/alle-sensor-Manegg.jpg "alle sensor Manegg" { width:auto; max-width:85% }
 
 [I know that you cannot see too much here...]{color :red }
 ~
@@ -390,13 +390,14 @@ s
 ~ SubFigure {  }
 
 ![temperature_Manegg]
+
 ~
 ~ SubFigure {  }
 
 ![130815-6597]
 [temperature_Manegg]: images/temperature_Manegg.JPG "temperature_Manegg" { width:auto; max-width:50% }
 
-[130815-6597]: images/130815-6597.jpg "130815-6597" {max-width:50%, heigth:auto }
+[130815-6597]: images/130815-6597.jpg "130815-6597" {max-width:40% }
 
 ~
 
@@ -416,6 +417,7 @@ s
   - Different geometries
 * Validate the model in tunnels
 * Development of plume equations
+* Test and validate new premixed burning submodel
 
 # The future of the FDS Simulations?
 
