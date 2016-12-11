@@ -1,18 +1,10 @@
 [INCLUDE=style/lncs]
-Title         : TITLE OF YOUR PAPER, IN CAPITAL LETTERS CENTERED ON PAGE, USING ONE OR MORE LINES AS NECESSARY
-Subtitle      : An optional subtitle.
+Title         : EXPLORING UNSTRUCTURED POISSON SOLVERS FOR FDS
+Subtitle      : 
 
-Author        : First Author Name
-Affiliation   : Research institute
-Email         : you@bar.com
-
-Author        : My co-author 1
-Affiliation   : Other institute
-Email         : other1@bar.com
-
-Author        : My co-author 2
-Affiliation   : Other institute
-Email         : other2@bar.com
+Author        : Dr. Susanne Kilian
+Affiliation   : hhp
+Email         : s.kilian@hhpberlin.de
 
 Bibliography  : references.bib
 Logo          : False
@@ -23,10 +15,10 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-Papers should follow standard technical paper format, an abstract
-followed by the more detailed presentation. The abstract should be typed
-on this area of the first page, with the presentation following after two
-lines of space.
+Many presently employed Poisson solvers which offer a sufficient amount of computational efficiency and robustness are limited to the use of regular geometries and corresponding grid structures. This restriction can affect the precise representation of complex fire scenarios involving complex bodies and flow obstructions. Usually, their parallel application in the context of multi-core architectures contributes to a further impairment.
+The current solver for the Poisson equation in FDS is based on the use of local FFT methods on the single meshes of the underlying domain decomposition. This approach has proven to be computationally efficient and accurate in a multitude of cases. But due to its restriction to rectilinear meshes and its purely local character, there are two possible drawbacks, namely the presence of velocity errors based on penetrations into immersed obstacles as well as possibly large velocity errors along mesh interfaces.
+In order to face this challenge several alternative Poisson solvers of direct and iterative type are examined which basically apply global solution strategies spanning over the whole domain decomposition. Furthermore, their ability to deal with unstructured grids along with the exact setting of boundary conditions on internal obstacle surfaces shall be analyzed.
+The paper and its associated talk are intended to give some insights into the current state of development and to compare the pros and cons of the different Poisson approaches with respect to their efficiency and accuracy.
 ~
 
 [editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
@@ -34,31 +26,65 @@ lines of space.
 [femtc2016]: https://github.com/thunderheadeng/femtc2016
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
-# GENERAL INSTRUCTIONS { #sec-intro }
-You are encouraged to use the [Madoko.net Editor][editor] while using
-the [Madoko Reference Manual][reference-manual] to edit/commit your
-documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
-More information about this method of contribution will be covered below.
+# MOTIVATION { #sec-intro }
+The efficient solution of the Poisson equation for the pressure is an essential part in 
+many CFD codes for the simulation of realistic flow phenomena.
+There are a two main classes of numerical solvers for the Poisson equation, namely {\it direct} and {\it iterative} ones, with various representatives each. Both classes differ comprehensively regarding the underlying algorithmic approach which strongly influences their applicability and efficiency for different problem types.
 
-Text styling, links, sub- and super-script, footnotes and other topics
-are covered in section [Syntax: Inline
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--inline-elements)
-of the manual.
+The numerical simulation of fire scenarios with respect to both their high geometric complexity and their extreme computational requirements represents a particular challenge when selecting a suitable pressure solver. 
+In view of their use in the solution procedure of FDS several advantages and disadvantages are associated with the different choices. %which are illustrated in more detail below.
 
-Headings, Figures and Tables, Lists, Code Blocks, Mathematics, etc. are
-covered in section [Syntax: Block
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--block-elements)
-of the manual.
+A basic design feature of FDS for the mapping of the considered geometry is the use of one or more cubic blocks (meshes) using a rectilinear grid decomposition each. Objects like walls or other obstacles which are internal to those meshes are represented as rectangular shapes conforming with the underlying mesh grid. 
 
-The target length for submitted and invited papers is about eight pages.
-This length includes all figures and tables. However, because the
-Proceedings will not be printed on paper, there is no maximum limit on
-the number of pages. You are free to exceed the target length of eight
-pages.
+Currently, the solution of the FDS Poisson equation is achieved by a representative of the direct Poisson solvers, namely a highly optimized blockwise {\it Fast Fourier Transformation} (FFT) solver which is part of CRAYFISHPAK, a vectorized form of the elliptic equation solver FISHPAK originally developed at the National Center for Atmospheric Research (NCAR) in Boulder, Colorado. 
+On every single mesh a local FFT is performed which produces a correct solution (up to machine precision) to the related local Poisson problem. Afterwards the local solutions are clustered together by means of an interconnecting process along the mesh interfaces. This strategy has proven to be extremely fast and robust for many different constellations.
 
-Please watch this short YouTube Video for a tutorial on how to use the system as intended.
+But the use of this solver is basically restricted to uniform meshes. Therefore, all cells internal to immersed obstacles must be included into the system of equations which my lead to non-zero normal components of velocity at internal obstacles even in case of solid boundaries with no mass transfer. 
 
-# MAIN HEADINGS LIKE THIS STYLE
+In order to compensate this 'penetration' an additional iterative {\it direct forcing immersed boundary method} \cite{stillmissing} is used. In every time step it requires the repeated blockwise FFT-solution of the Poisson equation until a specified tolerance for the velocity error has been reached. 
+
+A similar strategy comes into effect along mesh interfaces, because the mentioned interconnection process namely produces a continuous global Poisson solution but isn't able to guarantee that the normal components of velocity match there, too.
+In the worst case this 'velocity-correction' method may be slow and increase the resulting computational costs.
+
+Finally, the purely blockwise execution of FFT methods doesn't take sufficient account of the intrinsically global character of the physical pressure which spreads local information immediately over the whole domain. In case of big geometries with many meshes (i.e. tunnels) and/or transient boundary conditions this strategy may experience difficulties to reproduce the resulting strong overall coupling of data.
+
+In order to get rid of these drawbacks, some other Poisson solvers are taken into account for the solution of the FDS pressure equation:
+
+ - another direct solver, namely the shared-memory multiprocessing {\it parallel direct sparse solver} ({PARDISO}) of the Intel Math Kernel Library (Intel MKL), and its version for {\it clusters interfaces} ({CLUSTER\_SPARSE\_SOLVER}),
+ -  different iterative solvers based on {\it Scalable Recursive Clustering} (ScaRC) which combine techniques of {\it conjugated gradient methods} (CG) and/or {\it geometric multigrid methods} (GMG)  with optimized preconditioning/smoothing techniques.
+
+Both variants are able to scope with unstructured meshes such that cells internal to obstacles can now be omitted from the system of equations and the correct internal boundary conditions can be set. Furthermore, all different representatives actually compute the correct normal components of velocity along mesh interfaces. All in all, there is no need to apply an additional velocity-correction method any more. 
+
+However, the computational costs for all considered variants may be far higher compared to the current FFT-solver depending on the underlying constellation. Therefore, the proper choice of the Poisson solver for a given application requires a sensible consideration of the specific advantages and disadvantages.
+To provide a basic overview, the different solution techniques will be explained in more detail and analyzed with respect to their accuracy and scalability properties as well as their computational times.
+
+# DIFFERENT POISSON SOLVERS { #PoissonEq }
+
+## The Poisson equation for the Pressure
+Based on its non-conservative formulation, the momentum equation can be simplified to
+~ Equation { #EQ_momentum; caption:" " }
+   \dod{\bu}{t} + \bF + \nabla \cH = 0 \quad ; \quad \bF = \bF_{\rm A} + \bF_{\rm B}
+~
+by a series of substitutions.
+Taking the divergence of equation (\ref{EQ_momentum}) the pressure equation of FDS reads as
+~ Equation { #EQ_pressure; caption:" " } 
+  \nabla^2 \cH =-\dod{(\nabla \cdot {\bf u})}{t} - \nabla \cdot \bF\,. 
+~
+The pressure term $\cH \equiv |\bu|^2/2 + \tp/\rho$ includes the velocity field $\bu$, the density $\rho$ as well as the perturbation pressure $\tp$ which drives the fluid motion. The force term $\bF$ is defined as sum of an advective term $\bF_{\rm A}$ and a baroclinic term $\bF_{\rm B} $. Note that $\bF_{\rm B} $ also contains the perturbation pressure $\tp$ which is taken from the last computed $\cH$ during time iteration. 
+
+The main advantage of the mentioned simplification process is that the system of equations arising in equation (\ref{EQ_pressure}) has constant  coefficients (i.e., is separable) which allows the use of fast, optimized solvers for uniform grids as the already mentioned FFT solver above.
+For a detailed derivation of the pressure equation 
+
+see the FDS Technical Guide \cite{REF_fdstechguide}.  
+
+From a mathematical point of view this so-called {\it Poisson equation} is an elliptic partial differential equation of second order for which different types of boundary conditions i.e., for open and solid boundaries must be specified.
+
+The numerical time-stepping scheme in FDS, an {\it explicit second-order predictor/corrector scheme}, requires the solution of equation (\ref{EQ_pressure}) at least twice per time iteration. Because of its strong interaction with the calculation of all other thermodynamic quantities, the solution of the pressure equation is an essential step in the whole time marching scheme and must be treated very efficiently.
+
+Due to the mathematical theory, a purely local approach isn't sufficient to reproduce the global data dependencies for elliptic problems.
+Increasing the number of subdomains will worsen the convergence rate, possibly right up to divergence at a (problem-dependent) critical number of subdomains. To find a remedy, a domain-spanning correction process must take place which is able to couple the local solutions and spread global information all over the domain.
+
+# MAIN -------------------
 Main Headings are all upper case letters and underlined. In Madoko, a
 Single '#' symbol at the start of the line, followed by a space and then
 the heading text.
