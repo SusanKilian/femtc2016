@@ -76,20 +76,20 @@ Based on its non-conservative formulation, the momentum equation can be simplifi
    \dod{\bu}{t} + \bF + \nabla \cH = 0 \quad ; \quad \bF = \bF_{\rm A} + \bF_{\rm B}
 ~
 by a series of substitutions.
-Taking the divergence of equation (\ref{EQ_momentum}) the pressure equation of FDS reads as
+Taking the divergence of equation ([#EQ_momentum]) the pressure equation of FDS reads as
 ~ Equation { #EQ_pressure; caption:"Alignment example" }
   \nabla^2 \cH =-\dod{(\nabla \cdot {\bf u})}{t} - \nabla \cdot \bF\,. 
 ~
 The pressure term $\cH \equiv |\bu|^2/2 + \tp/\rho$ includes the velocity field $\bu$, the density $\rho$ as well as the perturbation pressure $\tp$ which drives the fluid motion. The force term $\bF$ is defined as sum of an advective term $\bF_{\rm A}$ and a baroclinic term $\bF_{\rm B} $. Note that $\bF_{\rm B} $ also contains the perturbation pressure $\tp$ which is taken from the last computed $\cH$ during time iteration. 
 
-The main advantage of the mentioned simplification process is that the system of equations arising in equation (\ref{EQ_pressure}) has constant  coefficients (i.e., is separable) which allows the use of fast, optimized solvers for uniform grids as the already mentioned FFT solver above.
+The main advantage of the mentioned simplification process is that the system of equations arising in equation ([#EQ_pressure]) has constant  coefficients (i.e., is separable) which allows the use of fast, optimized solvers for uniform grids as the already mentioned FFT solver above.
 For a detailed derivation of the pressure equation 
 
-see the FDS Technical Guide \cite{REF_fdstechguide}.  
+see the FDS Technical Guide [@REF_fdstechguide].  
 
 From a mathematical point of view this so-called _Poisson equation_ is an elliptic partial differential equation of second order for which different types of boundary conditions i.e., for open and solid boundaries must be specified.
 
-The numerical time-stepping scheme in FDS, an _explicit second-order predictor/corrector scheme_, requires the solution of equation (\ref{EQ_pressure}) at least twice per time iteration. Because of its strong interaction with the calculation of all other thermodynamic quantities, the solution of the pressure equation is an essential step in the whole time marching scheme and must be treated very efficiently.
+The numerical time-stepping scheme in FDS, an _explicit second-order predictor/corrector scheme_, requires the solution of equation ([#EQ_pressure]) at least twice per time iteration. Because of its strong interaction with the calculation of all other thermodynamic quantities, the solution of the pressure equation is an essential step in the whole time marching scheme and must be treated very efficiently.
 
 Due to the mathematical theory, a purely local approach isn't sufficient to reproduce the global data dependencies for elliptic problems.
 Increasing the number of subdomains will worsen the convergence rate, possibly right up to divergence at a (problem-dependent) critical number of subdomains. To find a remedy, a domain-spanning correction process must take place which is able to couple the local solutions and spread global information all over the domain.
@@ -97,7 +97,7 @@ Increasing the number of subdomains will worsen the convergence rate, possibly r
 
 ## Discretization of the Poisson equation
 
-Based on a subdivision of the underlying geometric domain $\Omega$ into cubic subdomains $\Om, \, \dmM$, with rectilinear grid decompositions each, the spatial derivative of $\cH$ in equation (\ref{EQ_pressure}) is now discretized by a second-order accurate finite difference method. 
+Based on a subdivision of the underlying geometric domain $\Omega$ into cubic subdomains $\Om, \, \dmM$, with rectilinear grid decompositions each, the spatial derivative of $\cH$ in equation ([#EQ_pressure]) is now discretized by a second-order accurate finite difference method. 
 Note that scalar quantities in FDS such as the pressure are assigned in the center of each grid cell. 
 
 Now, the discretized form of the Poisson equation reads as
@@ -115,11 +115,10 @@ where different discretisations for the time derivative of the divergence are us
 
 
 In the single-mesh case with a local discretization of $\Omega$ into $n$ grid cells, this discretization process leads to the following system of equations
-~ Equation { #eq-alignment; caption:"Alignment example" }
+~ Equation { #EQ_singlesystem; caption:"Alignment example" }
   Ax = b\,, 
-  \label{EQ_singlesystem}
 ~
-where  $x, \,b$ are vectors in $\mathbb{R}^n$  and A is the well-known _7-point matrix_ in $\mathbb{R}^{n \times n}$ with its _5-point_ counterpart in 2D as indicated in Figure (\ref{FIG_fivepointstencil}). Note that the vector $x$ corresponds to the single components $\cH_{ijk}$ and $b$ to the right hand side entries of Equation (\ref{EQ_discretepoisson}) for short.
+where  $x, \,b$ are vectors in $\mathbb{R}^n$  and A is the well-known _7-point matrix_ in $\mathbb{R}^{n \times n}$ with its _5-point_ counterpart in 2D as indicated in Figure ([#FIG_fivepointstencil]). Note that the vector $x$ corresponds to the single components $\cH_{ijk}$ and $b$ to the right hand side entries of Equation ([#EQ_discretepoisson]) for short.
 
 In the multi-mesh case, there are  $N$ local systems of equations
 ~ Equation { #EQ_multisystem; caption:"Alignment example" }
@@ -146,7 +145,7 @@ belong either to the class of direct or iterative solvers whose basic properties
 
 ## Direct solvers { #SEC_direct_solvers }
 
-Direct solvers compute the solution of the system of equations (\ref{EQ_singlesystem}) in only one single computational cycle which may be very complex. Usually, they are performed with enormous speed and are used for the demonstration of potential computer power, see the LINPACK-tests by Dongorra et al. \cite{Dongorra}. They have proven to be very robust even in the non-symmetric and ill-conditioned case. Besides, they are nearly independent of the degree of grid distortion (except of rounding errors) and well suited for the application on unstructured grids.
+Direct solvers compute the solution of the system of equations ([#EQ_singlesystem]) in only one single computational cycle which may be very complex. Usually, they are performed with enormous speed and are used for the demonstration of potential computer power, see the LINPACK-tests by Dongorra et al. \cite{Dongorra}. They have proven to be very robust even in the non-symmetric and ill-conditioned case. Besides, they are nearly independent of the degree of grid distortion (except of rounding errors) and well suited for the application on unstructured grids.
 
 
 \paragraph{\bf { $\boldmath{LU}$}-factorization: } \mbox{}\\[0.2ex]
@@ -223,15 +222,17 @@ GMG-methods use a complete hierarchy of grids with different resolutions and are
 The basic idea is to improve the convergence speed of the basic iteration by correcting the defects on successively coarser grids whose data are interpolated between each other. The process explicitly exploits the so-called _smoothing property_ of the single representatives of the basic iteration, namely that they smooth out the high frequent error components very fast.
 ~
 ~ Column { width:30% }
+~~ Center
 [Interpolation between levels]{font_size:x-small}
 ![grid_transfer_gmg]
+~~
 ~
 ~End Columns
-[grid_transfer_gmg]: { pictures/grid_transfer_gmg.png }
+[grid_transfer_gmg]: pictures/grid_transfer_gmg.png { width: 3cm }
 
 
 \vspace{2mm}
-Both, CG- and GMG-methods, are able to reasonably improve the speed of convergence returning the exact solution in a moderate or even small number of iterations depending on the underlying problem. For a detailed overview of iterative methods see \ref{}. 
+Both, CG- and GMG-methods, are able to reasonably improve the speed of convergence returning the exact solution in a moderate or even small number of iterations depending on the underlying problem. For a detailed overview of iterative methods see [#]. 
 
 With regard to an efficient parallelization, iterative methods seem to be much easier and more universally applicable than direct ones. 
 In the context of domain decomposition % as it is used in FDS 
@@ -259,33 +260,32 @@ If there is a mix of open and solid surfaces along an external face, the specifi
 In case of a multi-mesh application the blockwise FFT method additionally requires the specification of Dirichlet boundary conditions for cells at the interface between two adjacent meshes. This isn't necessary for the LU-, CG- and GMG-methods as they all solve the corresponding global problem without extra settings at mesh interfaces.
 
 As a member of the Neumann conditions the _no-flux_ or _forced-flow_ condition
-~ Equation { #eq-alignment; caption:"Alignment example" }
+~ Equation { #EQ_noflux; caption:"Alignment example" }
   \dod{{\cal H}}{n} = -F_n - \dod{u_n}{t} 
-  \label{EQ_noflux}
 ~
 is of special interest. % for the handling of internal obstructions.  
 $F_n$ denotes the normal component of $\bF$ at vents or solid walls and $\partial u_n/\partial t$
-the rate of change in the normal component  of velocity at a forced vent. In case of an internal obstruction consisting of a stationary non reaction solid material, a _homogeneous_ Neumann condition is present, i.e. the right hand side of (\ref{EQ_noflux}) is zero.
+the rate of change in the normal component  of velocity at a forced vent. In case of an internal obstruction consisting of a stationary non reaction solid material, a _homogeneous_ Neumann condition is present, i.e. the right hand side of ([#EQ_noflux]) is zero.
 
 If the mesh blocks are discretized including all solid obstructions within the computational domain, cells internal to the obstructions are masked as blocked cells. But without exception all of these cells are incorporated into the resulting discretization matrix by application of the same matrix stencil all over the domain. Thus, the matrix takes a highly regular shape such that optimized solvers can be applied.
 
-While the no-flux boundary condition is exact at external boundaries, it is not possible to directly prescribe the homogeneous no-flux condition at internal boundaries. To reduce flow penetration into the obstructions, a direct forcing method is currently applied in FDS. In each time step, this method requires the repeated application of the blockwise FFT method until the normal components of velocity are driven to within a specified tolerance. This approach guarantees that the total flux into a given obstruction is always identically zero, even if the normal components of velocity may contain small errors. For more details see the FDS Technical Guide \ref{REF_fdstechguide}.
+While the no-flux boundary condition is exact at external boundaries, it is not possible to directly prescribe the homogeneous no-flux condition at internal boundaries. To reduce flow penetration into the obstructions, a direct forcing method is currently applied in FDS. In each time step, this method requires the repeated application of the blockwise FFT method until the normal components of velocity are driven to within a specified tolerance. This approach guarantees that the total flux into a given obstruction is always identically zero, even if the normal components of velocity may contain small errors. For more details see the FDS Technical Guide [@REF_fdstechguide].
 
 The only way to get rid of these penetration errors is to discretize exclusively on cells that belong to the gas phase. Now, all cells internal to solid obstructions are omitted from the discretization matrix.  On gas cells which are directly adjacent to the surface of an obstruction the proper boundary conditions are explicitly specified and included to the matrix. In contrast to structured case this strategy requires the usage of individual matrix stencils for the different grid cells depending on their location with respect to obstructions. While the resulting
 discretization matrix has less entries than before, it hasn't a regular shape anymore and the choice of efficient solvers gets much more difficult.
 
 The different settings for the matrix entries in case of the structured and unstructured approach are illustrated below.
-Figure (\ref{FIG_geometry_and_velocity}) outlines a simple 2D geometry with an angled obstruction and the computed FDS velocity field.
+Figure ([#FIG_geometry_and_velocity]) outlines a simple 2D geometry with an angled obstruction and the computed FDS velocity field.
 The external boundary conditions for the forced in- and outflow are prescribed by corresponding forced-flow Neumann conditions.
 For both, the structured and unstructured discretization, these external boundary settings are similarly included to the discretization matrix and therefore not considered any further.
 
-~ Figure { #FIG_fivepointstencilFIG_geometry_and_velocity; caption:"Simple 2D geometry with obstruction and resulting flow field"}
+~ Figure { #FIG_geometry_and_velocity; caption:"Simple 2D geometry with obstruction and resulting flow field"}
 
 ![geometry_and_velocity]
 ![democase_velocity_field]
 ~
-[geometry_and_velocity]: { pictures/geometry_and_velocity.png }
-[democase_velocity_field]: { pictures/democase_velocity_field.png }
+[geometry_and_velocity]:  pictures/geometry_and_velocity.png { height:6cm} 
+[democase_velocity_field]:  pictures/democase_velocity_field.png  { height:6cm} 
 
 
 But the differences get obvious for the treatment of the internal obstruction:
@@ -295,7 +295,6 @@ But the differences get obvious for the treatment of the internal obstruction:
 
 
 ~ Begin Figure { #FIG_structures_vs_unstructured; caption:"Matrix generation and grid numbering for structured and unstructured cartesian grids"}
-
 [INCLUDE="tikz/structured_vs_unstructured.tex"]
 ~
 
