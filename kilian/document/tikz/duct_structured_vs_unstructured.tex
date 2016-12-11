@@ -1,0 +1,109 @@
+%--------------------------------------------------------------------------------------------------------------------
+% Left picture: Structured grid
+%--------------------------------------------------------------------------------------------------------------------
+\begin{minipage}[b]{0.44\textwidth}
+\centering {\small \hspace{-1mm}Structured grid}\\[1ex]
+\hspace{2mm}
+\begin{tikzpicture}
+[
+ scale=0.8,
+ every node/.style ={scale=0.8},
+ inner sep=0.5mm,
+ BLUECIRC/.style={circle, draw=black!50, fill=blue!10, thin, minimum size=7.5mm},
+ REDCIRC/.style={circle, draw=black!50, fill=red!10, thin, minimum size=7.5mm},
+ OBST/.style={rectangle, draw=black!50, fill=black!30, thin, minimum size=10mm},
+ CELL/.style={rectangle, draw=black!50, fill=black!02,   thin, minimum size=10mm},
+ ],
+%
+\foreach \y in {0,1,2,3,4,5,6,7}
+   \foreach \x in {1,2,3,4,5,6}
+      {
+        \node [CELL]    at ( \x, \y)  {};
+       }
+ %      
+\node  at (8.3,4)  {\Large \,$\cdot \,\frac{1}{h^2}$};      
+%
+\draw [draw=blue, line width=1.5 pt] (0.5,5.5) -- (3.5,5.5);
+\draw [draw=blue, line width=1.5 pt] (3.5,0.5) -- (3.5,5.5); 
+%
+\node [BLUECIRC]  (XS)   at ( 4, 1)  {$-1$};
+\node [BLUECIRC]  (XW)  at ( 3, 2)  {$-1$};
+\node [BLUECIRC]  (XC)   at ( 4, 2)  {$4$};
+\node [BLUECIRC]  (XN)   at ( 4, 3)  {$-1$};
+\node [BLUECIRC]  (XE)   at ( 5, 2)  {$-1$};
+%
+\node [BLUECIRC]  (YS)   at ( 3, 4)  {$-1$};
+\node [BLUECIRC]  (YW)  at ( 2, 5)  {$-1$};
+\node [BLUECIRC]  (YC)   at ( 3, 5)  {$4$};
+\node [BLUECIRC]  (YN)   at ( 3, 6)  {$-1$};
+\node [BLUECIRC]  (YE)   at ( 4, 5)  {$-1$};
+
+%
+\draw [thick]  (XC.south)  -- (XS.north) ;
+\draw [thick]  (XC.west)   -- (XW.east) ;
+\draw [thick]  (XC.north)  -- (XN.south) ;
+\draw [thick]  (XC.east)  -- (XE.west) ;
+%
+\draw [thick]  (YC.south)  -- (YS.north) ;
+\draw [thick]  (YC.west)   -- (YW.east) ;
+\draw [thick]  (YC.north)  -- (YN.south) ;
+\draw [thick]  (YC.east)  -- (YE.west) ;
+%
+\end{tikzpicture}
+\end{minipage}
+%
+\hspace{5mm}
+%--------------------------------------------------------------------------------------------------------------------
+% Right picture: Unstructured grid
+%--------------------------------------------------------------------------------------------------------------------
+\begin{minipage}[b]{0.44\textwidth}
+\centering {\small \hspace{-1mm}Unstructured grid}\\[1ex]
+\hspace{2mm}
+\begin{tikzpicture}
+[
+ scale=0.8,
+ every node/.style ={scale=0.8},
+ inner sep=0.5mm,
+ BLUECIRC/.style={circle, draw=black!50, fill=blue!10, thin, minimum size=7.5mm},
+ REDCIRC/.style={circle, draw=black!50, fill=red!10, thin, minimum size=7.5mm},
+ OBST/.style={rectangle, draw=black!50, fill=black!30, thin, minimum size=10mm},
+ CELL/.style={rectangle, draw=black!50, fill=black!02,   thin, minimum size=10mm},
+ ],
+%
+\foreach \y in {0,1,2,3,4,5,6,7}
+   \foreach \x in {1,2,3,4,5,6}
+      {
+        \node [CELL]    at ( \x, \y)  {};
+       }
+ %      
+\node  at (8.3,4)  {\Large \,$\cdot \,\frac{1}{h^2}$};      
+%
+\draw [draw=blue, line width=1.5 pt] (0.5,5.5) -- (3.5,5.5);
+\draw [draw=blue, line width=1.5 pt] (3.5,0.5) -- (3.5,5.5); 
+%
+\node [REDCIRC]  (XS)   at ( 4, 1)  {$-1$};
+%\node [REDCIRC]  (XW)  at ( 3, 2)  {$-1$};
+\node [REDCIRC]  (XC)   at ( 4, 2)  {$3$};
+\node [REDCIRC]  (XN)   at ( 4, 3)  {$-1$};
+\node [REDCIRC]  (XE)   at ( 5, 2)  {$-1$};
+%
+\node [REDCIRC]  (YS)   at ( 3, 4)  {$-1$};
+\node [REDCIRC]  (YW)  at ( 2, 5)  {$-1$};
+\node [REDCIRC]  (YC)   at ( 3, 5)  {$2$};
+%\node [REDCIRC]  (YN)   at ( 3, 6)  {$-1$};
+%\node [REDCIRC]  (YE)   at ( 4, 5)  {$-1$};
+
+%
+\draw [thick]  (XC.south)  -- (XS.north) ;
+%\draw [thick]  (XC.west)   -- (XW.east) ;
+\draw [thick]  (XC.north)  -- (XN.south) ;
+\draw [thick]  (XC.east)  -- (XE.west) ;
+%
+\draw [thick]  (YC.south)  -- (YS.north) ;
+\draw [thick]  (YC.west)   -- (YW.east) ;
+%\draw [thick]  (YC.north)  -- (YN.south) ;
+%\draw [thick]  (YC.east)  -- (YE.west) ;
+%
+\end{tikzpicture}
+\end{minipage}
+%
