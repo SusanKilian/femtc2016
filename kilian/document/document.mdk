@@ -8,9 +8,15 @@ Email         : s.kilian@hhpberlin.de
 
 Bibliography  : references.bib
 Logo          : False
-Tex Header    :
+Package     : tikz
+Tex Header  : \usetikzlibrary{decorations.pathreplacing%
+                             ,decorations.pathmorphing}
   \def\refname{&name-references;}
 name-references : REFERENCES
+
+~ MathDefs
+[INCLUDE="declarations.tex"]
+~
 
 [TITLE]
 
@@ -26,22 +32,22 @@ The paper and its associated talk are intended to give some insights into the cu
 [femtc2016]: https://github.com/thunderheadeng/femtc2016
 [emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
 
-# MOTIVATION { #sec-intro }
+# MOTIVATION 
 The efficient solution of the Poisson equation for the pressure is an essential part in 
 many CFD codes for the simulation of realistic flow phenomena.
-There are a two main classes of numerical solvers for the Poisson equation, namely {\it direct} and {\it iterative} ones, with various representatives each. Both classes differ comprehensively regarding the underlying algorithmic approach which strongly influences their applicability and efficiency for different problem types.
+There are a two main classes of numerical solvers for the Poisson equation, namely _direct_ and _iterative_ ones, with various representatives each. Both classes differ comprehensively regarding the underlying algorithmic approach which strongly influences their applicability and efficiency for different problem types.
 
 The numerical simulation of fire scenarios with respect to both their high geometric complexity and their extreme computational requirements represents a particular challenge when selecting a suitable pressure solver. 
 In view of their use in the solution procedure of FDS several advantages and disadvantages are associated with the different choices. %which are illustrated in more detail below.
 
 A basic design feature of FDS for the mapping of the considered geometry is the use of one or more cubic blocks (meshes) using a rectilinear grid decomposition each. Objects like walls or other obstacles which are internal to those meshes are represented as rectangular shapes conforming with the underlying mesh grid. 
 
-Currently, the solution of the FDS Poisson equation is achieved by a representative of the direct Poisson solvers, namely a highly optimized blockwise {\it Fast Fourier Transformation} (FFT) solver which is part of CRAYFISHPAK, a vectorized form of the elliptic equation solver FISHPAK originally developed at the National Center for Atmospheric Research (NCAR) in Boulder, Colorado. 
+Currently, the solution of the FDS Poisson equation is achieved by a representative of the direct Poisson solvers, namely a highly optimized blockwise _Fast Fourier Transformation_ (FFT) solver which is part of CRAYFISHPAK, a vectorized form of the elliptic equation solver FISHPAK originally developed at the National Center for Atmospheric Research (NCAR) in Boulder, Colorado. 
 On every single mesh a local FFT is performed which produces a correct solution (up to machine precision) to the related local Poisson problem. Afterwards the local solutions are clustered together by means of an interconnecting process along the mesh interfaces. This strategy has proven to be extremely fast and robust for many different constellations.
 
 But the use of this solver is basically restricted to uniform meshes. Therefore, all cells internal to immersed obstacles must be included into the system of equations which my lead to non-zero normal components of velocity at internal obstacles even in case of solid boundaries with no mass transfer. 
 
-In order to compensate this 'penetration' an additional iterative {\it direct forcing immersed boundary method} \cite{stillmissing} is used. In every time step it requires the repeated blockwise FFT-solution of the Poisson equation until a specified tolerance for the velocity error has been reached. 
+In order to compensate this 'penetration' an additional iterative _direct forcing immersed boundary method_ \cite{stillmissing} is used. In every time step it requires the repeated blockwise FFT-solution of the Poisson equation until a specified tolerance for the velocity error has been reached. 
 
 A similar strategy comes into effect along mesh interfaces, because the mentioned interconnection process namely produces a continuous global Poisson solution but isn't able to guarantee that the normal components of velocity match there, too.
 In the worst case this 'velocity-correction' method may be slow and increase the resulting computational costs.
@@ -50,13 +56,17 @@ Finally, the purely blockwise execution of FFT methods doesn't take sufficient a
 
 In order to get rid of these drawbacks, some other Poisson solvers are taken into account for the solution of the FDS pressure equation:
 
- - another direct solver, namely the shared-memory multiprocessing {\it parallel direct sparse solver} ({PARDISO}) of the Intel Math Kernel Library (Intel MKL), and its version for {\it clusters interfaces} ({CLUSTER\_SPARSE\_SOLVER}),
- -  different iterative solvers based on {\it Scalable Recursive Clustering} (ScaRC) which combine techniques of {\it conjugated gradient methods} (CG) and/or {\it geometric multigrid methods} (GMG)  with optimized preconditioning/smoothing techniques.
+ - another direct solver, namely the shared-memory multiprocessing _parallel direct sparse solver_ ({PARDISO}) of the Intel Math Kernel Library (Intel MKL), and its version for _clusters interfaces_ ({CLUSTER\_SPARSE\_SOLVER}),
+ -  different iterative solvers based on _Scalable Recursive Clustering_ (ScaRC) which combine techniques of _conjugated gradient methods_ (CG) and/or _geometric multigrid methods_ (GMG)  with optimized preconditioning/smoothing techniques.
 
 Both variants are able to scope with unstructured meshes such that cells internal to obstacles can now be omitted from the system of equations and the correct internal boundary conditions can be set. Furthermore, all different representatives actually compute the correct normal components of velocity along mesh interfaces. All in all, there is no need to apply an additional velocity-correction method any more. 
 
 However, the computational costs for all considered variants may be far higher compared to the current FFT-solver depending on the underlying constellation. Therefore, the proper choice of the Poisson solver for a given application requires a sensible consideration of the specific advantages and disadvantages.
 To provide a basic overview, the different solution techniques will be explained in more detail and analyzed with respect to their accuracy and scalability properties as well as their computational times.
+
+
+
+
 
 # DIFFERENT POISSON SOLVERS { #PoissonEq }
 
@@ -67,7 +77,7 @@ Based on its non-conservative formulation, the momentum equation can be simplifi
 ~
 by a series of substitutions.
 Taking the divergence of equation (\ref{EQ_momentum}) the pressure equation of FDS reads as
-~ Equation { #EQ_pressure; caption:" " } 
+~ Equation { #EQ_pressure; caption:"Alignment example" }
   \nabla^2 \cH =-\dod{(\nabla \cdot {\bf u})}{t} - \nabla \cdot \bF\,. 
 ~
 The pressure term $\cH \equiv |\bu|^2/2 + \tp/\rho$ includes the velocity field $\bu$, the density $\rho$ as well as the perturbation pressure $\tp$ which drives the fluid motion. The force term $\bF$ is defined as sum of an advective term $\bF_{\rm A}$ and a baroclinic term $\bF_{\rm B} $. Note that $\bF_{\rm B} $ also contains the perturbation pressure $\tp$ which is taken from the last computed $\cH$ during time iteration. 
@@ -77,12 +87,247 @@ For a detailed derivation of the pressure equation
 
 see the FDS Technical Guide \cite{REF_fdstechguide}.  
 
-From a mathematical point of view this so-called {\it Poisson equation} is an elliptic partial differential equation of second order for which different types of boundary conditions i.e., for open and solid boundaries must be specified.
+From a mathematical point of view this so-called _Poisson equation_ is an elliptic partial differential equation of second order for which different types of boundary conditions i.e., for open and solid boundaries must be specified.
 
-The numerical time-stepping scheme in FDS, an {\it explicit second-order predictor/corrector scheme}, requires the solution of equation (\ref{EQ_pressure}) at least twice per time iteration. Because of its strong interaction with the calculation of all other thermodynamic quantities, the solution of the pressure equation is an essential step in the whole time marching scheme and must be treated very efficiently.
+The numerical time-stepping scheme in FDS, an _explicit second-order predictor/corrector scheme_, requires the solution of equation (\ref{EQ_pressure}) at least twice per time iteration. Because of its strong interaction with the calculation of all other thermodynamic quantities, the solution of the pressure equation is an essential step in the whole time marching scheme and must be treated very efficiently.
 
 Due to the mathematical theory, a purely local approach isn't sufficient to reproduce the global data dependencies for elliptic problems.
 Increasing the number of subdomains will worsen the convergence rate, possibly right up to divergence at a (problem-dependent) critical number of subdomains. To find a remedy, a domain-spanning correction process must take place which is able to couple the local solutions and spread global information all over the domain.
+
+
+## Discretization of the Poisson equation
+
+Based on a subdivision of the underlying geometric domain $\Omega$ into cubic subdomains $\Om, \, \dmM$, with rectilinear grid decompositions each, the spatial derivative of $\cH$ in equation (\ref{EQ_pressure}) is now discretized by a second-order accurate finite difference method. 
+Note that scalar quantities in FDS such as the pressure are assigned in the center of each grid cell. 
+
+Now, the discretized form of the Poisson equation reads as
+~ Equation { #EQ_discretepoisson; caption:" " }
+\begin{aligned}
+\frac{\cH_{i+1,jk}-2\cH_{ijk}+\cH_{i-1,jk}}{\dx^2} +
+\frac{\cH_{i,j+1,k}-2\cH_{ijk}+\cH_{i,j-1,k}}{\dy^2} +
+\frac{\cH_{ij,k+1}-2\cH_{ijk}+\cH_{ij,k-1}}{\dz^2} \notag \\ =
+    -\frac{F_{\x,ijk} - F_{\x,i-1,jk}}{\dx}
+    -\frac{F_{\y,ijk} - F_{\y,i,j-1,k}}{\dy}
+    -\frac{F_{\z,ijk} - F_{\z,ij,k-1}}{\dz} - \frac{\delta}{\delta t}(\nabla\!\cdot \bu)_{ijk}
+\end{aligned}
+~
+where different discretisations for the time derivative of the divergence are used in the predictor and corrector step of the time marching scheme, see the FDS Technical Guide \cite{TechGuide}. 
+
+
+In the single-mesh case with a local discretization of $\Omega$ into $n$ grid cells, this discretization process leads to the following system of equations
+~ Equation { #eq-alignment; caption:"Alignment example" }
+  Ax = b\,, 
+  \label{EQ_singlesystem}
+~
+where  $x, \,b$ are vectors in $\mathbb{R}^n$  and A is the well-known _7-point matrix_ in $\mathbb{R}^{n \times n}$ with its _5-point_ counterpart in 2D as indicated in Figure (\ref{FIG_fivepointstencil}). Note that the vector $x$ corresponds to the single components $\cH_{ijk}$ and $b$ to the right hand side entries of Equation (\ref{EQ_discretepoisson}) for short.
+
+In the multi-mesh case, there are  $N$ local systems of equations
+~ Equation { #eq-alignment; caption:"Alignment example" }
+   \Am \xm = \bm\, \qquad \dmM, 
+  \label{EQ_multisystem}
+~
+where each subdomain $\Om$ has $\nm$ local grid cells. Here, $\Am \in \mathbb{R}^{\nm\times \nm}$ is the local system matrix  on subgrid $\Om$ 
+with corresponding local solution vector  $\xm$ and right hand side vector $\bm $ in $\mathbb{R}^{\nm}$ each. Informally spoken, $\Am$ is  the restriction of the global matrix $A$ to the subdomain $\Om$, i.e. $\Am \sim "\restrict{A}{\Om}".$
+
+\begin{figure}[htb]
+\begin{center}
+\input{tikz/matrix_stencil}
+\caption{Five-point matrix stencil for equidistant grid size $h$ in 2D}
+\label{FIG_fivepointstencil}
+\end{center}
+\end{figure}
+
+\newpage
+
+
+
+\subsection{Direct versus Iterative Poisson solvers}
+
+
+Typical approaches for the solution of the Poisson equation
+
+belong either to the class of direct or iterative solvers whose basic properties will be summarized below.
+
+
+
+
+\subsubsection{Direct solvers} { #SEC_direct_solvers }
+
+Direct solvers compute the solution of the system of equations (\ref{EQ_singlesystem}) in only one single computational cycle which may be very complex. Usually, they are performed with enormous speed and are used for the demonstration of potential computer power, see the LINPACK-tests by Dongorra et al. \cite{Dongorra}. They have proven to be very robust even in the non-symmetric and ill-conditioned case. Besides, they are nearly independent of the degree of grid distortion (except of rounding errors) and well suited for the application on unstructured grids.
+
+
+\paragraph{\bf { $\boldmath{LU}$}-factorization: } \mbox{}\\[0.2ex]
+Within the framework of the _Gaussian elimination algorithm_, many direct algorithms are based on the computation of the  $LU$-_factorization_ for a permutation of the system matrix, $PAQ = LU$, 
+with suitable permutation matrices $P$ and $Q$ and the lower and upper triangular matrices $L$ and $U$, respectively. The solution can then be obtained using a forward substitution step, $Ly=P^Tb$, followed by a backward substitution step, $U(Q^Tx)=y$.
+If $A$ is symmetric a _Cholesky factorization_, $PAP^T=LL^T$, can be applied.
+
+Commonly, the whole process can be subdivided into three phases:
+(i) an _reordering phase_  where the matrix is analyzed to produce an ordering of the matrix which allows a more efficient factorization,
+(ii) a _factorization phase_ where the $LU$-factorization is actually computed and stored, 
+(iii) a _solution phase_ where the forward and backward substitution is performed.
+Typically, the factorization phase (ii) requires the most computing time while the solution phase (iii) is an order of magnitude faster.
+
+A disadvantage of this strategy is that less benefit can be drawn from a very convenient property of 
+
+the discretization matrix $A$, namely its intrinsic _sparsity_:
+Even though $A$ has only very few non-zero entries compared to the total number of entries $n$, 
+
+the factorization process leads to _fill-in_, i.e., produces non-zero entries in $L$ and $U$ where $A$ was zero before. 
+The computing and storing of both triangular matrices can become prohibitively expensive, especially in case of huge systems of equations with hundreds of millions of unknowns. For the assessment of the computational efficiency for a given application the resulting fill-in is a decisive criterion.
+
+
+
+
+
+
+\paragraph{\bf Fast Fourier Transformation: } \mbox{}\\[0.2ex]
+Spectral solvers like the Fast Fourier Transformation exploit a very special property of the underlying Poisson problem, namely that sine and cosine functions are eigenvectors of the Laplace operator. They expand the solution as a Fourier series which can be quickly performed at rather low complexity. In practise, this approach has proven to by extremely efficient and is used in many different fields of application. But in contrast to the $LU$-approach, it is restricted to structured grids which may impede the use for complex geometries.
+
+
+\vspace{2mm}
+Both, the $LU$- and the FFT-solvers, are based on highly recursive algorithms which couple the overall data of the whole domain. In case of single-mesh applications this fact very good reflects the mentioned requirements of the pressure with respect to globality.
+However, for (massively) parallel applications with many meshes this property inevitably causes dependencies on the number of meshes and can considerably decrease the resulting efficiency and/or accuracy. 
+
+
+To diminish this effect, the basic methods can be combined with additional strategies. For instance, in FDS the local FFT-solutions are embedded into an iterative update for the velocity components coupling the local solutions by averaging coincident values of the normal velocity at adjacent mesh interfaces.
+
+Nevertheless, for problems of moderate size, especially if only a few meshes are used, direct solvers may be incomparably fast and should be preferred to iterative ones.
+
+
+
+
+
+
+\subsubsection{Iterative solvers}
+Iterative solvers perform multiple computational cycles producing a sequence of iterates which gradually improve an initial estimate of the solution until a specified tolerance has been reached. 
+
+Usually, they are easier to implement than direct ones, because they can be reduced to a series of core components such as matrix-vector multiplications, linear-combinations of vectors, scalar-products, etc. which may be suitably optimized. The computational complexity associated with each single computational cycle is comprehensively less compared to direct methods. Thus, the decisive question is how many of those cycles are needed for convergence.
+
+Because iterative methods don't produce any fill-in, they preserve the sparsity structure of the system matrix and are much less demanding 
+with respect to  storage requirements than direct methods.
+
+However, they may depend on special properties of the underlying problem such as symmetry or positive-definiteness. Convergence can be very slow for ill-conditioned problems such that many iterations may be needed. Furthermore, they often require the optimal choice of different method problem-dependent parameters which are highly individual and difficult to predict.
+
+The rate of convergence usually depends on the grid resolution, but can be considerably improved by a suitable _preconditioning matrix_ $B \in \mathbb{R}^{n \times n}$ which transforms the original system $Ax=b$  into  an equivalent system $B^{-1}Ax=B^{-1}b$ which may be solved much faster. 
+
+The more special properties of the given application can be incorporated into $B$, the better the convergence is, but the higher the computational costs are, too.
+
+Based on $B$, the core component of an iterative method is a simple defect correction scheme, the so-called _basic iteration_,
+
+  $x^k = x^{k-1} - \omega B^{-1}(Ax^{k-1} - b)\,, $
+
+
+which is used to minimize the _defect_  $d^{k-1}:=A x^{k-1} -b$ which indicates how good $Ax=b$ is fullfilled by the current iterate $x^k$ (measured in a suitable norm).
+Here, $x^k, x^{k-1}$ are vectors in $\mathbb{R}^{n}$ with an initial guess $x^0$, and $\omega$ is a  _relaxation parameter_ which must be chosen very carefully.
+
+Simple candidates for $B$ are $B_{diag}\sim `` \mbox{diagonal of \;} A ''$, which corresponds to the _Jacobi scheme_, or $B_{ssor} \sim  `` \mbox{lower triangular part of \;}A ''$, which corresponds to the _Gauss-Seidel scheme_. 
+
+On its own, the basic iteration is inefficient and takes many iterations to produce a reasonable solution. But the single representatives can be embedded into much stronger surrounding schemes: 
+
+
+\paragraph{\bf Conjugate gradient methods: } \mbox{}\\[0.2ex]
+CG-methods belong to the class of _Krylov subspace_ methods which are based on solving the equivalent minimization problem $F(x)=1/2\, x^T A x - x^T b \rightarrow 0$ 
+
+in the direction of the steepest gradient.
+They are restricted to symmetric positive-definite problems and only need less storage space for several auxiliary vectors. They are largely based on matrix-vector multiplications which only require cheap local data-exchanges between neighboring meshes. Besides, they also rest on global scalar products which require more expensive global data-exchanges between all meshes but also contribute to a stronger global coupling.
+
+
+
+
+
+\paragraph {\bf Geometric multigrid methods: } \mbox{}\\[0.2ex]
+\begin{minipage}[t]{0.62\textwidth}
+GMG-methods use a complete hierarchy of grids with different resolutions and are able to achieve fast convergence rates independent of the grid size with moderate computational complexity.
+The basic idea is to improve the convergence speed of the basic iteration by correcting the defects on successively coarser grids whose data are interpolated between each other. The process explicitly exploits the so-called _smoothing property_ of the single representatives of the basic iteration, namely that they smooth out the high frequent error components very fast.
+\end{minipage}
+\hspace{-5mm}
+\begin{minipage}[t]{0.3\textwidth}
+\begin{center}
+{\scriptsize Interpolation between levels}
+\includegraphics[height=3cm]{pictures/grid_transfer_gmg.png}
+\end{center}
+\end{minipage}
+
+
+\vspace{2mm}
+Both, CG- and GMG-methods, are able to reasonably improve the speed of convergence returning the exact solution in a moderate or even small number of iterations depending on the underlying problem. For a detailed overview of iterative methods see \ref{}. 
+
+With regard to an efficient parallelization, iterative methods seem to be much easier and more universally applicable than direct ones. 
+In the context of domain decomposition % as it is used in FDS 
+a natural choice for preconditioning is the blockwise solution of the local mesh problems known as _Schwarz preconditioning_. But again, this approach necessarily leads to dependencies of the number of meshes which can impair the speedup especially for massively parallel applications.%\be
+
+
+
+
+
+
+
+\subsection{Structured versus unstructured discretization}
+
+The appropriate treatment of the boundary conditions is of major importance for the accuracy of the whole numerical solution of the pressure equation. There are two different classes of boundaries conditions which must be specified at mesh faces matching with the borders of the computational domain:
+
+ - {\bf Dirichlet boundary conditions: } \mbox{}\\[0.2ex]
+This type of boundary condition is applied to open boundaries, where the fluid motion into or out of the domain is driven by the pressure gradient. In this case a value for ${\cal H}$ itself must be specified at the corresponding grid cells.
+ - {\bf Neumann boundary conditions: } \mbox{}\\[0.2ex]
+This type of boundary condition is applied to internal solid obstructions as well as external faces which are entirely determined by a forced flow or a solid. In this case a value for the normal gradient $\partial {\cal H}/\partial n$ must be specified at the corresponding grid cells.
+
+
+
+If there is a mix of open and solid surfaces along an external face, the specification of the Dirichlet condition is given precedence to the Neumann condition (i.e. it is more important to specify the direct value of ${\cal H}$ than its gradient).
+
+In case of a multi-mesh application the blockwise FFT method additionally requires the specification of Dirichlet boundary conditions for cells at the interface between two adjacent meshes. This isn't necessary for the LU-, CG- and GMG-methods as they all solve the corresponding global problem without extra settings at mesh interfaces.
+
+As a member of the Neumann conditions the _no-flux_ or _forced-flow_ condition
+~ Equation { #eq-alignment; caption:"Alignment example" }
+  \dod{{\cal H}}{n} = -F_n - \dod{u_n}{t} 
+  \label{EQ_noflux}
+~
+is of special interest. % for the handling of internal obstructions.  
+$F_n$ denotes the normal component of $\bF$ at vents or solid walls and $\partial u_n/\partial t$
+the rate of change in the normal component  of velocity at a forced vent. In case of an internal obstruction consisting of a stationary non reaction solid material, a _homogeneous_ Neumann condition is present, i.e. the right hand side of (\ref{EQ_noflux}) is zero.
+
+If the mesh blocks are discretized including all solid obstructions within the computational domain, cells internal to the obstructions are masked as blocked cells. But without exception all of these cells are incorporated into the resulting discretization matrix by application of the same matrix stencil all over the domain. Thus, the matrix takes a highly regular shape such that optimized solvers can be applied.
+
+While the no-flux boundary condition is exact at external boundaries, it is not possible to directly prescribe the homogeneous no-flux condition at internal boundaries. To reduce flow penetration into the obstructions, a direct forcing method is currently applied in FDS. In each time step, this method requires the repeated application of the blockwise FFT method until the normal components of velocity are driven to within a specified tolerance. This approach guarantees that the total flux into a given obstruction is always identically zero, even if the normal components of velocity may contain small errors. For more details see the FDS Technical Guide \ref{REF_fdstechguide}.
+
+The only way to get rid of these penetration errors is to discretize exclusively on cells that belong to the gas phase. Now, all cells internal to solid obstructions are omitted from the discretization matrix.  On gas cells which are directly adjacent to the surface of an obstruction the proper boundary conditions are explicitly specified and included to the matrix. In contrast to structured case this strategy requires the usage of individual matrix stencils for the different grid cells depending on their location with respect to obstructions. While the resulting
+discretization matrix has less entries than before, it hasn't a regular shape anymore and the choice of efficient solvers gets much more difficult.
+
+The different settings for the matrix entries in case of the structured and unstructured approach are illustrated below.
+Figure (\ref{FIG_geometry_and_velocity}) outlines a simple 2D geometry with an angled obstruction and the computed FDS velocity field.
+The external boundary conditions for the forced in- and outflow are prescribed by corresponding forced-flow Neumann conditions.
+For both, the structured and unstructured discretization, these external boundary settings are similarly included to the discretization matrix and therefore not considered any further.
+
+\begin{figure}[htb]
+\begin{center}
+\begin{minipage}[t]{0.42\textwidth}
+
+\includegraphics[height=6.7cm]{pictures/geometry_and_velocity.png}
+\end{minipage}
+\begin{minipage}[t]{0.42\textwidth}
+
+\hspace{1cm}\includegraphics[height=6.7cm]{pictures/democase_velocity_field.png}
+\end{minipage}
+\label{FIG_geometry_and_velocity}
+\caption{Simple 2D geometry with obstruction and resulting flow field}
+\end{center}
+\end{figure}
+
+But the differences get obvious for the treatment of the internal obstruction:
+
+ - In the structured case the single grid cells are numbered in a lexicographic order including all cells within the obstruction and starting from the bottom left cell up to the top right cell. Here, the cell indices for the different coordinate directions are simply varied one after the other. Based on this regular numbering the connectivity graph of the matrix is clearly defined and the same matrix stencil is applied for all grid cells which allows the usage of the optimized FFT-solver.
+ - In the unstructured case,  there is no seamless numbering any more because the obstruction is excluded from the numbering. Instead, an additional connectivity list must be stored which specifies the neighborhood relations between the single grid cells. For every single cell an individual matrix stencil must be applied which prevents the usage of the optimized FFT-solver. But the unstructured discretization offers more flexibility and accuracy because the boundary information along the internal obstruction is now included into the system.
+
+
+\begin{figure}[htb]
+\begin{center}
+\include{tikz/structured_vs_unstructured}
+\caption{Matrix generation and grid numbering for structured and unstructured cartesian grids}
+\label{FIG_structures_vs_unstructured}
+\end{center}
+\end{figure}
+
+
 
 # MAIN -------------------
 Main Headings are all upper case letters and underlined. In Madoko, a
