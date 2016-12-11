@@ -1,9 +1,11 @@
+~ Begin SubFigureRow { vertical-align: bottom }
+~ SubFigure { #fig-subfig1; caption:"Structured discretization" }
+
+~~ Snippet
 %--------------------------------------------------------------------------------------------------------------------
 % Left lower picture: Structured grid
 %--------------------------------------------------------------------------------------------------------------------
-\begin{minipage}[b]{0.44\textwidth}
-\centering {\small \hspace{-1mm}Structured discretization}\\[1ex]
-\hspace{2mm}
+
 \begin{tikzpicture}
 [
  scale=0.6,
@@ -137,15 +139,10 @@
 \draw[color=gray]   node at (6.7,8.7) {\tiny 77};
 %
 \end{tikzpicture}
-\end{minipage}
-%
-\hspace{5mm}
-%--------------------------------------------------------------------------------------------------------------------
-% Right lower picture: Unstructured grid
-%--------------------------------------------------------------------------------------------------------------------
-\begin{minipage}[b]{0.44\textwidth}
-\centering {\small\hspace{-2mm}Unstructured discretization}\\[1ex]
-\hspace{1mm}
+~~
+~
+~ SubFigure { #fig-subfig1; caption:"Unstructured discretization" }
+~~ Snippet
 \begin{tikzpicture}
 [
  scale=0.6,
@@ -250,5 +247,8 @@
 \draw[color=gray]   node at (5.7,8.7) {\tiny 56};
 \draw[color=gray]   node at (6.7,8.7) {\tiny 57};
 \end{tikzpicture}
-\end{minipage}
 %
+~~
+~
+~ End SubFigureRow
+
