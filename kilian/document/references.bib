@@ -1,39 +1,171 @@
-@BOOK{ Knuth:TeX,
-  author   = "Knuth, Donald E.",
-  title    = "The {T}e{X} book",
-  publisher= "Addison-Wesley",
-  year     = 1984
+@TechReport{partI,
+ author = 	 {Kilian, S. and M\"unch, M.},
+ title = 	 {{A new generalized domain decomposition strategy for the efficient parallel solution of the FDS-pressure equation, Part I: Theory, Concept and Implementation}},
+ institution =  {Konrad-Zuse-Zentrum f\"ur Informationstechnik Berlin},
+ year = 	 {2009},
+ OPTkey = 	 {},
+ OPTtype = 	 {},
+ OPTaddress = 	 {Takustr. 7, 14195 Berlin},
+ OPTmonth = 	 {},
+ OPTnote = 	 {},
+ OPTannote = 	 {}
 }
 
-@BOOK{ Lamport:LaTeX,
-  author    = "Lamport, Leslie",
-  title     = "{LaTeX}: A Document Preparation System (2nd Edition)",
-  publisher = "Addison-Wesley",
-  year      = 1994,
-  note      = "See also \cite{Knuth:TeX}."
+@TechReport{partII,
+ author = 	 {M\"unch, M. and Kilian, S.},
+ title = 	 {{A new generalized domain decomposition strategy for the efficient parallel solution of the FDS-pressure equation, Part II: Verification and Valdiation}},
+ institution =  {Konrad-Zuse-Zentrum f\"ur Informationstechnik Berlin},
+ year = 	 {2009},
+ OPTkey = 	 {},
+ OPTtype = 	 {},
+ number = 	 {in preparation},
+ OPTaddress = 	 {Takustr. 7, 14195 Berlin},
+ OPTmonth = 	 {},
+ OPTnote = 	 {},
+ OPTannote = 	 {}
 }
 
-@INBOOK{ Grandstrand,
-  author   = {O. Grandstrand},
-  title    = {Innovation and Intellectual Property Rights},
-  chapter  = 10,
-  crossref = {Fberg04}
+@Book{Hackbusch1995/45,
+ publisher = {Teubner},
+ isbn = {3-519-02074-2},
+ title = {Theorie und Numerik elliptischer Differentialgleichungen},
+ series = {Teubner Studienbuecher: Mathematik},
+ author = {Hackbusch, W.},
+ year = {1986},
+ address = {Stuttgart}
 }
 
-@BOOK{ Fberg04,
-  editor    = {J. Fagerberg and D.C. Mowery and R.R. Nelson}, 
-  title     = {Oxford Handbook of Innovation},
-  booktitle = {Oxford Handbook of Innovation},
-  publisher = {Oxford University Press},
-  address   = {Oxford},
-  volume    = 1,
-  year      = 2004
+@BOOK{Hackbusch94,
+  author = {Hackbusch, W.},
+  title = {Iterative solution of large sparse systems of equations},
+  series = {Applied Mathematical Sciences},
+  volume = {95},
+  note = {Translated and revised from the 1991 German original},
+  publisher = {Springer-Verlag},
+  address = {New York},
+  year = {1994},
+  pages = {xxii+429},
+  ISBN = {0-387-94064-2},
+}
+@BOOK{Multigrid,
+  author = {Trottenberg, U. and Oosterlee, C. W. and Schüller, A.},
+  title = {Multigrid},
+  series = {Applied Mathematical Sciences},
+  publisher = {Elsevier Academic Press},
+  year = {2007},
+  pages = {xxii+631},
+  ISBN = {0-12-701070-X},
 }
 
-@BOOK{Goo93,
-  author    = "Goossens, Michel and Mittelbach, Frank and Samarin, Alexander",
-  title     = "The LaTeX Companion",
-  year      = "1993",
-  publisher = "Addison-Wesley",
-  address   = "Reading, Massachusetts"
+
+@PHDTHESIS{Kilian2002,
+ author       = {Kilian, S.},
+ title        = {{ScaRC: Ein verallgemeinertes Gebietszerlegungs--/\-Mehr\-gitterkonzept auf Parallelrechnern}},
+ school       = {Universit\"{a}t Dortmund},
+ publisher    = {Logos Verlag, Berlin},
+ year         = {2002},
+ address      = {Logos Verlag, Berlin},
+ note         = {ISBN 3-8325-0092-8},
+}
+
+@Misc{Kilian:Interschutz,
+ OPTkey = 	 {},
+ author = 	 {Kilian, S.},
+ title = 	 {{ScaRC: An optimized parallelization concept for the FDS-pressure equation based on adaptive mesh refinement techniques}},
+ howpublished = {The 11th international symposium of fire protection},
+ month = 	 {8.-9. Juni, Leipzig},
+ year = 	 {2010},
+ OPTnote = 	 {},
+ OPTannote = 	 {}
+}
+
+@BOOK{Saad03,
+ author = {Saad, Y.},
+ title = {Iterative methods for sparse linear systems},
+ edition = {Second},
+ publisher = {Society for Industrial and Applied Mathematics},
+ address = {Philadelphia, PA},
+ year = {2003},
+ pages = {xviii+528},
+ ISBN = {0-89871-534-2},
+}
+
+@MISC{MPIWebsite,
+      TITLE = "The Message Passing Interface (MPI) standard",
+      NOTE = "\url{http://www.mcs.anl.gov/research/projects/mpi/index.htm}",
+      author={Argonne National Laboratory}
+}
+
+@BOOK{Dong98,
+  author = {Dongarra, Jack J. and Duff, Lain S. and Sorensen, Danny C. and Vorst, Henk A. Vander},
+  title = {Numerical Linear Algebra for High Performance Computers},
+  year = {1998},
+  isbn = {0898714281},
+  publisher = {Society for Industrial and Applied Mathematics},
+  address = {Philadelphia, PA, USA},
+ }
+ 
+@Manual{FDSMathModel,
+  title = 	 {Fire Dynamics Simulator (Version 6)
+                  Technical Reference Guide, Volume 1: Mathematical Model},
+  OPTkey = 	 {},
+  author = 	 {McGrattan, Kevin B. and Hostikka, Simo and McDermott, Randall and Floyd, Jason and Weinschenk, Craig and Overholt, Kristopher},
+  organization = {National Institute of Standards and Technology},
+  OPTaddress = 	 {},
+  edition = 	 {6.1.1},
+  month = 	 {July},
+  year = 	 {2014}
+}
+
+@Manual{FDSVerification,
+  title = 	 {Fire Dynamics Simulator (Version 6)
+                  Technical Reference Guide, Volume 2: Verification},
+  OPTkey = 	 {},
+  author = 	 {McGrattan, Kevin B. and Hostikka, Simo and McDermott, Randall and Floyd, Jason and Weinschenk, Craig and Overholt, Kristopher},
+  organization = {National Institute of Standards and Technology},
+  OPTaddress = 	 {},
+  edition = 	 {6.1.1},
+  month = 	 {July},
+  year = 	 {2014}
+}
+
+@Manual{FDSValidation,
+  title = 	 {Fire Dynamics Simulator (Version 6)
+                  Technical Reference Guide, Volume 3: Validation},
+  OPTkey = 	 {},
+  author = 	 {McGrattan, Kevin B. and Hostikka, Simo and McDermott, Randall and Floyd, Jason and Weinschenk, Craig and Overholt, Kristopher},
+  organization = {National Institute of Standards and Technology},
+  OPTaddress = 	 {},
+  edition = 	 {6.1.1},
+  month = 	 {July},
+  year = 	 {2014}
+}
+
+
+
+@misc{ KilianTurek1998,
+  author = {Kilian, Susanne and Turek, Stefan},
+  title = {An example for parallel ScaRC and its application to the incompressible Navier-Stokes equations},
+  text = "KILIAN, S., TUREK, S.: An example for parallel ScaRC and its application to the incompressible Navier-Stokes equations, Proc. ENUMATH-97, Heidelberg, October 1997.",
+  year = "1997",
+  url = "citeseer.ist.psu.edu/article/kilian97example.html" 
+}
+
+@misc{Crayfishpak,
+  author = {Sweet, Roland, A.~},
+  title = {Crayfishpak: A vectorized Fortran package to solve Helmholtz equations},
+  }
+
+
+@ARTICLE{Xu1992,
+  author = {Xu, Jinchao},
+  title = {Iterative methods by space decomposition and subspace correction},
+  journal = {SIAM Rev.},
+  fjournal = {SIAM Review. A Publication of the Society for Industrial and
+              Applied Mathematics},
+  volume = {34},
+  year = {1992},
+  number = {4},
+  pages = {581--613},
+  ISSN = {0036-1445},
 }
