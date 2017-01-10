@@ -75,6 +75,7 @@ Performance based design flowchart and in red where advanced modelling is
 situated within the overall process.
 
 [PBD Chart]: images/PBD-Chart.jpg "PBD Chart" { width:auto; max-width:90% }
+
 ~ Figure { #PBD Chart; caption:"Performance based design flow chart."}
 ![PBD Chart]
 ~
