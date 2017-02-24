@@ -279,36 +279,38 @@ described here.
 ~
 
 ~ TableFigure {#tab-prep-trans, caption:"Preparation time and transportation walking speed for non-ambulant patients."}
-|                                                                         |||------|--------|---------|
-|                                                                         ||| Mean |St. Dev.|Range    |
-|:------------------------:|:-----------|:----------------------------------+:----:+:------:+:-------:+
-| Dependent patients [@10] | Evacuation | Preparation time (s)              | 32.7 | 5.3    | -       |
-|                          | Chair      |-----------------------------------|------|--------|---------|
-|                          |            | Transportation walking speed (m/s)| 1.46 | 0.09   | -       |
-|                          |------------|-----------------------------------|------|--------|---------|
-|                          | Carry      | Preparation time (s)              | 41.5 | 7.9    |         |
-|                          | Chair      |-----------------------------------|------|--------|---------|
-|                          |            | Transportation walking speed (m/s)| 1.50 | 0.10   | -       |
-|                          |------------|-----------------------------------|------|--------|---------|
-|                          | Stretcher  | Preparation time (s)              | 77.7 | 19.2   | -       |
-|                          |            |-----------------------------------|------|--------|---------|
-|                          |            | Transportation walking speed (m/s)| 1.04 | 0.09   | -       |
-|                          |------------|-----------------------------------|------|--------|---------|
-|                          | Rescue     | Preparation time (s)              | 65.2 | 14.1   | -       |
-|                          | Sheet      |-----------------------------------|------|--------|---------|
-|                          |            | Transportation walking speed (m/s)| 0.89 | 0.24   | -       |
-|--------------------------|------------|-----------------------------------|------|--------|---------|
-| Highly dependent patients [@11]      || Preparation time (s)              | -    | -      | 180-900 |
-|                                      ||-----------------------------------|------|--------|---------|
-|                                      || Transportation walking speed (m/s)| 0.40 | 0.04   | -       |
-| -------------------------------------||-----------------------------------|------|--------|---------|
-|                          |            |                                   |      |        |         |
+|                                                       |||------|--------|---------|
+|                                                       ||| Mean |St. Dev.|Range    |
+|:--------------:|:-----------|:--------------------------+:----:+:------:+:-------:+
+| Dependent      | Evacuation | Preparation time (s)      | 32.7 | 5.3    | -       |
+| patients [@10] | Chair      |                           |      |        |         |
+|                |            |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 1.46 | 0.09   | -       |
+|                |------------|---------------------------|------|--------|---------|
+|                | Carry      | Preparation time (s)      | 41.5 | 7.9    |         |
+|                | Chair      |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 1.50 | 0.10   | -       |
+|                |------------|---------------------------|------|--------|---------|
+|                | Stretcher  | Preparation time (s)      | 77.7 | 19.2   | -       |
+|                |            |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 1.04 | 0.09   | -       |
+|                |------------|---------------------------|------|--------|---------|
+|                | Rescue     | Preparation time (s)      | 65.2 | 14.1   | -       |
+|                | Sheet      |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 0.89 | 0.24   | -       |
+|----------------|------------|---------------------------|------|--------|---------|
+| Highly dependent           || Preparation time (s)      | -    | -      | 180-900 |
+| patients [@11]             ||                           |      |        |         |
+|                            ||---------------------------|------|--------|---------|
+|                            || Transportation speed (m/s)| 0.40 | 0.04   | -       |
+| ---------------------------||---------------------------|------|--------|---------|
+|                            ||                           |      |        |         |
 {  }
 ~
 
 There is a lack of data regarding the number of attendants needed to
 evacuate non-ambulant patients. Table [#tab-operators-roles] shows some
-values found on the available literature for dependent patients. As it is
+values found on the available literature for dependent patients[@10]. As it is
 shown in this table, the type of the transportation device used defines
 the number of required attendants to prepare the patient and to assist on
 the evacuation process. Comparing the different devices, we can conclude
@@ -318,26 +320,27 @@ attendants (two).
 For highly dependent patients, the number of attendants needed is
 unknown. Therefore, we suppose that two attendants are enough.
 
-~ TableFigure {#tab-operators-roles, caption:"The number of operators and their roles for each device [@10]."}
+~ TableFigure {#tab-operators-roles, caption:'The number of operators and their roles for each device.'}
 
-| Experiment   | Role         | Stretcher | Evacuation | Carry Chair | Carry Chair  | Rescue |
-| Phase        |              |           | Chair      | (Male team) | (Female team)| Sheet  |
-|:------------:+:------------:+:---------:+:----------:+:-----------:+:------------:+:------:+
-| Preparation  | Essential    | 2         | 2          | 2           | 2            | 2      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Major        | 1         | 0          | 1           | 1            | 0      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Minor        | 1         | 0          | 0           | 1            | 0      |
-|--------------|--------------|-----------|------------|-------------|--------------|--------|
-| Corridor     | Essential    | 4         | 1          | 1           | 1            | 2      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Major        | 0         | 1          | 1           | 1            | 0      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Minor        | 0         | 0          | 1           | 2            | 0      |
-|--------------|--------------|-----------|------------|-------------|--------------|--------|
-| Total number of attendants || 4         | 2          | 3           | 4            | 2      |
-|----------------------------||-----------|------------|-------------|--------------|--------|
-|              |              |           |            |             |              |        |
+| Experiment   | Role         | Stretcher | Evacuation | Carry  | Carry   | Rescue |
+| Phase        |              |           | Chair      | Chair  | Chair   | Sheet  |
+|              |              |           |            | (Male) | (Female)|        |
+|:------------:+:------------:+:---------:+:----------:+:------:+:-------:+:------:+
+| Preparation  | Essential    | 2         | 2          | 2      | 2       | 2      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Major        | 1         | 0          | 1      | 1       | 0      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Minor        | 1         | 0          | 0      | 1       | 0      |
+|--------------|--------------|-----------|------------|--------|---------|--------|
+| Corridor     | Essential    | 4         | 1          | 1      | 1       | 2      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Major        | 0         | 1          | 1      | 1       | 0      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Minor        | 0         | 0          | 1      | 2       | 0      |
+|--------------|--------------|-----------|------------|--------|---------|--------|
+| Total number of attendants || 4         | 2          | 3      | 4       | 2      |
+|----------------------------||-----------|------------|--------|---------|--------|
+|              |              |           |            |        |         |        |
 {  }
 ~
 
@@ -394,11 +397,13 @@ shows the sub-scenarios simulated.
 
 ~ TableFigure {#tab-scenario2, caption:"Sub-scenarios simulated for Scenario 2"}
 
-| Sub-scenario | Number of independent patients | Number of dependent patients | Number of highly dependent patients |
-|:------------:|:------------------------------:|:----------------------------:|:-----------------------------------:|
-| 2.1          | 28                             | 14                           | 0                                   |
-| 2.2          | 28                             | 7                            | 7                                   |
-|-----------------------------------------------------------------------------------------------------------------||||
+| Sub-scenario | Number of   | Number of | Number of        |
+|              | independent | dependent | highly dependent |
+|              | patients    | patients  | patients         |
+|:------------:|:-----------:|:---------:|:----------------:|
+| 2.1          | 28          | 14        | 0                |
+| 2.2          | 28          | 7         | 7                |
+|--------------------------------------------------------||||
 ~
 
 ### Scenario 3
@@ -512,7 +517,7 @@ of a dependent patient.
 [mean-evac-curve-s1_s2]: images/mean-evac-curve-s1_s2.png "mean-evac-curve-s1_s2" { width:auto; max-width:100% } 
 
 ### Scenario 3 {#path-s3}
-The results from the scenario 3, compared in Figure #fig-evac-curve-s3],
+The results from the scenario 3, compared in Figure [#fig-evac-curve-s3],
 show that there is an increase in total evacuation time when considering
 a lower number of attendants. Indeed, when considering 6 EG (12
 attendants) the total evacuation time is about 35 minutes, while when
