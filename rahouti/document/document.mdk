@@ -274,13 +274,12 @@ described here.
 |--------------------------------------|------|----------|-------------|
 | Horizontal walking speed (m/s) [@36] | 1.00 | 0.42     | 0.10 – 1.77 |
 |--------------------------------------|------|----------|-------------|
-|                                      |      |          |             |
 {}
 ~
 
 ~ TableFigure {#tab-prep-trans, caption:"Preparation time and transportation walking speed for non-ambulant patients."}
-|                                                       |||------|--------|---------|
-|                                                       ||| Mean |St. Dev.|Range    |
+|                |            |                           |------|--------|---------|
+|                |            |                           | Mean |St. Dev.|Range    |
 |:--------------:|:-----------|:--------------------------+:----:+:------:+:-------:+
 | Dependent      | Evacuation | Preparation time (s)      | 32.7 | 5.3    | -       |
 | patients [@10] | Chair      |                           |      |        |         |
@@ -301,10 +300,9 @@ described here.
 |----------------|------------|---------------------------|------|--------|---------|
 | Highly dependent           || Preparation time (s)      | -    | -      | 180-900 |
 | patients [@11]             ||                           |      |        |         |
-|                            ||---------------------------|------|--------|---------|
-|                            || Transportation speed (m/s)| 0.40 | 0.04   | -       |
-| ---------------------------||---------------------------|------|--------|---------|
-|                            ||                           |      |        |         |
+|                |            |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 0.40 | 0.04   | -       |
+|----------------|------------|---------------------------|------|--------|---------|
 {  }
 ~
 
@@ -321,11 +319,11 @@ For highly dependent patients, the number of attendants needed is
 unknown. Therefore, we suppose that two attendants are enough.
 
 ~ TableFigure {#tab-operators-roles, caption:'The number of operators and their roles for each device.'}
-
+|--------------|--------------|-----------|------------|--------|---------|--------|
 | Experiment   | Role         | Stretcher | Evacuation | Carry  | Carry   | Rescue |
 | Phase        |              |           | Chair      | Chair  | Chair   | Sheet  |
 |              |              |           |            | (Male) | (Female)|        |
-|:------------:+:------------:+:---------:+:----------:+:------:+:-------:+:------:+
++:------------:+:------------:+:---------:+:----------:+:------:+:-------:+:------:+
 | Preparation  | Essential    | 2         | 2          | 2      | 2       | 2      |
 |              |--------------|-----------|------------|--------|---------|--------|
 |              | Major        | 1         | 0          | 1      | 1       | 0      |
@@ -340,7 +338,6 @@ unknown. Therefore, we suppose that two attendants are enough.
 |--------------|--------------|-----------|------------|--------|---------|--------|
 | Total number of attendants || 4         | 2          | 3      | 4       | 2      |
 |----------------------------||-----------|------------|--------|---------|--------|
-|              |              |           |            |        |         |        |
 {  }
 ~
 
