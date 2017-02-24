@@ -529,7 +529,6 @@ evacuation times will reach extremely high values.
 
 [evac-curve-scenario3]: images/evac-curve-scenario3.png "evac-curve-scenario3" { width:auto; max-width:100% }
 
-
 # CONCLUSIONS
 The main objectives of this paper were: (1) the simulation of prescript
 assisted evacuation using and agent based model, i.e. Pathfinder2016; (2)
