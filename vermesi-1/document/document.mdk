@@ -55,7 +55,7 @@ One of the simplifications used in the majority of studies in the literature is 
 
 
 # IGNITION EXPERIMENTS { #experiments }
-The experiments used in this work were conducted in the FM Global Fire Propagation Apparatus (FPA). The MDF sample of a thickness of 30 mm was placed onto an aluminium plate of 25 mm thickness, used for a better defined bottom boundary condition, and then covered in 5 layers on the bottom and 3 layers on the side of Cotronics insulation that minimize the heat losses to the environment. The surface temperature was read using an infrared pryometer and the mass loss was recorded using the load cell. A wireless thermocouple was inserted in the aluminium plate to measure the in-depth temperature. The ethylene-air pilot was placed 10 mm above the sample surface and 10 mm away from the perimeter of the specimen. A sketch of the prepared sample is shown in Fig.1. 
+The experiments used in this work were conducted in the FM Global Fire Propagation Apparatus (FPA). The MDF sample of a thickness of 30 mm was placed onto an aluminium plate of 25 mm thickness, used for a better defined bottom boundary condition, and then covered in 5 layers on the bottom and 3 layers on the side of Cotronics insulation that minimize the heat losses to the environment. The surface temperature was read using an infrared pyrometer and the mass loss was recorded using the load cell. A wireless thermocouple was inserted in the aluminium plate to measure the in-depth temperature. The ethylene-air pilot was placed 10 mm above the sample surface and 10 mm away from the perimeter of the specimen. A sketch of the prepared sample is shown in Fig.1. 
 
 ~ Figure { #fig-samplesketch; caption:"Sketch of the MDF sample placed in the FPA  for the constant and transient irradiation experiments"}
 ![samplesketch]
@@ -127,7 +127,7 @@ The kinetics scheme and parameter values were proposed by Li, Huang et al., [@ka
 ~ Figure { #fig-kinetics; caption: "The kinetics scheme used in the one-dimensional model; the abbreviation of the reaction step is written inparenthesis"}
 ![kinetics]
 ~
-[kinetics]: images/kinetics.png "kinetics" { width:30%; max-width:90% }
+[kinetics]: images/kinetics.png "kinetics" { width:70%; max-width:90% }
 ~
 ~
 ~ TableFigure { #table-sample; caption: "Kinetic constants used in the modelling, following the kinetic scheme of Lie et al. [ref x and kai paper]"; .wide }
