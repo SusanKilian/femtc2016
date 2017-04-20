@@ -1,20 +1,24 @@
 [INCLUDE=style/lncs]
-Title         : TITLE OF YOUR PAPER, IN CAPITAL LETTERS CENTERED ON PAGE, USING ONE OR MORE LINES AS NECESSARY
-Subtitle      : An optional subtitle.
+Title         : ONE-DIMENSIONAL MODEL OF PYROLYSIS AND IGNITION OF MEDIUM DENSITY FIBERBOARD SUBJECTED TO TRANSIENT IRRADIATION
 
-Author        : First Author Name
-Affiliation   : Research institute
-Email         : you@bar.com
 
-Author        : My co-author 1
-Affiliation   : Other institute
-Email         : other1@bar.com
+Author        : Izabella Vermesi
+Affiliation   : Imperial College London
+Email         : i.vermesi14@imperial.ac.uk
 
-Author        : My co-author 2
-Affiliation   : Other institute
-Email         : other2@bar.com
+Author        : Gaurav Agarwal
+Affiliation   : FM Global
+Email         : gaurav.agarwal@fmglobal.com
 
-Bibliography  : references.bib
+Author        : Marcos Chaos
+Affiliation   : Lawrence Livermore National Laboratory
+Email         : chaos1@llnl.com
+
+Author        : Guillermo Rein
+Affiliation   : Imperial College London
+Email         : g.rein@imperial.ac.uk
+
+Bibliography  : pyrolysis_mdf.bib
 Logo          : False
 Tex Header    :
   \def\refname{&name-references;}
@@ -23,227 +27,308 @@ name-references : REFERENCES
 [TITLE]
 
 ~ Abstract
-Papers should follow standard technical paper format, an abstract
-followed by the more detailed presentation. The abstract should be typed
-on this area of the first page, with the presentation following after two
-lines of space.
+Medium density fiberboard (MDF) is an engineered wood product that is
+widely used in the interior design of buildings and in furniture because
+of its good performance, ease of use and cost efficiency. However, like
+all wood products, MDF poses a fire risk. While the literature contains a
+lot of studies for wood pyrolysis and burning, MDF has not been
+thoroughly investigated yet. In this work, we study the pyrolysis of MDF
+subjected to transient irradiation in the form of parabolic pulses. While
+the majority of studies in literature employ a constant heat flux, we use
+transient irradiation to obtain a more comprehensive case. A one
+dimensional model was set up in GPyro, a generalized pyrolysis code. The
+model uses heat and mass transfer and temperature dependent properties
+for each material. We use a kinetics scheme that includes drying and 4
+competing reactions in which the four components of MDF (lignin,
+cellulose, hemicellulose and resin) decompose into char. For the surface
+temperature, the model predictions experiments show very good agreement
+with experimental measurements that were performed in an FPA (Fire
+Propagation Apparatus).
 ~
 
-[editor]: https://www.madoko.net/editor.html "Madoko.net Editor"
-[reference-manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html "Madoko Reference Manual"
-[femtc2016]: https://github.com/thunderheadeng/femtc2016
-[emaillink]: mailto:conference@thunderheadeng.com "conference@thunderheadeng.com"
+# INTRODUCTION { #sec-intro }
+Medium density fiberboard (MDF) is an engineered wood product (EWP) that
+is widely used in the built environment. It is manufactured by binding
+wood fibers with wax or resin under high temperature and pressure
+conditions [@mdfbook]. Due to this, its thermal properties and fire
+behavior are different than the properties and behavior of natural wood.
+Fire is a major risk for wood products, and that is no different for EWP,
+therefore it is essential to have a solid understanding of how EWP in
+general and MDF in particular behaves when subjected to a fire. There are
+many studies in the literature that deal with the pyrolysis and ignition
+of wood but only a handful that look at the ignition of MDF. The recent
+experimental work of Li et al. looked to measure various properties of
+virgin MDF and its produced residues (char) when subjected to fire, such
+as heat of pyrolysis [@kaiheat], density thermal conductivity and
+specific heat [@kaiprop]. Huang et al. [@xproci] studied computationally
+the influence of transient flame and physicochemical properties on the
+burning behavior of MDF.
 
-# GENERAL INSTRUCTIONS { #sec-intro }
-You are encouraged to use the [Madoko.net Editor][editor] while using
-the [Madoko Reference Manual][reference-manual] to edit/commit your
-documents into the 'authoring' branch of the [femtc2016] GitHub repository. 
-More information about this method of contribution will be covered below.
+One of the simplifications used in the majority of studies in the
+literature is the assumption of a constant irradiation from the heat
+source. While this is convenient due to its simplicity, this case is
+singular and does not reflect more possible fire scenarios. Transient
+irradiation is a more comprehensive case, thus analyzing dynamic heat
+transfer effects and how they impact solid-phase ignition criteria is a
+relevant topic. There are are studies [@cnfpaper] that have used
+transient heating scenarios for piloted ignition of different materials
+such as polymers and wood. However, as the studies mentioned before use
+constant heating scenarios, only one other work in literature looks at
+piloted ignition under transient irradiation for MDF [@gauravinterflam].
+Agarwal et al. [@gauravinterflam] use transient irradiation in the form
+of linearly varying irradiation to validate the optimized thermal
+properties of MDF obtained through inverse modelling of constant
+irradiation scenarios.
 
-Text styling, links, sub- and super-script, footnotes and other topics
-are covered in section [Syntax: Inline
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--inline-elements)
-of the manual.
+# IGNITION EXPERIMENTS { #experiments }
+The experiments used in this work were conducted in the FM Global Fire
+Propagation Apparatus (FPA). The MDF sample of a thickness of 30 mm was
+placed onto an aluminium plate of 25 mm thickness, used for a better
+defined bottom boundary condition, and then covered in 5 layers on the
+bottom and 3 layers on the side of Cotronics insulation that minimize the
+heat losses to the environment. The surface temperature was read using an
+infrared pyrometer and the mass loss was recorded using the load cell. A
+wireless thermocouple was inserted in the aluminium plate to measure the
+in-depth temperature. The ethylene-air pilot was placed 10 mm above the
+sample surface and 10 mm away from the perimeter of the specimen. A
+sketch of the prepared sample is shown in Fig. [#fig-samplesketch].
 
-Headings, Figures and Tables, Lists, Code Blocks, Mathematics, etc. are
-covered in section [Syntax: Block
-elements](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-syntax--block-elements)
-of the manual.
-
-The target length for submitted and invited papers is about eight pages.
-This length includes all figures and tables. However, because the
-Proceedings will not be printed on paper, there is no maximum limit on
-the number of pages. You are free to exceed the target length of eight
-pages.
-
-Please watch this short YouTube Video for a tutorial on how to use the system as intended.
-
-# MAIN HEADINGS LIKE THIS STYLE
-Main Headings are all upper case letters and underlined. In Madoko, a
-Single '#' symbol at the start of the line, followed by a space and then
-the heading text.
-
-## Subheadings Like This Style
-Subheadings within sections follow the same format as section titles, but
-with upper and lower case. In Madoko, a Double '#' symbol at the start of
-the line, followed by a space and then the heading text.
-
-### Subsubheadings like this style
-Subsubheadings have no underline, and only the first letter capitalized.
-In Madoko, a Triple '#' symbol at the start of the line, followed by a
-space and then the heading text.
-
-# FIGURES, TABLES, AND EQUATIONS
-Original drawings and photos may be included in your paper as figures.
-Diagrams may be in color.
-
-Figures and tables should immediately follow first mention of them in the
-text and can be placed in one column, or in the case of wider figures,
-can cover two columns (but only at the top or bottom of the page). The
-caption should start with either the word “figure” spelled out or
-abbreviated, followed by the figure number (i.e., Figure 1 or Fig. 1).
-The figure caption should be followed by a single line of space before
-the text resumes.
-
-## Figures
-Figure [#fig-smokeview] in Section [#sec-intro] shows an image from an
-older version of Smokeview. Note that you can drag&drop images into the
-editor pane to include them in the document, and similarly with bibtex
-files, latex style files, etc.
-
-~ Figure { #fig-smokeview; caption:"Illustration of placement of figure and caption. (use the `.wide` class for wide figure)."}
-![Ex1_0]
+~ Figure { #fig-samplesketch; caption:"Sketch of the MDF sample placed in the FPA  for the constant and transient irradiation experiments"}
+![samplesketch]
 ~
-[Ex1_0]: images/Ex1_0.png "Ex1_0" { width:auto; max-width:90% }
+[samplesketch]: images/samplesketch.png "samplesketch" { width:70%; max-width:90% }
 
-~ Note
-Images larger than about 1Mb in size will be rejected by the Madoko.net server.
+Unlike the majority of studies in literature, this work investigates
+samples exposed transient irradiation. Parabolic irradiation curves that
+imitate both the growth and the decay are chosen to illustrate a case
+that challenges the assumptions of constant irradiation used in the
+majority of the literature. The validation of the heater controller is
+shown in Fig.[#fig-heatfluxcontroller].
+
+~ Figure { #fig-heatfluxcontroller; caption:"Heater controller validaton"}
+![heatfluxcontroller]
 ~
+[heatfluxcontroller]: images/heatfluxcontroller.png "heatfluxcontroller" { width:60%; max-width:90% }
 
-## Tables
-Table [#table-sample] shows an example full width table figure.
+A number of 7 parabolas are used, as shown in Fig. [#fig-heatfluxes],
+with the addition of a constant irradiation scenario of 20 kW/m^2^ which
+was done to validate the setup and provide a link to literature. The two
+varying parameters of the parabolic curves are the time to peak and the
+peak irradiation. Four times to peak were used in the investigation,
+ranging from 160 s to 480 s and the peak irradiations are 30, 35 and 40
+kW/m^2^. The details about the peak irradiation time to peak which
+characterize the parabolas are summarized in Table [#table-parabolic].
+Time to ignition was observed visually and it varies from 161 s in
+Scenario 4 to 408 in Scenario 0 (constant irradiation).
 
-~ TableFigure { #table-sample; caption: "Modelle mit unterschiedlich geschätztem baseline hazard"; .wide }
-|                | $c(t)$                               ||||
-|                |---------|---------|---------|-----------|
-|                | (A0)    | (A1)    | (A2)    | (A3)      |
-|                | ohne    | Log     | Polynom | Stückweise|
-|                |         |         |         | konstant  |
-|:---------------|:-------:|:-------:|:-------:|:---------:|
-| Log likelihood | -6.798  | -6.733  | -6.715  | -6.686    |
-| Pseudeo $R^{2}$| 0,048   | 0,057   | 0,059   | -         |
-| AIC            | 13.615  | 13.489  | 13.456  | 13.483    |
-| BIC            | 13.711  | 13.594  | 13.580  | 14.009    |
-| N              | 105.484 | 105.484 | 105.484 | 105.484   |
-|----------------|---------|---------|---------|-----------|
+~ Figure { #fig-heatfluxes; caption:"Summary of the parabolic irradiation curves used in the experiments and described in Table 1"}
+![heatfluxes2]
 ~
+[heatfluxes2]: images/heatfluxes2.png "heatfluxes2" { width:60%; max-width:90% }
 
-## Equations
-Standard terminology should be used in equations. If possible, keep
-equations to one column. All equations should be numbered. A definition
-of $e$ is shown in Equation [#euler]:
 
-~ Equation { #euler }
-e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n
-~
-
-Or to use &logolatex; to align equations.
-
-~ Equation { #eq-alignment; caption:"Alignment example" }
-\begin{aligned} 
- f(x)  &= a x^2+b x +c   &   g(x)  &= d x^3 \\
- f'(x) &= 2 a x +b       &   g'(x) &= 3 d x^2
-\end{aligned}
+~ TableFigure { #table-parabolic; caption: "Summary of the parabolic irradiation scenarios"; .wide }
+|----------|--------------|------------------|------------------|
+| Scenario | Time to peak | Peak irradiation | Time to ignition |
+| number   | (s)          | (kW/m^2^)        | (s)              |
+|:--------:|:------------:|:----------------:|:----------------:|
+| 0        | constant     | 20               | 408              |
+| 1        | 320          | 30               | 280              |
+| 2        | 260          | 30               | 256              |
+| 3        | 480          | 30               | 360              |
+| 4        | 160          | 40               | 161              |
+| 5        | 320          | 40               | 224              |
+| 6        | 160          | 35               | 180              |
+| 7        | 320          | 35               | 252              |
+|----------|--------------|------------------|------------------|
 ~
 
-# FUN CONTENT EXAMPLES
-Let's program some JavaScript:
-``` javascript
-function hello() {
-  return "hello world!"
-}
-```
-Here is a footnote[^fn] reference.
-[^fn]: This is the content of the example footnote. 
-    You can continue a footnote by indenting content.
-    And notice the back link.
+# PYROLYSIS MODEL { #model }
+## Governing equations and boundary conditions
+The setup and sample were modelled using the open-source code Gpyro [@gpyro]. The governing equations are listed as follows: condensed-phase mass conservation (Eq. [#eq-mass]), species conservation (Eq. [#eq-species]) and the energy equation (Eq. [#eq-energy]). Thermal equilibrium between the condensed-phase and the gas phase is assumed. The shrinkage of the sample was taken into account. As shown in the literature [@spectral_chaos], in-depth radiation is important for wood for certain wavelengths, but not the ones of the FPA quartz tubes. Therefore the in-depth radiation was not taken into account. The reaction rate is expressed by the Arrhenius equation, Eq. [#eq-arrhenius]. 
 
-# BIBLIOGRAPHY AND REFERENCES
-When references are used in the text, tie them to an alphabetical (by
-principal author) list of references to be included as the last item of
-your paper. The format commonly used in scientific literature follows:
+~ Equation {#eq-mass}
+\frac{\partial\bar{\rho}}{\partial t}=-\dot{\omega}'''_{fg}
+~
 
-Smith, J. S., Bloggs, R. T. and Jones, E. R. (1974), "Magnetic Anomalies
-in Geothermal Systems", Journal of Fluid Mechanics, 254, 73-79
+~ Equation {#eq-species}
+\frac{\partial(\bar{\rho}Y_i)}{\partial t}=-\dot{\omega}'''_{di}
+~
 
-Leslie Lamport, LaTeX: A Document Preparation System (2nd Edition), Addison-Wesley, 1994
+~ Equation {#eq-energy}
+\frac{\partial(\bar{\rho}\bar{h)}}{\partial t}=\frac{\partial}{\partial z}\left(\bar{k}\frac{\partial T}{\partial z}\right)+\sum\limits_{i=1}^K (-\dot{\omega}'''_{i})\Delta H_s
+~
 
-When using Madoko, edit the content of the .bib file in the document
-folder, and use the reference methods as shown in the [Bibliography and
-Citations
-Section](http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#sec-bib)
-of the Madoko Manual.
+~ Equation {#eq-arrhenius}
+\dot{\omega}'''_i= \bar{\rho} Y_{A,k} A_k exp({-E_k/RT})^n
+~
 
-A bibliography file consists of all your references in the BibTeX format, for example:
+where &rho; is the density (kg/m^3^}), t is time (s), Y is mass fraction,
+&omega;‴ is the reaction rate per unit volume (_fg_ stands for formation
+of gases, _di_ for destruction of species), k is the thermal conductivity
+(W/mK), T is temperature (&deg;C), z is the depth (m), &Delta;H is the
+heat of pyrolysis (kJ/kg), A is the pre-exponential factor (s^-1^), E is
+the activation energy (kJ/mol), n is the reaction order, R is the
+universal gas constant.
 
-    @BOOK{ Knuth:TeX,  
-        author   = "Knuth, Donald E.",  
-        title    = "The {\TeX} book",  
-        publisher= "Addison-Wesley",  
-        year     = 1984  
-    }
+~ Figure { #fig-domain2; caption:"The computation domain used in the Gpyro simulations: the irradiation is applied to the top of the MDF sample, the bottom boundary is considered adiabatic "}
+![domain3]
+~
+[domain3]: images/domain3.png "domain3" { width:30%; max-width:90% }
 
-Entries in the bibliography files can now be referenced using semi-colon
-separated references, for example:
-``` Markdown 
-Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
-```
-Results in: Read about LaTeX and TeX [@Knuth:TeX; @Lamport:LaTeX].
+The domain for the one-dimensional model of the cone experiments is shown
+in Fig. 4 and is made of a layer of MDF with a thickness of 30 mm and a
+layer of aluminium of 25 mm thickness. The ceramic insulation layer was
+not modelled, but it provides the adiabatic bottom boundary condition (z
+= L)(Eq. [#eq-adiabatic]). The top surface (z = 0) is exposed to the heat
+flux (Eq. [#eq-flux]). Keeping a balance between accuracy and simulation
+time, the final values of the domain parameters are a cell size of 0.01
+mm and a time step of 0.05 s [@cnfpaper].
 
-Please include full title of journal articles or other references,
-journal, volume, date, pages. There is a nice [table on
-Wikipedia](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX)
-that shows all of the different data fields for the BibTeX file.
+~ Equation {#eq-adiabatic}
+(z=L) \qquad -\bar{k}\frac{\partial T(L)}{\partial z}=0
+~
 
-# PAPER DEADLINE
-Your paper, in final form, must be received by October 15th, 2016. The
-best way to edit and submit is to use the Madoko [editor] to edit your
-document in the 'authoring' branch of the GitHub [femtc2016] repository.
-If you choose to use some other document format and editing tool, PDF
-format is preferred, but ODT, DOC, or DOCX formats are acceptable. Please
-e-mail the files to [conference@thunderheadeng.com][emaillink].
+~ Equation {#eq-flux}
+(z=0) \qquad -\bar{k}\frac{\partial T(0)}{\partial z}=\bar{\varepsilon}\dot{q}^"_e-h_c(T_s-T_0)-\bar{\varepsilon}\sigma(T(0)^4-T^4_0)
+~
+where &epsilon; is the emissivity and q~_e_~ is the external irradiation.
 
-# PRESENTATION
-Each author must present his/her paper within the allotted time, allowing
-for some minutes of open discussion. The session chair is responsible for
-keeping authors within their time limit, in order to ensure that each
-author has enough time for their presentation. When preparing your
-presentation slides, make sure they are clear and large enough so that
-your audience can read them from as far as 80 feet away.
+##Chemical kinetics
+The kinetics scheme and parameter values were proposed by Li, Huang et
+al., [@kaix] to which a drying step step was added. First, the sample
+undergoes the drying process, after which each of the four components of
+MDF (cellulose, hemicellulose, lignin and resin) decompose into char and
+volatiles. The values for the pre-exponential factor, activation energy,
+heat of pyrolysis and reaction order are summarized in Table [#table-kinetic].
 
-All presentations will be made using the computer projector available in
-the conference room. We will not have overhead projectors or slide
-projectors in the meeting rooms.
+~ Figure { #fig-kinetics; caption: "The kinetics scheme used in the one-dimensional model; the abbreviation of the reaction step is written inparenthesis"}
+![kinetics]
+~
 
-Your presentation, in final form, must be received by **October 15th,
-2016**. A final commit of the files to the GitHub repository is
-preferred. Once the final draft is complete and reviewed it will be
-merged into the master branch of the repository. If you decide to use
-some other tool for creating your presentation, PDF format is preferred,
-but ODP, PPT, or PPTX formats are acceptable. Please e-mail the files
-to [conference@thunderheadeng.com][emaillink].
+[kinetics]: images/kinetics.png "kinetics" { width:70%; max-width:90% }
 
-All presentations will be pre-loaded on the computers that are present.
-Please note that this approach will make it necessary for us to receive
-the presentation files prior to the conference. If you have a different
-software requirement, it should still be possible for you to attach your
-own computer to the projector if you bring it with you. This is not
-optimal, as it takes time and slows down the session.
+~ TableFigure { #table-kinetic; caption: "Kinetic constants used in the modelling, following the kinetic scheme of Lie et al."; .wide }
+|          | Kinetic constants                       ||||
+|          |-----------|---------|------------|---------|
+|          | Log A     | E       | &Delta;H   | n       |
+|:---------|:---------:|:-------:|:----------:|:-------:|
+| Drying   | 8.12      | 67.8    | 270        | 2.37    |
+| hc       | 12.9      | 165     | 256        | 2.4     |
+| cc       | 13.6      | 189     | 256        | 0.84    |
+| lc       | 16.3      | 238     | 256        | 10.4    |
+| rc       | 13.6      | 149     | 256        | 4.7     |
+| Units    | log (1/s) | kJ/mol  | kJ/kg      | -       |
+|Reference | [@kaix]   | [@kaix] | [@kaiheat] | [@kaix] |
+|          |           |         |            |         |
+|----------|-----------|---------|------------|---------|
+~
+## Model Parameters
+The solid properties used in the simulations are listed in Table 3. The
+thermal conductivity and specific heat capacity of MDF and of char vary
+with temperature and are taken from Li et al [@kaiprop]. The density of
+char is taken from Li et al, while the density of MDF is measured prior
+to the experiment. Because shrinkage is taken into account, the density
+does not vary with temperature. The surface emissivity of MDF is taken
+from Boulet et al [@boulet]. No parameter fittings were used.
 
-# CONFERENCE CONTENT DISTRIBUTION
-The papers and presentation materials will be made available online
-during and after the conference. In addition, the organizers are planning
-to may broadcast live presentations online during the event. The papers,
-presentations, and videos will be archived and made available on the web
-after the conference.
+~ TableFigure { #table-sample; caption: "Modelling parameters for MDF"; .wide }
+|                                         | Temperature-dependent properties       ||||
+|                                         |---------|---------|---------|-------------|
+|                                         | Value   |Exponent | Units   | Reference   |
+|                                         |         |Value    |         |             |
+|:----------------------------------------|:-------:|:-------:|:-------:|:-----------:|
+| Thermal conductivity k                  | 0.12    | 0.49    | W/mK    | [@kaiprop]  |
+| Density &rho;                           | 605     | -       | kg/m^3^ | measurement |
+| Specific heat capacity c~p~             | 1489    | 0.85    | J/kgK   | [@kaiprop]  |
+| Surface emissivity of MDF &epsilon;     | 0.8     | -       | -       | [@boulet]   |
+| Thermal conductivity of char k~char~    | 0.09    | 3.90    | W/mK    | [@kaiprop]  |
+| Density of char &rho;~char~             | 330     | -       | kg/m^3^ | [@kaiprop]  |
+| Specific heat capacity of char c~p,char~| 600     | 1.15    | J/kgK   | [@kaiprop]  |
+|-----------------------------------------|---------|---------|---------|-------------|
+~
 
-Author(s) retain all rights to submitted material. The organizers are
-granted a non-exclusive right to copy and redistribute conference
-material submitted by the author(s).
+# RESULTS { #results }
+For the constant irradiation scenario, the comparison between the
+experimental measurements and the model predictions are shown in Fig. [#fig-compare0].
+The surface temperature prior to ignition is predicted excellently by the
+model. The model slightly underpredicts the mass loss rate in the initial
+phase, but goes on to predict well prior to ignition.
+
+~ Figure { #fig-compare0; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for constant irradiation (Scenario 0)" }
+~~ SubFigureRow { vertical-align: bottom }
+~~~ SubFigure { #fig-comp0subfig1; caption:"Surface temperature" }
+![constanthf_temp]
+~~~
+~~~ SubFigure { #fig-comp0subfig2; caption:"Mass loss rate" }
+![constanthf_mlr]
+~~~
+~~
+~
+
+[constanthf_temp]: images/constanthf_temp.png "constanthf_temp" { width:90%; max-width:90% } 
+[constanthf_mlr]: images/constanthf_mlr.png "constanthf_mlr" { width:90%; max-width:90% }
+
+Considering the good predictions in the constant irradiation model, it is
+interesting to see how the transient irradition scenario behaves.
+Fig. [#fig-compare1] shows the model predictions in the transient
+irradiation scenario with time to peak of 320 s and peak irradiation of
+30 kW/m^2^. Like in the constant irradiation scenario, the surface
+temperature prediction is very good, with the mass loss rate being
+underpredicted by the model. Considering that this model has no fittings,
+only measured values from literature sources, its performance is very
+good. Also, the accuracy of mass loss rate measurements in the FPA is
+better when the readings are very frequent [@mlr_khan], so potential
+errors induced experimentally might also contribute to the small
+discrepancy between predictions and measurements.
+
+~ Figure { #fig-compare1; caption:"Comparison between the measurements and the model predictions for surface temperature and mass loss rate for the transient irradiation (Scenario 1)" }
+~~ SubFigureRow { vertical-align: bottom }
+~~~ SubFigure { #fig-comp1subfig1; caption:"Surface temperature" }
+![transienthf_temp]
+~~~
+~~~ SubFigure { #fig-comp1subfig2; caption:"Mass loss rate"; }
+![transienthf_mlr]
+~~~
+~~
+~
+
+[transienthf_temp]: images/transienthf_temp.png "constanthf_temp" { width:80%; max-width:90% } 
+[transienthf_mlr]: images/transienthf_mlr.png "constanthf_mlr" { width:80%; max-width:90% }
+
+# DISCUSSION { #discussion }
+An analysis was done to assess the influence of two complexity
+parameters, namely using temperature dependent properties and adding the
+drying step in the kinetic scheme respectively. Scenario 1 for transient
+irradiation was used in this investigation.
+
+The influence of using properties (k and c~p~) that change with time is
+presented in Fig. [#fig-tempdep]. Using constant k and c~p~ results in an
+overprediction of the surface temperature before ignition by a maximum of
+60 &deg;C (18%), which is a notable difference. For mass loss rate, the
+largest difference between the two cases is just 0.16 g, which shows that
+mass loss rate is not significantly influenced by the use of temperature
+dependent k and c~p~. Therefore, the use of temperature dependent
+properties improves the predictions of surface temperatures slightly, but
+does not play a role in mass loss rate predictions.
+
+~ Figure { #fig-tempdep; caption:"The influence of using temperature dependent properties: surface temperature and mass loss rate variation"}
+![propertiesinfluence]
+~
+[propertiesinfluence]: images/propertiesinfluence.png "domain" { width:60%; max-width:90% }
+
+The second parameter that was analyzed is the role of the drying step. As shown in Fig. [#fig-drystep], adding the drying step is much more influential than using temperature dependent properties. For surface temperature, the largest difference of 113 &deg;C occurs around 130 s and represents around 78% more than the predicted value which uses the drying step. For mass loss rate, the difference is much higher. The slope of the curve starts later in the case without drying and increases at a much faster rate, showing a completely different behavior.
+ 
+~ Figure { #fig-drystep; caption:"The influence of using a drying step in the kinetics scheme: surface temperature and mass loss rate variation"}
+![dryinginfluence]
+~
+[dryinginfluence]: images/dryinginfluence.png "domain" { width:60%; max-width:90% }
+
+# CONCLUSION { #conclusion }
+A set of experiments investigating the behavior of MDF, an EWP commonly used in the built environment, prior to ignition was performed in the FPA. The samples were subjected to constant irradiation, which is the most used scenario in literature, to validate the setup and then to transient irradiation in the form of parabolic curves that simulate both the growth and the decay of the fire. Transient irradiation is a more general case of which the usually assumed constant irradiation is a particular case. 
+
+These experiments served as validation for a computational model. This one-dimensional model was then set up using thermo-chemical parameters taken from literature or measured experimentally. For both constant and transient irradiation, the model predictions show good agreement for surface temperature mass loss rate. 
+
+The model is used to investigate the influence of temperature-dependent k and c~p~, as well as adding a drying set to the kinetic scheme. The former causes an overprediction in surface temperature (18%), but a negligible change in mass loss rate. The drying step, however, has a major influence both on surface temperature, where it overpredicts the surface temperature by 78% and significantly changes the behavior of the mass loss rate curve.
 
 [BIB]
-
-&pagebreak;
-
-# An appendix { @h1:"A" }
-"All the same, I should like it all plain and clear," said he
-obstinately, putting on his business manner (usually reserved for people
-who tried to borrow money off him), and doing his best to appear wise and
-prudent and professional and live up to Gandalf's recommendation. "Also I
-should like to know about risks, out-of-pocket expenses, time required
-and remuneration, and so forth" -- by which he meant: "What am I going to
-get out of it? and am I going to come back alive?"
-
-# Conclusion
-If you have any questions concerning your paper and/or the Conference,
-please email us at [conference@thunderheadeng.com][emaillink].

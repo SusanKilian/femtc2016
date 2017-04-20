@@ -6,7 +6,10 @@ Affiliation   : Cantene
 Email         : m.fronterre@cantene.it
 Reveal Theme  : night
 Beamer Theme  : Classic
+Embed         : 2048
 
+JS Footer:
+    revealConfig.transition = "fade";
 
 [TITLE]
 
@@ -41,8 +44,8 @@ Beamer Theme  : Classic
 ## Methodology   
 
 Through a multiscale approach combining 1D and CFD + evacuation analyses,
-
-it is possible to evaluate the interaction between people and combustion products. 
+it is possible to evaluate the interaction between people and combustion
+products.
 
 
 
@@ -78,8 +81,6 @@ it is possible to evaluate the interaction between people and combustion product
 
 ## CASE 1 - Evacuation results    
 
-
-
 ~ Center
 ![Slide7_resultsCase1]
 ~
@@ -101,9 +102,6 @@ it is possible to evaluate the interaction between people and combustion product
 
 
 ## CASE 1 - Comparative analysis
-
-
-
 Empty columns correspond to egress evaluated in no fire case (fire drill). 
 
 The comparison gives an estimation of how much the configuration_b is close to a not emergency situation. 
@@ -123,26 +121,18 @@ The comparison gives an estimation of how much the configuration_b is close to a
 
 Existing opera -  Impact of a noise barrier installation between two existing tunnels
 
-
-
 * a) current configuration (tunnels are fluid dynamically independent)
 
 * b) a noise barrier connect the tunnels and makes them a unique longer tunnel
-
-
 
 ~ Center
 ![Case2_1]
 ~
 
-
 [Case2_1]: images/Case2_1.png "Case2_1" { width:auto; max-width:90% }
 
 
-
 ## CASE 2 - Tunnel characteristics   
-
-
 
 * 2 one-way tunnels 
 
@@ -160,17 +150,9 @@ Existing opera -  Impact of a noise barrier installation between two existing tu
 [Case2_section]: images/Case2_section.png "Case2_section" { width:auto; max-width:90% }
 
 
-
-
-
-
-
 ## CASE 2 - Fire Scenario   
 
-
-
 Fire: positioned at the lowest point of the tunnel (worst case) 
-
 
 
 ~ Center
@@ -183,57 +165,38 @@ Fire: positioned at the lowest point of the tunnel (worst case)
 
 
 ##CASE 2 - HRR curve
-
-2 HRR are considered (30 and 100 MW)
-
-
 ~ Center
+2 HRR are considered (30 and 100 MW)
 ![Case 2_HRR Curve]
 ~
 
 
 [Case 2_HRR Curve]: images/Case-2_HRR-Curve.png "Case 2_HRR Curve" { width:auto; max-width:90% }
 
-
-
 ##CASE 2 - Results - smoke control
 
-
-
 **Configuration_a**
-
-
 
 ~ Center
 ![Case2_Config_a]
 ~
 
-
 [Case2_Config_a]: images/Case2_Config_a.png "Case2_Config_a" { width:auto; max-width:90% }
 
-
-
-Without the noise barrier, smoke exits from right tube of tunnel 2 and spread in the environment without involving tunnel 1.
+Without the noise barrier, smoke exits from right tube of tunnel 2 and
+spread in the environment without involving tunnel 1.
 
 
 
 ##CASE 2 - Results - smoke control
 
-
-
 **Configuration_b**
-
-
 
 ~ Center
 ![case2_Config_b]
 ~
 
-
-
-
 [case2_Config_b]: images/case2_Config_b.png "case2_Config_b" { width:auto; max-width:90% }
-
 
 
 After 240 s from ignition, smoke exits from the right tube of tunnel 2 and moves along the noise barrier. 
@@ -241,35 +204,23 @@ After 240 s from ignition, smoke exits from the right tube of tunnel 2 and moves
 At 750 s, smokes enters both the tubes of tunnel 1.
 
 
-
 ##CASE 2 - Results - CO concentration
 
-
-
-CO concentration is higher in presence of the noise barrier. 
-
-
-
 ~ Center
+CO concentration is higher in presence of the noise barrier. 
 ![Case2-results]
 ~
-
 
 [Case2-results]: images/Case2-results.png "Case2-results" { width:auto; max-width:90% }
 
 
-
 ##Conclusions / 1
 
-
-
-In road tunnels, when the interaction between occupants and combustion products is not negligible 
-
-egress can not be calculated under the hypothesis of ‘occupant never interact with combustion  products’.
+In road tunnels, when the interaction between occupants and combustion
+products is not negligible egress can not be calculated under the
+hypothesis of ‘occupant never interact with combustion products’.
 
 FED analysis is necessary.
-
-
 
 ~ Center
 ![Conclusioni1]
@@ -279,11 +230,7 @@ FED analysis is necessary.
 [Conclusioni1]: images/Conclusioni1.png "Conclusioni1" { width:auto; max-width:90% }
 
 
-
-
-
 ##Conclusions / 2
-
 
 **A suggestions for Thunderhead Engineering**: Pathfinder could take into account: 
 

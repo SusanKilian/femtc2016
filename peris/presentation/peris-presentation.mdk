@@ -11,7 +11,7 @@ Embed         : 2000
 JS Footer :
     revealConfig.transition = "fade";
 
-# STUDY OF PARAMETERS THAT INFLUENCE I-GIRDER BRIDGE BEHAVIOR DURING FIRE EVENTS
+# STUDY OF PARAMETERS THAT INFLUENCE I-GIRDER BRIDGE BEHAVIOR DURING FIRE EVENTS { #slide1 }
 
 ~ Begin Columns
 ~~ Column { width:50% }
@@ -29,7 +29,8 @@ Universidad Politécnica de Valencia
 [title1]: images/title1.png "title1" { width:auto; max-width:90%; vertical-align:top }
 [title2]: images/title2.png "title2" { width:auto; max-width:90%; vertical-align:top }
 
-# Bridge fires {data-background-image:images/Presentation1.jpg; color:white}
+
+# Bridge fires {#slide2; data-background-image:images/Presentation1.jpg; color:white}
 ![Presentation1]
 
 ![Presentacion_1]
@@ -41,7 +42,7 @@ Universidad Politécnica de Valencia
 [Presentation1]: images/Presentation1.jpg "Presentation1" { display:none}
 
 
-# MacArthur Maze Collapse, USA, 2007
+# MacArthur Maze Collapse, USA, 2007 { #slide3 }
 ~Begin Columns
 ~~ Column {width 50%}
 ![collapse]
@@ -64,7 +65,7 @@ Indirect Cost: 180 million USD (6M USD/day)
 
 
 
-# 9 mile, Detroit, USA, 2009
+# 9 mile, Detroit, USA, 2009 { #slide4 }
 ~ Begin Columns
 ~~ Column { width:50% }
 ![bridge1]  
@@ -79,7 +80,7 @@ Detroit, USA - July 15th, 2009
 [bridge1]: images/BridgeFire1.png "Bridge Fire Photo 1" { width:100%; vertical-align:top }
 [bridge2]: images/BridgeFire2.png "Bridge Fire Photo 2" { width:100%; vertical-align:top }
 
-## Standards
+## Standards  { #slide5 }
 ~ Center
 Eurocode 1: Actions on Structures
 
@@ -91,7 +92,7 @@ Eurocode 1: Actions on Structures
 [code1]: images/code1.png "Eurocode 1" { width:45%; vertical-align:top}
 [code2]: images/code2.png "Eurocode 2" { width:70%; vertical-align:top}
 
-## Standards
+## Standards { #slide6 }
 ~ Center
 NFPA 502: Road Tunnels, Bridges and Other Limited Access Highway
 
@@ -103,15 +104,15 @@ NFPA 502: Road Tunnels, Bridges and Other Limited Access Highway
 
 [Presentation2a]: images/Presentation2a.png "Presentation2a" { width:60%}
 
-# OBJECTIVE
+# OBJECTIVE { #slide7 }
 
-## To improve bridge resilience against fires
+## To improve bridge resilience against fires  { #slide8 }
 
 ![objective1]
 
 [objective1]: images/objective1.jpg "objective1" { width:auto; max-width:100% }
 
-## Tanker truck
+## Tanker truck { #slide9 }
 ~ Center
 ![Presentacion 12]
 ~
@@ -119,7 +120,7 @@ NFPA 502: Road Tunnels, Bridges and Other Limited Access Highway
 [Presentacion 12]: images/Presentacion-12.jpg "Presentacion 12" { width:"110%"}
 
 
-## I-Girder Bridges
+## I-Girder Bridges { #slide10 }
 ~ Center
 ![objective2]
 ~
@@ -135,7 +136,7 @@ https://erkrishneelram.wordpress.com
 
 [objective2]: images/objective2.jpg "objective2" { width:auto; max-width:90% }
 
-## Very Common Type of Bridge
+## Very Common Type of Bridge { #slide11 }
 Approaches to Port Authority Bus Station, NYC
 
 ~ Center
@@ -144,7 +145,7 @@ Approaches to Port Authority Bus Station, NYC
 
 [objective5]: images/objective5.jpg "objective5" { width:auto; max-width:90% }
 
-# Very vulnerable structural system
+# Very vulnerable structural system { #slide12 }
 Peris-Sayol et al. 2016, Garlock et al., 2012
 
 ~ Center
@@ -155,7 +156,7 @@ Peris-Sayol et al. 2016, Garlock et al., 2012
 [objective3]: images/objective3.jpg "objective3" { width:auto; max-width:90% }
 
 
-## Importance of several parameters on the maximum gas temperatures
+## Importance of several parameters on the maximum gas temperatures { #slide13 }
 
 ~ Begin Columns
 ~~ Column { width:50%; vertical-align:top }
@@ -171,13 +172,13 @@ Two Fire Scenario Parameters
 [chart1]: images/chart1.png "chart1" { width:auto; max-width:100% }
 [objective6]: images/objective6.jpg "objective6" { width:auto; max-width:100% }
 
-# PARAMETERS { data-background-image:images/parameters1.jpg }
+# PARAMETERS { #slide14; data-background-image:images/parameters1.jpg }
 
 ![parameters1]
 [parameters1]: images/parameters1.jpg "parameters1" { display:none }
 
 
-## Geometric Parameters
+## Geometric Parameters { #slide15 }
 
 
 ~ Center
@@ -188,9 +189,7 @@ Vertical Clearance (6 and 9 meters)
 [geometric1]: images/geometric1.jpg "geometric1" { width:auto; max-width:100% }
 
 
-
-
-## Geometric Parameters
+## Geometric Parameters { #slide16 }
 Span (16 and 24 meters)
 
 ~ Center
@@ -200,7 +199,7 @@ Span (16 and 24 meters)
 [geometric2]: images/geometric2.jpg "geometric2" { width:auto; max-width:100% }
 
 
-## Geometric Parameters
+## Geometric Parameters { #slide17 }
 Width (13 and 23.4 meters)
 
 ~ Center
@@ -210,7 +209,7 @@ Width (13 and 23.4 meters)
 [geometric3]: images/geometric3.jpg "geometric3" { width:auto; max-width:100% }
 
 
-## Geometric Parameters
+## Geometric Parameters { #slide18 }
 Bridge Substructure (Piers or Abutments)
 
 ~ Center
@@ -220,7 +219,7 @@ Bridge Substructure (Piers or Abutments)
 [geometric4]: images/geometric4.jpg "geometric4" { width:auto; max-width:100% }
 
 
-## Geometric Parameters
+## Geometric Parameters { #slide19 }
 Bridge Substructure (Piers or Abutments)
 
 ~ Center
@@ -230,7 +229,7 @@ Bridge Substructure (Piers or Abutments)
 
 [geometric5]: images/geometric5.jpg "geometric5" { width:auto; max-width:100% }
 
-## Fire Scenario Parameters
+## Fire Scenario Parameters { #slide20 }
 
 ~ Begin Columns
 ~ Column { width:50% }
@@ -253,7 +252,7 @@ Bridge Substructure (Piers or Abutments)
 
 [diagram1]: images/diagram1.png "diagram1" { width:auto; max-width:90% }
 
-## Fire Scenario Parameters
+## Fire Scenario Parameters { #slide21 }
 
 ~ TableFigure {caption:"Table of Scenario Parameters"}
 |-----------|---------------|------|-----------------------|------------------|--------|
@@ -290,7 +289,7 @@ experiments technique
 
 [arrows]: images/arrows.png "arrows" { width:"125px"; height:"181px" }
 
-## Design of Experiments
+## Design of Experiments { #slide22 }
 
 ~ Columns
 ~~ Column { width:"70%"; vertical-align=top }
@@ -303,14 +302,14 @@ Temperatures?
 
 [table1]: images/table1.png "table1" { width:auto; max-width:90% }
 
-## CFD Simulations
+## CFD Simulations { #slide23 }
 
 ~ Center
 Fire Model using FDS
 ![title1]
 ~
 
-## CFD Simulations
+## CFD Simulations { #slide24 }
 
 ~ Columns
 ~~ Column { width:"48.5%"; vertical-align=top }
@@ -325,7 +324,7 @@ Alós Moya et Al. “Analysis of a Bridge Failure due to fire using Computationa
 [method1]: images/method1.jpg "method1" { width:auto; max-width:90% }
 [method2]: images/method2.jpg "method2" { width:auto; max-width:90% }
 
-## CFD Simulations
+## CFD Simulations { #slide25 }
 
 ~ Center
 ![method3]
@@ -343,7 +342,7 @@ Mesh: 0.20 x 0.20 x 0.20 m.
 
 * Total amount of cells: 1,134,000 to 3,262,500 cells
 
-## CFD Simulations
+## CFD Simulations { #slide26 }
 
 ~ Center
 ![method3]
@@ -357,7 +356,7 @@ Fire Load:
 * CO yield = 0.019 g/g
 * Soot yield = 0.059 g/g
 
-## CFD Simulations
+## CFD Simulations { #slide27 }
 
 ~ Center
 ![method3]
@@ -378,7 +377,7 @@ Adiabatic Temperatures
 
 [method4]: images/method4.jpg "method4" { width:auto; max-width:100% }
 
-## CFD Simulations
+## CFD Simulations { #slide28 }
 ~ Center
 Adiabatic temperatures along the most exposed girder
 ~
@@ -395,7 +394,7 @@ Adiabatic temperatures along the most exposed girder
 [method5]: images/method5.jpg "method5" { width:auto; max-width:90%;vertical-align=top }
 [method6]: images/method6.jpg "method6" { width:auto; max-width:90%;vertical-align=top }
 
-## ANOVA ANALYSIS
+## ANOVA ANALYSIS { #slide29 }
 ~ Center
 Maximum Adiabatic Temperatures
 ![Imagen1]  
@@ -410,7 +409,7 @@ ANOVA
 
 
 
-## ANOVA ANALYSIS
+## ANOVA ANALYSIS { #slide30 }
 Bottom Flange Temperatures
 ~ Columns
 ~~ Column {width:"50%"}
@@ -428,7 +427,7 @@ p-values below 0.05 indicate significance influence
 [Imagen3]: images/Imagen3.png "Imagen3" { width:"91%";vertical-align:top }
 [Imagen4]: images/Imagen4.png "Imagen4" { width:auto; max-width:90%;vertical-align:top }
 
-## ANOVA ANALYSIS
+## ANOVA ANALYSIS { #slide31 }
 Web Temperatures
 
 ~ Columns
@@ -447,7 +446,7 @@ p-values below 0.05 indicate significance influence
 [Imagen6]: images/Imagen6.png "Imagen6" { width:"95%"; vertical-align=top}
 [Imagen5]: images/Imagen5.png "Imagen5" { width:"77%"; vertical-align=top}
 
-## ANOVA ANALYSIS
+## ANOVA ANALYSIS { #slide32 }
 
 ~ Center
 Web Temperatures  
@@ -463,7 +462,7 @@ Web Temperatures
 Smoke Accumulation
 ~
 
-## ANOVA ANALYSIS
+## ANOVA ANALYSIS { #slide33 }
 Interactions (synergies)
 ~ Center
 clearance - position - bridge substructure
@@ -473,9 +472,9 @@ Coandâ Effect
 
 [Imagen10]: images/Imagen10.png "Imagen10" { width:auto; max-width:90% }
 
-# STRUCTURAL ANALYSIS
+# STRUCTURAL ANALYSIS { #slide34 }
 
-## STRUCTURAL ANALYSIS
+## STRUCTURAL ANALYSIS { #slide35 }
 ~ Center
 ![Imagen 11]
 ~
@@ -483,7 +482,7 @@ Coandâ Effect
 [Imagen 11]: images/Imagen-11.png "Imagen 11" { width:"106%"}
 
 
-## CASE STUDY
+## CASE STUDY { #slide36 }
 ~ Center
 ![Imagen12]
 ~
@@ -493,7 +492,7 @@ Coandâ Effect
 
 [Imagen12]: images/Imagen12.png "Imagen12" { width:"100%"}
 
-## BOUNDARIES
+## BOUNDARIES { #slide37 }
 ~ Center
 ![Imagen13]
 ~
@@ -501,7 +500,7 @@ Coandâ Effect
 [Imagen13]: images/Imagen13.png "Imagen13" { width:"106%"}
 
 
-## RESULTS AND CONCLUSIONS
+## RESULTS AND CONCLUSIONS { #slide38 }
 Bridges fail by yielding of the steel girder when steel reaches its ultimate strain
 ~ Center
 ![Imagen15]
@@ -510,7 +509,7 @@ Different times and modes of failure
 ~
 [Imagen15]: images/Imagen15.png "Imagen15" { width:auto; max-width:90% }
 
-## CONCLUSIONS AND FUTURE WORK
+## CONCLUSIONS AND FUTURE WORK { #slide39 }
 1. Vertical Clearance, HRR and fire position have an influence in flange temperatures
 2. Web temperatures are also influenced by the bridge substructure configuration
 3. Interactions have to be taken into account (Coandâ Effect)
@@ -526,7 +525,7 @@ THESE CONCLUSIONS SHOULD BE CONSIDERED IN FUTURE PROPOSALS OF FIRE CURVES SPECIF
 
 [Imagen16]: images/Imagen16.png "Imagen16" { width:auto; max-width:100% }
 
-## EUROESTUDIOS
+## EUROESTUDIOS { #slide40 }
 
 ~ Columns
 ~~ Column{width:60%}
@@ -557,24 +556,5 @@ THESE CONCLUSIONS SHOULD BE CONSIDERED IN FUTURE PROPOSALS OF FIRE CURVES SPECIF
 ~
 
 
-
-## Thanks for looking :-)
-
-# STUDY OF PARAMETERS THAT INFLUENCE I-GIRDER BRIDGE BEHAVIOR DURING FIRE EVENTS
-
-~ Begin Columns
-~~ Column { width:50% }
-![title1]
-~~
-~~ Column
-![title2]
-~~
-~ End Columns
-
-G. Peris-Sayol, I. Payá-Zaforteza  
-Euroestudios S.L  
-Universidad Politécnica de Valencia
-
-[title1]: images/title1.png "title1" { width:auto; max-width:90%; vertical-align:top }
-[title2]: images/title2.png "title2" { width:auto; max-width:90%; vertical-align:top }
+## Thanks for looking :-) { #slide41 }
 

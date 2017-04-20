@@ -1,21 +1,23 @@
 [INCLUDE=style/lncs]
+
 Title         : A SENSITIVITY ANALYSIS OF A HOSPITAL IN CASE OF FIRE
-Subtitle      : The impact of the percentage of people with reduced mobility and the staff to occupant's ratio
+Subtitle      : The impact of the percentage of people with reduced mobility and the staff to occupant’s ratio
 
 Author        : Anass Rahouti
-Affiliation   : Department of Civil Engineering and Structural Mechanics, Faculty of Engineering, University of Mons
+Affiliation   : Civil Engineering and Structural Mechanics Department, Faculty of Engineering, University of Mons
 Email         : anass.rahouti@umons.ac.be
 
 Author        : Selim Datoussaïd
-Affiliation   : Department of Civil Engineering and Structural Mechanics, Faculty of Engineering, University of Mons
+Affiliation   : Civil Engineering and Structural Mechanics Department, Faculty of Engineering, University of Mons
 
 Author        : Ruggiero Lovreglio
-Affiliation   : Department of Civil and Environmental Engineering, University of Auckland
+Affiliation   : Civil and Environmental Engineering Department, Faculty of Engineering, University of Auckland
 
 Keywords      : Evacuation Modeling, Assisted Evacuation, Fire Safety, Hospital, FRAME.
 
 Bibliography  : references.bib
 Logo          : False
+Csl Style     : madoko-numeric-nosort
 Tex Header    :
   \def\refname{&name-references;}
 name-references : REFERENCES
@@ -27,7 +29,7 @@ One of the primary objectives of fire safety is to guarantee the
 evacuation of all the occupants from a building safely. Although fire
 safety rules and regulations exist, they remain insufficient to guarantee
 the safety of all building occupants and do not prevent the dramatic
-events to be repeated. Especially in healthcare facilities, e.g.
+events to be repeated. Especially in health care facilities, e.g.
 hospitals, care homes, etc., the evacuation procedure is more complex
 than in an ordinary building. This is due to multiple reasons such as the
 large number of patients requiring assistance to evacuate or the time
@@ -41,12 +43,12 @@ Considering the limited number of studies on assisted evacuations, this
 work aims to provide a deeper insight on the modeling issues to simulate
 such an event. Based upon a preliminary risk analysis using the Fire Risk
 Assessment Method for Engineering (FRAME), the most critical floor will
-be selected and modeled using Pathfinder, an agent based evacuation
+be selected and modeled using Pathfinder, an agent-based evacuation
 model. Furthermore, the impact of different percentage of People with
 Reduced Mobility will be investigated. Moreover, since the number of
 staff may significantly vary in the same scenarios (e.g. during the
 night), different ratios of staff to occupant's will be studied to show
-the impact of this parameter on the evacuation process of patients.
+the impact of this parameter on the evacuation process.
 
 *Keywords*: Evacuation Modeling, Assisted Evacuation, Fire Safety, Hospital, FRAME
 ~
@@ -55,16 +57,16 @@ the impact of this parameter on the evacuation process of patients.
 
 Each year, in Belgium, fire kills and costs money. In fact, in 2013,
 Belgian fire and rescue services attended over 22.733 fires including 236
-in care homes and 79 in hospitals [@1]. These fires killed 51
-people and injured over 1189 [@1]. In health care facilities,
-patients may start fires, either accidentally or deliberately,
-particularly by those who are elderly, have learning difficulties, or are
-young people with disabilities. Those who suffer from mental illness may
-be particularly prone to starting fires. In these particular buildings,
-the occupants will be a mixture of patients, staff and visitors. Staff
-can reasonably be expected to have an understanding of the layout of the
-premises (or of the part in which they work), while visitors are unlikely
-to have knowledge of alternative escape routes. Patients may have limited
+in care homes and 79 in hospitals [@1]. These fires killed 51 people and
+injured over 1189 [@1]. In health care facilities, patients may start
+fires, either accidentally or deliberately, particularly by those who are
+elderly, have learning difficulties, or are young people with
+disabilities. Those who suffer from mental illness may be particularly
+prone to starting fires. In these particular buildings, the occupants
+will be a mixture of patients, staff and visitors. Staff can reasonably
+be expected to have an understanding of the layout of the premises (or of
+the part in which they work), while visitors are unlikely to have
+knowledge of alternative escape routes. Patients may have limited
 knowledge, but will generally be guided or assisted to a place of safety
 by staff or visitors. Further to this, health care facilities present a
 set of challenges from the perspective of fire safety. This is due to
@@ -87,55 +89,59 @@ independent mobility; **Very high dependency** (non-ambulant), those
 patients whose clinical treatment and/or condition create a high
 dependency on staff. This includes those in intensive care/intensive
 therapy units and operating rooms and those where evacuation would prove
-potentially life threatening. Patients being cared for in healthcare
+potentially life threatening. Patients being cared for in health care
 premises will vary considerably in terms of mobility and levels of
 awareness during a fire situation. There may be patients who exhibit
 severe mobility restriction but will have a good awareness of the
 situation, being able to co-operate with staff. Others may exhibit normal
 mobility, but their level of awareness may be such that they present
-unpredictable behaviour (including violent behaviour), which may impede
+unpredictable behavior (including violent behavior), which may impede
 staff in an emergency.
 
-Conducting real experiments in health care environments is prohibited
-since such experiments will be really hazardous in presence of vulnerable
-people. Another alternative consists on using simulation tools. In fact,
-it is well known that evacuation models are powerful tools to study the
-evacuation process in different scenarios and
-applications [@2;@3;@4;@5;@6]. We can find several reviews [@2;@3] that
-show the capabilities and limitations of these types of models. These
-reviews show that, apart from their possibilities, it is difficult to
-apply directly the current evacuation models to the scenarios that
+It is true that the ideal way to determine the egress time required and
+the best evacuation strategy would be to conduct some timed evacuation
+drills involving the movement of all the patients. However, conducting
+real experiments in health care environments is prohibited since such
+experiments will be really hazardous in presence of vulnerable people.
+Another alternative consists on using simulation tools. This would
+identify many simple problems that may be rectified before any emergency
+evacuation should occur. In fact, it is well known that evacuation models
+are powerful tools to study the evacuation process in different scenarios
+and applications [@2;@3;@4;@5;@6]. We can find several reviews [@2;@3]
+that show the capabilities and limitations of these types of models.
+These reviews show that, apart from their possibilities, it is difficult
+to apply directly the current evacuation models to the scenarios that
 involve assisted evacuations, due to the presence of vulnerable people
-who cannot evacuate by themselves (healthcare facilities, kindergartens
+who cannot evacuate by themselves (health care facilities, kindergartens
 and schools). However, few of them are able to simulate assisted
 evacuations. For example, the EXITT [@7] model includes two types of
 occupants, the able-bodied people and the people with reduced mobility
 (PRM) in need of assistance to evacuate the building. Decision rules
 apply only to the first type, and the latter type follows the decisions
-and movements of their attendants. The BUMMPEE [@8] model can simulate the
-evacuation of people with disabilities, and their interaction with the
-built environment. However, it is not clear whether this model can
+and movements of their attendants. The BUMMPEE [@8] model can simulate
+the evacuation of people with disabilities, and their interaction with
+the built environment. However, it is not clear whether this model can
 simulate assisted evacuations. The buildingEXODUS [@9] model includes a
 theoretical model comprising algorithms derived to represent the use of
 patient transportation devices during the evacuation process [@10]. In
-addition, there are two models that specialise in the evacuation of
-hospitals: The G-HES (Glasgow Hospital Evacuation Simulator) [@11] and the
-Assisted Evacuation Simulation System [@12]. Both models have been
+addition, there are two models that specialize in the evacuation of
+hospitals: The G-HES (Glasgow Hospital Evacuation Simulator) [@11] and
+the Assisted Evacuation Simulation System [@12]. Both models have been
 developed to consider assisted evacuations. However, they are not
 publicly available [@13].
 
 Another alternative is the use of other existing evacuation (or general)
 models that are not explicitly designed to simulate assisted evacuations
 but they can be flexible enough to archive this goal (e.g.
-Pathfinder [@14], FDS+Evac [@15], STEPS [@16], etc.). In fact, some of them
-allow the simulation of additional behaviours, such as travel itineraries
-assigned to occupants, delays, etc. This could be used to simulate
-prescript assisted evacuation procedures.
+Pathfinder [@14], FDS+Evac [@15], STEPS [@16], etc.). In fact, some of
+them allow the simulation of additional behaviors, such as travel
+itineraries assigned to occupants, delays, etc. This could be used to
+simulate prescript assisted evacuation procedures.
 
 Only a limited number of studies have examined the assisted evacuations
 using the general models. One of the studies to do so was completed by
 Golmohammadi and Shimshak [@17] showed an analytical approximation to
-analyse the horizontal and the vertical evacuation times, considering
+analyze the horizontal and the vertical evacuation times, considering
 three types of patients. This analytical model permits the user to
 consider the number and the category of patients and the number of the
 staff members and the availability of the elevators. Alonso [@18]
@@ -153,7 +159,7 @@ commonly agreed that it is needed to differentiate between self-reliant
 (ambulant) and incapacitated (non-ambulant) patients. Moreover, all the
 incapacitated patients have a preparation time that may depend on the
 type of their disability. For some patients, this preparation time will
-include the processes to stabilise the patient's condition (e.g.
+include the processes to stabilize the patient's condition (e.g.
 operating room), to disconnect the patients from equipment, to move a
 patient from the bed to a transportation device (e.g. Evac+Chair,
 stretcher, etc.), to just help them to get dressed or to gather their
@@ -163,10 +169,10 @@ parameters are limited. For example, Adams and Galea [@20] present an
 experimental study to evaluate the performance of the movement devices
 used to assist PRM in high-rise building evacuations. Based on this
 experimental study, Hunt, Galea and Lawrence [@21] conducted a numerical
-study to analyse the performance of trained hospital staff using movement
-assist devices to evacuate PRM. Other studies [@22;@23] show some possible
-ranges and values for preparation times considering different types of
-patients for the sleeping areas.
+study to analyze the performance of trained hospital staff using movement
+assist devices to evacuate PRM. Other studies [@22;@23] show some
+possible ranges and values for preparation times considering different
+types of patients for the sleeping areas.
 
 The study undertaken here aimed (1) to simulate prescript assisted
 evacuation using Pathfinder; (2) to evaluate the impact of different
@@ -174,16 +180,16 @@ percentages of people with reduced mobility on the evacuation process,
 especially on the Required Safe Egress Time (RSET) – the time required by
 the occupants to leave the floor and escape to a place of reasonable
 safety; and, since the number of staff may significantly vary in the same
-scenarios (e.g. during the night), to study the effect of staff to
+scenarios (e.g. during the night), (3) to study the effect of staff to
 patient's ratio on the evacuation process.
 
 # METHODS
 
-The methods employed in this study were a combination of risk assessment
-and evacuation modeling techniques. The initial phase of the study was
-therefore the use of the Fire Risk Assessment Method for Engineering [@25]
-to identify the most critical floor. The layout of this floor is modeled
-within Pathfinder using a third-party (PyroSim). And finally, a number of
+The methods employed in this study combine risk assessment and evacuation
+modeling techniques. The initial phase of the study was therefore the use
+of the Fire Risk Assessment Method for Engineering [@25] to identify the
+most critical floor. Then, the layout of this floor was modeled within
+Pathfinder using a third-party (PyroSim). And finally, a number of
 patients with different individual characteristics were created and
 distributed throughout the model.
 
@@ -204,11 +210,11 @@ open-air environment.
 
 Apart from its use in airports [@26], industry [@27] and cultural
 heritage buildings [@28;@29] this method has been employed mainly for
-healthcare facilities [@30;@31].
+health care facilities [@30;@31].
 
 ## PATHFINDER
 
-Pathfinder is an agent based egress and human movement simulator. It is
+Pathfinder is an agent-based egress and human movement simulator. It is
 developed by Thunderhead Engineering. Its purpose is to provide an
 analytical evacuation tool that could be coupled with an external fire
 model such as FDS (Fire Dynamics Simulator) [@32] to form portion of
@@ -216,16 +222,16 @@ hazard analysis. The occupants are represented as circles moving in a
 continuous space. It uses two different ways to model the evacuation
 process (1) and agent-based model (steering) or (2) based on the method
 of Mowrer ad Nelson (flow model) [@33]. The model considers individual
-profiles (walking speed and pre-movement times) implemented through
-distribution laws.
+profiles (walking speed, delays, etc.) implemented through distribution
+laws.
 
 # MODEL CASE STUDY
 
 ## FLOOR LAYOUT
 
 The layout of the modeled floor is shown in Figure [#fig-layout]. As
-shown in this Figure, this floor contains 42 rooms: 14 single rooms (from
-13 to 26) and 28 double rooms (the others). This floor had three exits
+shown bellow, this floor contains 42 rooms: 14 single rooms (from 13 to
+26) and 28 double rooms (the others). This floor had three exits
 associated to the emergency staircases, two nurses' stations and some
 technical rooms. The lifts are not used during the evacuation process.
 The fire is supposed located in room 13. Therefore, the East Exit is
@@ -241,11 +247,11 @@ supposed non-functional during the evacuation processes simulated.
 For the simulations, we considered two types of patients: ambulant
 patients and non-ambulant patients.
 
-For ambulant patients, the movement and behaviour of each individual is
+For ambulant patients, the movement and behavior of each individual is
 described by several parameters such as the pre-evacuation time and the
 horizontal walking speed.
 
-For non-ambulant patients, the movement and behaviour of each patient is
+For non-ambulant patients, the movement and behavior of each patient is
 described by several parameters such as the pre-movement time, which is
 divided into two components: the waiting time – the time undertaken by
 the member(s) of staff to reach the room of the patient – and the
@@ -260,47 +266,49 @@ Tables [#tab-pre-evac] and [#tab-prep-trans]. The waiting times are
 dependent on the scenario simulated. So, they are not explicitly
 described here.
 
-~ TableFigure {#tab-pre-evac, caption:"Pre-evacuation time [@34;@35] and horizontal walking speed [@36] for ambulant patients."}
-|--------------------------------|------|------|-------------|
-|                                | Mean |    | Range       |
-+:-------------------------------+:----:+:----:+:-----------:+
-| Pre-evacuation time (s)        | 50.8 | -    | 30 – 66     |
-|--------------------------------|------|------|-------------|
-| Horizontal walking speed (m/s) | 1.00 | 0.42 | 0.10 – 1.77 |
-|--------------------------------|------|------|-------------|
-{  }
+~ TableFigure {#tab-pre-evac, caption:"Pre-evacuation time and horizontal walking speed for ambulant patients."}
+|                                      |------|----------|-------------|
+|                                      | Mean | St. Dev. | Range       |
+|:------------------------------------:+:----:+:--------:+:-----------:+
+| Pre-evacuation time (s) [@34;@35]    | 50.8 | -        | 30 – 66     |
+|--------------------------------------|------|----------|-------------|
+| Horizontal walking speed (m/s) [@36] | 1.00 | 0.42     | 0.10 – 1.77 |
+|--------------------------------------|------|----------|-------------|
+{}
 ~
 
 ~ TableFigure {#tab-prep-trans, caption:"Preparation time and transportation walking speed for non-ambulant patients."}
-|                                                                         |||------|-----|---------|
-|                                                                         ||| Mean |   | Range   |
-+:-------------------------+:-----------+:----------------------------------+:----:+:---:+:-------:+
-| Dependent patients [@10] | Evacuation | Preparation time (s)              | 32.7 | 5.3 | -       |
-|                          | Chair      |-----------------------------------|------|-----|---------|
-|                          |            | Transportation walking speed (m/s)| 1.46 | 0.09| -       |
-|                          |------------|-----------------------------------|------|-----|---------|
-|                          | Carry      | Preparation time (s)              | 41.5 | 7.9 |         |
-|                          | Chair      |-----------------------------------|------|-----|---------|
-|                          |            | Transportation walking speed (m/s)| 1.50 | 0.10| -       |
-|                          |------------|-----------------------------------|------|-----|---------|
-|                          | Stretcher  | Preparation time (s)              | 77.7 | 19.2| -       |
-|                          |            |-----------------------------------|------|-----|---------|
-|                          |            | Transportation walking speed (m/s)| 1.04 | 0.09| -       |
-|                          |------------|-----------------------------------|------|-----|---------|
-|                          | Rescue     | Preparation time (s)              | 65.2 | 14.1| -       |
-|                          | Sheet      |-----------------------------------|------|-----|---------|
-|                          |            | Transportation walking speed (m/s)| 0.89 | 0.24| -       |
-|--------------------------|------------|-----------------------------------|------|-----|---------|
-| Highly dependent patients [@11]      || Preparation time (s)              | -    | -   | 180-900 |
-|                                      ||-----------------------------------|------|-----|---------|
-|                                      || Transportation walking speed (m/s)| 0.40 | 0.04| -       |
-| -------------------------------------||-----------------------------------|------|-----|---------|
+|                |            |                           |------|--------|---------|
+|                |            |                           | Mean |St. Dev.|Range    |
+|:--------------:|:-----------|:--------------------------+:----:+:------:+:-------:+
+| Dependent      | Evacuation | Preparation time (s)      | 32.7 | 5.3    | -       |
+| patients [@10] | Chair      |                           |      |        |         |
+|                |            |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 1.46 | 0.09   | -       |
+|                |------------|---------------------------|------|--------|---------|
+|                | Carry      | Preparation time (s)      | 41.5 | 7.9    |         |
+|                | Chair      |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 1.50 | 0.10   | -       |
+|                |------------|---------------------------|------|--------|---------|
+|                | Stretcher  | Preparation time (s)      | 77.7 | 19.2   | -       |
+|                |            |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 1.04 | 0.09   | -       |
+|                |------------|---------------------------|------|--------|---------|
+|                | Rescue     | Preparation time (s)      | 65.2 | 14.1   | -       |
+|                | Sheet      |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 0.89 | 0.24   | -       |
+|----------------|------------|---------------------------|------|--------|---------|
+| Highly dependent           || Preparation time (s)      | -    | -      | 180-900 |
+| patients [@11]             ||                           |      |        |         |
+|                |            |---------------------------|------|--------|---------|
+|                |            | Transportation speed (m/s)| 0.40 | 0.04   | -       |
+|----------------|------------|---------------------------|------|--------|---------|
 {  }
 ~
 
 There is a lack of data regarding the number of attendants needed to
 evacuate non-ambulant patients. Table [#tab-operators-roles] shows some
-values found on the available literature for dependent patients. As it is
+values found on the available literature for dependent patients[@10]. As it is
 shown in this table, the type of the transportation device used defines
 the number of required attendants to prepare the patient and to assist on
 the evacuation process. Comparing the different devices, we can conclude
@@ -310,40 +318,41 @@ attendants (two).
 For highly dependent patients, the number of attendants needed is
 unknown. Therefore, we suppose that two attendants are enough.
 
-~ TableFigure {#tab-operators-roles, caption:"The number of operators and their roles for each device [@10]"}
-|--------------------------------------------------------------------------------------|||||||
-| Experiment   | Role         | Stretcher | Evacuation | Carry Chair | Carry Chair  | Rescue |
-| Phase        |              |           | Chair      | (Male team) | (Female team)| Sheet  |
-+:-------------+:-------------+:---------:+:----------:+:-----------:+:------------:+:------:+
-| Preparation  | Essential    | 2         | 2          | 2           | 2            | 2      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Major        | 1         | 0          | 1           | 1            | 0      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Minor        | 1         | 0          | 0           | 1            | 0      |
-|--------------|--------------|-----------|------------|-------------|--------------|--------|
-| Corridor     | Essential    | 4         | 1          | 1           | 1            | 2      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Major        | 0         | 1          | 1           | 1            | 0      |
-|              |--------------|-----------|------------|-------------|--------------|--------|
-|              | Minor        | 0         | 0          | 1           | 2            | 0      |
-|--------------|--------------|-----------|------------|-------------|--------------|--------|
-| Total number of attendants || 4         | 2          | 3           | 4            | 2      |
-|----------------------------||-----------|------------|-------------|--------------|--------|
+~ TableFigure {#tab-operators-roles, caption:'The number of operators and their roles for each device.'}
+|--------------|--------------|-----------|------------|--------|---------|--------|
+| Experiment   | Role         | Stretcher | Evacuation | Carry  | Carry   | Rescue |
+| Phase        |              |           | Chair      | Chair  | Chair   | Sheet  |
+|              |              |           |            | (Male) | (Female)|        |
++:------------:+:------------:+:---------:+:----------:+:------:+:-------:+:------:+
+| Preparation  | Essential    | 2         | 2          | 2      | 2       | 2      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Major        | 1         | 0          | 1      | 1       | 0      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Minor        | 1         | 0          | 0      | 1       | 0      |
+|--------------|--------------|-----------|------------|--------|---------|--------|
+| Corridor     | Essential    | 4         | 1          | 1      | 1       | 2      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Major        | 0         | 1          | 1      | 1       | 0      |
+|              |--------------|-----------|------------|--------|---------|--------|
+|              | Minor        | 0         | 0          | 1      | 2       | 0      |
+|--------------|--------------|-----------|------------|--------|---------|--------|
+| Total number of attendants || 4         | 2          | 3      | 4       | 2      |
+|----------------------------||-----------|------------|--------|---------|--------|
+{  }
 ~
 
 ## EVACUATION STRATEGY
 
 Traditionally, hospitals focused on horizontal evacuation [@37]. Patients
 should initially be moved from areas of risk to areas where a
-"shelter-in-place" posture can be maintained; usually in
-separate smoke compartments. As long as it is safe to remain in the
-"shelter-in-place" position, it is the preferred choice to
-attempting vertical evacuation. Therefore, in this study, we are only
-considering horizontal evacuation.
+"shelter-in-place" posture can be maintained; usually in separate smoke
+compartments. As long as it is safe to remain in the "shelter-in-place"
+position, it is the preferred choice to attempting vertical evacuation.
+Therefore, in this study, we are only considering horizontal evacuation.
 
 ## EVACUATION PROCEDURE
 
-In healthcare facilities, in case of fire, the objective of the staff is
+In health care facilities, in case of fire, the objective of the staff is
 to evacuate as many patients as possible [@10;@18]. So, in this study,
 people in immediate danger are evacuated first, followed by ambulant
 patients and then non-ambulant patients. For non-ambulant patients, those
@@ -352,10 +361,10 @@ evacuation chair), followed by those requiring transport assistance
 (rescue sheet) and then patients who are being treated and/or would be
 difficult to evacuate (i.e. Operating Room, ICU, obese, dangerous).
 
-Furthermore, we considered that attendants use the nearest exit and that
-only two exits were available.
+Furthermore, we considered that the attendants use the nearest exit and
+that only two exits were available.
 
-## SCENARIOS MODELLED
+## SCENARIOS MODELED
 
 Typically, hospital rooms are single or double occupancy but for the
 hypothetical scenarios simulated, all the rooms are considered as single
@@ -380,16 +389,18 @@ A mix of ambulant and non-ambulant patients was considered with different
 percentages of independent, dependent and highly dependent patients. We
 considered 6 attendants present to assist on the evacuation of
 non-ambulant patients. Therefore, three emergency groups were formed by
-two attendants for assisting each patient. The Table [#tab-scenario2] shows the
-sub-scenarios simulated.
+two attendants for assisting each patient. The Table [#tab-scenario2]
+shows the sub-scenarios simulated.
 
 ~ TableFigure {#tab-scenario2, caption:"Sub-scenarios simulated for Scenario 2"}
-|-----------------------------------------------------------------------------------------------------------------||||
-| Sub-scenario | Number of independent patients | Number of dependent patients | Number of highly dependent patients |
-+:------------:+:------------------------------:+:----------------------------:+:-----------------------------------:+
-| 2.1          | 28                             | 14                           | 0                                   |
-| 2.2          | 28                             | 7                            | 7                                   |
-|-----------------------------------------------------------------------------------------------------------------||||
+
+| Sub-scenario | Number of   | Number of | Number of        |
+|              | independent | dependent | highly dependent |
+|              | patients    | patients  | patients         |
+|:------------:|:-----------:|:---------:|:----------------:|
+| 2.1          | 28          | 14        | 0                |
+| 2.2          | 28          | 7         | 7                |
+|--------------------------------------------------------||||
 ~
 
 ### Scenario 3
@@ -398,17 +409,16 @@ Like Scenario 2, a mix of ambulant and non-ambulant patients is
 considered but here the percentage of the patients is constant (1/3
 independent, 1/3 dependent and 1/3 highly dependent). In order to
 evaluate the effect of different staff to patient's ratios on the
-evacuation process, we considered different numbers of attendants
-(nurses): 4, 8 and 12. The Table [#tab-scenario3] shows the emergency groups formed for
-the different sub-scenarios.
+evacuation process, we considered two different numbers of attendants
+(nurses): 8 and 12. The Table [#tab-scenario3] shows the emergency groups
+formed for these sub-scenarios.
 
 ~ TableFigure {#tab-scenario3, caption:"Sub-scenarios simulated for Scenario 3"}
-|------------------------------------------------------|||
+
 | Sub-scenario | Number of attendants | Emergency groups |
-+:------------:+:--------------------:+:----------------:+
-| 3.1          | 4                    | 2                |
-| 3.2          | 8                    | 4                |
-| 3.3          | 12                   | 6                |
+|:------------:|:--------------------:|:----------------:|
+| 3.1          | 8                    | 4                |
+| 3.2          | 12                   | 6                |
 |------------------------------------------------------|||
 ~
 
@@ -417,15 +427,15 @@ the different sub-scenarios.
 
 ## FRAME METHOD RESULTS
 
-The Table [#tab-frame] presents the results of the Fire Risk Assessment Method for
-Engineering performed on the G Bloc of the "Clinique Sainte Elisabeth",
-located at Namur (Belgium). The calculation of the potential risk is
-carried on each floor of this building but only for the characteristic
-premises of the floor in question. The method gives the following
-results: the calculated risk for the property & content (R), the
-calculated risk for the occupants (R1) and the calculated risk for the
-activities (R2). For a well-protected compartment, the three values shell
-be below one.
+The Table [#tab-frame] presents the results of the Fire Risk Assessment
+Method for Engineering performed on the G Bloc of the "Clinique Sainte
+Elisabeth", located at Namur (Belgium). The calculation of the potential
+risk is carried on each floor of this building but only for the
+characteristic premises of the floor in question. The method gives the
+following results: the calculated risk for the property & content (R),
+the calculated risk for the occupants (R1) and the calculated risk for
+the activities (R2). For a well-protected compartment, the three values
+shell be below one.
 
 In general, the results of this analysis demonstrate that the building is
 well protected (R<1) against fire excluding the technical premise of
@@ -457,9 +467,10 @@ scenarios simulated.
 
 ### Scenario 1 {#path-s1}
 
-The evacuation curve for the scenario 1 is shown in Figure [#fig-evac-curve-s1]. The mean
-total evacuation time of ambulant patients is about 383 seconds, with a
-range of value between 163 seconds and 622 seconds.
+The evacuation curve for the scenario 1 is shown in
+Figure [#fig-evac-curve-s1]. The mean total evacuation time of ambulant
+patients is about 383 seconds, with a range of value between 163 seconds
+and 622 seconds.
 
 ~ Figure {#fig-evac-curve-s1, caption:"Evacuation curve for scenario 1 (m is the mean evacuation curve, max is the maximum evacuation curve and min is the minimum evacuation curve)"}
 ![evac-curve-scenario1]
@@ -470,10 +481,10 @@ range of value between 163 seconds and 622 seconds.
 
 ### Scenario 2 {#path-s2}
 
-A comparison between the mean evacuation curves of scenario 1 and
-scenario 2 is shown in Figure [#mean-evac-curve_s1-s2]. The results demonstrate that there is an
-increase in total evacuation time when assisted evacuation is performed
-involving dependent and highly-dependent patients. In fact, for
+A comparison between the mean evacuation curves of scenarios 1 and 2 is
+shown in Figure [#mean-evac-curve_s1-s2]. The results demonstrate that
+there is an increase in total evacuation time when assisted evacuation is
+performed involving dependent and highly-dependent patients. In fact, for
 sub-scenario 2.1, in presence of 6 attendants to assist on the evacuation
 of dependent patients, the evacuation of all the patients takes in
 average about 483 seconds. For sub-scenario 2.2, in presence of 6
@@ -481,11 +492,20 @@ attendants to assist on the evacuation of dependent and highly-dependent
 patients, the total evacuation takes in average about 2124 seconds.
 
 Comparing the mean total evacuation times of scenarios 1 and 2, one can
-say that conducting an evacuation in presence of non-ambulant patients
-takes a higher time than a "normal" evacuation. This is due to the fact
-that the evacuation of dependent and highly-dependent patients is delayed
-due to the preparation times required and the waiting for someone (or
-some people) to assist them before starting to evacuate.
+say that conducting an evacuation in presence of assisted patients takes
+a higher time than a "normal" evacuation (involving ambulant patients
+only). This is due to the fact that the evacuation of dependent and
+highly-dependent patients is delayed due to the preparation times
+required and the waiting for someone to assist them before starting to
+evacuate. Furthermore, when considering only dependent patients, there is
+a slight increase of the total evacuation time, while when considering a
+mix of dependent and highly-dependent patients, the increase of total
+evacuation time is extremely higher. This is due to the fact that (1) the
+time required to prepare highly-dependent patients is higher than the
+time required to prepare dependent patients and, (2) when evacuating a
+highly-dependent patient, the group (nurses + the patient) evolves at a
+reduced velocity comparing to the case when they assist on the evacuation
+of a dependent patient.
 
 ~ Figure {#mean-evac-curve_s1-s2, caption:"Comparison of the mean evacuation curves for scenario 1 and 2"}
 ![mean-evac-curve-s1_s2]
@@ -494,32 +514,68 @@ some people) to assist them before starting to evacuate.
 [mean-evac-curve-s1_s2]: images/mean-evac-curve-s1_s2.png "mean-evac-curve-s1_s2" { width:auto; max-width:100% } 
 
 ### Scenario 3 {#path-s3}
+The results from the scenario 3, compared in Figure [#fig-evac-curve-s3],
+show that there is an increase in total evacuation time when considering
+a lower number of attendants. Indeed, when considering 6 EG (12
+attendants) the total evacuation time is about 35 minutes, while when
+only 4 EG (8 attendants) are present, the total evacuation time increase
+to about 48 minutes. If we continue to reduce the number of emergency
+groups (e.g. evacuation during the night), a safe evacuation of the
+non-ambulant patients will not necessarily be guaranteed, since the total
+evacuation times will reach extremely high values.
 
 
-Figure 5: comparison of evacuation curves for scenarios 1 and 3 
+~ Figure {#fig-evac-curve-s3, caption:"comparison of evacuation curves for scenario 3 "}
+![evac-curve-scenario3]
+~
 
-# CONCLUSION
+[evac-curve-scenario3]: images/evac-curve-scenario3.png "evac-curve-scenario3" { width:auto; max-width:100% }
+
+# CONCLUSIONS
+The main objectives of this paper were: (1) the simulation of prescript
+assisted evacuation using and agent based model, i.e. Pathfinder2016; (2)
+the evaluation of the effect of different numbers and categories of
+people with reduced mobility on the evacuation process; and, (3) the
+study of the impact of staff to patient’s ratio on the evacuation
+process.
+
+The analysis of the results showed that (1) conducting an assisted
+evacuation takes a higher time than an evacuation involving ambulant
+patients only (2) the number of non-ambulant patients in the event of a
+fire should be designed to be as few as possible. This may be achieved by
+establishing a number of protected areas within the floors. Restricting
+the number of patients within each protected area will be of benefit in
+an evacuation in terms of fewer patients requiring to be moved away from
+the fire and reducing the total evacuation time needed; (3) the type of
+non-ambulant patients involved on the evacuation process influence the
+total evacuation time. Indeed, evacuating highly-dependent patients lead
+to a higher total evacuation time than evacuating dependent patients;
+and, (4) the presence of a large number of attendants leads to faster
+evacuation.
 
 # FUTURE WORK
 
 This research highlighted a lack of data about preparation times, the
 number of attendants needed to assist the non-ambulant patients during
 the evacuation process and the walking speeds. Future data collection
-efforts are required to collect and analyze these variables.
+efforts are required to collect and analyze these variables. Further to
+this, more research is required to evaluate the effect of stress and
+fatigue perceived by the attendants during the repeated patient’s
+collection. In addition, future works could investigate the impact of
+training of the attendants on the evacuation process. For example, by
+using virtual reality gaming techniques. Another important point to
+investigate is the integration of an explicit model to simulate assisted
+evacuations, such as the model developed by Hunt [10], into the
+evacuation models. Finally, future research could focus on the coupling
+of this analysis with the study of the possible effect of the fire on the
+evacuating population, e.g., the presence of the fire and smoke affects
+the peoples’ behaviors, and there would be the need to simulate this
+impact on the evacuation process.
 
-Further to this, more research is required to evaluate the effect of
-stress and fatigue perceived by the attendants during the patient's
-collection.
+#ACKNOWLEDGEMENT
 
-In addition, future works could investigate the impact of training of the
-attendants on the evacuation time. Virtual Reality gaming could be used
-in the future to provide valuable insight into a real life simulation and
-highlight areas of risk.
-
-Finally, future research could focus on the coupling of this analysis
-with the study of the possible effect of the fire itself. In fact, the
-fire has a direct effect on the evacuating population, e.g., the presence
-of the fire and smoke affects the people behaviour, and there would be
-the need to simulate this impact on the evacuation process.
+The authors would thank the hospital “Clinique Sainte Elisabeth” managers
+for the material provided to conduct this study. The authors would also
+thank the staff for their helpfulness during the visit to the hospital.
 
 [BIB]

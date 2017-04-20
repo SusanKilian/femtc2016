@@ -32,7 +32,7 @@ Beamer Theme  : singapore
 ~~
 ~~ Center
 ![Namnlös1]
-[Namnlös1]: images/Namnl-s1.png "Namnlös1" { width:auto; max-width:80% }
+[Namnlös1]: images/Namnl-s1.png "Namnlös1" { width:auto; max-width:60% }
 ~~
 ~
 
@@ -130,7 +130,7 @@ $T_{PT} \sim T_{AST}$
 ## FDS 6.2.0 vs FDS 5.5.3, $\dot{q}^{\prime\prime}_{IRHF}$
 ~ Center
 ![Figure15]
-[Figure15]: images/Figure15.png "Figure15" { width:auto; max-width:50% }
+[Figure15]: images/Figure15.png "Figure15" { width:auto; max-width:60% }
 ~
 
 ~ End Vertical
@@ -150,6 +150,8 @@ $T_{PT} \sim T_{AST}$
 * $T_{AST}$ can be used as an alternative means of expressing the thermal
   exposure to a surface in FDS
 ~
+
+# Thank you for listening
 
 [slide]: http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/out/slidedemo.html
 [slide-mdk]: https://www.madoko.net/editor.html?#url=http://research.microsoft.com/en-us/um/people/daan/madoko/samples/slidedemo/slidedemo.mdk&options={"delayedUpdate":"true"}

@@ -6,6 +6,8 @@ Email         : agager@jensenhughes.com, gdominguez@jensenhughes.com
 Reveal Theme  : simple
 Beamer Theme  : singapore
 
+
+
 [TITLE]
 
 ## INTRODUCTION
@@ -120,8 +122,7 @@ S = \frac{K}{e}
 ~~~
 ~~
 ~~ Column {vertical-align:top;}
-Where:
-~~~ Equation { #eq-alignment}
+~~~ Equation { #eq-alignment }
 \begin{aligned}
 S &= visibility~(m) \\
 K &= proportionality~constant\\
@@ -335,55 +336,6 @@ Maximum Temperature Exposure Times Table B.2.1.1
 * Visibility is required for park staff and first responders in order to assist occupants who are restrained.  These occupants are familiar with their surroundings.
 * Researched tenability criteria should be used. 
 
-##AMUSEMENT PARKS - EXAMPLES
-~columns 
-~~column { width:"50%" }
-
-
-
-![Theme Park Overview]
-
-[Theme Park Overview]: images/Theme-Park-Overview.JPG "Theme Park Overview" { width:auto; max-width:90% }
-
-
-
-
-~~
-~~Column
-
-
-![FDS Overview]
-
-[FDS Overview]: images/FDS-Overview.JPG "FDS Overview" { width:auto; max-width:90% }
-~~
- ~ 
-
-##AMUSEMENT PARKS - EXAMPLES
-
-~center
-
-
-
-![Theme Park Section]
-
-[Theme Park Section]: images/Theme-Park-Section.JPG "Theme Park Section" { width:400px; max-width:90% }
-
-
-
-
-
-![FDS Section]
-
-[FDS Section]: images/FDS-Section.JPG "FDS Section" { width:400px; max-width:90% }
-
-~
-##AMUSEMENT PARKS - VISIBILITY
-
-~CENTER
-![TP Visibility]
-
-[TP Visibility]: images/TP-Visibility.JPG "TP Visibility" { width:auto; max-width:90% }
-~
 
 ##AMUSEMENT PARKS - VISIBILITY VS TEMPERATURE
 

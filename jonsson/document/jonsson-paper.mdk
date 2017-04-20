@@ -74,9 +74,10 @@ design process. The graph below, from the SFPE Handbook, shows the
 Performance based design flowchart and in red where advanced modelling is
 situated within the overall process.
 
-[PBD Chart]: images/PBD-Chart.jpg "PBD Chart" { width:auto; max-width:90% }
+[PBDChart]: images/PBD-Chart.jpg "PBD Chart" { width:auto; max-width:90% }
+
 ~ Figure { #PBD Chart; caption:"Performance based design flow chart."}
-![PBD Chart]
+![PBDChart]
 ~
 
 Each element of the flow chart are essential and responsible for the
@@ -125,9 +126,9 @@ area in the airside departures level, during a simulated evacuation. As
 can be seen on the image a few large bottleneck areas were created using
 the current evaluation strategy for this level.
 
-![Barajas4]
 ~ Figure { #Barajas4; caption:"Evaluation of the current configuration of the area with Pathfinder."}
 [Barajas4]: images/Barajas4.png "Barajas4" { width:auto; max-width:90% }
+![Barajas4]
 ~
 
 The analysis of the current configuration shown various conflictive
@@ -216,9 +217,9 @@ assigned to 15 MPI processes, with a resolution varying from 0.15 m in
 the fire region up to 0.30 m in the regions far from the fire.
 
 ~ Figure { #Porta Susa_1; caption:"Correspondence between the FDS model and the real building."}
-![Porta Susa_1]
+![PortaSusa_1]
 ~
-[Porta Susa_1]: images/Porta-Susa_1.png "Porta Susa_1" { width:auto; max-width:90% }
+[PortaSusa_1]: images/Porta-Susa_1.png "Porta Susa_1" { width:auto; max-width:90% }
 
 Before evaluating the design, the analysis required a dedicate
 pre-analysis so that the peculiarities of ventilation conditions could be
@@ -231,10 +232,10 @@ control system particularly when passing through the natural shafts
 designed in the interface between the station buildings and the
 platforms.
 
-~ Figure { #Porta Susa_2; caption:"Visibility isosurface use to show the effectivenes of the natural ventilation system."}
-![Porta Susa_2]
+~ Figure { #PortaSusa_2; caption:"Visibility isosurface use to show the effectivenes of the natural ventilation system."}
+![PortaSusa_2]
 ~
-[Porta Susa_2]: images/Porta-Susa_2.png "Porta Susa_2" { width:auto; max-width:90% }
+[PortaSusa_2]: images/Porta-Susa_2.png "Porta Susa_2" { width:auto; max-width:90% }
 
 On the evacuation side, Pathfinder was used to determine the overall
 evacuation time of the station both due to legislative requirements and
@@ -243,9 +244,9 @@ affecting the evacuation routes.
 
 
 ~ Figure { #Porta Susa_Evac; caption:"Simultaneous evacuation of the building."}
-![Porta Susa_Evac]
+![PortaSusa_Evac]
 ~
-[Porta Susa_Evac]: images/Porta-Susa_Evac.png "Porta Susa_Evac" { width:auto; max-width:90% }
+[PortaSusa_Evac]: images/Porta-Susa_Evac.png "Porta Susa_Evac" { width:auto; max-width:90% }
 
 ~ Figure { #Porta Susa_Evac3; caption:"Time to exit plot contour."}
 ![Porta Susa_Evac3]
@@ -264,7 +265,7 @@ determine the smoke movement conditions and its interaction with the
 evacuation, for such a project is clear. The design vision could not have
 been achieved without such an approach.
 
-## High Rise Aparment Hotel
+## High Rise Apartment Hotel
 
 The third example is a heritage protected multiuse building in the centre
 of Madrid, Spain. Part of the building was to be transformed into an
@@ -318,7 +319,6 @@ following images shows a few of these output parameters.
 ![GranVia2]
 ~
 [GranVia2]: images/GranVia2.png "GranVia2" { width:auto; max-width:90% }
-
 
 
 ~ Figure { #GranVia3; caption:"Level of Services map"}

@@ -8,6 +8,10 @@ Beamer Theme  : singapore
 Logo          : False
 Embed         : 2000
 
+JS Footer :
+    revealConfig.transition = "fade";
+
+
 # STUDY OF PARAMETERS THAT INFLUENCE I-GIRDER BRIDGE BEHAVIOR DURING FIRE EVENTS
 
 ~ Begin Columns

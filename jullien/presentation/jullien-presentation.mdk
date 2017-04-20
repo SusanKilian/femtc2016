@@ -4,10 +4,10 @@ Sub Title     :
 Author        : Quentin JULLIEN
 Affiliation   : Centre Scientifique et Technique du Bâtiment - France ![logo2]
 Email         : quentin.jullien@cstb.fr 
-Reveal Theme  : sky
+Reveal Theme  : simple
 Beamer Theme  : singapore
 Toc Depth     : 1
-
+Embed         : 2048
 
 [logo2]: images/logo2.png "logo2" { width:auto; max-width:37%; vertical-align:bottom}
 
